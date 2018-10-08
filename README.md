@@ -39,7 +39,7 @@ For a list of frequently asked questions please visit the [Copay FAQ](https://gi
 Clone the repo and open the directory:
 
 ```sh
-git clone https://github.com/bitpay/copay.git
+git https://github.com/fcash-project/fcash-pay.git
 cd copay
 ```
 
