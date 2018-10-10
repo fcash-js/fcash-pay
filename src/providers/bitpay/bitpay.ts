@@ -8,7 +8,7 @@ import { AppIdentityProvider } from '../app-identity/app-identity';
 import * as bitauthService from 'bitauth';
 
 @Injectable()
-export class BitPayProvider {
+export class FcashProvider {
   private NETWORK: string;
   private BITPAY_API_URL: string;
   constructor(
@@ -16,7 +16,7 @@ export class BitPayProvider {
     private appIdentityProvider: AppIdentityProvider,
     private logger: Logger
   ) {
-    this.logger.debug('BitPayProvider initialized');
+    this.logger.debug('FcashProvider initialized');
     this.NETWORK = 'livenet';
     this.BITPAY_API_URL =
       this.NETWORK == 'livenet'

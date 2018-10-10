@@ -21,7 +21,7 @@ import { ActionSheetProvider, GiftCardProvider } from '../../../providers';
 import { CardConifg, CardName } from '../../../providers/gift-card/gift-card';
 import { ProfileProvider } from '../../../providers/profile/profile';
 import { Coin } from '../../../providers/wallet/wallet';
-import { BitPayCardTopUpPage } from '../../integrations/fcash-card/fcash-card-topup/fcash-card-topup';
+import { FcashCardTopUpPage } from '../../integrations/fcash-card/fcash-card-topup/fcash-card-topup';
 import { BuyCoinbasePage } from '../../integrations/coinbase/buy-coinbase/buy-coinbase';
 import { SellCoinbasePage } from '../../integrations/coinbase/sell-coinbase/sell-coinbase';
 import { ConfirmCardPurchasePage } from '../../integrations/gift-cards/confirm-card-purchase/confirm-card-purchase';
@@ -136,7 +136,7 @@ export class AmountPage extends WalletTabsChild {
     this.satToUnit = 1 / this.unitToSatoshi;
     this.unitDecimals = this.config.wallet.settings.unitDecimals;
 
-    // BitPay Card ID or Wallet ID
+    // Fcash Card ID or Wallet ID
     this._id = this.navParams.data.id;
 
     // Use only with ShapeShift
@@ -272,9 +272,9 @@ export class AmountPage extends WalletTabsChild {
   private getNextView() {
     let nextPage;
     switch (this.navParams.data.nextPage) {
-      case 'BitPayCardTopUpPage':
+      case 'FcashCardTopUpPage':
         this.showSendMax = true;
-        nextPage = BitPayCardTopUpPage;
+        nextPage = FcashCardTopUpPage;
         break;
       case 'ConfirmCardPurchasePage':
         nextPage = ConfirmCardPurchasePage;
@@ -425,7 +425,7 @@ export class AmountPage extends WalletTabsChild {
   private checkAmountForBitpaycard(amount: number): void {
     // Check if the top up amount is at least 1 usd
     const isTopUp =
-      this.navParams.data.nextPage === 'BitPayCardTopUpPage' ? true : false;
+      this.navParams.data.nextPage === 'FcashCardTopUpPage' ? true : false;
     if (isTopUp && amount < 1) {
       this.allowSend = false;
     }

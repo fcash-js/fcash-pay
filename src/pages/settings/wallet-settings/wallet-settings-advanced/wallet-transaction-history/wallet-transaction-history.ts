@@ -99,7 +99,7 @@ export class WalletTransactionHistoryPage {
           'Currency',
           'Txid',
           'Creator',
-          'Copayers',
+          'FcashApp',
           'Comment'
         ];
 
@@ -140,7 +140,7 @@ export class WalletTransactionHistoryPage {
             Currency: this.currency,
             Txid: it.txid,
             Creator: _creator,
-            Copayers: _fcash-pay,
+            FcashApp: _fcash-pay,
             Comment: _comment
           });
 
@@ -154,7 +154,7 @@ export class WalletTransactionHistoryPage {
               Currency: this.currency,
               Txid: '',
               Creator: '',
-              Copayers: ''
+              FcashApp: ''
             });
           }
         });

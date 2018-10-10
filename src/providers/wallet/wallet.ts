@@ -1251,7 +1251,7 @@ export class WalletProvider {
       wallet.scanning = true;
       wallet.startScan(
         {
-          includeCopayerBranches: true
+          includeFcashAppBranches: true
         },
         err => {
           if (err) return reject(err);
@@ -1665,7 +1665,7 @@ export class WalletProvider {
     }
   }
 
-  public copyCopayers(wallet, newWallet): Promise<any> {
+  public copyFcashApp(wallet, newWallet): Promise<any> {
     return new Promise((resolve, reject) => {
       let walletPrivKey = this.bwcProvider
         .getBitcore()

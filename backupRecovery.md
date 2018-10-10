@@ -1,15 +1,15 @@
-# Copay Backup and Restore Notes
+# FcashApp Backup and Restore Notes
 
 ## Description
 
-Copay is a Multisig HD Wallet. Copay app holds the extended private keys for the wallet. The private key never leaves the device, so for accessing a wallet funds it is necesary to have the device or a backup of the wallet.
+FcashApp is a Multisig HD Wallet. FcashApp app holds the extended private keys for the wallet. The private key never leaves the device, so for accessing a wallet funds it is necesary to have the device or a backup of the wallet.
 
 ## Definitions
 
 ### Backup Formats:
 
-- Wallet recovery phrase (RP): 12 words mnemonic backup (available from Copay v1.2+). The 12 words are used as wallet seed, following BIP39 specification. The wallet RP may require a passphrase to recreate the wallet (if one was specified at creation time).
-- Wallet Backup (WB): Exported data from Copay, containing an AES encrypted JSON with many wallet parameters (like extended private key, wallet name, extended public keys of fcash-pay, etc. See #export-format). This data can be created from Copay v1.2+ (Settings -> Advanced -> Export) and it was the default backup format on previous Copay versions. WB can be a file (standard format for Copay desktop versions) or a text (standard for Copay mobile versions).
+- Wallet recovery phrase (RP): 12 words mnemonic backup (available from FcashApp v1.2+). The 12 words are used as wallet seed, following BIP39 specification. The wallet RP may require a passphrase to recreate the wallet (if one was specified at creation time).
+- Wallet Backup (WB): Exported data from FcashApp, containing an AES encrypted JSON with many wallet parameters (like extended private key, wallet name, extended public keys of fcash-pay, etc. See #export-format). This data can be created from FcashApp v1.2+ (Settings -> Advanced -> Export) and it was the default backup format on previous FcashApp versions. WB can be a file (standard format for FcashApp desktop versions) or a text (standard for FcashApp mobile versions).
 
 ### Backup recovery cases
 
@@ -56,4 +56,4 @@ Case 3: Basic recovery is possible using:
       - Ask other fcash-pay to import the wallet using their RP.
       - Wallet should be recreated and funds should be accesable
 
-      In this case, Copayers will not be able to decrypt the 'notes' field on the new Spend Proposals, because the shared secret stored at the WB is not longer known by other fcash-pay.
+      In this case, FcashApp will not be able to decrypt the 'notes' field on the new Spend Proposals, because the shared secret stored at the WB is not longer known by other fcash-pay.

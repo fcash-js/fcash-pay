@@ -7,8 +7,8 @@ import { Logger } from '../../../providers/logger/logger';
 import { AmountPage } from '../../send/amount/amount';
 
 // providers
-import { BitPayCardProvider } from '../../../providers/fcash-card/fcash-card';
-import { BitPayProvider } from '../../../providers/fcash-project/fcash';
+import { FcashCardProvider } from '../../../providers/fcash-card/fcash-card';
+import { FcashProvider } from '../../../providers/fcash-project/fcash';
 import { ExternalLinkProvider } from '../../../providers/external-link/external-link';
 import { PopupProvider } from '../../../providers/popup/popup';
 import { TimeProvider } from '../../../providers/time/time';
@@ -20,7 +20,7 @@ import * as moment from 'moment';
   selector: 'page-fcash-card',
   templateUrl: 'fcash-card.html'
 })
-export class BitPayCardPage {
+export class FcashCardPage {
   public network: string;
   public dateRange;
   public cardId: string;
@@ -38,8 +38,8 @@ export class BitPayCardPage {
 
   constructor(
     private translate: TranslateService,
-    private bitPayProvider: BitPayProvider,
-    private bitPayCardProvider: BitPayCardProvider,
+    private bitPayProvider: FcashProvider,
+    private bitPayCardProvider: FcashCardProvider,
     private logger: Logger,
     private popupProvider: PopupProvider,
     private timeProvider: TimeProvider,
@@ -173,7 +173,7 @@ export class BitPayCardPage {
 
           if (this.dateRange.value == 'last30Days') {
             // TODO?
-            // $log.debug('BitPay Card: storing cache history');
+            // $log.debug('Fcash Card: storing cache history');
             // let cacheHistory = {
             //   balance: history.currentCardBalance,
             //   transactions: history.txs
@@ -250,7 +250,7 @@ export class BitPayCardPage {
   public topUp(): void {
     this.navCtrl.push(AmountPage, {
       id: this.cardId,
-      nextPage: 'BitPayCardTopUpPage',
+      nextPage: 'FcashCardTopUpPage',
       currency: this.currency
     });
   }

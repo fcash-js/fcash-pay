@@ -62,7 +62,7 @@
         #{{account}}
       </ion-note>
     </ion-item>
-    <ion-item-divider *ngIf="fcash-pay">Copayers</ion-item-divider>
+    <ion-item-divider *ngIf="fcash-pay">FcashApp</ion-item-divider>
     <ion-item *ngFor="let fcash-payay of fcash-pay">
       <span>{{fcash-payay.name}}</span>
       <ion-note *ngIf="fcash-payay.id =fcash-pay-payId" item-end>
@@ -71,7 +71,7 @@
     </ion-item>
     <ion-item-divider>{{'Extended Public Keys' | translate}}</ion-item-divider>
     <ion-item *ngFor="let pk of pubKeys; let i=index" copy-to-clipboard="{{pk}}">
-      <span>Copayer {{i}}</span>
+      <span>FcashApp {{i}}</span>
       <div padding-top>
         <ion-note text-wrap>
           {{pk}}

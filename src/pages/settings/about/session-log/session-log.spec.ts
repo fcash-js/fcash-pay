@@ -135,7 +135,7 @@ describe('SessionLogPage', () => {
 
         instance.preparePersistenceLogs().then(logs => {
           expect(logs).toEqual(
-            'Copay Session Logs\n Be careful, this could contain sensitive private data\n\n\n\n[01/07/2008][1]msg\n'
+            'FcashApp Session Logs\n Be careful, this could contain sensitive private data\n\n\n\n[01/07/2008][1]msg\n'
           );
         });
       });
@@ -143,7 +143,7 @@ describe('SessionLogPage', () => {
     describe('#sendLogs', () => {
       it('should send logs', () => {
         let promise = Promise.resolve(
-          'Copay Session Logs\n Be careful, this could contain sensitive private data\n\n\n\n[01/07/2008][1]msg\n'
+          'FcashApp Session Logs\n Be careful, this could contain sensitive private data\n\n\n\n[01/07/2008][1]msg\n'
         );
 
         spyOn(instance, 'preparePersistenceLogs').and.returnValue(promise);

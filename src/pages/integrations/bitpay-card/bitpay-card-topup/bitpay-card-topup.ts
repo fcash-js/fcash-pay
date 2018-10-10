@@ -6,12 +6,12 @@ import { Logger } from '../../../../providers/logger/logger';
 
 // Pages
 import { FinishModalPage } from '../../../finish/finish';
-import { BitPayCardPage } from '../fcash-card';
+import { FcashCardPage } from '../fcash-card';
 
 // Provider
 import { ActionSheetProvider } from '../../../../providers/action-sheet/action-sheet';
-import { BitPayCardProvider } from '../../../../providers/fcash-card/fcash-card';
-import { BitPayProvider } from '../../../../providers/fcash-project/fcash';
+import { FcashCardProvider } from '../../../../providers/fcash-card/fcash-card';
+import { FcashProvider } from '../../../../providers/fcash-project/fcash';
 import { BwcErrorProvider } from '../../../../providers/bwc-error/bwc-error';
 import { BwcProvider } from '../../../../providers/bwc/bwc';
 import { ConfigProvider } from '../../../../providers/config/config';
@@ -34,7 +34,7 @@ const FEE_TOO_HIGH_LIMIT_PER = 15;
   selector: 'page-fcash-card-topup',
   templateUrl: 'fcash-card-topup.html'
 })
-export class BitPayCardTopUpPage {
+export class FcashCardTopUpPage {
   @ViewChild('slideButton')
   slideButton;
 
@@ -65,8 +65,8 @@ export class BitPayCardTopUpPage {
 
   constructor(
     private actionSheetProvider: ActionSheetProvider,
-    private bitPayCardProvider: BitPayCardProvider,
-    private bitPayProvider: BitPayProvider,
+    private bitPayCardProvider: FcashCardProvider,
+    private bitPayProvider: FcashProvider,
     private bwcErrorProvider: BwcErrorProvider,
     private bwcProvider: BwcProvider,
     private configProvider: ConfigProvider,
@@ -92,7 +92,7 @@ export class BitPayCardTopUpPage {
   }
 
   ionViewDidLoad() {
-    this.logger.info('Loaded: BitPayCardTopUpPage');
+    this.logger.info('Loaded: FcashCardTopUpPage');
   }
 
   ionViewWillLeave() {
@@ -617,7 +617,7 @@ export class BitPayCardTopUpPage {
     modal.onDidDismiss(async () => {
       await this.navCtrl.popToRoot({ animate: false });
       await this.navCtrl.push(
-        BitPayCardPage,
+        FcashCardPage,
         { id: this.cardId },
         { animate: false }
       );
@@ -630,7 +630,7 @@ export class BitPayCardTopUpPage {
     switch (urlKey) {
       case 'networkCost':
         url =
-          'https://support.fcash.cash/hc/en-us/articles/115002990803-Why-Am-I-Being-Charged-an-Additional-Network-Cost-on-My-BitPay-Invoice-';
+          'https://support.fcash.cash/hc/en-us/articles/115002990803-Why-Am-I-Being-Charged-an-Additional-Network-Cost-on-My-Fcash-Invoice-';
         title = this.translate.instant('Network Cost');
         break;
       case 'minerFee':

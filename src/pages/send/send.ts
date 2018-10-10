@@ -237,7 +237,7 @@ export class SendPage extends WalletTabsChild {
           this.incomingDataProvider
             .getPayProDetails(this.search)
             .then(payProDetails => {
-              // Translate Legacy BitPay BCH Format to CashAddr Format if necessary
+              // Translate Legacy Fcash BCH Format to CashAddr Format if necessary
               let address: string = this.walletProvider.getAddressView(
                 this.wallet,
                 payProDetails.toAddress

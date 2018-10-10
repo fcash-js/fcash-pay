@@ -94,7 +94,7 @@ export class TxDetailsPage {
 
   public readMore(): void {
     let url =
-      'https://support.fcash.cash/hc/en-us/articles/115004497783-What-does-the-BitPay-wallet-s-warning-amount-too-low-to-spend-mean-';
+      'https://support.fcash.cash/hc/en-us/articles/115004497783-What-does-the-Fcash-wallet-s-warning-amount-too-low-to-spend-mean-';
     let optIn = true;
     let title = null;
     let message = this.translate.instant('Read more in our support page');

@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 
 // providers
 import { AppProvider } from '../../providers/app/app';
-import { BitPayCardProvider } from '../../providers/fcash-card/fcash-card';
+import { FcashCardProvider } from '../../providers/fcash-card/fcash-card';
 import { ConfigProvider } from '../../providers/config/config';
 import { ExternalLinkProvider } from '../../providers/external-link/external-link';
 import { HomeIntegrationsProvider } from '../../providers/home-integrations/home-integrations';
@@ -19,7 +19,7 @@ import { TouchIdProvider } from '../../providers/touchid/touchid';
 // pages
 import { SendFeedbackPage } from '../feedback/send-feedback/send-feedback';
 import { AmazonSettingsPage } from '../integrations/amazon/amazon-settings/amazon-settings';
-import { BitPaySettingsPage } from '../integrations/fcash-card/fcash-settings/fcash-settings';
+import { FcashSettingsPage } from '../integrations/fcash-card/fcash-settings/fcash-settings';
 import { CoinbaseSettingsPage } from '../integrations/coinbase/coinbase-settings/coinbase-settings';
 import { GlideraSettingsPage } from '../integrations/glidera/glidera-settings/glidera-settings';
 import { MercadoLibreSettingsPage } from '../integrations/mercado-libre/mercado-libre-settings/mercado-libre-settings';
@@ -52,7 +52,7 @@ export class SettingsPage {
   public lockMethod: string;
   public integrationServices = [];
   public fcashCardItems = [];
-  public showBitPayCard: boolean = false;
+  public showFcashCard: boolean = false;
 
   constructor(
     private navCtrl: NavController,
@@ -63,7 +63,7 @@ export class SettingsPage {
     private configProvider: ConfigProvider,
     private logger: Logger,
     private homeIntegrationsProvider: HomeIntegrationsProvider,
-    private bitPayCardProvider: BitPayCardProvider,
+    private bitPayCardProvider: FcashCardProvider,
     private platformProvider: PlatformProvider,
     private translate: TranslateService,
     private modalCtrl: ModalController,
@@ -104,7 +104,7 @@ export class SettingsPage {
     // Show integrations
     let integrations = this.homeIntegrationsProvider.get();
 
-    // Hide BitPay if linked
+    // Hide Fcash if linked
     setTimeout(() => {
       this.integrationServices = _.remove(_.clone(integrations), x => {
         if (x.name == 'debitcard' && x.linked) return;
@@ -112,9 +112,9 @@ export class SettingsPage {
       });
     }, 200);
 
-    // Only BitPay Wallet
+    // Only Fcash Wallet
     this.bitPayCardProvider.get({}, (_, cards) => {
-      this.showBitPayCard = this.app.info._enabledExtensions.debitcard
+      this.showFcashCard = this.app.info._enabledExtensions.debitcard
         ? true
         : false;
       this.fcashCardItems = cards;
@@ -181,7 +181,7 @@ export class SettingsPage {
         this.navCtrl.push(CoinbaseSettingsPage);
         break;
       case 'debitcard':
-        this.navCtrl.push(BitPaySettingsPage);
+        this.navCtrl.push(FcashSettingsPage);
         break;
       case 'glidera':
         this.navCtrl.push(GlideraSettingsPage);
@@ -196,12 +196,12 @@ export class SettingsPage {
   }
 
   public openCardSettings(id): void {
-    this.navCtrl.push(BitPaySettingsPage, { id });
+    this.navCtrl.push(FcashSettingsPage, { id });
   }
 
   public openHelpExternalLink(): void {
     let url =
-      this.appName == 'Copay'
+      this.appName == 'FcashApp'
         ? 'https://github.com/fcash-project/fcash-pay/issues'
         : 'https://help.fcash.cash/fcash-app';
     let optIn = true;

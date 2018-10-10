@@ -59,10 +59,10 @@ export class OnGoingProcessProvider {
       sending2faCode: this.translate.instant('Sending 2FA code...'),
       buyingBitcoin: this.translate.instant('Buying Bitcoin...'),
       sellingBitcoin: this.translate.instant('Selling Bitcoin...'),
-      fetchingBitPayAccount: this.translate.instant(
-        'Fetching BitPay Account...'
+      fetchingFcashAccount: this.translate.instant(
+        'Fetching Fcash Account...'
       ),
-      fetchingBitPayCards: this.translate.instant('Fetching BitPay Cards...'),
+      fetchingFcashCards: this.translate.instant('Fetching Fcash Cards...'),
       updatingGiftCards: this.translate.instant('Updating Gift Cards...'),
       updatingGiftCard: this.translate.instant('Updating Gift Card...'),
       cancelingGiftCard: this.translate.instant('Canceling Gift Card...'),

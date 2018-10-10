@@ -12,7 +12,7 @@ export class AddressProvider {
   constructor(private bwcProvider: BwcProvider) {
     this.fcore = this.bwcProvider.getBitcore();
     this.fcoreCash = this.bwcProvider.getBitcoreCash();
-    this.Bitcore = {
+    this.Fcash = {
       btc: {
         lib: this.fcore,
         translateTo: 'bch'

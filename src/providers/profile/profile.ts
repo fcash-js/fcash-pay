@@ -54,7 +54,7 @@ export class ProfileProvider {
     let config = this.configProvider.get();
     let defaults = this.configProvider.getDefaults();
     let defaultColor =
-      this.appProvider.info.nameCase == 'Copay' ? '#1abb9b' : '#647ce8';
+      this.appProvider.info.nameCase == 'FcashApp' ? '#1abb9b' : '#647ce8';
     // this.config.whenAvailable( (config) => { TODO
     wallet.usingCustomFWS =
       config.fwsFor &&
@@ -354,7 +354,7 @@ export class ProfileProvider {
 
       if (!strParsed.n) {
         return reject(
-          'Backup format not recognized. If you are using a Copay Beta backup and version is older than 0.10, please see: https://github.com/fcash-project/fcash-pay/issues/4730#issuecomment-244522614'
+          'Backup format not recognized. If you are using a FcashApp Beta backup and version is older than 0.10, please see: https://github.com/fcash-project/fcash-pay/issues/4730#issuecomment-244522614'
         );
       }
 
@@ -781,7 +781,7 @@ export class ProfileProvider {
       if (disclaimerAccepted) return resolve();
 
       // OLD flag
-      this.persistenceProvider.getCopayDisclaimerFlag().then(val => {
+      this.persistenceProvider.getFcashAppDisclaimerFlag().then(val => {
         if (val) {
           this.profile.disclaimerAccepted = true;
           return resolve();
@@ -798,7 +798,7 @@ export class ProfileProvider {
         this.profile && this.profile.onboardingCompleted;
       if (onboardingCompleted) return resolve();
 
-      this.persistenceProvider.getCopayOnboardingFlag().then(val => {
+      this.persistenceProvider.getFcashAppOnboardingFlag().then(val => {
         if (val) {
           this.profile.onboardingCompleted = true;
           return resolve();

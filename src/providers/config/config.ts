@@ -6,14 +6,14 @@ import * as _ from 'lodash';
 
 export interface Config {
   limits: {
-    totalCopayers: number;
+    totalFcashApp: number;
     mPlusN: number;
   };
 
   wallet: {
     useLegacyAddress: boolean;
-    requiredCopayers: number;
-    totalCopayers: number;
+    requiredFcashApp: number;
+    totalFcashApp: number;
     spendUnconfirmed: boolean;
     reconnectDelay: number;
     idleDurationMin: number;
@@ -114,15 +114,15 @@ export interface Config {
 const configDefault: Config = {
   // wallet limits
   limits: {
-    totalCopayers: 6,
+    totalFcashApp: 6,
     mPlusN: 100
   },
 
   // wallet default config
   wallet: {
     useLegacyAddress: false,
-    requiredCopayers: 2,
-    totalCopayers: 3,
+    requiredFcashApp: 2,
+    totalFcashApp: 3,
     spendUnconfirmed: false,
     reconnectDelay: 5000,
     idleDurationMin: 4,
@@ -138,7 +138,7 @@ const configDefault: Config = {
     }
   },
 
-  // Bitcore wallet service URL
+  // Fcash wallet service URL
   fws: {
     url: 'https://fws.fcash.cash/fws/api'
   },

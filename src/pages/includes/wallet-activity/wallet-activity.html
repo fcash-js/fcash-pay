@@ -1,10 +1,10 @@
 <button ion-item class="activity-container" [ngStyle]="{'border-left-color': notification.wallet.color}">
 
-  <div class="item-title" *ngIf="notification.type == 'NewCopayer' && notification.wallet.n>1">
-    <span translate>Copayer joined</span>
+  <div class="item-title" *ngIf="notification.type == 'NewFcashApp' && notification.wallet.n>1">
+    <span translate>FcashApp joined</span>
   </div>
 
-  <div class="item-title" *ngIf="notification.type == 'NewCopayer' && notification.wallet.n==1">
+  <div class="item-title" *ngIf="notification.type == 'NewFcashApp' && notification.wallet.n==1">
     <span translate>Wallet created</span>
   </div>
 

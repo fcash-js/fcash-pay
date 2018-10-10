@@ -23,7 +23,7 @@ msgstr "(二重払い可能性あり)"
 msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcash-pay has signed, or 2) 10 minutes have passed since the proposal was created."
 msgstr ""
 
-msgid "5-star ratings help us get BitPay Wallet into more hands, and more users means more resources can be committed to the app!"
+msgid "5-star ratings help us get Fcash Wallet into more hands, and more users means more resources can be committed to the app!"
 msgstr ""
 
 msgid "A total of {{amountAboveMaxSizeStr}} {{coin}} were excluded. The maximum size allowed for a transaction was exceeded."
@@ -62,7 +62,7 @@ msgstr "履歴"
 msgid "Add"
 msgstr "Viêt nam"
 
-msgid "Add BitPay Account?"
+msgid "Add Fcash Account?"
 msgstr ""
 
 msgid "Add Contact"
@@ -83,7 +83,7 @@ msgstr "資金を追加"
 msgid "Add funds to get started"
 msgstr ""
 
-msgid "Add this BitPay account ({{email}})?"
+msgid "Add this Fcash account ({{email}})?"
 msgstr ""
 
 msgid "Address"
@@ -232,7 +232,7 @@ msgstr ""
 msgid "Below Minimum Amount"
 msgstr ""
 
-msgid "BitPay Card URI"
+msgid "Fcash Card URI"
 msgstr ""
 
 msgid "Bitcoin Address"
@@ -289,7 +289,7 @@ msgstr "ビットコインを購入中..."
 msgid "Buying Gift Card..."
 msgstr ""
 
-msgid "By providing your email address, you give explicit consent to BitPay to use your email address to send you email notifications about payments."
+msgid "By providing your email address, you give explicit consent to Fcash to use your email address to send you email notifications about payments."
 msgstr ""
 
 msgid "Calculating fee..."
@@ -397,7 +397,7 @@ msgstr "承認中"
 msgid "Congratulations! It looks like you've recently received money. It's highly advised that you verify your recovery phrase so that your funds can be recovered in case your phone was lost or stolen."
 msgstr ""
 
-msgid "Connect my BitPay Card"
+msgid "Connect my Fcash Card"
 msgstr ""
 
 msgid "Connecting to Coinbase..."
@@ -421,22 +421,22 @@ msgstr "続ける"
 msgid "Contribute translations"
 msgstr ""
 
-msgid "Copay Session Logs. Be careful, this could contain sensitive private data"
+msgid "FcashApp Session Logs. Be careful, this could contain sensitive private data"
 msgstr ""
 
-msgid "Copay only supports Bitcoin Cash using new version numbers addresses"
-msgstr "Copay のビットコインキャッシュはビットコインと完全に異なる別通貨なので、アドレスの頭文字が異なります。"
+msgid "FcashApp only supports Bitcoin Cash using new version numbers addresses"
+msgstr "FcashApp のビットコインキャッシュはビットコインと完全に異なる別通貨なので、アドレスの頭文字が異なります。"
 
-msgid "Copayer already in this wallet"
+msgid "FcashApp already in this wallet"
 msgstr "ウォレット参加者が既に存在しています。"
 
-msgid "Copayer already voted on this spend proposal"
+msgid "FcashApp already voted on this spend proposal"
 msgstr "ウォレット参加者が既に送金の提案の意思表明をしています。"
 
-msgid "Copayer data mismatch"
+msgid "FcashApp data mismatch"
 msgstr "ウォレット参加者のデータ不整合"
 
-msgid "Copayer joined"
+msgid "FcashApp joined"
 msgstr "ウォレット参加者が加わりました"
 
 msgid "Copied"
@@ -502,7 +502,7 @@ msgstr "送金の提案を削除できませんでした"
 msgid "Could not encrypt wallet"
 msgstr ""
 
-msgid "Could not get claim code. Please contact BitPay support."
+msgid "Could not get claim code. Please contact Fcash support."
 msgstr ""
 
 msgid "Could not get dynamic fee"
@@ -697,7 +697,7 @@ msgstr ""
 msgid "Enter Amount"
 msgstr ""
 
-msgid "Enter Two Factor for your BitPay account"
+msgid "Enter Two Factor for your Fcash account"
 msgstr ""
 
 msgid "Enter a new encrypt password"
@@ -763,8 +763,8 @@ msgstr ""
 msgid "Error in Payment Protocol"
 msgstr "支払い検証のエラー"
 
-msgid "Error pairing BitPay Account"
-msgstr "BitPayアカウントを接続中にエラー"
+msgid "Error pairing Fcash Account"
+msgstr "Fcashアカウントを接続中にエラー"
 
 msgid "Error scanning funds:"
 msgstr "残高確認に失敗しました"
@@ -829,10 +829,10 @@ msgstr "フォームを送信する事ができませんでした。時間をお
 msgid "Feedback!"
 msgstr ""
 
-msgid "Fetching BitPay Account..."
-msgstr "BitPay アカウントを取得..."
+msgid "Fetching Fcash Account..."
+msgstr "Fcash アカウントを取得..."
 
-msgid "Fetching BitPay Cards..."
+msgid "Fetching Fcash Cards..."
 msgstr ""
 
 msgid "Fetching payment information..."
@@ -847,8 +847,8 @@ msgstr ""
 msgid "From"
 msgstr "送信者"
 
-msgid "From BitPay account"
-msgstr " BitPayアカウントから"
+msgid "From Fcash account"
+msgstr " Fcashアカウントから"
 
 msgid "From the destination device, go to Add wallet > Import wallet and scan this QR code"
 msgstr ""
@@ -886,8 +886,8 @@ msgstr ""
 msgid "Get local cash anywhere you go, from any Visa® compatible ATM. ATM bank fees may apply."
 msgstr ""
 
-msgid "Get news and updates from BitPay"
-msgstr "BitPay からのニュースや更新情報を受け取ります。"
+msgid "Get news and updates from Fcash"
+msgstr "Fcash からのニュースや更新情報を受け取ります。"
 
 msgid "Get started"
 msgstr "始めよう"
@@ -949,7 +949,7 @@ msgstr ""
 msgid "I agree to the Terms and certify that I am the beneficial owner of the input assets and the destination address."
 msgstr ""
 
-msgid "I give explicit consent to BitPay to use my email address to send me email notifications about payments (and, if selected, email updates and news about the wallet)."
+msgid "I give explicit consent to Fcash to use my email address to send me email notifications about payments (and, if selected, email updates and news about the wallet)."
 msgstr ""
 
 msgid "I have read, understood, and agree to the Terms of Use"
@@ -982,7 +982,7 @@ msgstr ""
 msgid "I've used this card"
 msgstr ""
 
-msgid "If enabled, Bitcoin Cash addresses will be shown using Copay style address, and not the new cashaddr format."
+msgid "If enabled, Bitcoin Cash addresses will be shown using FcashApp style address, and not the new cashaddr format."
 msgstr ""
 
 msgid "If enabled, the Recent Transactions card - a list of transactions occuring across all wallets - will appear in the Home tab."
@@ -991,7 +991,7 @@ msgstr "有効にした場合、「最近の取引」カードがホームのメ
 msgid "If enabled, wallets will also try to spend unconfirmed funds."
 msgstr ""
 
-msgid "If this device is replaced or this app is deleted, neither you nor BitPay can recover your funds without a backup."
+msgid "If this device is replaced or this app is deleted, neither you nor Fcash can recover your funds without a backup."
 msgstr ""
 
 msgid "If you disable the persistent logs, all the logs registered so far will be deleted. However, you can still see the session logs on this screen."
@@ -1288,8 +1288,8 @@ msgstr ""
 msgid "Not enough funds for fee"
 msgstr "手数料含めたら残高が不足しています。"
 
-msgid "Not even BitPay can access it."
-msgstr "BitPayは管理できない。"
+msgid "Not even Fcash can access it."
+msgstr "Fcashは管理できない。"
 
 msgid "Not including the private key allows to check the wallet balance, transaction history, and create spend proposals from the export. However, does not allow to approve (sign) proposals, so funds will not be accessible from the export."
 msgstr ""
@@ -1369,7 +1369,7 @@ msgstr ""
 msgid "Open website"
 msgstr "サイトを開く"
 
-msgid "Order the BitPay Card"
+msgid "Order the Fcash Card"
 msgstr ""
 
 msgid "Ouch!"
@@ -1486,8 +1486,8 @@ msgstr ""
 msgid "Please tap each word in the correct order."
 msgstr "正しい順序で各単語をタップしてください。"
 
-msgid "Please upgrade Copay to perform this action"
-msgstr "この操作を実行するにはCopayを最新バージョンに更新してください"
+msgid "Please upgrade FcashApp to perform this action"
+msgstr "この操作を実行するにはFcashAppを最新バージョンに更新してください"
 
 msgid "Please wait..."
 msgstr ""
@@ -2031,7 +2031,7 @@ msgstr "宛先"
 msgid "To get started, you'll need to create a bitcoin wallet and get some bitcoin."
 msgstr "はじめに、ビットコインウォレットを作成し、ビットコインを入手する必要があります。"
 
-msgid "To {{reason}} you must first add your BitPay account - {{email}}"
+msgid "To {{reason}} you must first add your Fcash account - {{email}}"
 msgstr ""
 
 msgid "Top up in progress..."
@@ -2157,7 +2157,7 @@ msgstr "更新中... お待ち下さい"
 msgid "Urgent"
 msgstr "緊急"
 
-msgid "Use Bitcoin Cash Copay Style Addresses"
+msgid "Use Bitcoin Cash FcashApp Style Addresses"
 msgstr ""
 
 msgid "Use Unconfirmed Funds"
@@ -2400,13 +2400,13 @@ msgstr ""
 msgid "You should not set a fee higher than {{maxFeeRecommended}} satoshis/byte."
 msgstr "{{maxFeeRecommended}} satoshis/byte より高い手数料を設定しない方が良いです。"
 
-msgid "Your BitPay Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
-msgstr "BitPayカードの準備が整いました。入金して全世界のお店やATMでご利用下さい。"
+msgid "Your Fcash Card is ready. Add funds to your card to start using it at stores and ATMs worldwide."
+msgstr "Fcashカードの準備が整いました。入金して全世界のお店やATMでご利用下さい。"
 
 msgid "Your bitcoin wallet is ready!"
 msgstr "ビットコインウォレットが完成しました!"
 
-msgid "Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. BitPay does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
+msgid "Your extended private keys are all that is needed to access your bitcoin funds. Be sure to protect your private keys and store them only on secure devices. Fcash does not have access to your private keys, so you alone are responsible for your keys. If you share key access with external services, you take responsibility for the risk of theft or breach. Only advanced users should handle extended private keys directly."
 msgstr ""
 
 msgid "Your fee is lower than recommended."
@@ -2433,8 +2433,8 @@ msgstr "[残高非表示中]"
 msgid "[Scanning Funds]"
 msgstr "[確認中]"
 
-msgid "add your BitPay Visa card(s)"
-msgstr "BitPay VISAカードを追加します"
+msgid "add your Fcash Visa card(s)"
+msgstr "Fcash VISAカードを追加します"
 
 msgid "me"
 msgstr "自分"
@@ -2448,13 +2448,13 @@ msgstr "準備中..."
 msgid "{appName} BCH wallets use the CashAddr format by default"
 msgstr ""
 
-msgid "{coinName} miner fees are high due to record demand for limited space on the {coinName} network. BitPay does not receive and does not control {coinName} miner fees."
+msgid "{coinName} miner fees are high due to record demand for limited space on the {coinName} network. Fcash does not receive and does not control {coinName} miner fees."
 msgstr ""
 
 msgid "{coinName} miner fees unusually high"
 msgstr ""
 
-msgid "{{appName}} depends on Fcash Wallet Service (FWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://fws.fcash.cash (BitPay's public FWS instance)."
+msgid "{{appName}} depends on Fcash Wallet Service (FWS) for blockchain information, networking and FcashApp synchronization. The default configuration points to https://fws.fcash.cash (Fcash's public FWS instance)."
 msgstr ""
 
 msgid "{{fee}} {{coin}} will be deducted for bitcoin networking fees."

@@ -226,7 +226,7 @@ describe('TxFormatProvider', () => {
       );
     });
 
-    it('should return tx.toAddress in Copay legacy format if coin is BCH and useLegacyAddress is true', () => {
+    it('should return tx.toAddress in FcashApp legacy format if coin is BCH and useLegacyAddress is true', () => {
       tx.action = 'received';
       tx.outputs[0].toAddress = 'CWtp9bmTjiwBp89SvnZRbshkEkTY9TRZnt';
       txFormatProvider.processTx('bch', tx, true);
@@ -242,7 +242,7 @@ describe('TxFormatProvider', () => {
       );
     });
 
-    it('should return tx.addressTo in Copay legacy format if coin is BCH and useLegacyAddress is true', () => {
+    it('should return tx.addressTo in FcashApp legacy format if coin is BCH and useLegacyAddress is true', () => {
       tx.action = 'received';
       tx.addressTo = 'CWtp9bmTjiwBp89SvnZRbshkEkTY9TRZnt';
       txFormatProvider.processTx('bch', tx, true);

@@ -22,7 +22,7 @@ import { WalletProvider } from '../../../providers/wallet/wallet';
   selector: 'page-fcash-pay',
   templateUrl: 'fcash-pay.html'
 })
-export class CopayersPage {
+export class FcashAppPage {
   public appName: string;
   public appUrl: string;
   public isCordova: boolean;
@@ -60,7 +60,7 @@ export class CopayersPage {
   }
 
   ionViewDidLoad() {
-    this.logger.info('Loaded: CopayersPage');
+    this.logger.info('Loaded: FcashAppPage');
 
     this.onResumeSubscription = this.plt.resume.subscribe(() => {
       this.updateWallet();
@@ -92,7 +92,7 @@ export class CopayersPage {
       if (
         this.wallet &&
         walletId == this.wallet.id &&
-        type == ('NewCopayer' || 'WalletComplete')
+        type == ('NewFcashApp' || 'WalletComplete')
       ) {
         this.updateWallet();
       }

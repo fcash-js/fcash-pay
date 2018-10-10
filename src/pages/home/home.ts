@@ -12,8 +12,8 @@ import { Observable, Subscription } from 'rxjs';
 
 // Pages
 import { AddPage } from '../add/add';
-import { BitPayCardPage } from '../integrations/fcash-card/fcash-card';
-import { BitPayCardIntroPage } from '../integrations/fcash-card/fcash-card-intro/fcash-card-intro';
+import { FcashCardPage } from '../integrations/fcash-card/fcash-card';
+import { FcashCardIntroPage } from '../integrations/fcash-card/fcash-card-intro/fcash-card-intro';
 import { CoinbasePage } from '../integrations/coinbase/coinbase';
 import { GlideraPage } from '../integrations/glidera/glidera';
 import { ShapeshiftPage } from '../integrations/shapeshift/shapeshift';
@@ -31,7 +31,7 @@ import { AddressBookProvider } from '../../providers/address-book/address-book';
 import { AddressProvider } from '../../providers/address/address';
 import { AmazonProvider } from '../../providers/amazon/amazon';
 import { AppProvider } from '../../providers/app/app';
-import { BitPayCardProvider } from '../../providers/fcash-card/fcash-card';
+import { FcashCardProvider } from '../../providers/fcash-card/fcash-card';
 import { BwcErrorProvider } from '../../providers/bwc-error/bwc-error';
 import { ClipboardProvider } from '../../providers/clipboard/clipboard';
 import { ConfigProvider } from '../../providers/config/config';
@@ -75,7 +75,7 @@ export class HomePage {
   public updateText: string;
   public homeIntegrations;
   public fcashCardItems;
-  public showBitPayCard: boolean = false;
+  public showFcashCard: boolean = false;
   public showAnnouncement: boolean = false;
   public validDataFromClipboard;
   public payProDetailsData;
@@ -118,7 +118,7 @@ export class HomePage {
     private homeIntegrationsProvider: HomeIntegrationsProvider,
     private persistenceProvider: PersistenceProvider,
     private feedbackProvider: FeedbackProvider,
-    private bitPayCardProvider: BitPayCardProvider,
+    private bitPayCardProvider: FcashCardProvider,
     private translate: TranslateService,
     private emailProvider: EmailNotificationsProvider,
     private replaceParametersProvider: ReplaceParametersProvider,
@@ -185,7 +185,7 @@ export class HomePage {
       show: true
     });
 
-    // Hide BitPay if linked
+    // Hide Fcash if linked
     setTimeout(() => {
       this.homeIntegrations = _.remove(_.clone(integrations), x => {
         if (x.name == 'debitcard' && x.linked) return;
@@ -193,10 +193,10 @@ export class HomePage {
       });
     }, 200);
 
-    // Only BitPay Wallet
+    // Only Fcash Wallet
     this.bitPayCardProvider.get({}, (_, cards) => {
       this.zone.run(() => {
-        this.showBitPayCard = this.appProvider.info._enabledExtensions.debitcard
+        this.showFcashCard = this.appProvider.info._enabledExtensions.debitcard
           ? true
           : false;
         this.fcashCardItems = cards;
@@ -254,7 +254,7 @@ export class HomePage {
 
   private subscribeBwsEvents() {
     // FWS Events: Update Status per Wallet -> Update recent transactions and txps
-    // NewBlock, NewCopayer, NewAddress, NewTxProposal, TxProposalAcceptedBy, TxProposalRejectedBy, txProposalFinallyRejected,
+    // NewBlock, NewFcashApp, NewAddress, NewTxProposal, TxProposalAcceptedBy, TxProposalRejectedBy, txProposalFinallyRejected,
     // txProposalFinallyAccepted, TxProposalRemoved, NewIncomingTx, NewOutgoingTx
     this.events.subscribe('fwsEvent', (walletId: string) => {
       this.updateWallet(walletId);
@@ -322,7 +322,7 @@ export class HomePage {
 
   private openEmailDisclaimer() {
     let message = this.translate.instant(
-      'By providing your email address, you give explicit consent to BitPay to use your email address to send you email notifications about payments.'
+      'By providing your email address, you give explicit consent to Fcash to use your email address to send you email notifications about payments.'
     );
     let title = this.translate.instant('Privacy Policy update');
     let okText = this.translate.instant('Accept');
@@ -782,7 +782,7 @@ export class HomePage {
       return;
     }
     const pageMap = {
-      BitPayCardIntroPage,
+      FcashCardIntroPage,
       CoinbasePage,
       GlideraPage,
       ShapeshiftPage
@@ -805,7 +805,7 @@ export class HomePage {
   }
 
   public goToCard(cardId): void {
-    this.navCtrl.push(BitPayCardPage, { id: cardId });
+    this.navCtrl.push(FcashCardPage, { id: cardId });
   }
 
   public doRefresh(refresher) {

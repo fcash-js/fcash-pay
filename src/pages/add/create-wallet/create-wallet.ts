@@ -76,9 +76,9 @@ export class CreateWalletPage implements OnInit {
       ? this.translate.instant('Create shared wallet')
       : this.translate.instant('Create personal wallet');
     this.defaults = this.configProvider.getDefaults();
-    this.tc = this.isShared ? this.defaults.wallet.totalCopayers : 1;
+    this.tc = this.isShared ? this.defaults.wallet.totalFcashApp : 1;
 
-    this.fcash-pay = _.range(2, this.defaults.limits.totalCopayers + 1);
+    this.fcash-pay = _.range(2, this.defaults.limits.totalFcashApp + 1);
     this.derivationPathByDefault = this.derivationPathHelperProvider.default;
     this.derivationPathForTestnet = this.derivationPathHelperProvider.defaultTestnet;
     this.showAdvOpts = false;
@@ -86,8 +86,8 @@ export class CreateWalletPage implements OnInit {
     this.createForm = this.fb.group({
       walletName: [null, Validators.required],
       myName: [null],
-      totalCopayers: [1],
-      requiredCopayers: [1],
+      totalFcashApp: [1],
+      requiredFcashApp: [1],
       fwsURL: [this.defaults.fws.url],
       selectedSeed: ['new'],
       recoveryPhrase: [null],
@@ -97,7 +97,7 @@ export class CreateWalletPage implements OnInit {
       coin: [null, Validators.required]
     });
 
-    this.setTotalCopayers(this.tc);
+    this.setTotalFcashApp(this.tc);
     this.updateRCSelect(this.tc);
   }
 
@@ -107,17 +107,17 @@ export class CreateWalletPage implements OnInit {
     }
   }
 
-  public setTotalCopayers(n: number): void {
-    this.createForm.controls['totalCopayers'].setValue(n);
+  public setTotalFcashApp(n: number): void {
+    this.createForm.controls['totalFcashApp'].setValue(n);
     this.updateRCSelect(n);
     this.updateSeedSourceSelect();
   }
 
   private updateRCSelect(n: number): void {
-    this.createForm.controls['totalCopayers'].setValue(n);
+    this.createForm.controls['totalFcashApp'].setValue(n);
     var maxReq = this.COPAYER_PAIR_LIMITS[n];
     this.signatures = _.range(1, maxReq + 1);
-    this.createForm.controls['requiredCopayers'].setValue(
+    this.createForm.controls['requiredFcashApp'].setValue(
       Math.min(Math.trunc(n / 2 + 1), maxReq)
     );
   }
@@ -165,10 +165,10 @@ export class CreateWalletPage implements OnInit {
   public setOptsAndCreate(): void {
     let opts: Partial<WalletOptions> = {
       name: this.createForm.value.walletName,
-      m: this.createForm.value.requiredCopayers,
-      n: this.createForm.value.totalCopayers,
+      m: this.createForm.value.requiredFcashApp,
+      n: this.createForm.value.totalFcashApp,
       myName:
-        this.createForm.value.totalCopayers > 1
+        this.createForm.value.totalFcashApp > 1
           ? this.createForm.value.myName
           : null,
       networkName: this.createForm.value.testnetEnabled ? 'testnet' : 'livenet',

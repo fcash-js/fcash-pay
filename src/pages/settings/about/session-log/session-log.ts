@@ -78,7 +78,7 @@ export class SessionLogPage {
   private preparePersistenceLogs(): Promise<string> {
     return new Promise((resolve, reject) => {
       let log: string =
-        'Copay Session Logs\n Be careful, this could contain sensitive private data\n\n';
+        'FcashApp Session Logs\n Be careful, this could contain sensitive private data\n\n';
       log += '\n\n';
 
       this.persistenceProvider
@@ -108,7 +108,7 @@ export class SessionLogPage {
         let now = new Date().toISOString();
         let subject: string = this.appProvider.info.nameCase + '-logs ' + now;
         let message = this.translate.instant(
-          'Copay Session Logs. Be careful, this could contain sensitive private data'
+          'FcashApp Session Logs. Be careful, this could contain sensitive private data'
         );
 
         let blob = new Blob([logs], { type: 'text/txt' });

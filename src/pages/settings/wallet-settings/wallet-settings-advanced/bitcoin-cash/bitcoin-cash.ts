@@ -175,8 +175,8 @@ export class BitcoinCashPage extends WalletTabsChild {
             this.walletProvider.updateRemotePreferences(newWallet);
             this.pushNotificationsProvider.updateSubscription(newWallet);
 
-            // Multisig wallets? add Copayers
-            this.addCopayers(wallet, newWallet, isNew)
+            // Multisig wallets? add FcashApp
+            this.addFcashApp(wallet, newWallet, isNew)
               .then(() => {
                 this.onGoingProcessProvider.clear();
 
@@ -209,7 +209,7 @@ export class BitcoinCashPage extends WalletTabsChild {
       });
   }
 
-  private addCopayers(wallet, newWallet, isNew): Promise<any> {
+  private addFcashApp(wallet, newWallet, isNew): Promise<any> {
     return new Promise((resolve, reject) => {
       if (!isNew) return resolve();
       if (wallet.n == 1) return resolve();
@@ -219,7 +219,7 @@ export class BitcoinCashPage extends WalletTabsChild {
       );
 
       this.walletProvider
-        .copyCopayers(wallet, newWallet)
+        .copyFcashApp(wallet, newWallet)
         .then(() => {
           return resolve();
         })

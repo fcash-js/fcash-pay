@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"5-star ratings help us get BitPay Wallet into more hands, and more users "
+"5-star ratings help us get Fcash Wallet into more hands, and more users "
 "means more resources can be committed to the app!"
 msgstr ""
 
@@ -68,7 +68,7 @@ msgstr ""
 msgid "Add"
 msgstr ""
 
-msgid "Add BitPay Account?"
+msgid "Add Fcash Account?"
 msgstr ""
 
 msgid "Add Contact"
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Add funds to get started"
 msgstr ""
 
-msgid "Add this BitPay account ({{email}})?"
+msgid "Add this Fcash account ({{email}})?"
 msgstr ""
 
 msgid "Address"
@@ -253,7 +253,7 @@ msgstr ""
 msgid "Below Minimum Amount"
 msgstr ""
 
-msgid "BitPay Card URI"
+msgid "Fcash Card URI"
 msgstr ""
 
 msgid "Bitcoin Address"
@@ -311,7 +311,7 @@ msgid "Buying Gift Card..."
 msgstr ""
 
 msgid ""
-"By providing your email address, you give explicit consent to BitPay to use "
+"By providing your email address, you give explicit consent to Fcash to use "
 "your email address to send you email notifications about payments."
 msgstr ""
 
@@ -423,7 +423,7 @@ msgid ""
 "recovered in case your phone was lost or stolen."
 msgstr ""
 
-msgid "Connect my BitPay Card"
+msgid "Connect my Fcash Card"
 msgstr ""
 
 msgid "Connecting to Coinbase..."
@@ -447,22 +447,22 @@ msgstr ""
 msgid "Contribute translations"
 msgstr ""
 
-msgid "Copay Session Logs. Be careful, this could contain sensitive private data"
+msgid "FcashApp Session Logs. Be careful, this could contain sensitive private data"
 msgstr ""
 
-msgid "Copay only supports Bitcoin Cash using new version numbers addresses"
+msgid "FcashApp only supports Bitcoin Cash using new version numbers addresses"
 msgstr ""
 
-msgid "Copayer already in this wallet"
+msgid "FcashApp already in this wallet"
 msgstr ""
 
-msgid "Copayer already voted on this spend proposal"
+msgid "FcashApp already voted on this spend proposal"
 msgstr ""
 
-msgid "Copayer data mismatch"
+msgid "FcashApp data mismatch"
 msgstr ""
 
-msgid "Copayer joined"
+msgid "FcashApp joined"
 msgstr ""
 
 msgid "Copied"
@@ -528,7 +528,7 @@ msgstr ""
 msgid "Could not encrypt wallet"
 msgstr ""
 
-msgid "Could not get claim code. Please contact BitPay support."
+msgid "Could not get claim code. Please contact Fcash support."
 msgstr ""
 
 msgid "Could not get dynamic fee"
@@ -730,7 +730,7 @@ msgstr ""
 msgid "Enter Amount"
 msgstr ""
 
-msgid "Enter Two Factor for your BitPay account"
+msgid "Enter Two Factor for your Fcash account"
 msgstr ""
 
 msgid "Enter a new encrypt password"
@@ -796,7 +796,7 @@ msgstr ""
 msgid "Error in Payment Protocol"
 msgstr ""
 
-msgid "Error pairing BitPay Account"
+msgid "Error pairing Fcash Account"
 msgstr ""
 
 msgid "Error scanning funds:"
@@ -862,10 +862,10 @@ msgstr ""
 msgid "Feedback!"
 msgstr ""
 
-msgid "Fetching BitPay Account..."
+msgid "Fetching Fcash Account..."
 msgstr ""
 
-msgid "Fetching BitPay Cards..."
+msgid "Fetching Fcash Cards..."
 msgstr ""
 
 msgid "Fetching payment information..."
@@ -880,7 +880,7 @@ msgstr ""
 msgid "From"
 msgstr ""
 
-msgid "From BitPay account"
+msgid "From Fcash account"
 msgstr ""
 
 msgid ""
@@ -923,7 +923,7 @@ msgid ""
 "fees may apply."
 msgstr ""
 
-msgid "Get news and updates from BitPay"
+msgid "Get news and updates from Fcash"
 msgstr ""
 
 msgid "Get started"
@@ -989,7 +989,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"I give explicit consent to BitPay to use my email address to send me email "
+"I give explicit consent to Fcash to use my email address to send me email "
 "notifications about payments (and, if selected, email updates and news "
 "about the wallet)."
 msgstr ""
@@ -1029,7 +1029,7 @@ msgid "I've used this card"
 msgstr ""
 
 msgid ""
-"If enabled, Bitcoin Cash addresses will be shown using Copay style address, "
+"If enabled, Bitcoin Cash addresses will be shown using FcashApp style address, "
 "and not the new cashaddr format."
 msgstr ""
 
@@ -1042,7 +1042,7 @@ msgid "If enabled, wallets will also try to spend unconfirmed funds."
 msgstr ""
 
 msgid ""
-"If this device is replaced or this app is deleted, neither you nor BitPay "
+"If this device is replaced or this app is deleted, neither you nor Fcash "
 "can recover your funds without a backup."
 msgstr ""
 
@@ -1358,7 +1358,7 @@ msgstr ""
 msgid "Not enough funds for fee"
 msgstr ""
 
-msgid "Not even BitPay can access it."
+msgid "Not even Fcash can access it."
 msgstr ""
 
 msgid ""
@@ -1447,7 +1447,7 @@ msgstr ""
 msgid "Open website"
 msgstr ""
 
-msgid "Order the BitPay Card"
+msgid "Order the Fcash Card"
 msgstr ""
 
 msgid "Ouch!"
@@ -1568,7 +1568,7 @@ msgstr ""
 msgid "Please tap each word in the correct order."
 msgstr ""
 
-msgid "Please upgrade Copay to perform this action"
+msgid "Please upgrade FcashApp to perform this action"
 msgstr ""
 
 msgid "Please wait..."
@@ -2163,7 +2163,7 @@ msgstr ""
 msgid "To get started, you'll need to create a bitcoin wallet and get some bitcoin."
 msgstr ""
 
-msgid "To {{reason}} you must first add your BitPay account - {{email}}"
+msgid "To {{reason}} you must first add your Fcash account - {{email}}"
 msgstr ""
 
 msgid "Top up in progress..."
@@ -2291,7 +2291,7 @@ msgstr ""
 msgid "Urgent"
 msgstr ""
 
-msgid "Use Bitcoin Cash Copay Style Addresses"
+msgid "Use Bitcoin Cash FcashApp Style Addresses"
 msgstr ""
 
 msgid "Use Unconfirmed Funds"
@@ -2563,7 +2563,7 @@ msgid "You should not set a fee higher than {{maxFeeRecommended}} satoshis/byte.
 msgstr ""
 
 msgid ""
-"Your BitPay Card is ready. Add funds to your card to start using it at "
+"Your Fcash Card is ready. Add funds to your card to start using it at "
 "stores and ATMs worldwide."
 msgstr ""
 
@@ -2573,7 +2573,7 @@ msgstr ""
 msgid ""
 "Your extended private keys are all that is needed to access your bitcoin "
 "funds. Be sure to protect your private keys and store them only on secure "
-"devices. BitPay does not have access to your private keys, so you alone are "
+"devices. Fcash does not have access to your private keys, so you alone are "
 "responsible for your keys. If you share key access with external services, "
 "you take responsibility for the risk of theft or breach. Only advanced "
 "users should handle extended private keys directly."
@@ -2609,7 +2609,7 @@ msgstr ""
 msgid "[Scanning Funds]"
 msgstr ""
 
-msgid "add your BitPay Visa card(s)"
+msgid "add your Fcash Visa card(s)"
 msgstr ""
 
 msgid "me"
@@ -2626,7 +2626,7 @@ msgstr ""
 
 msgid ""
 "{coinName} miner fees are high due to record demand for limited space on "
-"the {coinName} network. BitPay does not receive and does not control "
+"the {coinName} network. Fcash does not receive and does not control "
 "{coinName} miner fees."
 msgstr ""
 
@@ -2635,8 +2635,8 @@ msgstr ""
 
 msgid ""
 "{{appName}} depends on Fcash Wallet Service (FWS) for blockchain "
-"information, networking and Copayer synchronization. The default "
-"configuration points to https://fws.fcash.cash (BitPay's public FWS "
+"information, networking and FcashApp synchronization. The default "
+"configuration points to https://fws.fcash.cash (Fcash's public FWS "
 "instance)."
 msgstr ""
 

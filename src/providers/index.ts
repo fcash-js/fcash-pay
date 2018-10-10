@@ -24,10 +24,10 @@ export { AppIdentityProvider } from '../providers/app-identity/app-identity';
 export { AppProvider } from '../providers/app/app';
 export { BackupProvider } from '../providers/backup/backup';
 export {
-  BitPayAccountProvider
+  FcashAccountProvider
 } from '../providers/fcash-account/fcash-account';
-export { BitPayCardProvider } from '../providers/fcash-card/fcash-card';
-export { BitPayProvider } from '../providers/fcash-project/fcash';
+export { FcashCardProvider } from '../providers/fcash-card/fcash-card';
+export { FcashProvider } from '../providers/fcash-project/fcash';
 export { BwcErrorProvider } from '../providers/bwc-error/bwc-error';
 export { BwcProvider } from '../providers/bwc/bwc';
 export { ClipboardProvider } from '../providers/clipboard/clipboard';

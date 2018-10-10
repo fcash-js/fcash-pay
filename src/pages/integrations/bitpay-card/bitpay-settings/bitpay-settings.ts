@@ -4,8 +4,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import * as _ from 'lodash';
 
 // Providers
-import { BitPayAccountProvider } from '../../../../providers/fcash-account/fcash-account';
-import { BitPayCardProvider } from '../../../../providers/fcash-card/fcash-card';
+import { FcashAccountProvider } from '../../../../providers/fcash-account/fcash-account';
+import { FcashCardProvider } from '../../../../providers/fcash-card/fcash-card';
 import { ConfigProvider } from '../../../../providers/config/config';
 import { HomeIntegrationsProvider } from '../../../../providers/home-integrations/home-integrations';
 import { PopupProvider } from '../../../../providers/popup/popup';
@@ -14,7 +14,7 @@ import { PopupProvider } from '../../../../providers/popup/popup';
   selector: 'page-fcash-settings',
   templateUrl: 'fcash-settings.html'
 })
-export class BitPaySettingsPage {
+export class FcashSettingsPage {
   private serviceName: string = 'debitcard';
   public showAtHome;
   public service;
@@ -23,8 +23,8 @@ export class BitPaySettingsPage {
   constructor(
     private navParams: NavParams,
     private navCtrl: NavController,
-    private fcashAccountProvider: BitPayAccountProvider,
-    private bitPayCardProvider: BitPayCardProvider,
+    private fcashAccountProvider: FcashAccountProvider,
+    private bitPayCardProvider: FcashCardProvider,
     private popupProvider: PopupProvider,
     private configProvider: ConfigProvider,
     private homeIntegrationsProvider: HomeIntegrationsProvider
@@ -61,9 +61,9 @@ export class BitPaySettingsPage {
   }
 
   public unlinkCard(card) {
-    let title = 'Unlink BitPay Card?';
+    let title = 'Unlink Fcash Card?';
     let msg =
-      'Are you sure you would like to remove your BitPay Card (' +
+      'Are you sure you would like to remove your Fcash Card (' +
       card.lastFourDigits +
       ') from this device?';
     this.popupProvider.ionicConfirm(title, msg).then(res => {
@@ -80,9 +80,9 @@ export class BitPaySettingsPage {
   }
 
   public unlinkAccount(card) {
-    let title = 'Unlink BitPay Account?';
+    let title = 'Unlink Fcash Account?';
     let msg =
-      'Are you sure you would like to remove your BitPay Account (' +
+      'Are you sure you would like to remove your Fcash Account (' +
       card.email +
       ') and all associated cards from this device?';
     this.popupProvider.ionicConfirm(title, msg).then(res => {

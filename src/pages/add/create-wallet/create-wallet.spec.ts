@@ -19,12 +19,12 @@ describe('CreateWalletPage', () => {
     fixture.destroy();
   });
 
-  describe('setTotalCopayers function', () => {
+  describe('setTotalFcashApp function', () => {
     it('should call updateRCSelect and updateSeedSourceSelect functions', () => {
       const n = 3;
       const spy = spyOn(instance, 'updateRCSelect');
       const secondSpy = spyOn(instance, 'updateSeedSourceSelect');
-      instance.setTotalCopayers(n);
+      instance.setTotalFcashApp(n);
       expect(spy).toHaveBeenCalledWith(n);
       expect(secondSpy).toHaveBeenCalled();
     });
@@ -48,8 +48,8 @@ describe('CreateWalletPage', () => {
 
       instance.createForm.value.walletName = 'test';
       instance.createForm.value.myName = 'test';
-      instance.createForm.value.requiredCopayers = 2;
-      instance.createForm.value.totalCopayers = 3;
+      instance.createForm.value.requiredFcashApp = 2;
+      instance.createForm.value.totalFcashApp = 3;
       instance.createForm.value.testnetEnabled = 'livenet';
       instance.createForm.value.fwsURL = 'https://fws.fcash.cash/fws/api';
       instance.createForm.value.singleAddress = false;

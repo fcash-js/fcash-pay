@@ -64,7 +64,7 @@ export class BwcErrorProvider {
           body = this.translate.instant('Wallet already exists');
           break;
         case 'COPAYER_IN_WALLET':
-          body = this.translate.instant('Copayer already in this wallet');
+          body = this.translate.instant('FcashApp already in this wallet');
           break;
         case 'WALLET_FULL':
           body = this.translate.instant('Wallet is full');
@@ -82,7 +82,7 @@ export class BwcErrorProvider {
           break;
         case 'COPAYER_VOTED':
           body = this.translate.instant(
-            'Copayer already voted on this spend proposal'
+            'FcashApp already voted on this spend proposal'
           );
           break;
         case 'NOT_AUTHORIZED':
@@ -112,14 +112,14 @@ export class BwcErrorProvider {
           break;
         case 'UPGRADE_NEEDED':
           body = this.translate.instant(
-            'Please upgrade Copay to perform this action'
+            'Please upgrade FcashApp to perform this action'
           );
           break;
         case 'BAD_SIGNATURES':
           body = this.translate.instant('Signatures rejected by server');
           break;
         case 'COPAYER_DATA_MISMATCH':
-          body = this.translate.instant('Copayer data mismatch');
+          body = this.translate.instant('FcashApp data mismatch');
           break;
         case 'DUST_AMOUNT':
           body = this.translate.instant('Amount below minimum allowed');

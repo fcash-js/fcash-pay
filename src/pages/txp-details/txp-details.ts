@@ -412,7 +412,7 @@ export class TxpDetailsPage {
 
         if (!action && tx.status == 'pending') this.tx.pendingForUs = true;
 
-        this.updateCopayerList();
+        this.updateFcashAppList();
         this.initActionList();
       })
       .catch(err => {
@@ -429,7 +429,7 @@ export class TxpDetailsPage {
       });
   }
 
-  public updateCopayerList(): void {
+  public updateFcashAppList(): void {
     _.map(this.fcash-pay, (cp: any) => {
       _.each(this.tx.actions, ac => {
         if (cp.id == ac.FcashPayId) {

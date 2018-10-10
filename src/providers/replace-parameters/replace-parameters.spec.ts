@@ -69,8 +69,8 @@ describe('Replace Parameters Provider', () => {
   it('Should return string without replacements if the spaces inside the brackets are not respected correctly', () => {
     replacedString = service.replace('Hello {{world }}. I love {{ appName }}', {
       world: 'world!',
-      appName: 'Copay'
+      appName: 'FcashApp'
     });
-    expect(replacedString).toEqual('Hello {{world }}. I love Copay');
+    expect(replacedString).toEqual('Hello {{world }}. I love FcashApp');
   });
 });

@@ -1,6 +1,6 @@
 <ion-header no-border>
   <ion-navbar>
-    <ion-title>BitPay Visa
+    <ion-title>Fcash Visa
       <sup>&reg;</sup> Card ({{lastFourDigits}})</ion-title>
   </ion-navbar>
 </ion-header>
@@ -25,7 +25,7 @@
   <div *ngIf="getStarted" class="initial-message">
     <h1 translate>Get started</h1>
     <div translate>
-      Your BitPay Card is ready. Add funds to your card to start using it at stores and ATMs worldwide.
+      Your Fcash Card is ready. Add funds to your card to start using it at stores and ATMs worldwide.
     </div>
   </div>
 
@@ -42,7 +42,7 @@
     </ion-item-divider>
 
     <ion-item-divider *ngIf="fcashCardTransactionHistoryConfirming && fcashCardTransactionHistoryConfirming[0]">
-      <ion-icon item-end (click)="openExternalLink('https://support.fcash.cash/hc/en-us/articles/115003014526-Why-do-you-require-one-blockchain-confirmation-for-BitPay-Card-loads-')">
+      <ion-icon item-end (click)="openExternalLink('https://support.fcash.cash/hc/en-us/articles/115003014526-Why-do-you-require-one-blockchain-confirmation-for-Fcash-Card-loads-')">
         <img src="assets/img/icon-help-support.svg" />
       </ion-icon>
       <span translate>Confirming</span>
@@ -54,7 +54,7 @@
     </ion-list>
 
     <ion-item-divider *ngIf="fcashCardTransactionHistoryPreAuth && fcashCardTransactionHistoryPreAuth[0]">
-      <ion-icon item-end (click)="openExternalLink('https://support.fcash.cash/hc/en-us/articles/115003003563-Why-was-I-overcharged-on-my-BitPay-Card-account-Why-is-there-a-hold-on-my-account-')">
+      <ion-icon item-end (click)="openExternalLink('https://support.fcash.cash/hc/en-us/articles/115003003563-Why-was-I-overcharged-on-my-Fcash-Card-account-Why-is-there-a-hold-on-my-account-')">
         <img src="assets/img/icon-help-support.svg" />
       </ion-icon>
       <span translate>Pre-Auth Holds</span>

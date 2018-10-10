@@ -5,28 +5,28 @@ import { ActionSheetController, NavController, NavParams } from 'ionic-angular';
 import * as _ from 'lodash';
 
 // providers
-import { BitPayAccountProvider } from '../../../../providers/fcash-account/fcash-account';
-import { BitPayCardProvider } from '../../../../providers/fcash-card/fcash-card';
+import { FcashAccountProvider } from '../../../../providers/fcash-account/fcash-account';
+import { FcashCardProvider } from '../../../../providers/fcash-card/fcash-card';
 import { ExternalLinkProvider } from '../../../../providers/external-link/external-link';
 import { PopupProvider } from '../../../../providers/popup/popup';
 
 // pages
-import { BitPayCardPage } from '../fcash-card';
+import { FcashCardPage } from '../fcash-card';
 
 @Component({
   selector: 'page-fcash-card-intro',
   templateUrl: 'fcash-card-intro.html'
 })
-export class BitPayCardIntroPage {
+export class FcashCardIntroPage {
   public accounts;
 
   constructor(
     private translate: TranslateService,
     private actionSheetCtrl: ActionSheetController,
     private navParams: NavParams,
-    private bitPayAccountProvider: BitPayAccountProvider,
+    private bitPayAccountProvider: FcashAccountProvider,
     private popupProvider: PopupProvider,
-    private bitPayCardProvider: BitPayCardProvider,
+    private bitPayCardProvider: FcashCardProvider,
     private navCtrl: NavController,
     private externalLinkProvider: ExternalLinkProvider
   ) {}
@@ -39,7 +39,7 @@ export class BitPayCardIntroPage {
         otp: this.navParams.data.otp
       };
       let pairingReason = this.translate.instant(
-        'add your BitPay Visa card(s)'
+        'add your Fcash Visa card(s)'
       );
       this.bitPayAccountProvider.pair(
         pairData,
@@ -47,7 +47,7 @@ export class BitPayCardIntroPage {
         (err: string, paired: boolean, apiContext) => {
           if (err) {
             this.popupProvider.ionicAlert(
-              this.translate.instant('Error pairing BitPay Account'),
+              this.translate.instant('Error pairing Fcash Account'),
               err
             );
             return;
@@ -67,7 +67,7 @@ export class BitPayCardIntroPage {
                 if (cards[0]) {
                   this.navCtrl
                     .push(
-                      BitPayCardPage,
+                      FcashCardPage,
                       { id: cards[0].id },
                       { animate: false }
                     )
@@ -97,20 +97,20 @@ export class BitPayCardIntroPage {
     this.externalLinkProvider.open(url);
   }
 
-  public orderBitPayCard() {
+  public orderFcashCard() {
     let url = 'https://fcash.cash/visa/get-started';
     this.externalLinkProvider.open(url);
   }
 
-  public connectBitPayCard() {
+  public connectFcashCard() {
     if (this.accounts.length == 0) {
-      this.startPairBitPayAccount();
+      this.startPairFcashAccount();
     } else {
       this.showAccountSelector();
     }
   }
 
-  private startPairBitPayAccount() {
+  private startPairFcashAccount() {
     this.navCtrl.popToRoot({ animate: false }); // Back to Root
     let url = 'https://fcash.cash/visa/dashboard/add-to-fcash-wallet-confirm';
     this.externalLinkProvider.open(url);
@@ -147,7 +147,7 @@ export class BitPayCardIntroPage {
     });
 
     let actionSheet = this.actionSheetCtrl.create({
-      title: this.translate.instant('From BitPay account'),
+      title: this.translate.instant('From Fcash account'),
       buttons: options
     });
     actionSheet.present();
@@ -155,7 +155,7 @@ export class BitPayCardIntroPage {
 
   private onAccountSelect(account?): void {
     if (_.isUndefined(account)) {
-      this.startPairBitPayAccount();
+      this.startPairFcashAccount();
     } else {
       this.bitPayCardProvider.sync(account.apiContext, err => {
         if (err) {

@@ -1,4 +1,4 @@
-# Contributing to Copay
+# Contributing to FcashApp
 
 Please take a moment to review this document in order to make the contribution
 process easy and effective for everyone involved.
@@ -72,7 +72,7 @@ provide as much detail and context as possible.
 
 ## Support requests
 
-If you are having particular problem with your Copay instalation, please first [search older
+If you are having particular problem with your FcashApp instalation, please first [search older
 issues](https://github.com/fcash-project/fcash-pay/issues) in order to learn if the issue is already reported. It could be fixed already.
 
 Please also check our [FAQ](https://github.com/fcash-project/fcash-pay/wiki/COPAY---FAQ).
@@ -81,16 +81,16 @@ When requesting support describe the issue as much in detail as possible. Consid
 provide the following information:
 
 - Which platform are you using? (Which device and operating system)
-- Which version of Copay are you using? (Check Copay version on the side menu)
+- Which version of FcashApp are you using? (Check FcashApp version on the side menu)
 - Please import your wallet on a different platform. Does the problem persist?
 - What type of wallet are you using? (multisig or singlesig)
 - When the wallet was created? On which device / operating system
-- Please check Copay logs (General Settings -> About Copay -> Session Logs). Look for
+- Please check FcashApp logs (General Settings -> About FcashApp -> Session Logs). Look for
   any errors reported there (errors are shown in red)
 - If possible, please provide a screenshot of the error / issue.
 
 If you need to provide personal / sensitive data to solve the issue (like the Wallet Id), do not use Github Issues.
-We will provide a better channel (like an BitPay email address) so you can send the information. If possible, please
+We will provide a better channel (like an Fcash email address) so you can send the information. If possible, please
 encrypt your emails using GnuPG.
 
 To open an issue go to [Github Issues](https://github.com/fcash-project/fcash-pay/issues).
@@ -108,7 +108,7 @@ implementing features, refactoring code, porting to a different language),
 otherwise you risk spending a lot of time working on something that the
 project's developers might not want to merge into the project.
 
-Please adhere to the coding conventions used throughout Copay (indentation, tests, etc.). You can
+Please adhere to the coding conventions used throughout FcashApp (indentation, tests, etc.). You can
 check and fix your code patch with:
 
 ```

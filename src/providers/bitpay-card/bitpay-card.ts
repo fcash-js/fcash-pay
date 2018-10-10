@@ -3,7 +3,7 @@ import { Logger } from '../../providers/logger/logger';
 
 // providers
 import { AppIdentityProvider } from '../app-identity/app-identity';
-import { BitPayProvider } from '../fcash-project/fcash';
+import { FcashProvider } from '../fcash-project/fcash';
 import { ConfigProvider } from '../config/config';
 import { HomeIntegrationsProvider } from '../home-integrations/home-integrations';
 import { OnGoingProcessProvider } from '../on-going-process/on-going-process';
@@ -13,17 +13,17 @@ import * as _ from 'lodash';
 import * as moment from 'moment';
 
 @Injectable()
-export class BitPayCardProvider {
+export class FcashCardProvider {
   constructor(
     private logger: Logger,
-    private bitPayProvider: BitPayProvider,
+    private bitPayProvider: FcashProvider,
     private appIdentityProvider: AppIdentityProvider,
     private onGoingProcessProvider: OnGoingProcessProvider,
     private persistenceProvider: PersistenceProvider,
     private configProvider: ConfigProvider,
     private homeIntegrationsProvider: HomeIntegrationsProvider
   ) {
-    this.logger.debug('BitPayCardProvider initialized');
+    this.logger.debug('FcashCardProvider initialized');
   }
 
   private isActive(cb): void {
@@ -204,7 +204,7 @@ export class BitPayCardProvider {
     var json = {
       method: 'getDebitCards'
     };
-    this.onGoingProcessProvider.set('fetchingBitPayCards');
+    this.onGoingProcessProvider.set('fetchingFcashCards');
     // Get Debit Cards
     this.bitPayProvider.post(
       '/api/v2/' + apiContext.token,
@@ -214,7 +214,7 @@ export class BitPayCardProvider {
           this.onGoingProcessProvider.clear();
           return cb(data.error);
         }
-        this.logger.info('BitPay Get Debit Cards: SUCCESS');
+        this.logger.info('Fcash Get Debit Cards: SUCCESS');
 
         var cards = [];
 
@@ -222,7 +222,7 @@ export class BitPayCardProvider {
           var n: any = {};
 
           if (!x.eid || !x.id || !x.lastFourDigits || !x.token) {
-            this.logger.warn('BAD data from BitPay card' + JSON.stringify(x));
+            this.logger.warn('BAD data from Fcash card' + JSON.stringify(x));
             return;
           }
 
@@ -248,7 +248,7 @@ export class BitPayCardProvider {
       },
       data => {
         this.onGoingProcessProvider.clear();
-        return cb(this._setError('BitPay Card Error: Get Debit Cards', data));
+        return cb(this._setError('Fcash Card Error: Get Debit Cards', data));
       }
     );
   }
@@ -293,7 +293,7 @@ export class BitPayCardProvider {
             '/api/v2/' + card.token,
             json,
             data => {
-              this.logger.info('BitPay Get Invoices: SUCCESS');
+              this.logger.info('Fcash Get Invoices: SUCCESS');
               invoices = data.data || [];
 
               if (_.isEmpty(invoices)) this.logger.info('No invoices');
@@ -307,7 +307,7 @@ export class BitPayCardProvider {
                 '/api/v2/' + card.token,
                 json,
                 data => {
-                  this.logger.info('BitPay Get History: SUCCESS');
+                  this.logger.info('Fcash Get History: SUCCESS');
                   history = data.data || {};
                   history['txs'] = this._processTransactions(invoices, history);
 
@@ -317,14 +317,14 @@ export class BitPayCardProvider {
                 },
                 data => {
                   return cb(
-                    this._setError('BitPay Card Error: Get History', data)
+                    this._setError('Fcash Card Error: Get History', data)
                   );
                 }
               );
             },
             data => {
               return cb(
-                this._setError('BitPay Card Error: Get Invoices', data)
+                this._setError('Fcash Card Error: Get Invoices', data)
               );
             }
           );
@@ -356,15 +356,15 @@ export class BitPayCardProvider {
             json,
             res => {
               if (res.error) {
-                this.logger.error('BitPay TopUp: With Errors');
+                this.logger.error('Fcash TopUp: With Errors');
                 return cb(res.error);
               } else {
-                this.logger.info('BitPay TopUp: SUCCESS');
+                this.logger.info('Fcash TopUp: SUCCESS');
                 return cb(null, res.data.invoice);
               }
             },
             res => {
-              return cb(this._setError('BitPay Card Error: TopUp', res));
+              return cb(this._setError('Fcash Card Error: TopUp', res));
             }
           );
         });
@@ -376,11 +376,11 @@ export class BitPayCardProvider {
     this.bitPayProvider.get(
       '/invoices/' + id,
       res => {
-        this.logger.info('BitPay Get Invoice: SUCCESS');
+        this.logger.info('Fcash Get Invoice: SUCCESS');
         return cb(res.error, res.data);
       },
       res => {
-        return cb(this._setError('BitPay Card Error: Get Invoice', res));
+        return cb(this._setError('Fcash Card Error: Get Invoice', res));
       }
     );
   }
@@ -432,7 +432,7 @@ export class BitPayCardProvider {
         return cb();
       })
       .catch(err => {
-        this.logger.error('Error removing BitPay debit card: ' + err);
+        this.logger.error('Error removing Fcash debit card: ' + err);
         return cb(err);
       });
   }
@@ -441,11 +441,11 @@ export class BitPayCardProvider {
     this.bitPayProvider.get(
       '/rates/' + currency,
       data => {
-        this.logger.info('BitPay Get Rates: SUCCESS');
+        this.logger.info('Fcash Get Rates: SUCCESS');
         return cb(data.error, data.data);
       },
       data => {
-        return cb(this._setError('BitPay Error: Get Rates', data));
+        return cb(this._setError('Fcash Error: Get Rates', data));
       }
     );
   }
@@ -454,11 +454,11 @@ export class BitPayCardProvider {
     this.bitPayProvider.get(
       '/rates/' + coin + '/' + currency,
       data => {
-        this.logger.info('BitPay Get Rates: SUCCESS');
+        this.logger.info('Fcash Get Rates: SUCCESS');
         return cb(data.error, data.data);
       },
       data => {
-        return cb(this._setError('BitPay Error: Get Rates', data));
+        return cb(this._setError('Fcash Error: Get Rates', data));
       }
     );
   }
@@ -499,9 +499,9 @@ export class BitPayCardProvider {
     this.isActive(isActive => {
       this.homeIntegrationsProvider.register({
         name: 'debitcard',
-        title: 'BitPay Visa® Card',
+        title: 'Fcash Visa® Card',
         icon: 'assets/img/fcash-card/icon-fcash.svg',
-        page: 'BitPayCardIntroPage',
+        page: 'FcashCardIntroPage',
         show: !!this.configProvider.get().showIntegration['debitcard'],
         linked: !!isActive
       });
@@ -522,7 +522,7 @@ const currencySymbols = {
 const bpTranCodes = {
   '00611': {
     merchant: {
-      name: 'BitPay',
+      name: 'Fcash',
       city: 'Atlanta',
       state: 'GA'
     },
@@ -580,7 +580,7 @@ const bpTranCodes = {
   },
   load: {
     merchant: {
-      name: 'BitPay',
+      name: 'Fcash',
       city: 'Atlanta',
       state: 'GA'
     },

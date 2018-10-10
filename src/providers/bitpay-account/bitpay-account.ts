@@ -7,7 +7,7 @@ import { Device } from '@ionic-native/device';
 
 // providers
 import { AppIdentityProvider } from '../app-identity/app-identity';
-import { BitPayProvider } from '../fcash-project/fcash';
+import { FcashProvider } from '../fcash-project/fcash';
 import { Logger } from '../logger/logger';
 import { OnGoingProcessProvider } from '../on-going-process/on-going-process';
 import { PersistenceProvider } from '../persistence/persistence';
@@ -16,7 +16,7 @@ import { PopupProvider } from '../popup/popup';
 import { ReplaceParametersProvider } from '../replace-parameters/replace-parameters';
 
 @Injectable()
-export class BitPayAccountProvider {
+export class FcashAccountProvider {
   /*
    * Pair this app with the fcash server using the specified pairing data.
    * An app identity will be created if one does not already exist.
@@ -31,7 +31,7 @@ export class BitPayAccountProvider {
    *
    * pairingReason - text string to be embedded into popup message.  If `null` then the reason
    * message is not shown to the UI.
-   *   "To {{reason}} you must pair this app with your BitPay account ({{email}})."
+   *   "To {{reason}} you must pair this app with your Fcash account ({{email}})."
    *
    * cb - callback after completion
    *   callback(err, paired, apiContext)
@@ -51,7 +51,7 @@ export class BitPayAccountProvider {
   constructor(
     private platformProvider: PlatformProvider,
     private replaceParametersProvider: ReplaceParametersProvider,
-    private bitPayProvider: BitPayProvider,
+    private bitPayProvider: FcashProvider,
     private logger: Logger,
     private onGoingProcessProvider: OnGoingProcessProvider,
     private popupProvider: PopupProvider,
@@ -60,7 +60,7 @@ export class BitPayAccountProvider {
     private device: Device,
     private translate: TranslateService
   ) {
-    this.logger.debug('BitPayAccountProvider initialized');
+    this.logger.debug('FcashAccountProvider initialized');
   }
 
   public pair(
@@ -86,7 +86,7 @@ export class BitPayAccountProvider {
         }
       };
 
-      this.onGoingProcessProvider.set('fetchingBitPayAccount');
+      this.onGoingProcessProvider.set('fetchingFcashAccount');
       this.bitPayProvider.postAuth(
         json,
         data => {
@@ -99,12 +99,12 @@ export class BitPayAccountProvider {
             pairData,
             appIdentity: data.appIdentity
           };
-          this.logger.info('BitPay service BitAuth create token: SUCCESS');
+          this.logger.info('Fcash service BitAuth create token: SUCCESS');
 
           this.fetchBasicInfo(apiContext, (err, basicInfo) => {
             this.onGoingProcessProvider.clear();
             if (err) return cb(err);
-            let title = this.translate.instant('Add BitPay Account?');
+            let title = this.translate.instant('Add Fcash Account?');
             let msg;
 
             if (pairingReason) {
@@ -113,14 +113,14 @@ export class BitPayAccountProvider {
 
               msg = this.replaceParametersProvider.replace(
                 this.translate.instant(
-                  'To {{reason}} you must first add your BitPay account - {{email}}'
+                  'To {{reason}} you must first add your Fcash account - {{email}}'
                 ),
                 { reason, email }
               );
             } else {
               let email = pairData.email;
               msg = this.replaceParametersProvider.replace(
-                this.translate.instant('Add this BitPay account ({{email}})?'),
+                this.translate.instant('Add this Fcash account ({{email}})?'),
                 { email }
               );
             }
@@ -140,7 +140,7 @@ export class BitPayAccountProvider {
                   this.setBitpayAccount(acctData);
                   return cb(null, true, apiContext);
                 } else {
-                  this.logger.info('User cancelled BitPay pairing process');
+                  this.logger.info('User cancelled Fcash pairing process');
                   return cb(null, false);
                 }
               });
@@ -148,7 +148,7 @@ export class BitPayAccountProvider {
         },
         data => {
           return cb(
-            this._setError('BitPay service BitAuth create token: ERROR ', data)
+            this._setError('Fcash service BitAuth create token: ERROR ', data)
           );
         }
       );
@@ -158,7 +158,7 @@ export class BitPayAccountProvider {
   private checkOtp(pairData, cb: (otp?) => any) {
     if (pairData.otp) {
       let msg = this.translate.instant(
-        'Enter Two Factor for your BitPay account'
+        'Enter Two Factor for your Fcash account'
       );
       this.popupProvider.ionicPrompt(null, msg, null).then(res => {
         cb(res);
@@ -178,11 +178,11 @@ export class BitPayAccountProvider {
       json,
       data => {
         if (data && data.error) return cb(data.error);
-        this.logger.info('BitPay Account Get Basic Info: SUCCESS');
+        this.logger.info('Fcash Account Get Basic Info: SUCCESS');
         return cb(null, data.data);
       },
       data => {
-        return cb(this._setError('BitPay Account Error: Get Basic Info', data));
+        return cb(this._setError('Fcash Account Error: Get Basic Info', data));
       }
     );
   }

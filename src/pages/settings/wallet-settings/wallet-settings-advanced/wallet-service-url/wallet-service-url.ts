@@ -61,7 +61,7 @@ export class WalletServiceUrlPage {
     let appName = this.app.info.nameCase;
     this.comment = this.replaceParametersProvider.replace(
       this.translate.instant(
-        "{{appName}} depends on Fcash Wallet Service (FWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://fws.fcash.cash (BitPay's public FWS instance)."
+        "{{appName}} depends on Fcash Wallet Service (FWS) for blockchain information, networking and FcashApp synchronization. The default configuration points to https://fws.fcash.cash (Fcash's public FWS instance)."
       ),
       { appName }
     );

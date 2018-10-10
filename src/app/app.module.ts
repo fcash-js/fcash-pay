@@ -17,7 +17,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { MomentModule } from 'angular2-moment';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 
-/* Copay App */
+/* FcashApp App */
 import env from '../environments';
 import { FcashApp } from './app.component';
 

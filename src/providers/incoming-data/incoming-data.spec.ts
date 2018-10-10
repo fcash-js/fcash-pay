@@ -147,7 +147,7 @@ describe('Provider: Incoming Data Provider', () => {
         expect(eventsSpy).toHaveBeenCalledWith('IncomingDataRedir', nextView);
       });
     });
-    it('Should handle BTC and BCH BitPay Invoices', () => {
+    it('Should handle BTC and BCH Fcash Invoices', () => {
       let data = [
         'bitcoin:?r=https://fcash.cash/i/CtcM753gnZ4Wpr5pmXU6i9',
         'bitcoincash:?r=https://fcash.cash/i/Rtz1RwWA7kdRRU3Wyo4YDY'
@@ -161,7 +161,7 @@ describe('Provider: Incoming Data Provider', () => {
         );
       });
     });
-    it('Should handle Bitcoin cash Copay/BitPay format and CashAddr format plain Address', () => {
+    it('Should handle Bitcoin cash FcashApp/Fcash format and CashAddr format plain Address', () => {
       let data = [
         'qr00upv8qjgkym8zng3f663n9qte9ljuqqcs8eep5w',
         'CcnxtMfvBHGTwoKGPSuezEuYNpGPJH6tjN'
@@ -182,7 +182,7 @@ describe('Provider: Incoming Data Provider', () => {
         });
       });
     });
-    it('Should handle Bitcoin cash Copay/BitPay format and CashAddr format URI', () => {
+    it('Should handle Bitcoin cash FcashApp/Fcash format and CashAddr format URI', () => {
       let data = [
         'bitcoincash:CcnxtMfvBHGTwoKGPSuezEuYNpGPJH6tjN',
         'bitcoincash:qr00upv8qjgkym8zng3f663n9qte9ljuqqcs8eep5w'
@@ -214,7 +214,7 @@ describe('Provider: Incoming Data Provider', () => {
         expect(eventsSpy).toHaveBeenCalledWith('IncomingDataRedir', nextView);
       });
     });
-    it('Should handle Bitcoin cash Copay/BitPay format and CashAddr format URI with amount', () => {
+    it('Should handle Bitcoin cash FcashApp/Fcash format and CashAddr format URI with amount', () => {
       let data = [
         'BITCOINCASH:QZCY06MXSK7HW0RU4KZWTRKXDS6VF8Y34VRM5SF9Z7?amount=1.00000000'
       ];
@@ -438,18 +438,18 @@ describe('Provider: Incoming Data Provider', () => {
         expect(eventsSpy).toHaveBeenCalledWith('IncomingDataRedir', nextView);
       });
     });
-    it('Should handle BitPay Card URI', () => {
+    it('Should handle Fcash Card URI', () => {
       let data = 'fcash://fcash.cash?secret=xxxxx&email=xxx@xx.com';
       let stateParams = { secret: 'xxxxx', email: 'xxx@xx.com', otp: null };
       let nextView = {
-        name: 'BitPayCardIntroPage',
+        name: 'FcashCardIntroPage',
         params: stateParams
       };
       expect(incomingDataProvider.redir(data, { activePage: 'ScanPage' })).toBe(
         true
       );
       expect(loggerSpy).toHaveBeenCalledWith(
-        'Incoming-data (redirect): BitPay Card URL'
+        'Incoming-data (redirect): Fcash Card URL'
       );
       expect(eventsSpy).toHaveBeenCalledWith('IncomingDataRedir', nextView);
     });

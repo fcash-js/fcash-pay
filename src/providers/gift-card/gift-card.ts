@@ -222,22 +222,22 @@ export class GiftCardProvider {
       .post(url, dataSrc, { headers })
       .toPromise()
       .catch(err => {
-        this.logger.error('BitPay Create Invoice: ERROR', JSON.stringify(data));
+        this.logger.error('Fcash Create Invoice: ERROR', JSON.stringify(data));
         throw err;
       });
-    this.logger.info('BitPay Create Invoice: SUCCESS');
+    this.logger.info('Fcash Create Invoice: SUCCESS');
     return cardOrder as { accessKey: string; invoiceId: string };
   }
 
-  public async getBitPayInvoice(id) {
+  public async getFcashInvoice(id) {
     const res: any = await this.http
       .get(`${this.credentials.BITPAY_API_URL}/invoices/${id}`)
       .toPromise()
       .catch(err => {
-        this.logger.error('BitPay Get Invoice: ERROR ' + err.error.message);
+        this.logger.error('Fcash Get Invoice: ERROR ' + err.error.message);
         throw err.error.message;
       });
-    this.logger.info('BitPay Get Invoice: SUCCESS');
+    this.logger.info('Fcash Get Invoice: SUCCESS');
     return res.data;
   }
 

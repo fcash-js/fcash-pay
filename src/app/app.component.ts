@@ -16,7 +16,7 @@ import { Observable, Subscription } from 'rxjs';
 // providers
 import { AmazonProvider } from '../providers/amazon/amazon';
 import { AppProvider } from '../providers/app/app';
-import { BitPayCardProvider } from '../providers/fcash-card/fcash-card';
+import { FcashCardProvider } from '../providers/fcash-card/fcash-card';
 import { CoinbaseProvider } from '../providers/coinbase/coinbase';
 import { ConfigProvider } from '../providers/config/config';
 import { EmailNotificationsProvider } from '../providers/email-notifications/email-notifications';
@@ -32,11 +32,11 @@ import { ShapeshiftProvider } from '../providers/shapeshift/shapeshift';
 import { TouchIdProvider } from '../providers/touchid/touchid';
 
 // pages
-import { CopayersPage } from '../pages/add/fcash-pay/fcash-pay';
+import { FcashAppPage } from '../pages/add/fcash-pay/fcash-pay';
 import { ImportWalletPage } from '../pages/add/import-wallet/import-wallet';
 import { JoinWalletPage } from '../pages/add/join-wallet/join-wallet';
 import { FingerprintModalPage } from '../pages/fingerprint/fingerprint';
-import { BitPayCardIntroPage } from '../pages/integrations/fcash-card/fcash-card-intro/fcash-card-intro';
+import { FcashCardIntroPage } from '../pages/integrations/fcash-card/fcash-card-intro/fcash-card-intro';
 import { CoinbasePage } from '../pages/integrations/coinbase/coinbase';
 import { GlideraPage } from '../pages/integrations/glidera/glidera';
 import { DisclaimerPage } from '../pages/onboarding/disclaimer/disclaimer';
@@ -79,10 +79,10 @@ export class FcashApp {
   private pageMap = {
     AddressbookAddPage,
     AmountPage,
-    BitPayCardIntroPage,
+    FcashCardIntroPage,
     CoinbasePage,
     ConfirmPage,
-    CopayersPage,
+    FcashAppPage,
     GlideraPage,
     ImportWalletPage,
     JoinWalletPage,
@@ -105,7 +105,7 @@ export class FcashApp {
     private glideraProvider: GlideraProvider,
     private coinbaseProvider: CoinbaseProvider,
     private amazonProvider: AmazonProvider,
-    private bitPayCardProvider: BitPayCardProvider,
+    private bitPayCardProvider: FcashCardProvider,
     private mercadoLibreProvider: MercadoLibreProvider,
     private shapeshiftProvider: ShapeshiftProvider,
     private emailNotificationsProvider: EmailNotificationsProvider,
@@ -306,7 +306,7 @@ export class FcashApp {
       this.coinbaseProvider.register();
     }
 
-    // BitPay Card
+    // Fcash Card
     if (this.appProvider.info._enabledExtensions.debitcard)
       this.bitPayCardProvider.register();
   }
@@ -326,7 +326,7 @@ export class FcashApp {
     if (this.isWalletModalOpen) {
       this.walletModal.dismiss();
     }
-    const page = wallet.isComplete() ? WalletTabsPage : CopayersPage;
+    const page = wallet.isComplete() ? WalletTabsPage : FcashAppPage;
     this.isWalletModalOpen = true;
     this.walletModal = this.modalCtrl.create(
       page,
@@ -405,10 +405,10 @@ export class FcashApp {
   private handleDeepLinksNW() {
     var gui = (window as any).require('nw.gui');
 
-    // This event is sent to an existent instance of Copay (only for standalone apps)
+    // This event is sent to an existent instance of FcashApp (only for standalone apps)
     gui.App.on('open', this.onOpenNW.bind(this));
 
-    // Used at the startup of Copay
+    // Used at the startup of FcashApp
     var argv = gui.App.argv;
     if (argv && argv[0] && !(window as any)._urlHandled) {
       (window as any)._urlHandled = true;

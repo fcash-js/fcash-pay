@@ -118,7 +118,7 @@ export class IncomingDataProvider {
     );
   }
 
-  private isValidBitPayCardUri(data: string): boolean {
+  private isValidFcashCardUri(data: string): boolean {
     data = this.sanitizeUri(data);
     return !!(data && data.indexOf('fcash://fcash.cash?secret=') === 0);
   }
@@ -307,12 +307,12 @@ export class IncomingDataProvider {
     }
   }
 
-  private goToBitPayCard(data: string): void {
-    this.logger.debug('Incoming-data (redirect): BitPay Card URL');
+  private goToFcashCard(data: string): void {
+    this.logger.debug('Incoming-data (redirect): Fcash Card URL');
 
-    // Disable BitPay Card
+    // Disable Fcash Card
     if (!this.appProvider.info._enabledExtensions.debitcard) {
-      this.logger.warn('BitPay Card has been disabled for this build');
+      this.logger.warn('Fcash Card has been disabled for this build');
       return;
     }
 
@@ -323,10 +323,10 @@ export class IncomingDataProvider {
     switch (reason) {
       default:
       case '0':
-        /* For BitPay card binding */
+        /* For Fcash card binding */
         let stateParams = { secret, email, otp };
         let nextView = {
-          name: 'BitPayCardIntroPage',
+          name: 'FcashCardIntroPage',
           params: stateParams
         };
         this.events.publish('IncomingDataRedir', nextView);
@@ -404,9 +404,9 @@ export class IncomingDataProvider {
       this.goToCoinbase(data);
       return true;
 
-      // BitPayCard Authentication
-    } else if (this.isValidBitPayCardUri(data)) {
-      this.goToBitPayCard(data);
+      // FcashCard Authentication
+    } else if (this.isValidFcashCardUri(data)) {
+      this.goToFcashCard(data);
       return true;
 
       // Join
@@ -513,12 +513,12 @@ export class IncomingDataProvider {
         title: 'Coinbase URI'
       };
 
-      // BitPayCard Authentication
-    } else if (this.isValidBitPayCardUri(data)) {
+      // FcashCard Authentication
+    } else if (this.isValidFcashCardUri(data)) {
       return {
         data,
-        type: 'BitPayCard',
-        title: this.translate.instant('BitPay Card URI')
+        type: 'FcashCard',
+        title: this.translate.instant('Fcash Card URI')
       };
 
       // Join

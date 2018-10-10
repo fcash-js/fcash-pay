@@ -13,14 +13,14 @@ import { TourPage } from './tour/tour';
   templateUrl: 'onboarding.html'
 })
 export class OnboardingPage {
-  public isCopay: boolean;
+  public isFcashApp: boolean;
 
   constructor(
     public navCtrl: NavController,
     private logger: Logger,
     private app: AppProvider
   ) {
-    this.isCopay = this.app.info.nameCase == 'Copay' ? true : false;
+    this.isFcashApp = this.app.info.nameCase == 'FcashApp' ? true : false;
   }
 
   ionViewDidLoad() {

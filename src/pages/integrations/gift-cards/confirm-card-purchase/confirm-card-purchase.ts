@@ -255,7 +255,7 @@ export class ConfirmCardPurchasePage extends ConfirmPage {
       };
     }
     const invoice = await this.giftCardProvider
-      .getBitPayInvoice(cardOrder.invoiceId)
+      .getFcashInvoice(cardOrder.invoiceId)
       .catch(() => {
         throw {
           message: this.translate.instant('Could not get the invoice')

@@ -1,6 +1,6 @@
 /* Pages */
 import { AddPage } from '../pages/add/add';
-import { CopayersPage } from '../pages/add/fcash-pay/fcash-pay';
+import { FcashAppPage } from '../pages/add/fcash-pay/fcash-pay';
 import { CreateWalletPage } from '../pages/add/create-wallet/create-wallet';
 import { ImportWalletPage } from '../pages/add/import-wallet/import-wallet';
 import { JoinWalletPage } from '../pages/add/join-wallet/join-wallet';
@@ -45,11 +45,11 @@ import { ShapeshiftDetailsPage } from '../pages/integrations/shapeshift/shapeshi
 import { ShapeshiftSettingsPage } from '../pages/integrations/shapeshift/shapeshift-settings/shapeshift-settings';
 import { ShapeshiftShiftPage } from '../pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift';
 
-// Integrations: BitPayCard
-import { BitPayCardPage } from '../pages/integrations/fcash-card/fcash-card';
-import { BitPayCardIntroPage } from '../pages/integrations/fcash-card/fcash-card-intro/fcash-card-intro';
-import { BitPayCardTopUpPage } from '../pages/integrations/fcash-card/fcash-card-topup/fcash-card-topup';
-import { BitPaySettingsPage } from '../pages/integrations/fcash-card/fcash-settings/fcash-settings';
+// Integrations: FcashCard
+import { FcashCardPage } from '../pages/integrations/fcash-card/fcash-card';
+import { FcashCardIntroPage } from '../pages/integrations/fcash-card/fcash-card-intro/fcash-card-intro';
+import { FcashCardTopUpPage } from '../pages/integrations/fcash-card/fcash-card-topup/fcash-card-topup';
+import { FcashSettingsPage } from '../pages/integrations/fcash-card/fcash-settings/fcash-settings';
 
 /*Includes */
 import { CardItemPage } from '../pages/includes/card-item/card-item';
@@ -130,17 +130,17 @@ export const PAGES = [
   AltCurrencyPage,
   BackupRequestPage,
   BitcoinCashPage,
-  BitPayCardIntroPage,
-  BitPayCardPage,
-  BitPaySettingsPage,
-  BitPayCardTopUpPage,
+  FcashCardIntroPage,
+  FcashCardPage,
+  FcashSettingsPage,
+  FcashCardTopUpPage,
   BuyCoinbasePage,
   BuyGlideraPage,
   ChooseFeeLevelPage,
   CreateWalletPage,
   CoinbasePage,
   CoinbaseTxDetailsPage,
-  CopayersPage,
+  FcashAppPage,
   FeedbackCardPage,
   SharePage,
   ImportWalletPage,
