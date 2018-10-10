@@ -161,7 +161,7 @@ export class BuyGlideraPage {
         }
 
         this.hideSlideButton = true;
-        this.onGoingProcessProvider.set('buyingBitcoin');
+        this.onGoingProcessProvider.set('buyingFcash');
         this.glideraProvider.get2faCode(this.token, (err, tfa) => {
           if (err) {
             this.onGoingProcessProvider.clear();

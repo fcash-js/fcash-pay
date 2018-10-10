@@ -367,7 +367,7 @@ export class SellCoinbasePage {
         }
 
         this.hideSlideButton = true;
-        this.onGoingProcessProvider.set('sellingBitcoin');
+        this.onGoingProcessProvider.set('sellingFcash');
         this.coinbaseProvider.init((err, res) => {
           if (err) {
             this.onGoingProcessProvider.clear();

@@ -155,8 +155,8 @@ msgstr ""
 msgid "Apply changes"
 msgstr "Applica le modifiche"
 
-msgid "Approximate Bitcoin network fee to transfer wallet's balance (with normal priority)"
-msgstr "La tariffa approssimativa della rete Bitcoin per il trasferimento del saldo del portafoglio ( con priorità normale)"
+msgid "Approximate Fcash network fee to transfer wallet's balance (with normal priority)"
+msgstr "La tariffa approssimativa della rete Fcash per il trasferimento del saldo del portafoglio ( con priorità normale)"
 
 msgid "Archive Card"
 msgstr ""
@@ -233,44 +233,44 @@ msgstr ""
 msgid "Fcash Card URI"
 msgstr "Carta Fcash URI"
 
-msgid "Bitcoin Address"
-msgstr "Indirizzo Bitcoin"
+msgid "Fcash Address"
+msgstr "Indirizzo Fcash"
 
-msgid "Bitcoin Cash Address"
-msgstr "Indirizzo Bitcoin Cash"
+msgid "Fcash Cash Address"
+msgstr "Indirizzo Fcash Cash"
 
-msgid "Bitcoin Cash URI"
-msgstr "Bitcoin Cash URI"
+msgid "Fcash Cash URI"
+msgstr "Fcash Cash URI"
 
-msgid "Bitcoin Cash Wallets"
-msgstr "Portafogli Bitcoin Cash"
+msgid "Fcash Cash Wallets"
+msgstr "Portafogli Fcash Cash"
 
-msgid "Bitcoin Network Fee Policy"
-msgstr "Criterio delle Commissioni del Bitcoin Network"
+msgid "Fcash Network Fee Policy"
+msgstr "Criterio delle Commissioni del Fcash Network"
 
-msgid "Bitcoin URI"
-msgstr "Bitcoin URI"
+msgid "Fcash URI"
+msgstr "Fcash URI"
 
-msgid "Bitcoin Wallets"
-msgstr "Portafogli Bitcoin"
+msgid "Fcash Wallets"
+msgstr "Portafogli Fcash"
 
-msgid "Bitcoin is a currency."
-msgstr "Bitcoin è una moneta."
+msgid "Fcash is a currency."
+msgstr "Fcash è una moneta."
 
-msgid "Bitcoin is different - it cannot be safely held with a bank or web service."
-msgstr "Bitcoin è differente - Non può essere custodito al sicuro in una banca o su un servizio web."
+msgid "Fcash is different - it cannot be safely held with a bank or web service."
+msgstr "Fcash è differente - Non può essere custodito al sicuro in una banca o su un servizio web."
 
-msgid "Bitcoin is secure, digital money."
-msgstr "Bitcoin è denaro sicuro, digitale."
+msgid "Fcash is secure, digital money."
+msgstr "Fcash è denaro sicuro, digitale."
 
-msgid "Bitcoin miner fee:"
+msgid "Fcash miner fee:"
 msgstr "Commissione per miner bitcoin:"
 
-msgid "Bitcoin network fee policy"
+msgid "Fcash network fee policy"
 msgstr "Criterio commissioni del network bitcoin"
 
-msgid "Bitcoin transactions include a fee collected by miners on the network."
-msgstr "Le transazioni Bitcoin comprendono un supplemento che viene raccolto dai mines nella rete."
+msgid "Fcash transactions include a fee collected by miners on the network."
+msgstr "Le transazioni Fcash comprendono un supplemento che viene raccolto dai mines nella rete."
 
 msgid "Broadcast Payment"
 msgstr "Diffusione del Pagamento"
@@ -281,8 +281,8 @@ msgstr "Trasmesso"
 msgid "Broadcasting transaction..."
 msgstr "Trasmissione transazione..."
 
-msgid "Buying Bitcoin..."
-msgstr "Comprare Bitcoin..."
+msgid "Buying Fcash..."
+msgstr "Comprare Fcash..."
 
 msgid "Buying Gift Card..."
 msgstr "Acquisizione carta regalo..."
@@ -422,8 +422,8 @@ msgstr "Contribuisci alle traduzioni"
 msgid "FcashApp Session Logs. Be careful, this could contain sensitive private data"
 msgstr ""
 
-msgid "FcashApp only supports Bitcoin Cash using new version numbers addresses"
-msgstr "FcashApp supporta Bitcoin Cash soltanto utilizzando la nuova versione di indirizzi"
+msgid "FcashApp only supports Fcash Cash using new version numbers addresses"
+msgstr "FcashApp supporta Fcash Cash soltanto utilizzando la nuova versione di indirizzi"
 
 msgid "FcashApp already in this wallet"
 msgstr "FcashApp già in questo portafoglio"
@@ -653,8 +653,8 @@ msgstr ""
 msgid "Duplicate"
 msgstr "Duplica"
 
-msgid "Duplicate ( Bitcoin Cash )"
-msgstr "Duplicare (Bitcoin Cash)"
+msgid "Duplicate ( Fcash Cash )"
+msgstr "Duplicare (Fcash Cash)"
 
 msgid "Duplicating wallet..."
 msgstr "Duplicazione di portafoglio..."
@@ -980,8 +980,8 @@ msgstr "Sono molto felice"
 msgid "I've used this card"
 msgstr ""
 
-msgid "If enabled, Bitcoin Cash addresses will be shown using FcashApp style address, and not the new cashaddr format."
-msgstr "Se abilitato, gli indirizzi di Bitcoin Cash saranno mostrati con lo stile di indirizzo di FcashApp, e non con il nuovo formato di cashaddr."
+msgid "If enabled, Fcash Cash addresses will be shown using FcashApp style address, and not the new cashaddr format."
+msgstr "Se abilitato, gli indirizzi di Fcash Cash saranno mostrati con lo stile di indirizzo di FcashApp, e non con il nuovo formato di cashaddr."
 
 msgid "If enabled, the Recent Transactions card - a list of transactions occuring across all wallets - will appear in the Home tab."
 msgstr "Se abilitata, la scheda delle Transazioni Recenti - una lista di transazioni che avvengono attraverso tutti i portafogli - apparirà nella scheda Home."
@@ -1068,7 +1068,7 @@ msgid "It's a ghost town in here"
 msgstr ""
 
 msgid "It's a good idea to avoid reusing addresses - this both protects your privacy and keeps your bitcoins secure against hypothetical attacks by quantum computers."
-msgstr "È una buona idea evitare di riutilizzare gli indirizzi - questo protegge la tua privacy e mantiene i Bitcoin al sicuro da ipotetici attacchi di computer quantistici."
+msgstr "È una buona idea evitare di riutilizzare gli indirizzi - questo protegge la tua privacy e mantiene i Fcash al sicuro da ipotetici attacchi di computer quantistici."
 
 msgid "It's important that you write your recovery phrase down correctly. If something happens to your wallet, you'll need it to recover your money. Please review and try again."
 msgstr ""
@@ -1703,8 +1703,8 @@ msgstr "Selezionare un portafoglio"
 msgid "Self-signed Certificate"
 msgstr "Certificato autofirmato"
 
-msgid "Selling Bitcoin..."
-msgstr "Vendere Bitcoin..."
+msgid "Selling Fcash..."
+msgstr "Vendere Fcash..."
 
 msgid "Send"
 msgstr "Invia"
@@ -1856,8 +1856,8 @@ msgstr "Proposta di pagamento non trovata"
 msgid "Spendable balance"
 msgstr "Saldo spendibile"
 
-msgid "Spending this balance will need significant Bitcoin network fees"
-msgstr "Per spendere questa quantità saranno necessarie significative commissioni di rete Bitcoin"
+msgid "Spending this balance will need significant Fcash network fees"
+msgstr "Per spendere questa quantità saranno necessarie significative commissioni di rete Fcash"
 
 msgid "Start"
 msgstr "Inizio"
@@ -1967,8 +1967,8 @@ msgstr "La richiesta potrebbe non essere compresa dal server"
 msgid "The spend proposal is not pending"
 msgstr "La proposta di pagamento non è in sospeso"
 
-msgid "The testnet is an alternative Bitcoin block chain, to be used for testing. Testnet coins are separate and distinct from actual bitcoins, and do not have any value. This allows application developers or bitcoin testers to experiment, without having to use real bitcoins."
-msgstr "La testnet è una blockchain Bitcoin alternativa, da utilizzare per i test. Le monete testnet sono separate e distinte dall'effettivo Bitcoin e non hanno alcun valore. Questo consente agli sviluppatori di applicazioni o tester bitcoin di sperimentare, senza dover usare il reale Bitcoin."
+msgid "The testnet is an alternative Fcash block chain, to be used for testing. Testnet coins are separate and distinct from actual bitcoins, and do not have any value. This allows application developers or bitcoin testers to experiment, without having to use real bitcoins."
+msgstr "La testnet è una blockchain Fcash alternativa, da utilizzare per i test. Le monete testnet sono separate e distinte dall'effettivo Fcash e non hanno alcun valore. Questo consente agli sviluppatori di applicazioni o tester bitcoin di sperimentare, senza dover usare il reale Fcash."
 
 msgid "The total amount of bitcoin stored in this wallet."
 msgstr "La quantità totale di bitcoin depositati su questo portafoglio."
@@ -2009,8 +2009,8 @@ msgstr "Questa password è solo per questo dispositivo, e non può essere recupe
 msgid "This recovery phrase was created with a password. To recover this wallet both the recovery phrase and password are needed."
 msgstr "Questa frase di recupero è stata creata con una password. Per recuperare questo portafoglio sono necessari sia la frase di recupero e che la password."
 
-msgid "This transaction amount is too small compared to current Bitcoin network fees. Spending these funds will need a Bitcoin network fee cost comparable to the funds itself."
-msgstr "Questo importo della transazione è troppo piccolo rispetto alle attuali commissioni della rete Bitcoin. Per spendere questi fondi sarà necessaria una commissione Bitcoin paragonabile ai fondi stessi."
+msgid "This transaction amount is too small compared to current Fcash network fees. Spending these funds will need a Fcash network fee cost comparable to the funds itself."
+msgstr "Questo importo della transazione è troppo piccolo rispetto alle attuali commissioni della rete Fcash. Per spendere questi fondi sarà necessaria una commissione Fcash paragonabile ai fondi stessi."
 
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender."
 msgstr "Questa operazione potrebbe richiedere molto tempo per essere confermata o potrebbe essere abbandonata a causa delle commissioni basse impostate dal mittente."
@@ -2081,11 +2081,11 @@ msgstr "Transazioni"
 msgid "Transactions without fee are not supported."
 msgstr "Non sono supportate transazioni senza commissione."
 
-msgid "Transfer to Bitcoin Cash Wallet"
-msgstr "Trasferimento a portafoglio Bitcoin Cash"
+msgid "Transfer to Fcash Cash Wallet"
+msgstr "Trasferimento a portafoglio Fcash Cash"
 
-msgid "Transfer to Bitcoin Wallet"
-msgstr "Trasferimento a portafoglio Bitcoin"
+msgid "Transfer to Fcash Wallet"
+msgstr "Trasferimento a portafoglio Fcash"
 
 msgid "Transfer to Contact"
 msgstr "Trasferisci a Contatto"
@@ -2153,8 +2153,8 @@ msgstr "In aggiornamento... Attendere"
 msgid "Urgent"
 msgstr "Urgente"
 
-msgid "Use Bitcoin Cash FcashApp Style Addresses"
-msgstr "Utilizzare gli indirizzi Bitcoin Cash in stile FcashApp"
+msgid "Use Fcash Cash FcashApp Style Addresses"
+msgstr "Utilizzare gli indirizzi Fcash Cash in stile FcashApp"
 
 msgid "Use Unconfirmed Funds"
 msgstr "Usa i fondi non confermati"

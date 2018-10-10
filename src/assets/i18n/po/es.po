@@ -155,8 +155,8 @@ msgstr "Cualquier persona con su frase de recuperación puede tener acceso y gas
 msgid "Apply changes"
 msgstr "Aplicar los cambios"
 
-msgid "Approximate Bitcoin network fee to transfer wallet's balance (with normal priority)"
-msgstr "Comisión aproximada de la red Bitcoin para transferir el saldo de esta billetera (con prioridad normal)"
+msgid "Approximate Fcash network fee to transfer wallet's balance (with normal priority)"
+msgstr "Comisión aproximada de la red Fcash para transferir el saldo de esta billetera (con prioridad normal)"
 
 msgid "Archive Card"
 msgstr "Archivar Tarjeta"
@@ -233,43 +233,43 @@ msgstr "Monto inferior al mínimo"
 msgid "Fcash Card URI"
 msgstr "URI de la Tarjeta de Fcash"
 
-msgid "Bitcoin Address"
-msgstr "Dirección Bitcoin"
+msgid "Fcash Address"
+msgstr "Dirección Fcash"
 
-msgid "Bitcoin Cash Address"
-msgstr "Dirección Bitcoin Cash"
+msgid "Fcash Cash Address"
+msgstr "Dirección Fcash Cash"
 
-msgid "Bitcoin Cash URI"
-msgstr "URI de Bitcoin Cash"
+msgid "Fcash Cash URI"
+msgstr "URI de Fcash Cash"
 
-msgid "Bitcoin Cash Wallets"
-msgstr "Billeteras Bitcoin Cash"
+msgid "Fcash Cash Wallets"
+msgstr "Billeteras Fcash Cash"
 
-msgid "Bitcoin Network Fee Policy"
-msgstr "Política de Comisión de la Red Bitcoin"
+msgid "Fcash Network Fee Policy"
+msgstr "Política de Comisión de la Red Fcash"
 
-msgid "Bitcoin URI"
-msgstr "URI de Bitcoin"
+msgid "Fcash URI"
+msgstr "URI de Fcash"
 
-msgid "Bitcoin Wallets"
-msgstr "Billeteras Bitcoin"
+msgid "Fcash Wallets"
+msgstr "Billeteras Fcash"
 
-msgid "Bitcoin is a currency."
-msgstr "Bitcoin es una moneda."
+msgid "Fcash is a currency."
+msgstr "Fcash es una moneda."
 
-msgid "Bitcoin is different - it cannot be safely held with a bank or web service."
-msgstr "Bitcoin es diferente - no se puede resguardar con ningún servicio web o banco."
+msgid "Fcash is different - it cannot be safely held with a bank or web service."
+msgstr "Fcash es diferente - no se puede resguardar con ningún servicio web o banco."
 
-msgid "Bitcoin is secure, digital money."
-msgstr "Bitcoin es seguro, es dinero digital."
+msgid "Fcash is secure, digital money."
+msgstr "Fcash es seguro, es dinero digital."
 
-msgid "Bitcoin miner fee:"
+msgid "Fcash miner fee:"
 msgstr "Comisión de minero bitcoin:"
 
-msgid "Bitcoin network fee policy"
+msgid "Fcash network fee policy"
 msgstr "Política de comisión de la red bitcoin"
 
-msgid "Bitcoin transactions include a fee collected by miners on the network."
+msgid "Fcash transactions include a fee collected by miners on the network."
 msgstr "Las transacciones de bitcoins incluyen una comisión recogida por los mineros de la red."
 
 msgid "Broadcast Payment"
@@ -281,8 +281,8 @@ msgstr "Enviado"
 msgid "Broadcasting transaction..."
 msgstr "Finalizando transacción..."
 
-msgid "Buying Bitcoin..."
-msgstr "Comprando Bitcoins..."
+msgid "Buying Fcash..."
+msgstr "Comprando Fcashs..."
 
 msgid "Buying Gift Card..."
 msgstr "Comprando Tarjeta de Regalo..."
@@ -422,8 +422,8 @@ msgstr "Contribuye en las traducciones"
 msgid "FcashApp Session Logs. Be careful, this could contain sensitive private data"
 msgstr "Registros de sesión de FcashApp. Sea cuidadoso, esto podría contener datos privados sensibles"
 
-msgid "FcashApp only supports Bitcoin Cash using new version numbers addresses"
-msgstr "FcashApp solo soporta Bitcoin Cash utilizando la nueva versión de direcciones"
+msgid "FcashApp only supports Fcash Cash using new version numbers addresses"
+msgstr "FcashApp solo soporta Fcash Cash utilizando la nueva versión de direcciones"
 
 msgid "FcashApp already in this wallet"
 msgstr "Ya se encuentra en esta billetera"
@@ -653,8 +653,8 @@ msgstr "Descargar registros"
 msgid "Duplicate"
 msgstr "Duplicar"
 
-msgid "Duplicate ( Bitcoin Cash )"
-msgstr "Duplicar ( Bitcoin Cash )"
+msgid "Duplicate ( Fcash Cash )"
+msgstr "Duplicar ( Fcash Cash )"
 
 msgid "Duplicating wallet..."
 msgstr "Duplicando billetera..."
@@ -980,8 +980,8 @@ msgstr "Estoy muy contento"
 msgid "I've used this card"
 msgstr "He utilizado esta tarjeta"
 
-msgid "If enabled, Bitcoin Cash addresses will be shown using FcashApp style address, and not the new cashaddr format."
-msgstr "Si se habilita, las direcciones Bitcoin Cash se mostrarán usando el formato de FcashApp y no el nuevo formato CashAddr."
+msgid "If enabled, Fcash Cash addresses will be shown using FcashApp style address, and not the new cashaddr format."
+msgstr "Si se habilita, las direcciones Fcash Cash se mostrarán usando el formato de FcashApp y no el nuevo formato CashAddr."
 
 msgid "If enabled, the Recent Transactions card - a list of transactions occuring across all wallets - will appear in the Home tab."
 msgstr "Si se habilita, aparecerá una lista de las transacciones recientes de las billeteras en el inicio."
@@ -1703,8 +1703,8 @@ msgstr "Seleccionar una billetera"
 msgid "Self-signed Certificate"
 msgstr "Certificado autofirmado"
 
-msgid "Selling Bitcoin..."
-msgstr "Vendiendo Bitcoins..."
+msgid "Selling Fcash..."
+msgstr "Vendiendo Fcashs..."
 
 msgid "Send"
 msgstr "Enviar"
@@ -1856,7 +1856,7 @@ msgstr "La propuesta de gasto no se ha encontrado"
 msgid "Spendable balance"
 msgstr "Balance disponible"
 
-msgid "Spending this balance will need significant Bitcoin network fees"
+msgid "Spending this balance will need significant Fcash network fees"
 msgstr "Gastar este balance requiere de significativas comisiones"
 
 msgid "Start"
@@ -1967,8 +1967,8 @@ msgstr "La solicitud no pudo ser comprendida por el servidor"
 msgid "The spend proposal is not pending"
 msgstr "La propuesta de gasto no esta pendiente"
 
-msgid "The testnet is an alternative Bitcoin block chain, to be used for testing. Testnet coins are separate and distinct from actual bitcoins, and do not have any value. This allows application developers or bitcoin testers to experiment, without having to use real bitcoins."
-msgstr "Testnet es una cadena de bloques alternativa de Bitcoin utilizada para pruebas. Las monedas testnet trabajan en una red separada y distinta de los bitcoins reales y no tienen ningún valor. Esto permite a los desarrolladores o usuarios en general experimentar sin tener que usar bitcoins reales."
+msgid "The testnet is an alternative Fcash block chain, to be used for testing. Testnet coins are separate and distinct from actual bitcoins, and do not have any value. This allows application developers or bitcoin testers to experiment, without having to use real bitcoins."
+msgstr "Testnet es una cadena de bloques alternativa de Fcash utilizada para pruebas. Las monedas testnet trabajan en una red separada y distinta de los bitcoins reales y no tienen ningún valor. Esto permite a los desarrolladores o usuarios en general experimentar sin tener que usar bitcoins reales."
 
 msgid "The total amount of bitcoin stored in this wallet."
 msgstr "El total de bitcoins almacenados en esta billetera."
@@ -2009,7 +2009,7 @@ msgstr "Esta contraseña es solo para este dispositivo, y no puede ser recuperad
 msgid "This recovery phrase was created with a password. To recover this wallet both the recovery phrase and password are needed."
 msgstr "Esta frase de recuperación fue creada con una contraseña. Para recuperar esta billetera, la frase de recuperación y la contraseña son necesarios."
 
-msgid "This transaction amount is too small compared to current Bitcoin network fees. Spending these funds will need a Bitcoin network fee cost comparable to the funds itself."
+msgid "This transaction amount is too small compared to current Fcash network fees. Spending these funds will need a Fcash network fee cost comparable to the funds itself."
 msgstr "Esta transacción es muy pequeña comparada a la tasa de comisión actual de la red.\n"
 "Para gastar esta cantidad necesitarás un costo de comisión comparable a los fondos en sí mismos."
 
@@ -2082,11 +2082,11 @@ msgstr "Transacciones"
 msgid "Transactions without fee are not supported."
 msgstr "Las transacciones sin comisión no están soportadas."
 
-msgid "Transfer to Bitcoin Cash Wallet"
-msgstr "Transferir a Billetera Bitcoin Cash"
+msgid "Transfer to Fcash Cash Wallet"
+msgstr "Transferir a Billetera Fcash Cash"
 
-msgid "Transfer to Bitcoin Wallet"
-msgstr "Transferir a Billetera Bitcoin"
+msgid "Transfer to Fcash Wallet"
+msgstr "Transferir a Billetera Fcash"
 
 msgid "Transfer to Contact"
 msgstr "Transferir a Contacto"
@@ -2101,7 +2101,7 @@ msgid "Try again in {{expires}}"
 msgstr "Intenta de nuevo en {{expires}}"
 
 msgid "Turn bitcoin into dollars, swipe anywhere Visa® is accepted."
-msgstr "Convierta Bitcoin en Dólares, use en cualquier lugar que acepte Visa®."
+msgstr "Convierta Fcash en Dólares, use en cualquier lugar que acepte Visa®."
 
 msgid "Type the recovery phrase (usually 12 words)"
 msgstr "Escribe la frase de recuperación (normalmente 12 palabras)"
@@ -2154,8 +2154,8 @@ msgstr "Actualizando... Por favor, espera"
 msgid "Urgent"
 msgstr "Urgente"
 
-msgid "Use Bitcoin Cash FcashApp Style Addresses"
-msgstr "Utilizar direcciones Bitcoin Cash de FcashApp"
+msgid "Use Fcash Cash FcashApp Style Addresses"
+msgstr "Utilizar direcciones Fcash Cash de FcashApp"
 
 msgid "Use Unconfirmed Funds"
 msgstr "Utilizar los fondos sin confirmar"

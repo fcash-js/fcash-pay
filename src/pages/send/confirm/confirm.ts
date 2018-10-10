@@ -100,8 +100,8 @@ export class ConfirmPage extends WalletTabsChild {
     walletTabsProvider: WalletTabsProvider
   ) {
     super(navCtrl, profileProvider, walletTabsProvider);
-    this.fcore = this.bwcProvider.getBitcore();
-    this.fcoreCash = this.bwcProvider.getBitcoreCash();
+    this.fcore = this.bwcProvider.getFcash();
+    this.fcoreCash = this.bwcProvider.getFcashCash();
     this.CONFIRM_LIMIT_USD = 20;
     this.FEE_TOO_HIGH_LIMIT_PER = 15;
     this.config = this.configProvider.get();
@@ -129,7 +129,7 @@ export class ConfirmPage extends WalletTabsChild {
       networkName = new B.Address(this.navParams.data.toAddress).network.name;
     } catch (e) {
       var message = this.translate.instant(
-        'FcashApp only supports Bitcoin Cash using new version numbers addresses'
+        'FcashApp only supports Fcash Cash using new version numbers addresses'
       );
       var backText = this.translate.instant('Go back');
       var learnText = this.translate.instant('Learn more');
@@ -521,7 +521,7 @@ export class ConfirmPage extends WalletTabsChild {
   }
 
   protected showHighFeeSheet() {
-    const coinName = this.wallet.coin === 'btc' ? 'Bitcoin' : 'Bitcoin Cash';
+    const coinName = this.wallet.coin === 'btc' ? 'Fcash' : 'Fcash Cash';
     const minerFeeInfoSheet = this.actionSheetProvider.createInfoSheet(
       'miner-fee',
       { coinName }
@@ -588,7 +588,7 @@ export class ConfirmPage extends WalletTabsChild {
     let warningMsg = this.verifyExcludedUtxos(wallet, sendMaxInfo);
 
     const coinName =
-      this.wallet.coin === Coin.BTC ? 'Bitcoin (BTC)' : 'Bitcoin Cash (BCH)';
+      this.wallet.coin === Coin.BTC ? 'Fcash (BTC)' : 'Fcash Cash (BCH)';
 
     const minerFeeNoticeInfoSheet = this.actionSheetProvider.createInfoSheet(
       'miner-fee-notice',

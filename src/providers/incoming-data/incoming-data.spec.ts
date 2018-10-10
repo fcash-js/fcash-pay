@@ -161,7 +161,7 @@ describe('Provider: Incoming Data Provider', () => {
         );
       });
     });
-    it('Should handle Bitcoin cash FcashApp/Fcash format and CashAddr format plain Address', () => {
+    it('Should handle Fcash cash FcashApp/Fcash format and CashAddr format plain Address', () => {
       let data = [
         'qr00upv8qjgkym8zng3f663n9qte9ljuqqcs8eep5w',
         'CcnxtMfvBHGTwoKGPSuezEuYNpGPJH6tjN'
@@ -171,7 +171,7 @@ describe('Provider: Incoming Data Provider', () => {
           incomingDataProvider.redir(element, { activePage: 'ScanPage' })
         ).toBe(true);
         expect(loggerSpy).toHaveBeenCalledWith(
-          'Incoming-data: Bitcoin Cash plain address'
+          'Incoming-data: Fcash Cash plain address'
         );
         expect(actionSheetSpy).toHaveBeenCalledWith({
           data: {
@@ -182,14 +182,14 @@ describe('Provider: Incoming Data Provider', () => {
         });
       });
     });
-    it('Should handle Bitcoin cash FcashApp/Fcash format and CashAddr format URI', () => {
+    it('Should handle Fcash cash FcashApp/Fcash format and CashAddr format URI', () => {
       let data = [
         'bitcoincash:CcnxtMfvBHGTwoKGPSuezEuYNpGPJH6tjN',
         'bitcoincash:qr00upv8qjgkym8zng3f663n9qte9ljuqqcs8eep5w'
       ];
 
       data.forEach(element => {
-        let parsed = bwcProvider.getBitcoreCash().URI(element);
+        let parsed = bwcProvider.getFcashCash().URI(element);
         let addr = parsed.address ? parsed.address.toString() : '';
 
         // keep address in original format
@@ -209,18 +209,18 @@ describe('Provider: Incoming Data Provider', () => {
           incomingDataProvider.redir(element, { activePage: 'ScanPage' })
         ).toBe(true);
         expect(loggerSpy).toHaveBeenCalledWith(
-          'Incoming-data: Bitcoin Cash URI'
+          'Incoming-data: Fcash Cash URI'
         );
         expect(eventsSpy).toHaveBeenCalledWith('IncomingDataRedir', nextView);
       });
     });
-    it('Should handle Bitcoin cash FcashApp/Fcash format and CashAddr format URI with amount', () => {
+    it('Should handle Fcash cash FcashApp/Fcash format and CashAddr format URI with amount', () => {
       let data = [
         'BITCOINCASH:QZCY06MXSK7HW0RU4KZWTRKXDS6VF8Y34VRM5SF9Z7?amount=1.00000000'
       ];
 
       data.forEach(element => {
-        let parsed = bwcProvider.getBitcoreCash().URI(element);
+        let parsed = bwcProvider.getFcashCash().URI(element);
         let addr = parsed.address ? parsed.address.toString() : '';
         // keep address in original format
         if (parsed.address && element.indexOf(addr) < 0) {
@@ -243,27 +243,27 @@ describe('Provider: Incoming Data Provider', () => {
           incomingDataProvider.redir(element, { activePage: 'ScanPage' })
         ).toBe(true);
         expect(loggerSpy).toHaveBeenCalledWith(
-          'Incoming-data: Bitcoin Cash URI'
+          'Incoming-data: Fcash Cash URI'
         );
         expect(eventsSpy).toHaveBeenCalledWith('IncomingDataRedir', nextView);
       });
     });
-    it('Should handle Bitcoin URI', () => {
+    it('Should handle Fcash URI', () => {
       let data = [
-        'bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', // Genesis Bitcoin Address
-        'bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa?message=test%20message', // Bitcoin Address with message and not amount
-        'bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa?amount=1.0000', // Bitcoin Address with amount
-        'bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa?amount=1.0000&label=Genesis%20Bitcoin%20Address&message=test%20message' // Basic Payment Protocol
+        'bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', // Genesis Fcash Address
+        'bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa?message=test%20message', // Fcash Address with message and not amount
+        'bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa?amount=1.0000', // Fcash Address with amount
+        'bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa?amount=1.0000&label=Genesis%20Fcash%20Address&message=test%20message' // Basic Payment Protocol
       ];
       data.forEach(element => {
-        let parsed = bwcProvider.getBitcore().URI(element);
+        let parsed = bwcProvider.getFcash().URI(element);
         let addr = parsed.address ? parsed.address.toString() : '';
         let message = parsed.message;
         let amount = parsed.amount ? parsed.amount : '';
         expect(
           incomingDataProvider.redir(element, { activePage: 'ScanPage' })
         ).toBe(true);
-        expect(loggerSpy).toHaveBeenCalledWith('Incoming-data: Bitcoin URI');
+        expect(loggerSpy).toHaveBeenCalledWith('Incoming-data: Fcash URI');
         if (amount) {
           let stateParams = {
             amount,
@@ -290,27 +290,27 @@ describe('Provider: Incoming Data Provider', () => {
         }
       });
     });
-    it('Should Handle Bitcoin Cash URI with legacy address', fakeAsync(() => {
+    it('Should Handle Fcash Cash URI with legacy address', fakeAsync(() => {
       let data = 'bitcoincash:1ML5KKKrJEHw3fQqhhajQjHWkh3yKhNZpa';
       expect(incomingDataProvider.redir(data, { activePage: 'ScanPage' })).toBe(
         true
       );
       expect(loggerSpy).toHaveBeenCalledWith(
-        'Incoming-data: Bitcoin Cash URI with legacy address'
+        'Incoming-data: Fcash Cash URI with legacy address'
       );
 
       let parsed = bwcProvider
-        .getBitcore()
+        .getFcash()
         .URI(data.replace(/^bitcoincash:/, 'bitcoin:'));
 
       let oldAddr = parsed.address ? parsed.address.toString() : '';
 
       let a = bwcProvider
-        .getBitcore()
+        .getFcash()
         .Address(oldAddr)
         .toObject();
       let addr = bwcProvider
-        .getBitcoreCash()
+        .getFcashCash()
         .Address.fromObject(a)
         .toString();
 
@@ -326,28 +326,28 @@ describe('Provider: Incoming Data Provider', () => {
       tick();
       expect(eventsSpy).toHaveBeenCalledWith('IncomingDataRedir', nextView);
     }));
-    it('Should Handle Testnet Bitcoin Cash URI with legacy address', fakeAsync(() => {
+    it('Should Handle Testnet Fcash Cash URI with legacy address', fakeAsync(() => {
       let data = 'bchtest:mu7ns6LXun5rQiyTJx7yY1QxTzndob4bhJ';
       expect(incomingDataProvider.redir(data, { activePage: 'ScanPage' })).toBe(
         true
       );
 
       expect(loggerSpy).toHaveBeenCalledWith(
-        'Incoming-data: Bitcoin Cash URI with legacy address'
+        'Incoming-data: Fcash Cash URI with legacy address'
       );
 
       let parsed = bwcProvider
-        .getBitcore()
+        .getFcash()
         .URI(data.replace(/^bchtest:/, 'bitcoin:'));
 
       let oldAddr = parsed.address ? parsed.address.toString() : '';
 
       let a = bwcProvider
-        .getBitcore()
+        .getFcash()
         .Address(oldAddr)
         .toObject();
       let addr = bwcProvider
-        .getBitcoreCash()
+        .getFcashCash()
         .Address.fromObject(a)
         .toString();
 
@@ -363,17 +363,17 @@ describe('Provider: Incoming Data Provider', () => {
       tick();
       expect(eventsSpy).toHaveBeenCalledWith('IncomingDataRedir', nextView);
     }));
-    it('Should handle Bitcoin Livenet and Testnet Plain Address', () => {
+    it('Should handle Fcash Livenet and Testnet Plain Address', () => {
       let data = [
-        '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', // Genesis Bitcoin Address
-        'mpXwg4jMtRhuSpVq4xS3HFHmCmWp9NyGKt' // Genesis Testnet3 Bitcoin Address
+        '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa', // Genesis Fcash Address
+        'mpXwg4jMtRhuSpVq4xS3HFHmCmWp9NyGKt' // Genesis Testnet3 Fcash Address
       ];
       data.forEach(element => {
         expect(
           incomingDataProvider.redir(element, { activePage: 'ScanPage' })
         ).toBe(true);
         expect(loggerSpy).toHaveBeenCalledWith(
-          'Incoming-data: Bitcoin plain address'
+          'Incoming-data: Fcash plain address'
         );
         expect(actionSheetSpy).toHaveBeenCalledWith({
           data: {

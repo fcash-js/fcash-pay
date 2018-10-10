@@ -61,20 +61,20 @@ export class IncomingDataProvider {
     return !!/^bitcoin(cash)?:\?r=[\w+]/.exec(data);
   }
 
-  private isValidBitcoinUri(data: string): boolean {
+  private isValidFcashUri(data: string): boolean {
     data = this.sanitizeUri(data);
-    return !!this.bwcProvider.getBitcore().URI.isValid(data);
+    return !!this.bwcProvider.getFcash().URI.isValid(data);
   }
 
-  private isValidBitcoinCashUri(data: string): boolean {
+  private isValidFcashCashUri(data: string): boolean {
     data = this.sanitizeUri(data);
-    return !!this.bwcProvider.getBitcoreCash().URI.isValid(data);
+    return !!this.bwcProvider.getFcashCash().URI.isValid(data);
   }
 
-  public isValidBitcoinCashUriWithLegacyAddress(data: string): boolean {
+  public isValidFcashCashUriWithLegacyAddress(data: string): boolean {
     data = this.sanitizeUri(data);
     return !!this.bwcProvider
-      .getBitcore()
+      .getFcash()
       .URI.isValid(data.replace(/^(bitcoincash:|bchtest:)/, 'bitcoin:'));
   }
 
@@ -83,24 +83,24 @@ export class IncomingDataProvider {
     return !!/^https?:\/\//.test(data);
   }
 
-  private isValidBitcoinAddress(data: string): boolean {
+  private isValidFcashAddress(data: string): boolean {
     return !!(
-      this.bwcProvider.getBitcore().Address.isValid(data, 'livenet') ||
-      this.bwcProvider.getBitcore().Address.isValid(data, 'testnet')
+      this.bwcProvider.getFcash().Address.isValid(data, 'livenet') ||
+      this.bwcProvider.getFcash().Address.isValid(data, 'testnet')
     );
   }
 
-  public isValidBitcoinCashLegacyAddress(data: string): boolean {
+  public isValidFcashCashLegacyAddress(data: string): boolean {
     return !!(
-      this.bwcProvider.getBitcore().Address.isValid(data, 'livenet') ||
-      this.bwcProvider.getBitcore().Address.isValid(data, 'testnet')
+      this.bwcProvider.getFcash().Address.isValid(data, 'livenet') ||
+      this.bwcProvider.getFcash().Address.isValid(data, 'testnet')
     );
   }
 
-  private isValidBitcoinCashAddress(data: string): boolean {
+  private isValidFcashCashAddress(data: string): boolean {
     return !!(
-      this.bwcProvider.getBitcoreCash().Address.isValid(data, 'livenet') ||
-      this.bwcProvider.getBitcoreCash().Address.isValid(data, 'testnet')
+      this.bwcProvider.getFcashCash().Address.isValid(data, 'livenet') ||
+      this.bwcProvider.getFcashCash().Address.isValid(data, 'testnet')
     );
   }
 
@@ -167,12 +167,12 @@ export class IncomingDataProvider {
     this.goToPayPro(data, coin);
   }
 
-  private handleBitcoinUri(data: string, redirParams?: RedirParams): void {
-    this.logger.debug('Incoming-data: Bitcoin URI');
+  private handleFcashUri(data: string, redirParams?: RedirParams): void {
+    this.logger.debug('Incoming-data: Fcash URI');
     let amountFromRedirParams =
       redirParams && redirParams.amount ? redirParams.amount : '';
     const coin = Coin.BTC;
-    let parsed = this.bwcProvider.getBitcore().URI(data);
+    let parsed = this.bwcProvider.getFcash().URI(data);
     let address = parsed.address ? parsed.address.toString() : '';
     let message = parsed.message;
     let amount = parsed.amount || amountFromRedirParams;
@@ -180,12 +180,12 @@ export class IncomingDataProvider {
     else this.goSend(address, amount, message, coin);
   }
 
-  private handleBitcoinCashUri(data: string, redirParams?: RedirParams): void {
-    this.logger.debug('Incoming-data: Bitcoin Cash URI');
+  private handleFcashCashUri(data: string, redirParams?: RedirParams): void {
+    this.logger.debug('Incoming-data: Fcash Cash URI');
     let amountFromRedirParams =
       redirParams && redirParams.amount ? redirParams.amount : '';
     const coin = Coin.BCH;
-    let parsed = this.bwcProvider.getBitcoreCash().URI(data);
+    let parsed = this.bwcProvider.getFcashCash().URI(data);
     let address = parsed.address ? parsed.address.toString() : '';
 
     // keep address in original format
@@ -200,30 +200,30 @@ export class IncomingDataProvider {
     else this.goSend(address, amount, message, coin);
   }
 
-  private handleBitcoinCashUriLegacyAddress(data: string): void {
-    this.logger.debug('Incoming-data: Bitcoin Cash URI with legacy address');
+  private handleFcashCashUriLegacyAddress(data: string): void {
+    this.logger.debug('Incoming-data: Fcash Cash URI with legacy address');
     const coin = Coin.BCH;
     let parsed = this.bwcProvider
-      .getBitcore()
+      .getFcash()
       .URI(data.replace(/^(bitcoincash:|bchtest:)/, 'bitcoin:'));
 
     let oldAddr = parsed.address ? parsed.address.toString() : '';
     if (!oldAddr)
-      this.logger.error('Could not parse Bitcoin Cash legacy address');
+      this.logger.error('Could not parse Fcash Cash legacy address');
 
     let a = this.bwcProvider
-      .getBitcore()
+      .getFcash()
       .Address(oldAddr)
       .toObject();
     let address = this.bwcProvider
-      .getBitcoreCash()
+      .getFcashCash()
       .Address.fromObject(a)
       .toString();
     let message = parsed.message;
     let amount = parsed.amount ? parsed.amount : '';
 
     // Translate address
-    this.logger.warn('Legacy Bitcoin Address transalated to: ' + address);
+    this.logger.warn('Legacy Fcash Address transalated to: ' + address);
     if (parsed.r) this.goToPayPro(data, coin);
     else this.goSend(address, amount, message, coin);
   }
@@ -237,11 +237,11 @@ export class IncomingDataProvider {
     });
   }
 
-  private handlePlainBitcoinAddress(
+  private handlePlainFcashAddress(
     data: string,
     redirParams?: RedirParams
   ): void {
-    this.logger.debug('Incoming-data: Bitcoin plain address');
+    this.logger.debug('Incoming-data: Fcash plain address');
     const coin = Coin.BTC;
     if (redirParams && redirParams.activePage === 'ScanPage') {
       this.showMenu({
@@ -256,11 +256,11 @@ export class IncomingDataProvider {
     }
   }
 
-  private handlePlainBitcoinCashAddress(
+  private handlePlainFcashCashAddress(
     data: string,
     redirParams?: RedirParams
   ): void {
-    this.logger.debug('Incoming-data: Bitcoin Cash plain address');
+    this.logger.debug('Incoming-data: Fcash Cash plain address');
     const coin = Coin.BCH;
     if (redirParams && redirParams.activePage === 'ScanPage') {
       this.showMenu({
@@ -364,19 +364,19 @@ export class IncomingDataProvider {
       this.handlePayProNonBackwardsCompatible(data);
       return true;
 
-      // Bitcoin  URI
-    } else if (this.isValidBitcoinUri(data)) {
-      this.handleBitcoinUri(data, redirParams);
+      // Fcash  URI
+    } else if (this.isValidFcashUri(data)) {
+      this.handleFcashUri(data, redirParams);
       return true;
 
-      // Bitcoin Cash URI
-    } else if (this.isValidBitcoinCashUri(data)) {
-      this.handleBitcoinCashUri(data, redirParams);
+      // Fcash Cash URI
+    } else if (this.isValidFcashCashUri(data)) {
+      this.handleFcashCashUri(data, redirParams);
       return true;
 
-      // Bitcoin Cash URI using Bitcoin Core legacy address
-    } else if (this.isValidBitcoinCashUriWithLegacyAddress(data)) {
-      this.handleBitcoinCashUriLegacyAddress(data);
+      // Fcash Cash URI using Fcash Core legacy address
+    } else if (this.isValidFcashCashUriWithLegacyAddress(data)) {
+      this.handleFcashCashUriLegacyAddress(data);
       return true;
 
       // Plain URL
@@ -384,14 +384,14 @@ export class IncomingDataProvider {
       this.handlePlainUrl(data);
       return true;
 
-      // Plain Address (Bitcoin)
-    } else if (this.isValidBitcoinAddress(data)) {
-      this.handlePlainBitcoinAddress(data, redirParams);
+      // Plain Address (Fcash)
+    } else if (this.isValidFcashAddress(data)) {
+      this.handlePlainFcashAddress(data, redirParams);
       return true;
 
-      // Plain Address (Bitcoin Cash)
-    } else if (this.isValidBitcoinCashAddress(data)) {
-      this.handlePlainBitcoinCashAddress(data, redirParams);
+      // Plain Address (Fcash Cash)
+    } else if (this.isValidFcashCashAddress(data)) {
+      this.handlePlainFcashCashAddress(data, redirParams);
       return true;
 
       // Glidera
@@ -449,28 +449,28 @@ export class IncomingDataProvider {
         title: this.translate.instant('Payment URL')
       };
 
-      // Bitcoin  URI
-    } else if (this.isValidBitcoinUri(data)) {
+      // Fcash  URI
+    } else if (this.isValidFcashUri(data)) {
       return {
         data,
-        type: 'BitcoinUri',
-        title: this.translate.instant('Bitcoin URI')
+        type: 'FcashUri',
+        title: this.translate.instant('Fcash URI')
       };
 
-      // Bitcoin Cash URI
-    } else if (this.isValidBitcoinCashUri(data)) {
+      // Fcash Cash URI
+    } else if (this.isValidFcashCashUri(data)) {
       return {
         data,
-        type: 'BitcoinCashUri',
-        title: this.translate.instant('Bitcoin Cash URI')
+        type: 'FcashCashUri',
+        title: this.translate.instant('Fcash Cash URI')
       };
 
-      // Bitcoin Cash URI using Bitcoin Core legacy address
-    } else if (this.isValidBitcoinCashUriWithLegacyAddress(data)) {
+      // Fcash Cash URI using Fcash Core legacy address
+    } else if (this.isValidFcashCashUriWithLegacyAddress(data)) {
       return {
         data,
-        type: 'BitcoinCashUri',
-        title: this.translate.instant('Bitcoin Cash URI')
+        type: 'FcashCashUri',
+        title: this.translate.instant('Fcash Cash URI')
       };
 
       // Plain URL
@@ -481,20 +481,20 @@ export class IncomingDataProvider {
         title: this.translate.instant('Plain URL')
       };
 
-      // Plain Address (Bitcoin)
-    } else if (this.isValidBitcoinAddress(data)) {
+      // Plain Address (Fcash)
+    } else if (this.isValidFcashAddress(data)) {
       return {
         data,
-        type: 'BitcoinAddress',
-        title: this.translate.instant('Bitcoin Address')
+        type: 'FcashAddress',
+        title: this.translate.instant('Fcash Address')
       };
 
-      // Plain Address (Bitcoin Cash)
-    } else if (this.isValidBitcoinCashAddress(data)) {
+      // Plain Address (Fcash Cash)
+    } else if (this.isValidFcashCashAddress(data)) {
       return {
         data,
-        type: 'BitcoinCashAddress',
-        title: this.translate.instant('Bitcoin Cash Address')
+        type: 'FcashCashAddress',
+        title: this.translate.instant('Fcash Cash Address')
       };
 
       // Glidera
@@ -582,7 +582,7 @@ export class IncomingDataProvider {
     let isPK: boolean = this.checkRegex(privateKey);
     if (!isPK) return false;
     try {
-      this.bwcProvider.getBitcore().PrivateKey(privateKey, 'livenet');
+      this.bwcProvider.getFcash().PrivateKey(privateKey, 'livenet');
     } catch (err) {
       return false;
     }

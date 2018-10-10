@@ -7,11 +7,11 @@ import { BwcProvider } from '../../providers/bwc/bwc';
 export class AddressProvider {
   private fcore;
   private fcoreCash;
-  private Bitcore;
+  private Fcash;
 
   constructor(private bwcProvider: BwcProvider) {
-    this.fcore = this.bwcProvider.getBitcore();
-    this.fcoreCash = this.bwcProvider.getBitcoreCash();
+    this.fcore = this.bwcProvider.getFcash();
+    this.fcoreCash = this.bwcProvider.getFcashCash();
     this.Fcash = {
       btc: {
         lib: this.fcore,
@@ -27,11 +27,11 @@ export class AddressProvider {
   public getCoin(address: string) {
     address = address.replace(/^(bitcoincash:|bchtest:|bitcoin:)/i, '');
     try {
-      new this.Bitcore['btc'].lib.Address(address);
+      new this.Fcash['btc'].lib.Address(address);
       return 'btc';
     } catch (e) {
       try {
-        new this.Bitcore['bch'].lib.Address(address);
+        new this.Fcash['bch'].lib.Address(address);
         return 'bch';
       } catch (e) {
         return null;
@@ -43,10 +43,10 @@ export class AddressProvider {
     address = address.replace(/^(bitcoincash:|bchtest:|bitcoin:)/i, '');
     let network;
     try {
-      network = this.bwcProvider.getBitcore().Address(address).network.name;
+      network = this.bwcProvider.getFcash().Address(address).network.name;
     } catch (e) {
       try {
-        network = this.bwcProvider.getBitcoreCash().Address(address).network
+        network = this.bwcProvider.getFcashCash().Address(address).network
           .name;
       } catch (e) {}
     }
@@ -57,11 +57,11 @@ export class AddressProvider {
     var origCoin = this.getCoin(address);
     if (!origCoin) return undefined;
 
-    var origAddress = new this.Bitcore[origCoin].lib.Address(address);
+    var origAddress = new this.Fcash[origCoin].lib.Address(address);
     var origObj = origAddress.toObject();
 
-    var resultCoin = this.Bitcore[origCoin].translateTo;
-    var resultAddress = this.Bitcore[resultCoin].lib.Address.fromObject(
+    var resultCoin = this.Fcash[origCoin].translateTo;
+    var resultAddress = this.Fcash[resultCoin].lib.Address.fromObject(
       origObj
     );
     return {
@@ -156,7 +156,7 @@ export class AddressProvider {
       }
     }
 
-    // Regular Address: try Bitcoin and Bitcoin Cash
+    // Regular Address: try Fcash and Fcash Cash
     let regularAddressLivenet = Address.isValid(address, 'livenet');
     let regularAddressTestnet = Address.isValid(address, 'testnet');
     let regularAddressCashLivenet = AddressCash.isValid(address, 'livenet');

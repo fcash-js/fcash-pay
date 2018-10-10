@@ -1668,7 +1668,7 @@ export class WalletProvider {
   public copyFcashApp(wallet, newWallet): Promise<any> {
     return new Promise((resolve, reject) => {
       let walletPrivKey = this.bwcProvider
-        .getBitcore()
+        .getFcash()
         .PrivateKey.fromString(wallet.credentials.walletPrivKey);
       let fcash-pay = 1;
       let i = 0;

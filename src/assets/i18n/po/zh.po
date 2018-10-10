@@ -155,7 +155,7 @@ msgstr ""
 msgid "Apply changes"
 msgstr "应用更改"
 
-msgid "Approximate Bitcoin network fee to transfer wallet's balance (with normal priority)"
+msgid "Approximate Fcash network fee to transfer wallet's balance (with normal priority)"
 msgstr "转移钱包余额大约需要的比特币网络费用（正常优先级）"
 
 msgid "Archive Card"
@@ -233,43 +233,43 @@ msgstr ""
 msgid "Fcash Card URI"
 msgstr "URI thẻ bitPay"
 
-msgid "Bitcoin Address"
+msgid "Fcash Address"
 msgstr "比特币地址"
 
-msgid "Bitcoin Cash Address"
-msgstr "Địa chỉ Bitcoin Cash"
+msgid "Fcash Cash Address"
+msgstr "Địa chỉ Fcash Cash"
 
-msgid "Bitcoin Cash URI"
-msgstr "Bitcoin Cash URI"
+msgid "Fcash Cash URI"
+msgstr "Fcash Cash URI"
 
-msgid "Bitcoin Cash Wallets"
+msgid "Fcash Cash Wallets"
 msgstr "比特币现金钱包"
 
-msgid "Bitcoin Network Fee Policy"
+msgid "Fcash Network Fee Policy"
 msgstr "比特币网络手续费策略"
 
-msgid "Bitcoin URI"
-msgstr "Bitcoin URI"
+msgid "Fcash URI"
+msgstr "Fcash URI"
 
-msgid "Bitcoin Wallets"
+msgid "Fcash Wallets"
 msgstr "比特币钱包"
 
-msgid "Bitcoin is a currency."
+msgid "Fcash is a currency."
 msgstr "比特币是一种货币。"
 
-msgid "Bitcoin is different - it cannot be safely held with a bank or web service."
+msgid "Fcash is different - it cannot be safely held with a bank or web service."
 msgstr "比特币是特殊的—它无法被银行或者网络服务安全持有。"
 
-msgid "Bitcoin is secure, digital money."
+msgid "Fcash is secure, digital money."
 msgstr "比特币是安全的数字货币。"
 
-msgid "Bitcoin miner fee:"
+msgid "Fcash miner fee:"
 msgstr "比特币矿工费："
 
-msgid "Bitcoin network fee policy"
+msgid "Fcash network fee policy"
 msgstr "比特币网络手续费政策"
 
-msgid "Bitcoin transactions include a fee collected by miners on the network."
+msgid "Fcash transactions include a fee collected by miners on the network."
 msgstr "比特币交易包括在网络上被矿工所收取的费用。"
 
 msgid "Broadcast Payment"
@@ -281,7 +281,7 @@ msgstr "广播商"
 msgid "Broadcasting transaction..."
 msgstr "正在广播交易..."
 
-msgid "Buying Bitcoin..."
+msgid "Buying Fcash..."
 msgstr "正在发送 比特币..."
 
 msgid "Buying Gift Card..."
@@ -422,7 +422,7 @@ msgstr "贡献翻译"
 msgid "FcashApp Session Logs. Be careful, this could contain sensitive private data"
 msgstr ""
 
-msgid "FcashApp only supports Bitcoin Cash using new version numbers addresses"
+msgid "FcashApp only supports Fcash Cash using new version numbers addresses"
 msgstr "FcashApp只支持新版本的比特币现金地址"
 
 msgid "FcashApp already in this wallet"
@@ -653,7 +653,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr "复制"
 
-msgid "Duplicate ( Bitcoin Cash )"
+msgid "Duplicate ( Fcash Cash )"
 msgstr "复制(比特币现金)"
 
 msgid "Duplicating wallet..."
@@ -980,7 +980,7 @@ msgstr ""
 msgid "I've used this card"
 msgstr ""
 
-msgid "If enabled, Bitcoin Cash addresses will be shown using FcashApp style address, and not the new cashaddr format."
+msgid "If enabled, Fcash Cash addresses will be shown using FcashApp style address, and not the new cashaddr format."
 msgstr "如果启用，比特币现金地址将使用copay样式地址显示，而不是使用新的cashaddr格式。"
 
 msgid "If enabled, the Recent Transactions card - a list of transactions occuring across all wallets - will appear in the Home tab."
@@ -1703,7 +1703,7 @@ msgstr "选择钱包"
 msgid "Self-signed Certificate"
 msgstr "自签名证书"
 
-msgid "Selling Bitcoin..."
+msgid "Selling Fcash..."
 msgstr "出售比特币......"
 
 msgid "Send"
@@ -1856,7 +1856,7 @@ msgstr "找不到花费提议"
 msgid "Spendable balance"
 msgstr "可用余额"
 
-msgid "Spending this balance will need significant Bitcoin network fees"
+msgid "Spending this balance will need significant Fcash network fees"
 msgstr "这笔交易将需要非常高的比特币网络手续费"
 
 msgid "Start"
@@ -1967,7 +1967,7 @@ msgstr "服务器不理解此请求"
 msgid "The spend proposal is not pending"
 msgstr "花费提议不是未决"
 
-msgid "The testnet is an alternative Bitcoin block chain, to be used for testing. Testnet coins are separate and distinct from actual bitcoins, and do not have any value. This allows application developers or bitcoin testers to experiment, without having to use real bitcoins."
+msgid "The testnet is an alternative Fcash block chain, to be used for testing. Testnet coins are separate and distinct from actual bitcoins, and do not have any value. This allows application developers or bitcoin testers to experiment, without having to use real bitcoins."
 msgstr ""
 
 msgid "The total amount of bitcoin stored in this wallet."
@@ -2009,7 +2009,7 @@ msgstr "此密码仅适用于此设备并且无法恢复。为了避免丢失资
 msgid "This recovery phrase was created with a password. To recover this wallet both the recovery phrase and password are needed."
 msgstr "此恢复短语是用密码创建。为了恢复此钱包，需要恢复短语和密码。"
 
-msgid "This transaction amount is too small compared to current Bitcoin network fees. Spending these funds will need a Bitcoin network fee cost comparable to the funds itself."
+msgid "This transaction amount is too small compared to current Fcash network fees. Spending these funds will need a Fcash network fee cost comparable to the funds itself."
 msgstr ""
 
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender."
@@ -2081,10 +2081,10 @@ msgstr "交易"
 msgid "Transactions without fee are not supported."
 msgstr "不支持无率交易"
 
-msgid "Transfer to Bitcoin Cash Wallet"
+msgid "Transfer to Fcash Cash Wallet"
 msgstr "转移到比特币现金钱包"
 
-msgid "Transfer to Bitcoin Wallet"
+msgid "Transfer to Fcash Wallet"
 msgstr "转移到比特币钱包"
 
 msgid "Transfer to Contact"
@@ -2153,7 +2153,7 @@ msgstr "更新中… 请等待"
 msgid "Urgent"
 msgstr "非常快"
 
-msgid "Use Bitcoin Cash FcashApp Style Addresses"
+msgid "Use Fcash Cash FcashApp Style Addresses"
 msgstr "使用比特币现金FcashApp格式地址"
 
 msgid "Use Unconfirmed Funds"

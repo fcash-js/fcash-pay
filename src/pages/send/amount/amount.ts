@@ -198,7 +198,7 @@ export class AmountPage extends WalletTabsChild {
 
     if (parentWalletCoin === 'btc' || !parentWalletCoin) {
       this.availableUnits.push({
-        name: 'Bitcoin',
+        name: 'Fcash',
         id: 'btc',
         shortName: 'BTC'
       });
@@ -206,7 +206,7 @@ export class AmountPage extends WalletTabsChild {
 
     if (parentWalletCoin === 'bch' || !parentWalletCoin) {
       this.availableUnits.push({
-        name: 'Bitcoin Cash',
+        name: 'Fcash Cash',
         id: 'bch',
         shortName: 'BCH'
       });

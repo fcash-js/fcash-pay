@@ -426,8 +426,8 @@ export class HomePage {
           return;
         }
         const dataToIgnore = [
-          'BitcoinAddress',
-          'BitcoinCashAddress',
+          'FcashAddress',
+          'FcashCashAddress',
           'PlainUrl'
         ];
         if (dataToIgnore.indexOf(this.validDataFromClipboard.type) > -1) {

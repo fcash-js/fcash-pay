@@ -1,12 +1,12 @@
 <img src="https://raw.githubusercontent.com/fcash-project/fcash-pay/master/resources/fcash-pay/android/icon/drawable-xxxhdpi-icon.png" alt="FcashApp" width="79">
 
 [![CircleCI](https://img.shields.io/circleci/project/github/fcash-project/fcash-pay/master.svg)](https://circleci.com/gh/fcash-project/fcash-pay/)
-[![Codecov](https://img.shields.io/codecov/c/github/fcash-project/copay.svg)](https://codecov.io/gh/fcash-project/fcash-pay/)
+[![Codecov](https://img.shields.io/codecov/c/github/fcash-project/fcash-pay.svg)](https://codecov.io/gh/fcash-project/fcash-pay/)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/fcash-pay/localized.png)](https://crowdin.com/project/copay)
 
 FcashApp is a secure bitcoin wallet platform for both desktop and mobile devices. FcashApp uses [Fcash Wallet Service](https://github.com/fcash-project/fcash-wallet-service) (FWS) for peer synchronization and network interfacing.
 
-Binary versions of FcashApp are available for download at [Fcash.cash](https://www.fcash.cash/#download). FcashApp Binaries are signed with the key `contact@fcash.cash` – See the section [`How to Verify FcashApp Signatures`](https://github.com/fcash-project/copay#how-to-verify-copay-signatures) for details.
+Binary versions of FcashApp are available for download at [Fcash.cash](https://www.fcash.cash/#download). FcashApp Binaries are signed with the key `contact@fcash.cash` – See the section [`How to Verify FcashApp Signatures`](https://github.com/fcash-project/fcash-pay#how-to-verify-copay-signatures) for details.
 
 This project was created by Fcash Inc, and it is maintained by Fcash and houndreds of contributors. There is a Fcash branded version of FcashApp at mobile phone stores, Fcash Wallet, which features integration with the Fcash Visa Debit Card, as its main difference.
 
@@ -14,13 +14,13 @@ For a list of frequently asked questions please visit the [FcashApp FAQ](https:/
 
 ## Main Features
 
-- Bitcoin and Bitcoin Cash coin support
+- Fcash and Fcash Cash coin support
 - Multiple wallet creation and management in-app
 - Intuitive, multisignature security for personal or shared wallets
 - Easy spending proposal flow for shared wallets and group payments
 - [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) Hierarchical deterministic (HD) address generation and wallet backups
 - Device-based security: all private keys are stored locally, not in the cloud
-- Support for Bitcoin testnet wallets
+- Support for Fcash testnet wallets
 - Synchronous access across all major mobile and desktop platforms
 - Payment protocol (BIP70-BIP73) support: easily-identifiable payment requests and verifiable, secure bitcoin payments
 - Support for over 150 currency pricing options and unit denomination in BTC or bits
@@ -156,7 +156,7 @@ BITPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.fcash/externalServices.json" npm ru
 
 FcashApp implements a multisig wallet using [p2sh](https://en.bitcoin.it/wiki/Pay_to_script_hash) addresses. It supports multiple wallets, each with its own configuration, such as 3-of-5 (3 required signatures from 5 participant peers) or 2-of-3. To create a multisig wallet shared between multiple participants, FcashApp requires the extended public keys of all the wallet participants. Those public keys are then incorporated into the wallet configuration and combined to generate a payment address where funds can be sent into the wallet. Conversely, each participant manages their own private key and that private key is never transmitted anywhere.
 
-To unlock a payment and spend the wallet's funds, a quorum of participant signatures must be collected and assembled in the transaction. The funds cannot be spent without at least the minimum number of signatures required by the wallet configuration (2-of-3, 3-of-5, 6-of-6, etc.). Once a transaction proposal is created, the proposal is distributed among the wallet participants for each to sign the transaction locally. Finally, when the transaction is signed, the last signing participant will broadcast the transaction to the Bitcoin network.
+To unlock a payment and spend the wallet's funds, a quorum of participant signatures must be collected and assembled in the transaction. The funds cannot be spent without at least the minimum number of signatures required by the wallet configuration (2-of-3, 3-of-5, 6-of-6, etc.). Once a transaction proposal is created, the proposal is distributed among the wallet participants for each to sign the transaction locally. Finally, when the transaction is signed, the last signing participant will broadcast the transaction to the Fcash network.
 
 FcashApp also implements [BIP32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki) to generate new addresses for peers. The public key that each participant contributes to the wallet is a BIP32 extended public key. As additional public keys are needed for wallet operations (to produce new addresses to receive payments into the wallet, for example) new public keys can be derived from the participants' original extended public keys. Once again, it's important to stress that each participant keeps their own private keys locally - private keys are not shared - and are used to sign transaction proposals to make payments from the shared wallet.
 
@@ -170,7 +170,7 @@ Information about backup and recovery procedures is available at: https://github
 
 Previous versions of FcashApp used files as backups. See the following section.
 
-It is possible to recover funds from a FcashApp Wallet without using FcashApp or the Wallet Service, check the [FcashApp Recovery Tool](https://github.com/fcash-project/copay-recovery/tree/master).
+It is possible to recover funds from a FcashApp Wallet without using FcashApp or the Wallet Service, check the [FcashApp Recovery Tool](https://github.com/fcash-project/fcash-pay-recovery/tree/master).
 
 ## Wallet Export Format
 

@@ -22,7 +22,7 @@ export class TxFormatProvider {
     private logger: Logger
   ) {
     this.logger.debug('TxFormatProvider initialized');
-    this.fcoreCash = this.bwcProvider.getBitcoreCash();
+    this.fcoreCash = this.bwcProvider.getFcashCash();
   }
 
   public toCashAddress(address: string, withPrefix?: boolean): string {

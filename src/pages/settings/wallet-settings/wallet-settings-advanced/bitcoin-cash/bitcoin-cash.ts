@@ -25,7 +25,7 @@ import { WalletTabsProvider } from '../../../../wallet-tabs/wallet-tabs.provider
   selector: 'page-bitcoin-cash',
   templateUrl: 'bitcoin-cash.html'
 })
-export class BitcoinCashPage extends WalletTabsChild {
+export class FcashCashPage extends WalletTabsChild {
   private errors;
 
   public availableWallet;
@@ -231,7 +231,7 @@ export class BitcoinCashPage extends WalletTabsChild {
 
   public openHelpExternalLink(): void {
     let url =
-      'https://support.fcash.cash/hc/en-us/articles/115005019583-How-Can-I-Recover-Bitcoin-Cash-BCH-from-My-Wallet-';
+      'https://support.fcash.cash/hc/en-us/articles/115005019583-How-Can-I-Recover-Fcash-Cash-BCH-from-My-Wallet-';
     let optIn = true;
     let title = null;
     let message = this.translate.instant(

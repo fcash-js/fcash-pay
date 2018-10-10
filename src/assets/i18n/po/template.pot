@@ -170,7 +170,7 @@ msgid "Apply changes"
 msgstr ""
 
 msgid ""
-"Approximate Bitcoin network fee to transfer wallet's balance (with normal "
+"Approximate Fcash network fee to transfer wallet's balance (with normal "
 "priority)"
 msgstr ""
 
@@ -256,43 +256,43 @@ msgstr ""
 msgid "Fcash Card URI"
 msgstr ""
 
-msgid "Bitcoin Address"
+msgid "Fcash Address"
 msgstr ""
 
-msgid "Bitcoin Cash Address"
+msgid "Fcash Cash Address"
 msgstr ""
 
-msgid "Bitcoin Cash URI"
+msgid "Fcash Cash URI"
 msgstr ""
 
-msgid "Bitcoin Cash Wallets"
+msgid "Fcash Cash Wallets"
 msgstr ""
 
-msgid "Bitcoin Network Fee Policy"
+msgid "Fcash Network Fee Policy"
 msgstr ""
 
-msgid "Bitcoin URI"
+msgid "Fcash URI"
 msgstr ""
 
-msgid "Bitcoin Wallets"
+msgid "Fcash Wallets"
 msgstr ""
 
-msgid "Bitcoin is a currency."
+msgid "Fcash is a currency."
 msgstr ""
 
-msgid "Bitcoin is different - it cannot be safely held with a bank or web service."
+msgid "Fcash is different - it cannot be safely held with a bank or web service."
 msgstr ""
 
-msgid "Bitcoin is secure, digital money."
+msgid "Fcash is secure, digital money."
 msgstr ""
 
-msgid "Bitcoin miner fee:"
+msgid "Fcash miner fee:"
 msgstr ""
 
-msgid "Bitcoin network fee policy"
+msgid "Fcash network fee policy"
 msgstr ""
 
-msgid "Bitcoin transactions include a fee collected by miners on the network."
+msgid "Fcash transactions include a fee collected by miners on the network."
 msgstr ""
 
 msgid "Broadcast Payment"
@@ -304,7 +304,7 @@ msgstr ""
 msgid "Broadcasting transaction..."
 msgstr ""
 
-msgid "Buying Bitcoin..."
+msgid "Buying Fcash..."
 msgstr ""
 
 msgid "Buying Gift Card..."
@@ -450,7 +450,7 @@ msgstr ""
 msgid "FcashApp Session Logs. Be careful, this could contain sensitive private data"
 msgstr ""
 
-msgid "FcashApp only supports Bitcoin Cash using new version numbers addresses"
+msgid "FcashApp only supports Fcash Cash using new version numbers addresses"
 msgstr ""
 
 msgid "FcashApp already in this wallet"
@@ -683,7 +683,7 @@ msgstr ""
 msgid "Duplicate"
 msgstr ""
 
-msgid "Duplicate ( Bitcoin Cash )"
+msgid "Duplicate ( Fcash Cash )"
 msgstr ""
 
 msgid "Duplicating wallet..."
@@ -1029,7 +1029,7 @@ msgid "I've used this card"
 msgstr ""
 
 msgid ""
-"If enabled, Bitcoin Cash addresses will be shown using FcashApp style address, "
+"If enabled, Fcash Cash addresses will be shown using FcashApp style address, "
 "and not the new cashaddr format."
 msgstr ""
 
@@ -1789,7 +1789,7 @@ msgstr ""
 msgid "Self-signed Certificate"
 msgstr ""
 
-msgid "Selling Bitcoin..."
+msgid "Selling Fcash..."
 msgstr ""
 
 msgid "Send"
@@ -1944,7 +1944,7 @@ msgstr ""
 msgid "Spendable balance"
 msgstr ""
 
-msgid "Spending this balance will need significant Bitcoin network fees"
+msgid "Spending this balance will need significant Fcash network fees"
 msgstr ""
 
 msgid "Start"
@@ -2080,7 +2080,7 @@ msgid "The spend proposal is not pending"
 msgstr ""
 
 msgid ""
-"The testnet is an alternative Bitcoin block chain, to be used for testing. "
+"The testnet is an alternative Fcash block chain, to be used for testing. "
 "Testnet coins are separate and distinct from actual bitcoins, and do not "
 "have any value. This allows application developers or bitcoin testers to "
 "experiment, without having to use real bitcoins."
@@ -2139,8 +2139,8 @@ msgid ""
 msgstr ""
 
 msgid ""
-"This transaction amount is too small compared to current Bitcoin network "
-"fees. Spending these funds will need a Bitcoin network fee cost comparable "
+"This transaction amount is too small compared to current Fcash network "
+"fees. Spending these funds will need a Fcash network fee cost comparable "
 "to the funds itself."
 msgstr ""
 
@@ -2219,10 +2219,10 @@ msgstr ""
 msgid "Transactions without fee are not supported."
 msgstr ""
 
-msgid "Transfer to Bitcoin Cash Wallet"
+msgid "Transfer to Fcash Cash Wallet"
 msgstr ""
 
-msgid "Transfer to Bitcoin Wallet"
+msgid "Transfer to Fcash Wallet"
 msgstr ""
 
 msgid "Transfer to Contact"
@@ -2291,7 +2291,7 @@ msgstr ""
 msgid "Urgent"
 msgstr ""
 
-msgid "Use Bitcoin Cash FcashApp Style Addresses"
+msgid "Use Fcash Cash FcashApp Style Addresses"
 msgstr ""
 
 msgid "Use Unconfirmed Funds"

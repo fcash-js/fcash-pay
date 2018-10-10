@@ -93,7 +93,7 @@
     </expandable-header>
 
     <div *ngIf="wallet.network == 'testnet'" class="box-notification warning">
-      <a class="energized" (click)="openExternalLink('https://support.fcash.cash/hc/en-us/articles/360004102011-What-is-testnet-How-do-I-avoid-testnet-Bitcoin-scams-')">
+      <a class="energized" (click)="openExternalLink('https://support.fcash.cash/hc/en-us/articles/360004102011-What-is-testnet-How-do-I-avoid-testnet-Fcash-scams-')">
         <ion-icon name="warning"></ion-icon>
         {{'Learn more about testnet blockchain' | translate}}
         <ion-icon name="arrow-forward"></ion-icon>
@@ -103,7 +103,7 @@
     <div *ngIf="lowUtxosWarning" class="box-notification warning">
       <a class="energized" (click)="openAddresses()">
         <ion-icon name="alert"></ion-icon>
-        {{'Spending this balance will need significant Bitcoin network fees'|translate}}
+        {{'Spending this balance will need significant Fcash network fees'|translate}}
         <ion-icon name="arrow-forward"></ion-icon>
       </a>
     </div>

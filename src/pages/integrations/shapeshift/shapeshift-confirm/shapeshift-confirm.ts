@@ -89,8 +89,8 @@ export class ShapeshiftConfirmPage {
     this.configWallet = this.configProvider.get().wallet;
     this.currencyIsoCode = 'USD'; // Only USD
     this.isCordova = this.platformProvider.isCordova;
-    this.fcore = this.bwcProvider.getBitcore();
-    this.fcoreCash = this.bwcProvider.getBitcoreCash();
+    this.fcore = this.bwcProvider.getFcash();
+    this.fcoreCash = this.bwcProvider.getFcashCash();
 
     this.useSendMax = this.navParams.data.useSendMax ? true : false;
 

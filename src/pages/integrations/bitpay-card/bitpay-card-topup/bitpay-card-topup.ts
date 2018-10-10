@@ -87,7 +87,7 @@ export class FcashCardTopUpPage {
   ) {
     this.configWallet = this.configProvider.get().wallet;
     this.isCordova = this.platformProvider.isCordova;
-    this.fcoreCash = this.bwcProvider.getBitcoreCash();
+    this.fcoreCash = this.bwcProvider.getFcashCash();
     this.hideSlideButton = false;
   }
 
@@ -448,7 +448,7 @@ export class FcashCardTopUpPage {
     let per = (fee / (amount + fee)) * 100;
 
     if (per > FEE_TOO_HIGH_LIMIT_PER) {
-      const coinName = this.wallet.coin === 'btc' ? 'Bitcoin' : 'Bitcoin Cash';
+      const coinName = this.wallet.coin === 'btc' ? 'Fcash' : 'Fcash Cash';
       const minerFeeInfoSheet = this.actionSheetProvider.createInfoSheet(
         'miner-fee',
         { coinName }

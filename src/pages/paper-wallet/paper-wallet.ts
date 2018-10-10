@@ -66,7 +66,7 @@ export class PaperWalletPage {
     private platformProvider: PlatformProvider,
     private bwcErrorProvider: BwcErrorProvider
   ) {
-    this.fcore = this.bwcProvider.getBitcore();
+    this.fcore = this.bwcProvider.getFcash();
     this.isCordova = this.platformProvider.isCordova;
     this.isOpenSelector = false;
     this.scannedKey = this.navParams.data.privateKey;

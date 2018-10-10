@@ -223,7 +223,7 @@ export class BuyCoinbasePage {
         }
 
         this.hideSlideButton = true;
-        this.onGoingProcessProvider.set('buyingBitcoin');
+        this.onGoingProcessProvider.set('buyingFcash');
         this.coinbaseProvider.init((err, res) => {
           if (err) {
             this.onGoingProcessProvider.clear();
@@ -375,7 +375,7 @@ export class BuyCoinbasePage {
   private openFinishModal(): void {
     let finishText = 'Bought';
     let finishComment =
-      'Bitcoin purchase completed. Coinbase has queued the transfer to your selected wallet';
+      'Fcash purchase completed. Coinbase has queued the transfer to your selected wallet';
     let modal = this.modalCtrl.create(
       FinishModalPage,
       { finishText, finishComment },

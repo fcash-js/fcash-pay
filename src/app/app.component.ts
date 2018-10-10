@@ -418,10 +418,10 @@ export class FcashApp {
 
   private onOpenNW(pathData) {
     if (pathData.indexOf('bitcoincash:/') != -1) {
-      this.logger.debug('Bitcoin Cash URL found');
+      this.logger.debug('Fcash Cash URL found');
       this.handleOpenUrl(pathData.substring(pathData.indexOf('bitcoincash:/')));
     } else if (pathData.indexOf('bitcoin:/') != -1) {
-      this.logger.debug('Bitcoin URL found');
+      this.logger.debug('Fcash URL found');
       this.handleOpenUrl(pathData.substring(pathData.indexOf('bitcoin:/')));
     } else if (pathData.indexOf(this.appProvider.info.name + '://') != -1) {
       this.logger.debug(this.appProvider.info.name + ' URL found');

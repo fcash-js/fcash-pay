@@ -7,14 +7,14 @@ describe('RateProvider', () => {
   let httpMock: HttpTestingController;
 
   const btcResponse = [
-    { code: 'BTC', name: 'Bitcoin', rate: 1 },
+    { code: 'BTC', name: 'Fcash', rate: 1 },
     { code: 'USD', name: 'US Dollar', rate: 11535.74 },
-    { code: 'BCH', name: 'Bitcoin Cash', rate: 7.65734 }
+    { code: 'BCH', name: 'Fcash Cash', rate: 7.65734 }
   ];
   const bchResponse = [
-    { code: 'BTC', name: 'Bitcoin', rate: 0.130377 },
+    { code: 'BTC', name: 'Fcash', rate: 0.130377 },
     { code: 'USD', name: 'US Dollar', rate: 1503.3 },
-    { code: 'BCH', name: 'Bitcoin Cash', rate: 1 }
+    { code: 'BCH', name: 'Fcash Cash', rate: 1 }
   ];
   let btcUrl: string = 'https://fcash.cash/api/rates';
   let bchUrl: string = 'https://fcash.cash/api/rates/bch';
@@ -164,13 +164,13 @@ describe('RateProvider', () => {
     service.updateRatesBtc().then(() => {
       expect(service.isBtcAvailable()).toBe(true);
       expect(service.listAlternatives(false)).toEqual([
-        { name: 'Bitcoin', isoCode: 'BTC' },
+        { name: 'Fcash', isoCode: 'BTC' },
         { name: 'US Dollar', isoCode: 'USD' },
-        { name: 'Bitcoin Cash', isoCode: 'BCH' }
+        { name: 'Fcash Cash', isoCode: 'BCH' }
       ]);
       expect(service.listAlternatives(true)).toEqual([
-        { name: 'Bitcoin', isoCode: 'BTC' },
-        { name: 'Bitcoin Cash', isoCode: 'BCH' },
+        { name: 'Fcash', isoCode: 'BTC' },
+        { name: 'Fcash Cash', isoCode: 'BCH' },
         { name: 'US Dollar', isoCode: 'USD' }
       ]);
     });

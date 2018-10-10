@@ -12,12 +12,12 @@ export class BwcProvider {
   constructor(private logger: Logger) {
     this.logger.debug('BwcProvider initialized');
   }
-  public getBitcore() {
-    return FWC.Bitcore;
+  public getFcash() {
+    return FWC.Fcash;
   }
 
-  public getBitcoreCash() {
-    return FWC.BitcoreCash;
+  public getFcashCash() {
+    return FWC.FcashCash;
   }
 
   public getErrors() {

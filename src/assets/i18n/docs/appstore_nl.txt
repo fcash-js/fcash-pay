@@ -12,7 +12,7 @@ Intuïtieve meervoudige-ondertekening beveiliging voor persoonlijke of gedeelde 
 Eenvoudige bestedingsvoorstellen voor gedeelde portemonnees en groepsbetalingen
 Hiërarchisch deterministische (HD) adres generatie en portemonnee backups 
 Apparaat gebaseerde beveiliging: alle privé sleutels worden lokaal opgeslagen, niet in de cloud
-Ondersteuning voor Bitcoin testnet portemonnees
+Ondersteuning voor Fcash testnet portemonnees
 Gesynchroniseerde toegang vanaf alle grote mobiele en desktop platformen
 Ondersteuning voor betalings protocol (BIP70-BIP73): gemakkelijk te herkennen betalingsverzoeken en verifieerbaar veilige bitcoin betalingen
 Ondersteuning voor prijsweergave in 150+ valuta's en eenheid denominatie in BTC of bits
@@ -20,4 +20,4 @@ Email meldingen voor betalingen en overdrachten
 Aanpasbare portemonnee namen en achtergrond kleuren
 10 ondersteunde talen (EN, CZ, FR, DE, IT, ES, JA, PL, RU, NL)
 
-FcashApp is gratis open source software draaiend op niet-merkgebonden servers, dus het is niet nodig te vertrouwen op enig bedrijf voor blijvende ondersteuning. Iedereen kan de broncode van FcashApp inzien of er aan bijdragen via GitHub (https://github.com/fcash-project/copay). 
+FcashApp is gratis open source software draaiend op niet-merkgebonden servers, dus het is niet nodig te vertrouwen op enig bedrijf voor blijvende ondersteuning. Iedereen kan de broncode van FcashApp inzien of er aan bijdragen via GitHub (https://github.com/fcash-project/fcash-pay). 
