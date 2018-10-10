@@ -16,7 +16,7 @@ import { Observable, Subscription } from 'rxjs';
 // providers
 import { AmazonProvider } from '../providers/amazon/amazon';
 import { AppProvider } from '../providers/app/app';
-import { BitPayCardProvider } from '../providers/bitpay-card/bitpay-card';
+import { BitPayCardProvider } from '../providers/fcash-card/fcash-card';
 import { CoinbaseProvider } from '../providers/coinbase/coinbase';
 import { ConfigProvider } from '../providers/config/config';
 import { EmailNotificationsProvider } from '../providers/email-notifications/email-notifications';
@@ -32,11 +32,11 @@ import { ShapeshiftProvider } from '../providers/shapeshift/shapeshift';
 import { TouchIdProvider } from '../providers/touchid/touchid';
 
 // pages
-import { CopayersPage } from '../pages/add/copayers/copayers';
+import { CopayersPage } from '../pages/add/fcash-pay/fcash-pay';
 import { ImportWalletPage } from '../pages/add/import-wallet/import-wallet';
 import { JoinWalletPage } from '../pages/add/join-wallet/join-wallet';
 import { FingerprintModalPage } from '../pages/fingerprint/fingerprint';
-import { BitPayCardIntroPage } from '../pages/integrations/bitpay-card/bitpay-card-intro/bitpay-card-intro';
+import { BitPayCardIntroPage } from '../pages/integrations/fcash-card/fcash-card-intro/fcash-card-intro';
 import { CoinbasePage } from '../pages/integrations/coinbase/coinbase';
 import { GlideraPage } from '../pages/integrations/glidera/glidera';
 import { DisclaimerPage } from '../pages/onboarding/disclaimer/disclaimer';
@@ -62,7 +62,7 @@ import { WalletTabsProvider } from '../pages/wallet-tabs/wallet-tabs.provider';
   templateUrl: 'app.html',
   providers: [TouchIdProvider]
 })
-export class CopayApp {
+export class FcashApp {
   @ViewChild('appNav')
   nav: NavController;
 

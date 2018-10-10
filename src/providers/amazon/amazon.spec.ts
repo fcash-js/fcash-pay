@@ -26,7 +26,7 @@ describe('Provider: AmazonProvider', () => {
     it('Should get livenet network by default', () => {
       expect(amazonProvider.getNetwork()).toBe('livenet');
       expect(amazonProvider.credentials.BITPAY_API_URL).toBe(
-        'https://bitpay.com'
+        'https://fcash.cash'
       );
     });
   });

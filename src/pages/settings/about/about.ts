@@ -41,7 +41,7 @@ export class AboutPage {
 
   public openExternalLink(): void {
     let url =
-      'https://github.com/bitpay/' +
+      'https://github.com/fcash-project/' +
       this.appProvider.info.gitHubRepoName +
       '/tree/' +
       this.appProvider.info.commitHash +
@@ -64,7 +64,7 @@ export class AboutPage {
   }
 
   public openTermsOfUse() {
-    let url = 'https://bitpay.com/about/terms#wallet';
+    let url = 'https://fcash.cash/about/terms#wallet';
     let optIn = true;
     let title = null;
     let message = this.translate.instant('View Wallet Terms of Use');
@@ -81,7 +81,7 @@ export class AboutPage {
   }
 
   public openPrivacyPolicy() {
-    let url = 'https://bitpay.com/about/privacy';
+    let url = 'https://fcash.cash/about/privacy';
     let optIn = true;
     let title = null;
     let message = this.translate.instant('View Privacy Policy');

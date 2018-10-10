@@ -61,7 +61,7 @@ export class CoinbaseProvider {
 
     this.selectedPriceSensitivity = this.priceSensitivity[1];
 
-    this.events.subscribe('bwsEvent', (_, type, n) => {
+    this.events.subscribe('fwsEvent', (_, type, n) => {
       if (type == 'NewBlock' && n && n.data && n.data.network == 'livenet') {
         this.isActive(isActive => {
           // Update Coinbase

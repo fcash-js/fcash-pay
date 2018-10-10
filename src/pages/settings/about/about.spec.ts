@@ -69,7 +69,7 @@ describe('AboutPage', () => {
         instance.openPrivacyPolicy();
 
         expect(instance.externalLinkProvider.open).toHaveBeenCalledWith(
-          'https://bitpay.com/about/privacy',
+          'https://fcash.cash/about/privacy',
           true,
           null,
           'View Privacy Policy',
@@ -95,7 +95,7 @@ describe('AboutPage', () => {
         instance.openTermsOfUse();
 
         expect(instance.externalLinkProvider.open).toHaveBeenCalledWith(
-          'https://bitpay.com/about/terms#wallet',
+          'https://fcash.cash/about/terms#wallet',
           true,
           null,
           'View Wallet Terms of Use',
@@ -126,7 +126,7 @@ describe('AboutPage', () => {
         instance.openExternalLink();
 
         expect(instance.externalLinkProvider.open).toHaveBeenCalledWith(
-          'https://github.com/bitpay/testRepo/tree/testHash',
+          'https://github.com/fcash-project/testRepo/tree/testHash',
           true,
           'Open GitHub Project',
           'You can see the latest developments and contribute to this open source app by visiting our project on GitHub.',

@@ -12,8 +12,8 @@ import { Observable, Subscription } from 'rxjs';
 
 // Pages
 import { AddPage } from '../add/add';
-import { BitPayCardPage } from '../integrations/bitpay-card/bitpay-card';
-import { BitPayCardIntroPage } from '../integrations/bitpay-card/bitpay-card-intro/bitpay-card-intro';
+import { BitPayCardPage } from '../integrations/fcash-card/fcash-card';
+import { BitPayCardIntroPage } from '../integrations/fcash-card/fcash-card-intro/fcash-card-intro';
 import { CoinbasePage } from '../integrations/coinbase/coinbase';
 import { GlideraPage } from '../integrations/glidera/glidera';
 import { ShapeshiftPage } from '../integrations/shapeshift/shapeshift';
@@ -31,7 +31,7 @@ import { AddressBookProvider } from '../../providers/address-book/address-book';
 import { AddressProvider } from '../../providers/address/address';
 import { AmazonProvider } from '../../providers/amazon/amazon';
 import { AppProvider } from '../../providers/app/app';
-import { BitPayCardProvider } from '../../providers/bitpay-card/bitpay-card';
+import { BitPayCardProvider } from '../../providers/fcash-card/fcash-card';
 import { BwcErrorProvider } from '../../providers/bwc-error/bwc-error';
 import { ClipboardProvider } from '../../providers/clipboard/clipboard';
 import { ConfigProvider } from '../../providers/config/config';
@@ -74,7 +74,7 @@ export class HomePage {
   public newRelease: boolean;
   public updateText: string;
   public homeIntegrations;
-  public bitpayCardItems;
+  public fcashCardItems;
   public showBitPayCard: boolean = false;
   public showAnnouncement: boolean = false;
   public validDataFromClipboard;
@@ -199,7 +199,7 @@ export class HomePage {
         this.showBitPayCard = this.appProvider.info._enabledExtensions.debitcard
           ? true
           : false;
-        this.bitpayCardItems = cards;
+        this.fcashCardItems = cards;
       });
     });
   }
@@ -229,7 +229,7 @@ export class HomePage {
 
     this.onPauseSubscription = this.plt.pause.subscribe(() => {
       this.events.unsubscribe('finishIncomingDataMenuEvent');
-      this.events.unsubscribe('bwsEvent');
+      this.events.unsubscribe('fwsEvent');
       this.events.unsubscribe('status:updated');
       this.events.unsubscribe('Local/TxAction');
     });
@@ -242,7 +242,7 @@ export class HomePage {
 
   ionViewWillLeave() {
     this.events.unsubscribe('finishIncomingDataMenuEvent');
-    this.events.unsubscribe('bwsEvent');
+    this.events.unsubscribe('fwsEvent');
     this.resetValuesForAnimationCard();
   }
 
@@ -253,10 +253,10 @@ export class HomePage {
   }
 
   private subscribeBwsEvents() {
-    // BWS Events: Update Status per Wallet -> Update recent transactions and txps
+    // FWS Events: Update Status per Wallet -> Update recent transactions and txps
     // NewBlock, NewCopayer, NewAddress, NewTxProposal, TxProposalAcceptedBy, TxProposalRejectedBy, txProposalFinallyRejected,
     // txProposalFinallyAccepted, TxProposalRemoved, NewIncomingTx, NewOutgoingTx
-    this.events.subscribe('bwsEvent', (walletId: string) => {
+    this.events.subscribe('fwsEvent', (walletId: string) => {
       this.updateWallet(walletId);
     });
   }
@@ -663,7 +663,7 @@ export class HomePage {
   public goToWalletDetails(wallet): void {
     if (this.showReorderBtc || this.showReorderBch) return;
     this.events.unsubscribe('finishIncomingDataMenuEvent');
-    this.events.unsubscribe('bwsEvent');
+    this.events.unsubscribe('fwsEvent');
     this.events.publish('OpenWallet', wallet);
   }
 
@@ -733,14 +733,14 @@ export class HomePage {
     if (OS.extension !== '') {
       okText = this.translate.instant('Download');
       url =
-        'https://github.com/bitpay/copay/releases/download/' +
+        'https://github.com/fcash-project/fcash-pay/releases/download/' +
         this.latestVersion +
         '/' +
         appName +
         OS.extension;
     } else {
       okText = this.translate.instant('View Update');
-      url = 'https://github.com/bitpay/copay/releases/latest';
+      url = 'https://github.com/fcash-project/fcash-pay/releases/latest';
     }
 
     let optIn = true;

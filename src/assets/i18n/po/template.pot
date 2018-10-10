@@ -12,7 +12,7 @@ msgstr ""
 
 msgid ""
 "* A payment proposal can be deleted if 1) you are the creator, and no other "
-"copayer has signed, or 2) 10 minutes have passed since the proposal was "
+"fcash-pay has signed, or 2) 10 minutes have passed since the proposal was "
 "created."
 msgstr ""
 
@@ -1888,7 +1888,7 @@ msgstr ""
 msgid "Share this QR code to receive {amount} in your wallet {name}."
 msgstr ""
 
-msgid "Share this invitation with your copayers"
+msgid "Share this invitation with your fcash-pay"
 msgstr ""
 
 msgid "Share {{appName}}"
@@ -2150,7 +2150,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"This wallet is not registered at the given Bitcore Wallet Service (BWS). "
+"This wallet is not registered at the given Fcash Wallet Service (FWS). "
 "You can recreate it from the local information."
 msgstr ""
 
@@ -2178,7 +2178,7 @@ msgstr ""
 msgid "Total Locked Balance"
 msgstr ""
 
-msgid "Total number of copayers"
+msgid "Total number of fcash-pay"
 msgstr ""
 
 msgid "Total wallet inputs"
@@ -2344,7 +2344,7 @@ msgstr ""
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr ""
 
-msgid "Waiting for copayers"
+msgid "Waiting for fcash-pay"
 msgstr ""
 
 msgid "Waiting..."
@@ -2634,9 +2634,9 @@ msgid "{coinName} miner fees unusually high"
 msgstr ""
 
 msgid ""
-"{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain "
+"{{appName}} depends on Fcash Wallet Service (FWS) for blockchain "
 "information, networking and Copayer synchronization. The default "
-"configuration points to https://bws.bitpay.com (BitPay's public BWS "
+"configuration points to https://fws.fcash.cash (BitPay's public FWS "
 "instance)."
 msgstr ""
 

@@ -18,7 +18,7 @@ export interface CardConifg {
   maxAmount: number;
   minAmount: number;
   name: CardName;
-  bitpayApiPath: string;
+  fcashApiPath: string;
   redeemUrl: string;
   website: string;
 }

@@ -20,7 +20,7 @@ msgstr "(Zaufany)"
 msgid "(possible double spend)"
 msgstr "(możliwa podwójna wypłata)"
 
-msgid "* A payment proposal can be deleted if 1) you are the creator, and no other copayer has signed, or 2) 10 minutes have passed since the proposal was created."
+msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcash-pay has signed, or 2) 10 minutes have passed since the proposal was created."
 msgstr ""
 
 msgid "5-star ratings help us get BitPay Wallet into more hands, and more users means more resources can be committed to the app!"
@@ -396,7 +396,7 @@ msgid "Congratulations! It looks like you've recently received money. It's highl
 msgstr ""
 
 msgid "Connect my BitPay Card"
-msgstr "Podłącz swoją kartę bitpay"
+msgstr "Podłącz swoją kartę fcash"
 
 msgid "Connecting to Coinbase..."
 msgstr "Łączenie z Coinbase..."
@@ -1368,7 +1368,7 @@ msgid "Open website"
 msgstr "Otwórz stronę"
 
 msgid "Order the BitPay Card"
-msgstr "Zamów kartę bitpay"
+msgstr "Zamów kartę fcash"
 
 msgid "Ouch!"
 msgstr "Ała!"
@@ -1802,7 +1802,7 @@ msgstr "Podziel się miłością, zapraszając swoich przyjaciół."
 msgid "Share this QR code to receive {amount} in your wallet {name}."
 msgstr ""
 
-msgid "Share this invitation with your copayers"
+msgid "Share this invitation with your fcash-pay"
 msgstr "Wyślij zaproszenie współwłaścicielom portfela"
 
 msgid "Share {{appName}}"
@@ -2015,8 +2015,8 @@ msgstr ""
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender."
 msgstr ""
 
-msgid "This wallet is not registered at the given Bitcore Wallet Service (BWS). You can recreate it from the local information."
-msgstr "Ten portfel nie jest zarejestrowany na Bitcore Wallet Service (BWS). Możesz go odtworzyć z lokalnego nośnika."
+msgid "This wallet is not registered at the given Fcash Wallet Service (FWS). You can recreate it from the local information."
+msgstr "Ten portfel nie jest zarejestrowany na Fcash Wallet Service (FWS). Możesz go odtworzyć z lokalnego nośnika."
 
 msgid "Timeline"
 msgstr "Historia"
@@ -2042,7 +2042,7 @@ msgstr "Łącznie"
 msgid "Total Locked Balance"
 msgstr "Łącznie zablokowane środki"
 
-msgid "Total number of copayers"
+msgid "Total number of fcash-pay"
 msgstr ""
 
 msgid "Total wallet inputs"
@@ -2204,7 +2204,7 @@ msgstr "Ostrzeżenie: klucz derywacji nie działa na tym urządzeniu/portfelu. D
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "OSTRZEŻENIE: CERTYFIKAT NIEZAUFANY"
 
-msgid "Waiting for copayers"
+msgid "Waiting for fcash-pay"
 msgstr "Oczekiwanie na współwłaścicieli portfela"
 
 msgid "Waiting..."
@@ -2450,7 +2450,7 @@ msgstr ""
 msgid "{coinName} miner fees unusually high"
 msgstr ""
 
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
+msgid "{{appName}} depends on Fcash Wallet Service (FWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://fws.fcash.cash (BitPay's public FWS instance)."
 msgstr ""
 
 msgid "{{fee}} {{coin}} will be deducted for bitcoin networking fees."

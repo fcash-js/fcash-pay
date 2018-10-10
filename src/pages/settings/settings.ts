@@ -7,7 +7,7 @@ import * as _ from 'lodash';
 
 // providers
 import { AppProvider } from '../../providers/app/app';
-import { BitPayCardProvider } from '../../providers/bitpay-card/bitpay-card';
+import { BitPayCardProvider } from '../../providers/fcash-card/fcash-card';
 import { ConfigProvider } from '../../providers/config/config';
 import { ExternalLinkProvider } from '../../providers/external-link/external-link';
 import { HomeIntegrationsProvider } from '../../providers/home-integrations/home-integrations';
@@ -19,7 +19,7 @@ import { TouchIdProvider } from '../../providers/touchid/touchid';
 // pages
 import { SendFeedbackPage } from '../feedback/send-feedback/send-feedback';
 import { AmazonSettingsPage } from '../integrations/amazon/amazon-settings/amazon-settings';
-import { BitPaySettingsPage } from '../integrations/bitpay-card/bitpay-settings/bitpay-settings';
+import { BitPaySettingsPage } from '../integrations/fcash-card/fcash-settings/fcash-settings';
 import { CoinbaseSettingsPage } from '../integrations/coinbase/coinbase-settings/coinbase-settings';
 import { GlideraSettingsPage } from '../integrations/glidera/glidera-settings/glidera-settings';
 import { MercadoLibreSettingsPage } from '../integrations/mercado-libre/mercado-libre-settings/mercado-libre-settings';
@@ -51,7 +51,7 @@ export class SettingsPage {
   public isCordova: boolean;
   public lockMethod: string;
   public integrationServices = [];
-  public bitpayCardItems = [];
+  public fcashCardItems = [];
   public showBitPayCard: boolean = false;
 
   constructor(
@@ -117,7 +117,7 @@ export class SettingsPage {
       this.showBitPayCard = this.app.info._enabledExtensions.debitcard
         ? true
         : false;
-      this.bitpayCardItems = cards;
+      this.fcashCardItems = cards;
     });
   }
 
@@ -202,8 +202,8 @@ export class SettingsPage {
   public openHelpExternalLink(): void {
     let url =
       this.appName == 'Copay'
-        ? 'https://github.com/bitpay/copay/issues'
-        : 'https://help.bitpay.com/bitpay-app';
+        ? 'https://github.com/fcash-project/fcash-pay/issues'
+        : 'https://help.fcash.cash/fcash-app';
     let optIn = true;
     let title = null;
     let message = this.translate.instant(

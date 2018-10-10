@@ -1,16 +1,16 @@
-<img src="https://raw.githubusercontent.com/bitpay/copay/master/resources/copay/android/icon/drawable-xxxhdpi-icon.png" alt="Copay" width="79">
+<img src="https://raw.githubusercontent.com/fcash-project/fcash-pay/master/resources/fcash-pay/android/icon/drawable-xxxhdpi-icon.png" alt="Copay" width="79">
 
-[![CircleCI](https://img.shields.io/circleci/project/github/bitpay/copay/master.svg)](https://circleci.com/gh/bitpay/copay/)
-[![Codecov](https://img.shields.io/codecov/c/github/bitpay/copay.svg)](https://codecov.io/gh/bitpay/copay/)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/copay/localized.png)](https://crowdin.com/project/copay)
+[![CircleCI](https://img.shields.io/circleci/project/github/fcash-project/fcash-pay/master.svg)](https://circleci.com/gh/fcash-project/fcash-pay/)
+[![Codecov](https://img.shields.io/codecov/c/github/fcash-project/copay.svg)](https://codecov.io/gh/fcash-project/fcash-pay/)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/fcash-pay/localized.png)](https://crowdin.com/project/copay)
 
-Copay is a secure bitcoin wallet platform for both desktop and mobile devices. Copay uses [Bitcore Wallet Service](https://github.com/bitpay/bitcore-wallet-service) (BWS) for peer synchronization and network interfacing.
+Copay is a secure bitcoin wallet platform for both desktop and mobile devices. Copay uses [Fcash Wallet Service](https://github.com/fcash-project/fcash-wallet-service) (FWS) for peer synchronization and network interfacing.
 
-Binary versions of Copay are available for download at [Copay.io](https://copay.io/#download). Copay Binaries are signed with the key `copay@bitpay.com` – See the section [`How to Verify Copay Signatures`](https://github.com/bitpay/copay#how-to-verify-copay-signatures) for details.
+Binary versions of Copay are available for download at [Fcash.cash](https://www.fcash.cash/#download). Copay Binaries are signed with the key `contact@fcash.cash` – See the section [`How to Verify Copay Signatures`](https://github.com/fcash-project/copay#how-to-verify-copay-signatures) for details.
 
 This project was created by BitPay Inc, and it is maintained by BitPay and houndreds of contributors. There is a BitPay branded version of Copay at mobile phone stores, BitPay Wallet, which features integration with the BitPay Visa Debit Card, as its main difference.
 
-For a list of frequently asked questions please visit the [Copay FAQ](https://github.com/bitpay/copay/wiki/COPAY---FAQ).
+For a list of frequently asked questions please visit the [Copay FAQ](https://github.com/fcash-project/fcash-pay/wiki/COPAY---FAQ).
 
 ## Main Features
 
@@ -30,11 +30,11 @@ For a list of frequently asked questions please visit the [Copay FAQ](https://gi
 - Push notifications (only available for ios and android versions)
 - Customizable wallet naming and background colors
 - Multiple languages supported
-- Available for [iOS](https://itunes.apple.com/us/app/copay/id951330296), [Android](https://play.google.com/store/apps/details?id=com.bitpay.copay&hl=en), [Windows Phone](http://www.windowsphone.com/en-us/store/app/copay-wallet/4372479b-a064-4d18-8bd3-74a3bdb81c3a), [Chrome App](https://chrome.google.com/webstore/detail/copay/cnidaodnidkbaplmghlelgikaiejfhja?hl=en), [Linux](https://github.com/bitpay/copay/releases/latest), [Windows](https://github.com/bitpay/copay/releases/latest) and [OS X](https://github.com/bitpay/copay/releases/latest) devices
+- Available for [iOS](https://itunes.apple.com/us/app/fcash-pay/id951330296), [Android](https://play.google.com/store/apps/details?id=com.fcash.copay&hl=en), [Windows Phone](http://www.windowsphone.com/en-us/store/app/copay-wallet/4372479b-a064-4d18-8bd3-74a3bdb81c3a), [Chrome App](https://chrome.google.com/webstore/detail/fcash-pay/cnidaodnidkbaplmghlelgikaiejfhja?hl=en), [Linux](https://github.com/fcash-project/fcash-pay/releases/latest), [Windows](https://github.com/fcash-project/fcash-pay/releases/latest) and [OS X](https://github.com/fcash-project/fcash-pay/releases/latest) devices
 
 ## Testing in a Browser
 
-> **Note:** This method should only be used for development purposes. When running Copay in a normal browser environment, browser extensions and other malicious code might have access to internal data and private keys. For production use, see the latest official [releases](https://github.com/bitpay/copay/releases/).
+> **Note:** This method should only be used for development purposes. When running Copay in a normal browser environment, browser extensions and other malicious code might have access to internal data and private keys. For production use, see the latest official [releases](https://github.com/fcash-project/fcash-pay/releases/).
 
 Clone the repo and open the directory:
 
@@ -141,7 +141,7 @@ To enable external services, set the `COPAY_EXTERNAL_SERVICES_CONFIG_LOCATION` o
 ```sh
 COPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.copay/externalServices.json" npm run apply:copay
 # or
-BITPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.bitpay/externalServices.json" npm run apply:bitpay
+BITPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.fcash/externalServices.json" npm run apply:fcash
 ```
 
 ## About Copay
@@ -160,11 +160,11 @@ For more information regarding how addresses are generated using this procedure,
 
 Since v1.2 Copay uses BIP39 mnemonics for backing up wallets. The BIP44 standard is used for wallet address derivation. Multisig wallets use P2SH addresses, while non-multisig wallets use P2PKH.
 
-Information about backup and recovery procedures is available at: https://github.com/bitpay/copay/blob/master/backupRecovery.md
+Information about backup and recovery procedures is available at: https://github.com/fcash-project/fcash-pay/blob/master/backupRecovery.md
 
 Previous versions of Copay used files as backups. See the following section.
 
-It is possible to recover funds from a Copay Wallet without using Copay or the Wallet Service, check the [Copay Recovery Tool](https://github.com/bitpay/copay-recovery/tree/master).
+It is possible to recover funds from a Copay Wallet without using Copay or the Wallet Service, check the [Copay Recovery Tool](https://github.com/fcash-project/copay-recovery/tree/master).
 
 ## Wallet Export Format
 
@@ -181,15 +181,15 @@ Depending on the key `derivationStrategy`, addresses are derived using
 | ≥1.2          | Multisig                  | BIP44               | P2SH         |
 | ≥1.5          | Multisig Hardware wallets | BIP44 (root m/48’)  | P2SH         |
 
-Using a tool like [Bitcore PlayGround](http://bitcore.io/playground) all wallet addresses can be generated. (TIP: Use the `Address` section for P2PKH address type wallets and `Multisig Address` for P2SH address type wallets). For multisig addresses, the required number of signatures (key `m` on the export) is also needed to recreate the addresses.
+Using a tool like [Bitcore PlayGround](http://fcore.io/playground) all wallet addresses can be generated. (TIP: Use the `Address` section for P2PKH address type wallets and `Multisig Address` for P2SH address type wallets). For multisig addresses, the required number of signatures (key `m` on the export) is also needed to recreate the addresses.
 
-BIP45 note: All addresses generated at BWS with BIP45 use the 'shared cosigner index' (2147483647) so Copay address indexes look like: `m/45'/2147483647/0/x` for main addresses and `m/45'/2147483647/1/y` for change addresses.
+BIP45 note: All addresses generated at FWS with BIP45 use the 'shared cosigner index' (2147483647) so Copay address indexes look like: `m/45'/2147483647/0/x` for main addresses and `m/45'/2147483647/1/y` for change addresses.
 
-Since version 1.5, Copay uses the root `m/48'` for hardware multisignature wallets. This was coordinated with Ledger and Trezor teams. While the derivation path format is still similar to BIP44, the root was in order to indicate that these wallets are not discoverable by scanning addresses for funds. Address generation for multisignature wallets requires the other copayers extended public keys.
+Since version 1.5, Copay uses the root `m/48'` for hardware multisignature wallets. This was coordinated with Ledger and Trezor teams. While the derivation path format is still similar to BIP44, the root was in order to indicate that these wallets are not discoverable by scanning addresses for funds. Address generation for multisignature wallets requires the other fcash-pay extended public keys.
 
-## Bitcore Wallet Service
+## Fcash Wallet Service
 
-Copay depends on [Bitcore Wallet Service](https://github.com/bitpay/bitcore-wallet-service) (BWS) for blockchain information, networking and Copayer synchronization. A BWS instance can be setup and operational within minutes or you can use a public instance like `https://bws.bitpay.com`. Switching between BWS instances is very simple and can be done with a click from within Copay. BWS also allows Copay to interoperate with other wallets like [Bitcore Wallet CLI](https://github.com/bitpay/bitcore-wallet).
+Copay depends on [Fcash Wallet Service](https://github.com/fcash-project/fcash-wallet-service) (FWS) for blockchain information, networking and Copayer synchronization. A FWS instance can be setup and operational within minutes or you can use a public instance like `https://fws.fcash.cash`. Switching between FWS instances is very simple and can be done with a click from within Copay. FWS also allows Copay to interoperate with other wallets like [Bitcore Wallet CLI](https://github.com/fcash-project/fcash-wallet).
 
 ## Translations
 
@@ -232,7 +232,7 @@ We release bug fixes as soon as possible for all platforms. Usually around a wee
 
 ## How to Verify Copay Signatures
 
-1.  Download the `copay@bitpay.com` public key (`gpg --recv-keys 1112CFA1`)
+1.  Download the `contact@fcash.cash` public key (`gpg --recv-keys 1112CFA1`)
 2.  Download Copay binary (`$FILENAME`) and signature file (`$FILENAME.sig`)
 3.  Verify the signature by running:
 
@@ -242,7 +242,7 @@ $ gpg --verify \
  $FILENAME
 
 # It should return:
-Good signature from "Copay (visit copay.io) <copay@bitpay.com>"
+Good signature from "Copay (visit Fcash.cash) <contact@fcash.cash>"
 ```
 
 ### Public Key for Copay Binaries
@@ -314,4 +314,4 @@ Please see [Support requests](CONTRIBUTING.md#support)
 
 ## License
 
-Copay is released under the MIT License. Please refer to the [LICENSE](https://github.com/bitpay/copay/blob/master/LICENSE) file that accompanies this project for more information including complete terms and conditions.
+Copay is released under the MIT License. Please refer to the [LICENSE](https://github.com/fcash-project/fcash-pay/blob/master/LICENSE) file that accompanies this project for more information including complete terms and conditions.

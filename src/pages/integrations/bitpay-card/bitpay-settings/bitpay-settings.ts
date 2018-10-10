@@ -4,26 +4,26 @@ import { NavController, NavParams } from 'ionic-angular';
 import * as _ from 'lodash';
 
 // Providers
-import { BitPayAccountProvider } from '../../../../providers/bitpay-account/bitpay-account';
-import { BitPayCardProvider } from '../../../../providers/bitpay-card/bitpay-card';
+import { BitPayAccountProvider } from '../../../../providers/fcash-account/fcash-account';
+import { BitPayCardProvider } from '../../../../providers/fcash-card/fcash-card';
 import { ConfigProvider } from '../../../../providers/config/config';
 import { HomeIntegrationsProvider } from '../../../../providers/home-integrations/home-integrations';
 import { PopupProvider } from '../../../../providers/popup/popup';
 
 @Component({
-  selector: 'page-bitpay-settings',
-  templateUrl: 'bitpay-settings.html'
+  selector: 'page-fcash-settings',
+  templateUrl: 'fcash-settings.html'
 })
 export class BitPaySettingsPage {
   private serviceName: string = 'debitcard';
   public showAtHome;
   public service;
-  public bitpayCard;
+  public fcashCard;
 
   constructor(
     private navParams: NavParams,
     private navCtrl: NavController,
-    private bitpayAccountProvider: BitPayAccountProvider,
+    private fcashAccountProvider: BitPayAccountProvider,
     private bitPayCardProvider: BitPayCardProvider,
     private popupProvider: PopupProvider,
     private configProvider: ConfigProvider,
@@ -39,7 +39,7 @@ export class BitPaySettingsPage {
     let cardId = this.navParams.data.id;
     if (cardId) {
       this.bitPayCardProvider.getCards(cards => {
-        this.bitpayCard = _.find(cards, { id: cardId });
+        this.fcashCard = _.find(cards, { id: cardId });
       });
     } else {
       this.service = _.filter(this.homeIntegrationsProvider.get(), {
@@ -87,7 +87,7 @@ export class BitPaySettingsPage {
       ') and all associated cards from this device?';
     this.popupProvider.ionicConfirm(title, msg).then(res => {
       if (res) {
-        this.bitpayAccountProvider.removeAccount(card.email, () => {
+        this.fcashAccountProvider.removeAccount(card.email, () => {
           this.navCtrl.pop();
         });
       }

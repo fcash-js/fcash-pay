@@ -23,7 +23,7 @@ const Keys = {
   APP_IDENTITY: network => 'appIdentity-' + network,
   BACKUP: walletId => 'backup-' + walletId,
   BALANCE_CACHE: cardId => 'balanceCache-' + cardId,
-  BITPAY_ACCOUNTS_V2: network => 'bitpayAccounts-v2-' + network,
+  BITPAY_ACCOUNTS_V2: network => 'fcashAccounts-v2-' + network,
   CLEAN_AND_SCAN_ADDRESSES: 'CleanAndScanAddresses',
   COINBASE_REFRESH_TOKEN: network => 'coinbaseRefreshToken-' + network,
   COINBASE_TOKEN: network => 'coinbaseToken-' + network,

@@ -133,7 +133,7 @@ export class WalletSettingsPage {
 
   public openSupportSpendingPassword(): void {
     let url =
-      'https://support.bitpay.com/hc/en-us/articles/360000244506-What-Does-a-Spending-Password-Do-';
+      'https://support.fcash.cash/hc/en-us/articles/360000244506-What-Does-a-Spending-Password-Do-';
     let optIn = true;
     let title = null;
     let message = this.translate.instant('Read more in our support page');

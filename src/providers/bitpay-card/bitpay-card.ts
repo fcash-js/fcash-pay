@@ -3,7 +3,7 @@ import { Logger } from '../../providers/logger/logger';
 
 // providers
 import { AppIdentityProvider } from '../app-identity/app-identity';
-import { BitPayProvider } from '../bitpay/bitpay';
+import { BitPayProvider } from '../fcash-project/fcash';
 import { ConfigProvider } from '../config/config';
 import { HomeIntegrationsProvider } from '../home-integrations/home-integrations';
 import { OnGoingProcessProvider } from '../on-going-process/on-going-process';
@@ -500,7 +500,7 @@ export class BitPayCardProvider {
       this.homeIntegrationsProvider.register({
         name: 'debitcard',
         title: 'BitPay Visa® Card',
-        icon: 'assets/img/bitpay-card/icon-bitpay.svg',
+        icon: 'assets/img/fcash-card/icon-fcash.svg',
         page: 'BitPayCardIntroPage',
         show: !!this.configProvider.get().showIntegration['debitcard'],
         linked: !!isActive

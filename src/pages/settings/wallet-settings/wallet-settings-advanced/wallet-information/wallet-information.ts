@@ -21,8 +21,8 @@ export class WalletInformationPage {
   public walletName: string;
   public N: number;
   public M: number;
-  public copayers;
-  public copayerId;
+  public fcash-pay;
+  public FcashPayId;
   public balanceByAddress;
   public account: number;
   public coin: string;
@@ -57,8 +57,8 @@ export class WalletInformationPage {
     this.walletId = this.wallet.credentials.walletId;
     this.N = this.wallet.credentials.n;
     this.M = this.wallet.credentials.m;
-    this.copayers = this.wallet.cachedStatus.wallet.copayers;
-    this.copayerId = this.wallet.credentials.copayerId;
+    this.fcash-pay = this.wallet.cachedStatus.wallet.fcash-pay;
+    this.FcashPayId = this.wallet.credentials.FcashPayId;
     this.balanceByAddress = this.wallet.balanceByAddress;
     this.account = this.wallet.credentials.account;
     this.network = this.wallet.credentials.network;

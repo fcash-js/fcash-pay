@@ -21,7 +21,7 @@ import { ActionSheetProvider, GiftCardProvider } from '../../../providers';
 import { CardConifg, CardName } from '../../../providers/gift-card/gift-card';
 import { ProfileProvider } from '../../../providers/profile/profile';
 import { Coin } from '../../../providers/wallet/wallet';
-import { BitPayCardTopUpPage } from '../../integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup';
+import { BitPayCardTopUpPage } from '../../integrations/fcash-card/fcash-card-topup/fcash-card-topup';
 import { BuyCoinbasePage } from '../../integrations/coinbase/buy-coinbase/buy-coinbase';
 import { SellCoinbasePage } from '../../integrations/coinbase/sell-coinbase/sell-coinbase';
 import { ConfirmCardPurchasePage } from '../../integrations/gift-cards/confirm-card-purchase/confirm-card-purchase';

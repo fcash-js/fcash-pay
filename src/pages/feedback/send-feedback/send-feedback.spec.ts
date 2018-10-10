@@ -36,8 +36,8 @@ describe('SendFeedbackPage', () => {
     describe('#openExternalLink', () => {
       it('should open external link with correct arguments', () => {
         const openLink = spyOn(instance.externalLinkProvider, 'open');
-        instance.openExternalLink('https://bitpay.canny.io');
-        expect(openLink).toHaveBeenCalledWith('https://bitpay.canny.io');
+        instance.openExternalLink('https://fcash.canny.io');
+        expect(openLink).toHaveBeenCalledWith('https://fcash.canny.io');
       });
     });
   });

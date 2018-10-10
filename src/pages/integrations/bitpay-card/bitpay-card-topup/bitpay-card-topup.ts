@@ -6,12 +6,12 @@ import { Logger } from '../../../../providers/logger/logger';
 
 // Pages
 import { FinishModalPage } from '../../../finish/finish';
-import { BitPayCardPage } from '../bitpay-card';
+import { BitPayCardPage } from '../fcash-card';
 
 // Provider
 import { ActionSheetProvider } from '../../../../providers/action-sheet/action-sheet';
-import { BitPayCardProvider } from '../../../../providers/bitpay-card/bitpay-card';
-import { BitPayProvider } from '../../../../providers/bitpay/bitpay';
+import { BitPayCardProvider } from '../../../../providers/fcash-card/fcash-card';
+import { BitPayProvider } from '../../../../providers/fcash-project/fcash';
 import { BwcErrorProvider } from '../../../../providers/bwc-error/bwc-error';
 import { BwcProvider } from '../../../../providers/bwc/bwc';
 import { ConfigProvider } from '../../../../providers/config/config';
@@ -31,8 +31,8 @@ import {
 const FEE_TOO_HIGH_LIMIT_PER = 15;
 
 @Component({
-  selector: 'page-bitpay-card-topup',
-  templateUrl: 'bitpay-card-topup.html'
+  selector: 'page-fcash-card-topup',
+  templateUrl: 'fcash-card-topup.html'
 })
 export class BitPayCardTopUpPage {
   @ViewChild('slideButton')
@@ -56,7 +56,7 @@ export class BitPayCardTopUpPage {
   public currencySymbol;
   public rate;
 
-  private bitcoreCash;
+  private fcoreCash;
   private createdTx;
   private configWallet;
 
@@ -87,7 +87,7 @@ export class BitPayCardTopUpPage {
   ) {
     this.configWallet = this.configProvider.get().wallet;
     this.isCordova = this.platformProvider.isCordova;
-    this.bitcoreCash = this.bwcProvider.getBitcoreCash();
+    this.fcoreCash = this.bwcProvider.getBitcoreCash();
     this.hideSlideButton = false;
   }
 
@@ -318,7 +318,7 @@ export class BitPayCardTopUpPage {
 
           if (wallet.coin && wallet.coin == 'bch') {
             // Use legacy address
-            txp.toAddress = this.bitcoreCash.Address(txp.toAddress).toString();
+            txp.toAddress = this.fcoreCash.Address(txp.toAddress).toString();
             txp.outputs[0].toAddress = txp.toAddress;
           }
 
@@ -630,12 +630,12 @@ export class BitPayCardTopUpPage {
     switch (urlKey) {
       case 'networkCost':
         url =
-          'https://support.bitpay.com/hc/en-us/articles/115002990803-Why-Am-I-Being-Charged-an-Additional-Network-Cost-on-My-BitPay-Invoice-';
+          'https://support.fcash.cash/hc/en-us/articles/115002990803-Why-Am-I-Being-Charged-an-Additional-Network-Cost-on-My-BitPay-Invoice-';
         title = this.translate.instant('Network Cost');
         break;
       case 'minerFee':
         url =
-          'https://support.bitpay.com/hc/en-us/articles/115003393863-What-are-bitcoin-miner-fees-Why-are-miner-fees-so-high-';
+          'https://support.fcash.cash/hc/en-us/articles/115003393863-What-are-bitcoin-miner-fees-Why-are-miner-fees-so-high-';
         title = this.translate.instant('Miner Fee');
         break;
     }

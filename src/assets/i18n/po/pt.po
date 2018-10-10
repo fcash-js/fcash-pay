@@ -20,7 +20,7 @@ msgstr "(Confiável)"
 msgid "(possible double spend)"
 msgstr "(Possível gasto duplo)"
 
-msgid "* A payment proposal can be deleted if 1) you are the creator, and no other copayer has signed, or 2) 10 minutes have passed since the proposal was created."
+msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcash-pay has signed, or 2) 10 minutes have passed since the proposal was created."
 msgstr "Uma proposta de pagamento pode ser excluída se: 1) você for o criador e nenhum outro assinante tiver assinado, ou 2) 10 minutos se passaram desde que a proposta foi criada."
 
 msgid "5-star ratings help us get BitPay Wallet into more hands, and more users means more resources can be committed to the app!"
@@ -1802,8 +1802,8 @@ msgstr "Compartilhe o amor convidando seus amigos."
 msgid "Share this QR code to receive {amount} in your wallet {name}."
 msgstr ""
 
-msgid "Share this invitation with your copayers"
-msgstr "Compartilhe este convite com seus copayers"
+msgid "Share this invitation with your fcash-pay"
+msgstr "Compartilhe este convite com seus fcash-pay"
 
 msgid "Share {{appName}}"
 msgstr "Compartilhar {{appName}}"
@@ -2015,8 +2015,8 @@ msgstr ""
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender."
 msgstr ""
 
-msgid "This wallet is not registered at the given Bitcore Wallet Service (BWS). You can recreate it from the local information."
-msgstr "Esta carteira não está registrada no dado serviço Wallet Service Bitcore (BWS) informado. Você pode recriá-la a partir da informação local."
+msgid "This wallet is not registered at the given Fcash Wallet Service (FWS). You can recreate it from the local information."
+msgstr "Esta carteira não está registrada no dado serviço Wallet Service Bitcore (FWS) informado. Você pode recriá-la a partir da informação local."
 
 msgid "Timeline"
 msgstr "Cronograma"
@@ -2042,8 +2042,8 @@ msgstr "Total"
 msgid "Total Locked Balance"
 msgstr "Saldo Total Bloqueado"
 
-msgid "Total number of copayers"
-msgstr "Número total de copayers"
+msgid "Total number of fcash-pay"
+msgstr "Número total de fcash-pay"
 
 msgid "Total wallet inputs"
 msgstr "Total de entradas da carteira"
@@ -2204,8 +2204,8 @@ msgstr "Aviso: Derivação de chave não está funcionando neste dispositivo/car
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "AVISO: CERTIFICADO NÃO CONFIÁVEL"
 
-msgid "Waiting for copayers"
-msgstr "Aguardando copayers"
+msgid "Waiting for fcash-pay"
+msgstr "Aguardando fcash-pay"
 
 msgid "Waiting..."
 msgstr "Aguardando…"
@@ -2450,8 +2450,8 @@ msgstr ""
 msgid "{coinName} miner fees unusually high"
 msgstr ""
 
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
-msgstr "{{appName}} depende do Serviço Bitcore Wallet (BWS) para informações do blockchain, rede e sincronização Copayer. A configuração padrão aponta para https://bws.bitpay.com (instância pública BWS do BitPay)."
+msgid "{{appName}} depends on Fcash Wallet Service (FWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://fws.fcash.cash (BitPay's public FWS instance)."
+msgstr "{{appName}} depende do Serviço Bitcore Wallet (FWS) para informações do blockchain, rede e sincronização Copayer. A configuração padrão aponta para https://fws.fcash.cash (instância pública FWS do BitPay)."
 
 msgid "{{fee}} {{coin}} will be deducted for bitcoin networking fees."
 msgstr "{{fee}} {{coin}} será deduzido para taxas de rede bitcoin."

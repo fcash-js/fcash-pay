@@ -5,17 +5,17 @@ import { ActionSheetController, NavController, NavParams } from 'ionic-angular';
 import * as _ from 'lodash';
 
 // providers
-import { BitPayAccountProvider } from '../../../../providers/bitpay-account/bitpay-account';
-import { BitPayCardProvider } from '../../../../providers/bitpay-card/bitpay-card';
+import { BitPayAccountProvider } from '../../../../providers/fcash-account/fcash-account';
+import { BitPayCardProvider } from '../../../../providers/fcash-card/fcash-card';
 import { ExternalLinkProvider } from '../../../../providers/external-link/external-link';
 import { PopupProvider } from '../../../../providers/popup/popup';
 
 // pages
-import { BitPayCardPage } from '../bitpay-card';
+import { BitPayCardPage } from '../fcash-card';
 
 @Component({
-  selector: 'page-bitpay-card-intro',
-  templateUrl: 'bitpay-card-intro.html'
+  selector: 'page-fcash-card-intro',
+  templateUrl: 'fcash-card-intro.html'
 })
 export class BitPayCardIntroPage {
   public accounts;
@@ -93,12 +93,12 @@ export class BitPayCardIntroPage {
   }
 
   public bitPayCardInfo() {
-    let url = 'https://bitpay.com/visa/faq';
+    let url = 'https://fcash.cash/visa/faq';
     this.externalLinkProvider.open(url);
   }
 
   public orderBitPayCard() {
-    let url = 'https://bitpay.com/visa/get-started';
+    let url = 'https://fcash.cash/visa/get-started';
     this.externalLinkProvider.open(url);
   }
 
@@ -112,7 +112,7 @@ export class BitPayCardIntroPage {
 
   private startPairBitPayAccount() {
     this.navCtrl.popToRoot({ animate: false }); // Back to Root
-    let url = 'https://bitpay.com/visa/dashboard/add-to-bitpay-wallet-confirm';
+    let url = 'https://fcash.cash/visa/dashboard/add-to-fcash-wallet-confirm';
     this.externalLinkProvider.open(url);
   }
 

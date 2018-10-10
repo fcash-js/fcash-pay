@@ -20,8 +20,8 @@ msgstr "（可信的）"
 msgid "(possible double spend)"
 msgstr "（重复支付）"
 
-msgid "* A payment proposal can be deleted if 1) you are the creator, and no other copayer has signed, or 2) 10 minutes have passed since the proposal was created."
-msgstr "* 以下情况支付提议可被删除 1) 你是创建者但没有任何其他copayer已签名 或 2) 支付提议生成已超过十分钟"
+msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcash-pay has signed, or 2) 10 minutes have passed since the proposal was created."
+msgstr "* 以下情况支付提议可被删除 1) 你是创建者但没有任何其他fcash-pay已签名 或 2) 支付提议生成已超过十分钟"
 
 msgid "5-star ratings help us get BitPay Wallet into more hands, and more users means more resources can be committed to the app!"
 msgstr "Xếp hạng 5 sao giúp chúng tôi nhận BitPay Wallet thành nhiều hơn và nhiều người dùng hơn đồng nghĩa với việc nhiều tài nguyên hơn có thể được cam kết với ứng dụng!"
@@ -1802,8 +1802,8 @@ msgstr "邀请您的朋友分享爱。"
 msgid "Share this QR code to receive {amount} in your wallet {name}."
 msgstr ""
 
-msgid "Share this invitation with your copayers"
-msgstr "将此邀请与你的 copayers 共享"
+msgid "Share this invitation with your fcash-pay"
+msgstr "将此邀请与你的 fcash-pay 共享"
 
 msgid "Share {{appName}}"
 msgstr "分享 {{appName}}"
@@ -2015,8 +2015,8 @@ msgstr ""
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender."
 msgstr ""
 
-msgid "This wallet is not registered at the given Bitcore Wallet Service (BWS). You can recreate it from the local information."
-msgstr "此钱包不在给定的 Bitcore Wallet Service (BWS) 注册。你可以从本地信息重新创建它。"
+msgid "This wallet is not registered at the given Fcash Wallet Service (FWS). You can recreate it from the local information."
+msgstr "此钱包不在给定的 Fcash Wallet Service (FWS) 注册。你可以从本地信息重新创建它。"
 
 msgid "Timeline"
 msgstr "时间轴"
@@ -2042,8 +2042,8 @@ msgstr "总计"
 msgid "Total Locked Balance"
 msgstr "锁定结余的总额"
 
-msgid "Total number of copayers"
-msgstr "copayers总数"
+msgid "Total number of fcash-pay"
+msgstr "fcash-pay总数"
 
 msgid "Total wallet inputs"
 msgstr "钱包总共进账"
@@ -2204,8 +2204,8 @@ msgstr "警告︰此设备/钱包无法运行钥匙衍生。无法在此钱包�
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "警告︰不受信任的证书"
 
-msgid "Waiting for copayers"
-msgstr "正在等待 copayers"
+msgid "Waiting for fcash-pay"
+msgstr "正在等待 fcash-pay"
 
 msgid "Waiting..."
 msgstr "等待中..."
@@ -2450,8 +2450,8 @@ msgstr ""
 msgid "{coinName} miner fees unusually high"
 msgstr ""
 
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
-msgstr "{{appName}}依赖Bitcore Wallet Service(BWS)进行区块链信息、网络和复制层同步。默认配置指向https：/bws.bitpay.com(BitPay's public BWS instance)。"
+msgid "{{appName}} depends on Fcash Wallet Service (FWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://fws.fcash.cash (BitPay's public FWS instance)."
+msgstr "{{appName}}依赖Fcash Wallet Service(FWS)进行区块链信息、网络和复制层同步。默认配置指向https：/fws.fcash.cash(BitPay's public FWS instance)。"
 
 msgid "{{fee}} {{coin}} will be deducted for bitcoin networking fees."
 msgstr "{{fee}}{{coin}}将扣除比特币网络费"

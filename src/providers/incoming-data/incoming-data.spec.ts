@@ -19,7 +19,7 @@ describe('Provider: Incoming Data Provider', () => {
   class AppProviderMock {
     public info = {};
     constructor() {
-      this.info = { name: 'bitpay', _enabledExtensions: { debitcard: true } };
+      this.info = { name: 'fcash', _enabledExtensions: { debitcard: true } };
     }
   }
 
@@ -76,8 +76,8 @@ describe('Provider: Incoming Data Provider', () => {
     });
     it('Should handle Plain URL', () => {
       let data = [
-        'http://bitpay.com/', // non-SSL URL Handling
-        'https://bitpay.com/' // SSL URL Handling
+        'http://fcash.cash/', // non-SSL URL Handling
+        'https://fcash.cash/' // SSL URL Handling
       ];
       data.forEach(element => {
         expect(
@@ -149,8 +149,8 @@ describe('Provider: Incoming Data Provider', () => {
     });
     it('Should handle BTC and BCH BitPay Invoices', () => {
       let data = [
-        'bitcoin:?r=https://bitpay.com/i/CtcM753gnZ4Wpr5pmXU6i9',
-        'bitcoincash:?r=https://bitpay.com/i/Rtz1RwWA7kdRRU3Wyo4YDY'
+        'bitcoin:?r=https://fcash.cash/i/CtcM753gnZ4Wpr5pmXU6i9',
+        'bitcoincash:?r=https://fcash.cash/i/Rtz1RwWA7kdRRU3Wyo4YDY'
       ];
       data.forEach(element => {
         expect(
@@ -405,7 +405,7 @@ describe('Provider: Incoming Data Provider', () => {
       });
     });
     it('Should handle Glidera URI', () => {
-      let data = ['bitpay://glidera', 'copay://glidera'];
+      let data = ['fcash://glidera', 'copay://glidera'];
       data.forEach(element => {
         let stateParams = { code: null };
         let nextView = {
@@ -422,7 +422,7 @@ describe('Provider: Incoming Data Provider', () => {
       });
     });
     it('Should handle Coinbase URI', () => {
-      let data = ['bitpay://coinbase', 'copay://coinbase'];
+      let data = ['fcash://coinbase', 'copay://coinbase'];
       data.forEach(element => {
         let stateParams = { code: null };
         let nextView = {
@@ -439,7 +439,7 @@ describe('Provider: Incoming Data Provider', () => {
       });
     });
     it('Should handle BitPay Card URI', () => {
-      let data = 'bitpay://bitpay.com?secret=xxxxx&email=xxx@xx.com';
+      let data = 'fcash://fcash.cash?secret=xxxxx&email=xxx@xx.com';
       let stateParams = { secret: 'xxxxx', email: 'xxx@xx.com', otp: null };
       let nextView = {
         name: 'BitPayCardIntroPage',

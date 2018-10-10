@@ -56,10 +56,10 @@ export class ProfileProvider {
     let defaultColor =
       this.appProvider.info.nameCase == 'Copay' ? '#1abb9b' : '#647ce8';
     // this.config.whenAvailable( (config) => { TODO
-    wallet.usingCustomBWS =
-      config.bwsFor &&
-      config.bwsFor[wallet.id] &&
-      config.bwsFor[wallet.id] != defaults.bws.url;
+    wallet.usingCustomFWS =
+      config.fwsFor &&
+      config.fwsFor[wallet.id] &&
+      config.fwsFor[wallet.id] != defaults.fws.url;
     wallet.name =
       (config.aliasFor && config.aliasFor[wallet.id]) ||
       wallet.credentials.walletName;
@@ -149,7 +149,7 @@ export class ProfileProvider {
     wallet.id = walletId;
     wallet.started = true;
     wallet.network = wallet.credentials.network;
-    wallet.copayerId = wallet.credentials.copayerId;
+    wallet.FcashPayId = wallet.credentials.FcashPayId;
     wallet.m = wallet.credentials.m;
     wallet.n = wallet.credentials.n;
     wallet.coin = wallet.credentials.coin;
@@ -165,13 +165,13 @@ export class ProfileProvider {
     wallet.removeAllListeners();
 
     wallet.on('report', n => {
-      this.logger.info('BWC Report:' + n);
+      this.logger.info('FWC Report:' + n);
     });
 
     wallet.on('notification', n => {
       // TODO: Only development purpose
       if (!this.platformProvider.isNW && !this.platformProvider.isCordova) {
-        this.logger.debug('BWC Notification:', JSON.stringify(n));
+        this.logger.debug('FWC Notification:', JSON.stringify(n));
       }
 
       if (n.type == 'NewBlock' && n.data.network == 'testnet') {
@@ -216,7 +216,7 @@ export class ProfileProvider {
 
     if (wallet.cachedTxps) wallet.cachedTxps.isValid = false;
 
-    this.events.publish('bwsEvent', wallet.id, n.type, n);
+    this.events.publish('fwsEvent', wallet.id, n.type, n);
   }
 
   public updateCredentials(credentials): void {
@@ -354,14 +354,14 @@ export class ProfileProvider {
 
       if (!strParsed.n) {
         return reject(
-          'Backup format not recognized. If you are using a Copay Beta backup and version is older than 0.10, please see: https://github.com/bitpay/copay/issues/4730#issuecomment-244522614'
+          'Backup format not recognized. If you are using a Copay Beta backup and version is older than 0.10, please see: https://github.com/fcash-project/fcash-pay/issues/4730#issuecomment-244522614'
         );
       }
 
       let addressBook = strParsed.addressBook ? strParsed.addressBook : {};
 
       this.addAndBindWalletClient(walletClient, {
-        bwsurl: opts.bwsurl
+        fwsurl: opts.fwsurl
       })
         .then(() => {
           this.setMetaData(walletClient, addressBook)
@@ -506,15 +506,15 @@ export class ProfileProvider {
         let saveBwsUrl = (): Promise<any> => {
           return new Promise(resolve => {
             let defaults = this.configProvider.getDefaults();
-            let bwsFor = {};
-            bwsFor[walletId] = opts.bwsurl || defaults.bws.url;
+            let fwsFor = {};
+            fwsFor[walletId] = opts.fwsurl || defaults.fws.url;
 
             // Dont save the default
-            if (bwsFor[walletId] == defaults.bws.url) {
+            if (fwsFor[walletId] == defaults.fws.url) {
               return resolve();
             }
 
-            this.configProvider.set({ bwsFor });
+            this.configProvider.set({ fwsFor });
             return resolve();
           });
         };
@@ -587,7 +587,7 @@ export class ProfileProvider {
             });
         } else {
           this.addAndBindWalletClient(walletClient, {
-            bwsurl: opts.bwsurl
+            fwsurl: opts.fwsurl
           })
             .then(wallet => {
               return resolve(wallet);
@@ -642,7 +642,7 @@ export class ProfileProvider {
               });
           } else {
             this.addAndBindWalletClient(walletClient, {
-              bwsurl: opts.bwsurl
+              fwsurl: opts.fwsurl
             })
               .then(wallet => {
                 return resolve(wallet);
@@ -684,7 +684,7 @@ export class ProfileProvider {
           }
 
           this.addAndBindWalletClient(walletClient, {
-            bwsurl: opts.bwsurl
+            fwsurl: opts.fwsurl
           })
             .then(wallet => {
               return resolve(wallet);
@@ -816,16 +816,16 @@ export class ProfileProvider {
       }
 
       // Create the client
-      let getBWSURL = (walletId: string) => {
+      let getFWSURL = (walletId: string) => {
         let config = this.configProvider.get();
         let defaults = this.configProvider.getDefaults();
-        return (config.bwsFor && config.bwsFor[walletId]) || defaults.bws.url;
+        return (config.fwsFor && config.fwsFor[walletId]) || defaults.fws.url;
       };
 
       let walletClient = this.bwcProvider.getClient(
         JSON.stringify(credentials),
         {
-          bwsurl: getBWSURL(credentials.walletId)
+          fwsurl: getFWSURL(credentials.walletId)
         }
       );
 
@@ -968,7 +968,7 @@ export class ProfileProvider {
     });
   }
 
-  // Creates a wallet on BWC/BWS
+  // Creates a wallet on FWC/FWS
   private doCreateWallet(opts): Promise<any> {
     return new Promise((resolve, reject) => {
       let showOpts = _.clone(opts);
@@ -1019,7 +1019,7 @@ export class ProfileProvider {
       this.doCreateWallet(opts)
         .then(walletClient => {
           this.addAndBindWalletClient(walletClient, {
-            bwsurl: opts.bwsurl
+            fwsurl: opts.fwsurl
           }).then(wallet => {
             return resolve(wallet);
           });
@@ -1072,7 +1072,7 @@ export class ProfileProvider {
                   });
               } else {
                 this.addAndBindWalletClient(walletClient, {
-                  bwsurl: opts.bwsurl
+                  fwsurl: opts.fwsurl
                 }).then(wallet => {
                   return resolve(wallet);
                 });
@@ -1335,7 +1335,7 @@ export class ProfileProvider {
             x.wallet &&
             x.wallet.credentials.sharedEncryptingKey
           ) {
-            // TODO TODO TODO => BWC
+            // TODO TODO TODO => FWC
             x.message = u.decryptMessage(
               x.data.message,
               x.wallet.credentials.sharedEncryptingKey
@@ -1355,7 +1355,7 @@ export class ProfileProvider {
 
             let idToName = {};
             if (wallet.cachedStatus) {
-              _.each(wallet.cachedStatus.wallet.copayers, c => {
+              _.each(wallet.cachedStatus.wallet.fcash-pay, c => {
                 idToName[c.id] = c.name;
               });
             }

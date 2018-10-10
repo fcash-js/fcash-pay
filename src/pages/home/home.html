@@ -245,7 +245,7 @@
         </ion-list>
       </div>
 
-      <div class="card" *ngIf="showBitPayCard && bitpayCardItems && bitpayCardItems[0] && wallets &&wallets[0]">
+      <div class="card" *ngIf="showBitPayCard && fcashCardItems && fcashCardItems[0] && wallets &&wallets[0]">
         <ion-item-divider>
           <div class="title" item-start>
             <span>BitPay Visa
@@ -258,7 +258,7 @@
           </div>
         </ion-item-divider>
         <ion-list>
-          <button ion-item *ngFor="let card of bitpayCardItems" (click)="goToCard(card.id)">
+          <button ion-item *ngFor="let card of fcashCardItems" (click)="goToCard(card.id)">
             <ion-icon class="item-img" item-start>
               <img src="assets/img/icon-card.svg" class="icon-card" />
             </ion-icon>

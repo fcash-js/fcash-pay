@@ -18,9 +18,9 @@
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>{{'Total number of copayers' | translate}}</ion-label>
+        <ion-label stacked>{{'Total number of fcash-pay' | translate}}</ion-label>
         <ion-select okText="{{okText}}" cancelText="{{cancelText}}" formControlName="totalCopayers" (ionChange)="setTotalCopayers(createForm.value.totalCopayers)">
-          <ion-option *ngFor="let copayer of copayers" [value]="copayer">{{copayer}}</ion-option>
+          <ion-option *ngFor="let fcash-pay of fcash-pay" [value]="fcash-pay">{{fcash-pay}}</ion-option>
         </ion-select>
       </ion-item>
 
@@ -54,7 +54,7 @@
     <div *ngIf="showAdvOpts">
       <ion-item>
         <ion-label stacked>Wallet Service URL</ion-label>
-        <ion-input type="text" formControlName="bwsURL"></ion-input>
+        <ion-input type="text" formControlName="fwsURL"></ion-input>
       </ion-item>
 
       <ion-item>

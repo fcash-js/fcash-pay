@@ -14,7 +14,7 @@ export type InfoSheetType =
   | 'backup-needed-with-activity'
   | 'backup-ready'
   | 'backup-warning'
-  | 'copayers'
+  | 'fcash-pay'
   | 'copy-to-clipboard'
   | 'copied-gift-card-claim-code'
   | 'custom-amount'

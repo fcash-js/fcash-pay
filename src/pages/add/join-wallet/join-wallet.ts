@@ -65,7 +65,7 @@ export class JoinWalletPage {
         null,
         [Validators.required, Validators.pattern(this.regex)]
       ], // invitationCode == secret
-      bwsURL: [this.defaults.bws.url],
+      fwsURL: [this.defaults.fws.url],
       selectedSeed: ['new'],
       recoveryPhrase: [null],
       coin: [null, Validators.required]
@@ -133,7 +133,7 @@ export class JoinWalletPage {
     let opts: Partial<WalletOptions> = {
       secret: this.joinForm.value.invitationCode,
       myName: this.joinForm.value.myName,
-      bwsurl: this.joinForm.value.bwsURL,
+      fwsurl: this.joinForm.value.fwsURL,
       coin: this.joinForm.value.coin
     };
 

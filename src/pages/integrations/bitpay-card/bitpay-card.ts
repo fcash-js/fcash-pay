@@ -7,8 +7,8 @@ import { Logger } from '../../../providers/logger/logger';
 import { AmountPage } from '../../send/amount/amount';
 
 // providers
-import { BitPayCardProvider } from '../../../providers/bitpay-card/bitpay-card';
-import { BitPayProvider } from '../../../providers/bitpay/bitpay';
+import { BitPayCardProvider } from '../../../providers/fcash-card/fcash-card';
+import { BitPayProvider } from '../../../providers/fcash-project/fcash';
 import { ExternalLinkProvider } from '../../../providers/external-link/external-link';
 import { PopupProvider } from '../../../providers/popup/popup';
 import { TimeProvider } from '../../../providers/time/time';
@@ -17,8 +17,8 @@ import * as _ from 'lodash';
 import * as moment from 'moment';
 
 @Component({
-  selector: 'page-bitpay-card',
-  templateUrl: 'bitpay-card.html'
+  selector: 'page-fcash-card',
+  templateUrl: 'fcash-card.html'
 })
 export class BitPayCardPage {
   public network: string;
@@ -26,9 +26,9 @@ export class BitPayCardPage {
   public cardId: string;
   public getStarted: boolean;
   public loadingHistory: boolean;
-  public bitpayCardTransactionHistoryCompleted;
-  public bitpayCardTransactionHistoryConfirming;
-  public bitpayCardTransactionHistoryPreAuth;
+  public fcashCardTransactionHistoryCompleted;
+  public fcashCardTransactionHistoryConfirming;
+  public fcashCardTransactionHistoryPreAuth;
   public balance: number;
   public updatedOn: number;
   public lastFourDigits: number;
@@ -135,9 +135,9 @@ export class BitPayCardPage {
 
         if (err) {
           this.logger.error(err);
-          this.bitpayCardTransactionHistoryCompleted = null;
-          this.bitpayCardTransactionHistoryConfirming = null;
-          this.bitpayCardTransactionHistoryPreAuth = null;
+          this.fcashCardTransactionHistoryCompleted = null;
+          this.fcashCardTransactionHistoryConfirming = null;
+          this.fcashCardTransactionHistoryPreAuth = null;
           this.balance = null;
           this.popupProvider
             .ionicAlert(
@@ -155,15 +155,15 @@ export class BitPayCardPage {
 
           this.setDateTime(txs);
 
-          this.bitpayCardTransactionHistoryConfirming = this.bitPayCardProvider.filterTransactions(
+          this.fcashCardTransactionHistoryConfirming = this.bitPayCardProvider.filterTransactions(
             'confirming',
             txs
           );
-          this.bitpayCardTransactionHistoryCompleted = this.bitPayCardProvider.filterTransactions(
+          this.fcashCardTransactionHistoryCompleted = this.bitPayCardProvider.filterTransactions(
             'completed',
             txs
           );
-          this.bitpayCardTransactionHistoryPreAuth = this.bitPayCardProvider.filterTransactions(
+          this.fcashCardTransactionHistoryPreAuth = this.bitPayCardProvider.filterTransactions(
             'preAuth',
             txs
           );
@@ -231,7 +231,7 @@ export class BitPayCardPage {
   }
 
   public viewOnBlockchain(transactionId: string) {
-    let url = 'https://insight.bitpay.com/tx/' + transactionId;
+    let url = 'https://insight.fcash.cash/tx/' + transactionId;
     let optIn = true;
     let title = null;
     let message = this.translate.instant('View Transaction on Insight');

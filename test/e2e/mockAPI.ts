@@ -24,12 +24,12 @@ function startMockServer(port: number) {
     res.status(200).json({ message: 'E2E mock server is alive.' })
   );
   mock.get(
-    '/bitpay.com/api/rates/',
-    sendJSON('mocks/bitpay.com_api_rates.json')
+    '/fcash.cash/api/rates/',
+    sendJSON('mocks/fcash.cash_api_rates.json')
   );
   mock.get(
-    '/bitpay.com/api/rates/bch',
-    sendJSON('mocks/bitpay.com_api_rates_bch.json')
+    '/fcash.cash/api/rates/bch',
+    sendJSON('mocks/fcash.cash_api_rates_bch.json')
   );
 
   mock.listen(port, () =>

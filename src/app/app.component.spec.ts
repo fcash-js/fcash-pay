@@ -13,18 +13,18 @@ import { Logger } from '../providers/logger/logger';
 import { LoggerMock } from '../providers/logger/logger.mock';
 import { ProfileProvider } from '../providers/profile/profile';
 import { ProvidersModule } from './../providers/providers.module';
-import { CopayApp } from './app.component';
+import { FcashApp } from './app.component';
 
-describe('CopayApp', () => {
+describe('FcashApp', () => {
   let fixture;
   let component;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [CopayApp],
+      declarations: [FcashApp],
       schemas: [NO_ERRORS_SCHEMA],
       imports: [
-        IonicModule.forRoot(CopayApp),
+        IonicModule.forRoot(FcashApp),
         ProvidersModule,
         HttpClientTestingModule,
         TranslateModule.forRoot({
@@ -36,7 +36,7 @@ describe('CopayApp', () => {
   }));
 
   beforeEach(async () => {
-    fixture = TestBed.createComponent(CopayApp);
+    fixture = TestBed.createComponent(FcashApp);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -47,7 +47,7 @@ describe('CopayApp', () => {
   });
 
   it('should be created', () => {
-    expect(component instanceof CopayApp).toBe(true);
+    expect(component instanceof FcashApp).toBe(true);
   });
 
   describe('Methods', () => {

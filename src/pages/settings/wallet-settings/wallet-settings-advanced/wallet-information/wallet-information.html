@@ -62,10 +62,10 @@
         #{{account}}
       </ion-note>
     </ion-item>
-    <ion-item-divider *ngIf="copayers">Copayers</ion-item-divider>
-    <ion-item *ngFor="let copayer of copayers">
-      <span>{{copayer.name}}</span>
-      <ion-note *ngIf="copayer.id == copayerId" item-end>
+    <ion-item-divider *ngIf="fcash-pay">Copayers</ion-item-divider>
+    <ion-item *ngFor="let fcash-payay of fcash-pay">
+      <span>{{fcash-payay.name}}</span>
+      <ion-note *ngIf="fcash-payay.id =fcash-pay-payId" item-end>
         ({{'Me' | translate}})
       </ion-note>
     </ion-item>

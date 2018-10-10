@@ -120,7 +120,7 @@ export class IncomingDataProvider {
 
   private isValidBitPayCardUri(data: string): boolean {
     data = this.sanitizeUri(data);
-    return !!(data && data.indexOf('bitpay://bitpay.com?secret=') === 0);
+    return !!(data && data.indexOf('fcash://fcash.cash?secret=') === 0);
   }
 
   private isValidJoinCode(data: string): boolean {

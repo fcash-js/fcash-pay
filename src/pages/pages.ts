@@ -1,6 +1,6 @@
 /* Pages */
 import { AddPage } from '../pages/add/add';
-import { CopayersPage } from '../pages/add/copayers/copayers';
+import { CopayersPage } from '../pages/add/fcash-pay/fcash-pay';
 import { CreateWalletPage } from '../pages/add/create-wallet/create-wallet';
 import { ImportWalletPage } from '../pages/add/import-wallet/import-wallet';
 import { JoinWalletPage } from '../pages/add/join-wallet/join-wallet';
@@ -46,10 +46,10 @@ import { ShapeshiftSettingsPage } from '../pages/integrations/shapeshift/shapesh
 import { ShapeshiftShiftPage } from '../pages/integrations/shapeshift/shapeshift-shift/shapeshift-shift';
 
 // Integrations: BitPayCard
-import { BitPayCardPage } from '../pages/integrations/bitpay-card/bitpay-card';
-import { BitPayCardIntroPage } from '../pages/integrations/bitpay-card/bitpay-card-intro/bitpay-card-intro';
-import { BitPayCardTopUpPage } from '../pages/integrations/bitpay-card/bitpay-card-topup/bitpay-card-topup';
-import { BitPaySettingsPage } from '../pages/integrations/bitpay-card/bitpay-settings/bitpay-settings';
+import { BitPayCardPage } from '../pages/integrations/fcash-card/fcash-card';
+import { BitPayCardIntroPage } from '../pages/integrations/fcash-card/fcash-card-intro/fcash-card-intro';
+import { BitPayCardTopUpPage } from '../pages/integrations/fcash-card/fcash-card-topup/fcash-card-topup';
+import { BitPaySettingsPage } from '../pages/integrations/fcash-card/fcash-settings/fcash-settings';
 
 /*Includes */
 import { CardItemPage } from '../pages/includes/card-item/card-item';

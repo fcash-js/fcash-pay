@@ -34,7 +34,7 @@ describe('PurchasedCardsPage', () => {
         currency: 'USD',
         date: Date.now() / 1000,
         invoiceId: '1',
-        invoiceUrl: 'https://bitpay.com/i/iNvOiceId',
+        invoiceUrl: 'https://fcash.cash/i/iNvOiceId',
         name: CardName.amazon,
         status: 'SUCCESS',
         uuid: 'uuid'

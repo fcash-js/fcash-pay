@@ -28,7 +28,7 @@ export class GiftCardProvider {
     BITPAY_API_URL: string;
   } = {
     NETWORK: 'livenet',
-    BITPAY_API_URL: 'https://bitpay.com'
+    BITPAY_API_URL: 'https://fcash.cash'
   };
 
   cardUpdatesSubject: Subject<GiftCard> = new Subject<GiftCard>();
@@ -52,8 +52,8 @@ export class GiftCardProvider {
   setCredentials() {
     this.credentials.BITPAY_API_URL =
       this.credentials.NETWORK === 'testnet'
-        ? 'https://test.bitpay.com'
-        : 'https://bitpay.com';
+        ? 'https://test.fcash.cash'
+        : 'https://fcash.cash';
     this.amazonProvider.setCredentials(this.credentials);
     this.mercadoLibreProvider.setCredentials(this.credentials);
   }
@@ -124,7 +124,7 @@ export class GiftCardProvider {
     const cardConfig = await this.getCardConfig(name);
 
     const url = `${this.credentials.BITPAY_API_URL}/${
-      cardConfig.bitpayApiPath
+      cardConfig.fcashApiPath
     }/redeem`;
 
     return this.http
@@ -213,7 +213,7 @@ export class GiftCardProvider {
     };
     const config = await this.getCardConfig(data.cardName);
     const url = `${this.credentials.BITPAY_API_URL}/${
-      config.bitpayApiPath
+      config.fcashApiPath
     }/pay`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
@@ -278,7 +278,7 @@ export class GiftCardProvider {
   getOfferedCards(): CardConifg[] {
     return [
       {
-        bitpayApiPath: 'amazon-gift', // Plan to remove bitpayApiPath when the api has a universal gift card enpoint
+        fcashApiPath: 'amazon-gift', // Plan to remove fcashApiPath when the api has a universal gift card enpoint
         brand: CardBrand.amazon,
         currency: 'USD',
         emailRequired: true,
@@ -291,7 +291,7 @@ export class GiftCardProvider {
         website: 'amazon.com'
       },
       {
-        bitpayApiPath: 'amazon-gift',
+        fcashApiPath: 'amazon-gift',
         brand: CardBrand.amazon,
         currency: 'JPY',
         emailRequired: true,
@@ -304,7 +304,7 @@ export class GiftCardProvider {
         website: 'amazon.co.jp'
       },
       {
-        bitpayApiPath: 'mercado-libre-gift',
+        fcashApiPath: 'mercado-libre-gift',
         brand: CardBrand.mercadoLibre,
         currency: 'BRL',
         emailRequired: false,

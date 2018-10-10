@@ -41,8 +41,8 @@ export class ConfirmPage extends WalletTabsChild {
   @ViewChild('slideButton')
   slideButton;
 
-  private bitcore;
-  protected bitcoreCash;
+  private fcore;
+  protected fcoreCash;
 
   public countDown = null;
   public CONFIRM_LIMIT_USD: number;
@@ -100,8 +100,8 @@ export class ConfirmPage extends WalletTabsChild {
     walletTabsProvider: WalletTabsProvider
   ) {
     super(navCtrl, profileProvider, walletTabsProvider);
-    this.bitcore = this.bwcProvider.getBitcore();
-    this.bitcoreCash = this.bwcProvider.getBitcoreCash();
+    this.fcore = this.bwcProvider.getBitcore();
+    this.fcoreCash = this.bwcProvider.getBitcoreCash();
     this.CONFIRM_LIMIT_USD = 20;
     this.FEE_TOO_HIGH_LIMIT_PER = 15;
     this.config = this.configProvider.get();
@@ -123,7 +123,7 @@ export class ConfirmPage extends WalletTabsChild {
   ionViewWillEnter() {
     this.navCtrl.swipeBackEnabled = false;
     this.isOpenSelector = false;
-    let B = this.navParams.data.coin == 'bch' ? this.bitcoreCash : this.bitcore;
+    let B = this.navParams.data.coin == 'bch' ? this.fcoreCash : this.fcore;
     let networkName;
     try {
       networkName = new B.Address(this.navParams.data.toAddress).network.name;
@@ -138,7 +138,7 @@ export class ConfirmPage extends WalletTabsChild {
         .then(back => {
           if (!back) {
             var url =
-              'https://support.bitpay.com/hc/en-us/articles/115004671663';
+              'https://support.fcash.cash/hc/en-us/articles/115004671663';
             this.externalLinkProvider.open(url);
           }
           this.navCtrl.pop();
@@ -177,7 +177,7 @@ export class ConfirmPage extends WalletTabsChild {
 
     if (this.tx.coin && this.tx.coin == 'bch') {
       // Use legacy address
-      this.tx.toAddress = this.bitcoreCash
+      this.tx.toAddress = this.fcoreCash
         .Address(this.tx.toAddress)
         .toString();
     }

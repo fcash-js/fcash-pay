@@ -66,7 +66,7 @@ export class WalletTabsPage {
   }
 
   private subscribeEvents(): void {
-    this.events.subscribe('bwsEvent', (walletId, type) => {
+    this.events.subscribe('fwsEvent', (walletId, type) => {
       // Update current address
       if (this.walletId == walletId && type == 'NewIncomingTx')
         this.events.publish('Wallet/setAddress', true);
@@ -82,7 +82,7 @@ export class WalletTabsPage {
 
   private unsubscribeEvents(): void {
     this.events.publish('Wallet/disableHardwareKeyboard');
-    this.events.unsubscribe('bwsEvent');
+    this.events.unsubscribe('fwsEvent');
     this.events.unsubscribe('Wallet/setAddress');
     this.events.unsubscribe('Wallet/disableHardwareKeyboard');
   }

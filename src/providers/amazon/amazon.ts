@@ -40,8 +40,8 @@ export class AmazonProvider {
     this.credentials.NETWORK = 'livenet';
     this.credentials.BITPAY_API_URL =
       this.credentials.NETWORK === 'testnet'
-        ? 'https://test.bitpay.com'
-        : 'https://bitpay.com';
+        ? 'https://test.fcash.cash'
+        : 'https://fcash.cash';
   }
 
   public getNetwork(): string {

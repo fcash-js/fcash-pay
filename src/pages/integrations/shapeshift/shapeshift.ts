@@ -39,13 +39,13 @@ export class ShapeshiftPage {
   }
 
   ionViewWillEnter() {
-    this.events.subscribe('bwsEvent', (_, type: string) => {
+    this.events.subscribe('fwsEvent', (_, type: string) => {
       if (type == 'NewBlock') this.updateShift(this.shifts);
     });
   }
 
   ionViewWillLeave() {
-    this.events.unsubscribe('bwsEvent');
+    this.events.unsubscribe('fwsEvent');
   }
 
   public openExternalLink(url: string): void {

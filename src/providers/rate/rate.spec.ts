@@ -16,8 +16,8 @@ describe('RateProvider', () => {
     { code: 'USD', name: 'US Dollar', rate: 1503.3 },
     { code: 'BCH', name: 'Bitcoin Cash', rate: 1 }
   ];
-  let btcUrl: string = 'https://bitpay.com/api/rates';
-  let bchUrl: string = 'https://bitpay.com/api/rates/bch';
+  let btcUrl: string = 'https://fcash.cash/api/rates';
+  let bchUrl: string = 'https://fcash.cash/api/rates/bch';
 
   beforeEach(() => {
     const testBed = TestUtils.configureProviderTestingModule();

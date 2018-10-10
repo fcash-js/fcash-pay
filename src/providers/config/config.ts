@@ -29,12 +29,12 @@ export interface Config {
     };
   };
 
-  bws: {
+  fws: {
     url: string;
   };
 
   download: {
-    bitpay: {
+    fcash: {
       url: string;
     };
     copay: {
@@ -43,7 +43,7 @@ export interface Config {
   };
 
   rateApp: {
-    bitpay: {
+    fcash: {
       ios: string;
       android: string;
       wp: string;
@@ -96,7 +96,7 @@ export interface Config {
   };
 
   emailFor?: any;
-  bwsFor?: any;
+  fwsFor?: any;
   aliasFor?: any;
   colorFor?: any;
   touchIdFor?: any;
@@ -139,30 +139,30 @@ const configDefault: Config = {
   },
 
   // Bitcore wallet service URL
-  bws: {
-    url: 'https://bws.bitpay.com/bws/api'
+  fws: {
+    url: 'https://fws.fcash.cash/fws/api'
   },
 
   download: {
-    bitpay: {
-      url: 'https://bitpay.com/wallet'
+    fcash: {
+      url: 'https://fcash.cash/wallet'
     },
     copay: {
-      url: 'https://copay.io/#download'
+      url: 'https://www.fcash.cash/#download'
     }
   },
 
   rateApp: {
-    bitpay: {
+    fcash: {
       ios:
-        'https://itunes.apple.com/app/bitpay-secure-bitcoin-wallet/id1149581638',
+        'https://itunes.apple.com/app/fcash-secure-bitcoin-wallet/id1149581638',
       android:
-        'https://play.google.com/store/apps/details?id=com.bitpay.wallet',
+        'https://play.google.com/store/apps/details?id=com.fcash.wallet',
       wp: ''
     },
     copay: {
       ios: 'https://itunes.apple.com/app/copay-bitcoin-wallet/id951330296',
-      android: 'https://play.google.com/store/apps/details?id=com.bitpay.copay',
+      android: 'https://play.google.com/store/apps/details?id=com.fcash.copay',
       wp: ''
     }
   },
@@ -190,11 +190,11 @@ const configDefault: Config = {
   },
 
   rates: {
-    url: 'https://insight.bitpay.com:443/api/rates'
+    url: 'https://insight.fcash.cash:443/api/rates'
   },
 
   release: {
-    url: 'https://api.github.com/repos/bitpay/copay/releases/latest'
+    url: 'https://api.github.com/repos/fcash-project/fcash-pay/releases/latest'
   },
 
   pushNotificationsEnabled: true,
@@ -213,8 +213,8 @@ const configDefault: Config = {
   },
 
   blockExplorerUrl: {
-    btc: 'insight.bitpay.com',
-    bch: 'bch-insight.bitpay.com/#'
+    btc: 'insight.fcash.cash',
+    bch: 'bch-insight.fcash.cash/#'
   }
 };
 
@@ -294,8 +294,8 @@ export class ConfigProvider {
 
   private backwardCompatibility() {
     // these ifs are to avoid migration problems
-    if (this.configCache.bws) {
-      this.configCache.bws = configDefault.bws;
+    if (this.configCache.fws) {
+      this.configCache.fws = configDefault.fws;
     }
     if (!this.configCache.wallet) {
       this.configCache.wallet = configDefault.wallet;

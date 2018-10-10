@@ -58,7 +58,7 @@ describe('HomePage', () => {
         instance.ionViewDidEnter();
         expect(spy).toHaveBeenCalled();
       });
-      it('should subscribe to bws events', () => {
+      it('should subscribe to fws events', () => {
         const spy = spyOn(instance, 'subscribeBwsEvents');
         instance.ionViewDidEnter();
         expect(spy).toHaveBeenCalled();
@@ -85,10 +85,10 @@ describe('HomePage', () => {
     });
 
     describe('ionViewWillLeave', () => {
-      it('should unsubscribe from bwsEvent event', () => {
+      it('should unsubscribe from fwsEvent event', () => {
         const spy = spyOn(instance.events, 'unsubscribe');
         instance.ionViewWillLeave();
-        expect(spy).toHaveBeenCalledWith('bwsEvent');
+        expect(spy).toHaveBeenCalledWith('fwsEvent');
       });
     });
   });

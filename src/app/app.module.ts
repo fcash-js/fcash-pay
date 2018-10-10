@@ -19,7 +19,7 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 /* Copay App */
 import env from '../environments';
-import { CopayApp } from './app.component';
+import { FcashApp } from './app.component';
 
 import { PAGES } from './../pages/pages';
 
@@ -70,7 +70,7 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
 
 @NgModule({
   declarations: [
-    CopayApp,
+    FcashApp,
     ...PAGES,
     ...COMPONENTS,
     /* Directives */
@@ -92,7 +92,7 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     OrderByPipe
   ],
   imports: [
-    IonicModule.forRoot(CopayApp, {
+    IonicModule.forRoot(FcashApp, {
       animate: env.enableAnimations,
       tabsHideOnSubPages: true,
       tabsPlacement: 'bottom',
@@ -119,7 +119,7 @@ export class MyMissingTranslationHandler implements MissingTranslationHandler {
     ZXingScannerModule.forRoot()
   ],
   bootstrap: [IonicApp],
-  entryComponents: [CopayApp, ...PAGES, ...COMPONENTS],
+  entryComponents: [FcashApp, ...PAGES, ...COMPONENTS],
   providers: [
     {
       provide: ErrorHandler,

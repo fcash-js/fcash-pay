@@ -95,7 +95,7 @@ export class ImportWalletPage {
       filePassword: [null],
       derivationPath: [this.derivationPathByDefault, Validators.required],
       testnetEnabled: [false],
-      bwsURL: [this.defaults.bws.url],
+      fwsURL: [this.defaults.fws.url],
       coin: [null, Validators.required]
     });
     this.events.subscribe('update:words', data => {
@@ -343,7 +343,7 @@ export class ImportWalletPage {
       this.reader.readAsBinaryString(backupFile);
     } else {
       let opts: Partial<WalletOptions> = {};
-      opts.bwsurl = this.importForm.value.bwsURL;
+      opts.fwsurl = this.importForm.value.fwsURL;
       opts.coin = this.importForm.value.coin;
       this.importBlob(backupText, opts);
     }
@@ -359,8 +359,8 @@ export class ImportWalletPage {
 
     let opts: Partial<WalletOptions> = {};
 
-    if (this.importForm.value.bwsURL)
-      opts.bwsurl = this.importForm.value.bwsURL;
+    if (this.importForm.value.fwsURL)
+      opts.fwsurl = this.importForm.value.fwsURL;
 
     let pathData = this.derivationPathHelperProvider.parse(
       this.importForm.value.derivationPath
@@ -424,7 +424,7 @@ export class ImportWalletPage {
       if (this.reader.readyState === 2) {
         // DONE === 2
         let opts: Partial<WalletOptions> = {};
-        opts.bwsurl = this.importForm.value.bwsURL;
+        opts.fwsurl = this.importForm.value.fwsURL;
         opts.coin = this.importForm.value.coin;
         this.importBlob(this.reader.result, opts);
       }

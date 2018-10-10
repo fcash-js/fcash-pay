@@ -20,7 +20,7 @@ msgstr "(信頼済み)"
 msgid "(possible double spend)"
 msgstr "(二重払い可能性あり)"
 
-msgid "* A payment proposal can be deleted if 1) you are the creator, and no other copayer has signed, or 2) 10 minutes have passed since the proposal was created."
+msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcash-pay has signed, or 2) 10 minutes have passed since the proposal was created."
 msgstr ""
 
 msgid "5-star ratings help us get BitPay Wallet into more hands, and more users means more resources can be committed to the app!"
@@ -1804,7 +1804,7 @@ msgstr "是非友達と共有して下さい"
 msgid "Share this QR code to receive {amount} in your wallet {name}."
 msgstr ""
 
-msgid "Share this invitation with your copayers"
+msgid "Share this invitation with your fcash-pay"
 msgstr "ウォレット参加者に\n"
 "この招待コードを\n"
 "送って下さい。"
@@ -2019,8 +2019,8 @@ msgstr ""
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender."
 msgstr ""
 
-msgid "This wallet is not registered at the given Bitcore Wallet Service (BWS). You can recreate it from the local information."
-msgstr "現在設定中のBitcore Wallet Service (BWS) サーバーにて、このウォレットの登録がありません。再登録を行うこともできます。"
+msgid "This wallet is not registered at the given Fcash Wallet Service (FWS). You can recreate it from the local information."
+msgstr "現在設定中のFcash Wallet Service (FWS) サーバーにて、このウォレットの登録がありません。再登録を行うこともできます。"
 
 msgid "Timeline"
 msgstr "履歴"
@@ -2046,7 +2046,7 @@ msgstr "合計"
 msgid "Total Locked Balance"
 msgstr "ロック中の残高"
 
-msgid "Total number of copayers"
+msgid "Total number of fcash-pay"
 msgstr ""
 
 msgid "Total wallet inputs"
@@ -2208,7 +2208,7 @@ msgstr "注意：このデバイスでは鍵の派生がちゃんと動いてお
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "警告: 信頼されていない証明書"
 
-msgid "Waiting for copayers"
+msgid "Waiting for fcash-pay"
 msgstr "ウォレット参加者を待っています"
 
 msgid "Waiting..."
@@ -2454,7 +2454,7 @@ msgstr ""
 msgid "{coinName} miner fees unusually high"
 msgstr ""
 
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
+msgid "{{appName}} depends on Fcash Wallet Service (FWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://fws.fcash.cash (BitPay's public FWS instance)."
 msgstr ""
 
 msgid "{{fee}} {{coin}} will be deducted for bitcoin networking fees."

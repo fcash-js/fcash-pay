@@ -35,4 +35,4 @@ function iconset {
 }
 
 postprocess copay
-postprocess bitpay
+postprocess fcash

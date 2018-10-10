@@ -7,7 +7,7 @@ import { Device } from '@ionic-native/device';
 
 // providers
 import { AppIdentityProvider } from '../app-identity/app-identity';
-import { BitPayProvider } from '../bitpay/bitpay';
+import { BitPayProvider } from '../fcash-project/fcash';
 import { Logger } from '../logger/logger';
 import { OnGoingProcessProvider } from '../on-going-process/on-going-process';
 import { PersistenceProvider } from '../persistence/persistence';
@@ -18,14 +18,14 @@ import { ReplaceParametersProvider } from '../replace-parameters/replace-paramet
 @Injectable()
 export class BitPayAccountProvider {
   /*
-   * Pair this app with the bitpay server using the specified pairing data.
+   * Pair this app with the fcash server using the specified pairing data.
    * An app identity will be created if one does not already exist.
-   * Pairing data is provided by an input URI provided by the bitpay server.
+   * Pairing data is provided by an input URI provided by the fcash server.
    *
    * pairData - data needed to complete the pairing process
    * {
    *   secret: shared pairing secret
-   *   email: email address associated with bitpay account
+   *   email: email address associated with fcash account
    *   otp: two-factor one-time use password
    * }
    *

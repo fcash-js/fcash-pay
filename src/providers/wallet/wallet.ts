@@ -30,7 +30,7 @@ export interface WalletOptions {
   n: any;
   myName: any;
   networkName: string;
-  bwsurl: any;
+  fwsurl: any;
   singleAddress: any;
   coin: Coin;
   extendedPrivateKey: any;
@@ -165,7 +165,7 @@ export class WalletProvider {
           }
 
           let action = lodash.find(tx.actions, {
-            copayerId: tx.wallet.copayerId
+            FcashPayId: tx.wallet.FcashPayId
           });
 
           if (!action && tx.status == 'pending') {
@@ -924,7 +924,7 @@ export class WalletProvider {
   }
 
   // These 2 functions were taken from
-  // https://github.com/bitpay/bitcore-wallet-service/blob/master/lib/model/txproposal.js#L243
+  // https://github.com/fcash-project/fcash-wallet-service/blob/master/lib/model/txproposal.js#L243
   private getEstimatedSizeForSingleInput(wallet): number {
     switch (wallet.credentials.addressType) {
       case 'P2PKH':
@@ -1670,11 +1670,11 @@ export class WalletProvider {
       let walletPrivKey = this.bwcProvider
         .getBitcore()
         .PrivateKey.fromString(wallet.credentials.walletPrivKey);
-      let copayer = 1;
+      let fcash-pay = 1;
       let i = 0;
 
       lodash.each(wallet.credentials.publicKeyRing, item => {
-        let name = item.copayerName || 'copayer ' + copayer++;
+        let name = item.fcash-payName || 'fcash-pay ' + fcash-pay++;
         newWallet._doJoinWallet(
           newWallet.credentials.walletId,
           walletPrivKey,
@@ -1685,7 +1685,7 @@ export class WalletProvider {
             coin: newWallet.credentials.coin
           },
           err => {
-            // Ignore error is copayer already in wallet
+            // Ignore error is fcash-pay already in wallet
             if (err && !(err instanceof this.errors.COPAYER_IN_WALLET))
               return reject(err);
             if (++i == wallet.credentials.publicKeyRing.length)

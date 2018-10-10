@@ -20,7 +20,7 @@ msgstr "(Vertrouwd)"
 msgid "(possible double spend)"
 msgstr "(mogelijk dubbel besteed)"
 
-msgid "* A payment proposal can be deleted if 1) you are the creator, and no other copayer has signed, or 2) 10 minutes have passed since the proposal was created."
+msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcash-pay has signed, or 2) 10 minutes have passed since the proposal was created."
 msgstr ""
 
 msgid "5-star ratings help us get BitPay Wallet into more hands, and more users means more resources can be committed to the app!"
@@ -1802,8 +1802,8 @@ msgstr "Deel het plezier door uw vrienden uit te nodigen."
 msgid "Share this QR code to receive {amount} in your wallet {name}."
 msgstr ""
 
-msgid "Share this invitation with your copayers"
-msgstr "Deel deze uitnodiging met uw copayers"
+msgid "Share this invitation with your fcash-pay"
+msgstr "Deel deze uitnodiging met uw fcash-pay"
 
 msgid "Share {{appName}}"
 msgstr ""
@@ -2015,8 +2015,8 @@ msgstr ""
 msgid "This transaction could take a long time to confirm or could be dropped due to the low fees set by the sender."
 msgstr ""
 
-msgid "This wallet is not registered at the given Bitcore Wallet Service (BWS). You can recreate it from the local information."
-msgstr "Deze portemonnee is niet geregistreerd bij de opgegeven Bitcore Wallet Service (BWS). U kunt deze opnieuw aanmaken vanuit de lokale informatie."
+msgid "This wallet is not registered at the given Fcash Wallet Service (FWS). You can recreate it from the local information."
+msgstr "Deze portemonnee is niet geregistreerd bij de opgegeven Fcash Wallet Service (FWS). U kunt deze opnieuw aanmaken vanuit de lokale informatie."
 
 msgid "Timeline"
 msgstr "Tijdlijn"
@@ -2042,7 +2042,7 @@ msgstr "Totaal"
 msgid "Total Locked Balance"
 msgstr "Totaal Vergrendeld Saldo"
 
-msgid "Total number of copayers"
+msgid "Total number of fcash-pay"
 msgstr ""
 
 msgid "Total wallet inputs"
@@ -2204,8 +2204,8 @@ msgstr "WAARSCHUWING: Sleutel derivatie werkt op dit moment niet op dit apparaat
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "WAARSCHUWING: NIET-VERTROUWD CERTIFICAAT"
 
-msgid "Waiting for copayers"
-msgstr "Wachten op copayers"
+msgid "Waiting for fcash-pay"
+msgstr "Wachten op fcash-pay"
 
 msgid "Waiting..."
 msgstr "Wachten..."
@@ -2450,7 +2450,7 @@ msgstr ""
 msgid "{coinName} miner fees unusually high"
 msgstr ""
 
-msgid "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
+msgid "{{appName}} depends on Fcash Wallet Service (FWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://fws.fcash.cash (BitPay's public FWS instance)."
 msgstr ""
 
 msgid "{{fee}} {{coin}} will be deducted for bitcoin networking fees."

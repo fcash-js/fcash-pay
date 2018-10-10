@@ -25,9 +25,9 @@ export { AppProvider } from '../providers/app/app';
 export { BackupProvider } from '../providers/backup/backup';
 export {
   BitPayAccountProvider
-} from '../providers/bitpay-account/bitpay-account';
-export { BitPayCardProvider } from '../providers/bitpay-card/bitpay-card';
-export { BitPayProvider } from '../providers/bitpay/bitpay';
+} from '../providers/fcash-account/fcash-account';
+export { BitPayCardProvider } from '../providers/fcash-card/fcash-card';
+export { BitPayProvider } from '../providers/fcash-project/fcash';
 export { BwcErrorProvider } from '../providers/bwc-error/bwc-error';
 export { BwcProvider } from '../providers/bwc/bwc';
 export { ClipboardProvider } from '../providers/clipboard/clipboard';

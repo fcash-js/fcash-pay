@@ -13,7 +13,7 @@
     </ion-buttons>
   </ion-navbar>
   <ion-toolbar *ngIf="!wallet.notAuthorized && secret" [navbar-bg]="wallet.color">
-    <div class="wallet-details-header__subtitle">{{ 'Share this invitation with your copayers' | translate }}</div>
+    <div class="wallet-details-header__subtitle">{{ 'Share this invitation with your fcash-pay' | translate }}</div>
   </ion-toolbar>
 </ion-header>
 
@@ -26,20 +26,20 @@
   </div>
   <ion-list>
     <ion-item>
-      <span translate>Waiting for copayers</span>
+      <span translate>Waiting for fcash-pay</span>
       <span class="text-gray">
         [
         <span translate>{{wallet.m}}-of-{{wallet.n}}</span> ]
       </span>
     </ion-item>
-    <div *ngFor="let copayer of copayers">
-      <ion-item *ngIf="copayer.id == wallet.copayerId">
+    <div *ngFor="let fcash-pay of fcash-pay">
+      <ion-item *ngIf="fcash-pay.id == wallet.FcashPayId">
         <ion-icon ios="ios-checkmark" md="md-checkmark" item-start></ion-icon>
         {{'Me'|translate}}
       </ion-item>
-      <ion-item *ngIf="copayer.id != wallet.copayerId">
+      <ion-item *ngIf="fcash-pay.id != wallet.FcashPayId">
         <ion-icon ios="ios-checkmark" md="md-checkmark" item-start></ion-icon>
-        {{copayer.name}}
+        {{fcash-pay.name}}
       </ion-item>
     </div>
     <ion-item *ngIf="!wallet.isComplete()">

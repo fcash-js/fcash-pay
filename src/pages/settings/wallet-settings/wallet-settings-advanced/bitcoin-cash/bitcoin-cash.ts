@@ -110,7 +110,7 @@ export class BitcoinCashPage extends WalletTabsChild {
       name: wallet.name + '[BCH]',
       m: wallet.m,
       n: wallet.n,
-      myName: wallet.credentials.copayerName,
+      myName: wallet.credentials.fcash-payName,
       networkName: wallet.network,
       coin: Coin.BCH,
       walletPrivKey: wallet.credentials.walletPrivKey,
@@ -215,7 +215,7 @@ export class BitcoinCashPage extends WalletTabsChild {
       if (wallet.n == 1) return resolve();
 
       this.logger.debug(
-        'Adding copayers for BCH wallet config:' + wallet.m + '-' + wallet.n
+        'Adding fcash-pay for BCH wallet config:' + wallet.m + '-' + wallet.n
       );
 
       this.walletProvider
@@ -231,7 +231,7 @@ export class BitcoinCashPage extends WalletTabsChild {
 
   public openHelpExternalLink(): void {
     let url =
-      'https://support.bitpay.com/hc/en-us/articles/115005019583-How-Can-I-Recover-Bitcoin-Cash-BCH-from-My-Wallet-';
+      'https://support.fcash.cash/hc/en-us/articles/115005019583-How-Can-I-Recover-Bitcoin-Cash-BCH-from-My-Wallet-';
     let optIn = true;
     let title = null;
     let message = this.translate.instant(

@@ -14,7 +14,7 @@ describe('Provider: Wallet Provider', () => {
 
   let opts = {
     enabled: true,
-    email: 'test@bitpay.com'
+    email: 'test@fcash.cash'
   };
 
   beforeEach(() => {
@@ -69,7 +69,7 @@ describe('Provider: Wallet Provider', () => {
     it('should return email', () => {
       emailNotificationsProvider.updateEmail(opts);
       expect(emailNotificationsProvider.getEmailIfEnabled()).toEqual(
-        'test@bitpay.com'
+        'test@fcash.cash'
       );
     });
   });

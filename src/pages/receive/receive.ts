@@ -137,7 +137,7 @@ export class ReceivePage extends WalletTabsChild {
 
   public openWikiBackupNeeded(): void {
     let url =
-      'https://support.bitpay.com/hc/en-us/articles/115002989283-Why-don-t-I-have-an-online-account-for-my-BitPay-wallet-';
+      'https://support.fcash.cash/hc/en-us/articles/115002989283-Why-don-t-I-have-an-online-account-for-my-BitPay-wallet-';
     let optIn = true;
     let title = null;
     let message = this.translate.instant('Read more in our Wiki');

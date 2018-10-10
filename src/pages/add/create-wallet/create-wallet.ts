@@ -44,7 +44,7 @@ export class CreateWalletPage implements OnInit {
   private derivationPathByDefault: string;
   private derivationPathForTestnet: string;
 
-  public copayers: number[];
+  public fcash-pay: number[];
   public signatures: number[];
   public showAdvOpts: boolean;
   public seedOptions;
@@ -78,7 +78,7 @@ export class CreateWalletPage implements OnInit {
     this.defaults = this.configProvider.getDefaults();
     this.tc = this.isShared ? this.defaults.wallet.totalCopayers : 1;
 
-    this.copayers = _.range(2, this.defaults.limits.totalCopayers + 1);
+    this.fcash-pay = _.range(2, this.defaults.limits.totalCopayers + 1);
     this.derivationPathByDefault = this.derivationPathHelperProvider.default;
     this.derivationPathForTestnet = this.derivationPathHelperProvider.defaultTestnet;
     this.showAdvOpts = false;
@@ -88,7 +88,7 @@ export class CreateWalletPage implements OnInit {
       myName: [null],
       totalCopayers: [1],
       requiredCopayers: [1],
-      bwsURL: [this.defaults.bws.url],
+      fwsURL: [this.defaults.fws.url],
       selectedSeed: ['new'],
       recoveryPhrase: [null],
       derivationPath: [this.derivationPathByDefault],
@@ -172,7 +172,7 @@ export class CreateWalletPage implements OnInit {
           ? this.createForm.value.myName
           : null,
       networkName: this.createForm.value.testnetEnabled ? 'testnet' : 'livenet',
-      bwsurl: this.createForm.value.bwsURL,
+      fwsurl: this.createForm.value.fwsURL,
       singleAddress: this.createForm.value.singleAddress,
       coin: this.createForm.value.coin
     };

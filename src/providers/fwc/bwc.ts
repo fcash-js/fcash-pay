@@ -2,42 +2,42 @@ import { Injectable } from '@angular/core';
 
 import { Logger } from '../../providers/logger/logger';
 
-import * as BWC from 'bitcore-wallet-client';
+import * as FWC from 'fcash-wallet-client';
 
 @Injectable()
 export class BwcProvider {
-  public buildTx = BWC.buildTx;
-  public parseSecret = BWC.parseSecret;
-  public Client = BWC;
+  public buildTx = FWC.buildTx;
+  public parseSecret = FWC.parseSecret;
+  public Client = FWC;
   constructor(private logger: Logger) {
     this.logger.debug('BwcProvider initialized');
   }
   public getBitcore() {
-    return BWC.Bitcore;
+    return FWC.Bitcore;
   }
 
   public getBitcoreCash() {
-    return BWC.BitcoreCash;
+    return FWC.BitcoreCash;
   }
 
   public getErrors() {
-    return BWC.errors;
+    return FWC.errors;
   }
 
   public getSJCL() {
-    return BWC.sjcl;
+    return FWC.sjcl;
   }
 
   public getUtils() {
-    return BWC.Utils;
+    return FWC.Utils;
   }
 
   public getClient(walletData?, opts?) {
     opts = opts || {};
 
-    // note opts use `bwsurl` all lowercase;
-    let bwc = new BWC({
-      baseUrl: opts.bwsurl || 'https://bws.bitpay.com/bws/api',
+    // note opts use `fwsurl` all lowercase;
+    let bwc = new FWC({
+      baseUrl: opts.fwsurl || 'https://fws.fcash.cash/fws/api',
       verbose: opts.verbose,
       timeout: 100000,
       transports: ['polling']

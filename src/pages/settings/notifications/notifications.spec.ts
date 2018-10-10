@@ -49,7 +49,7 @@ describe('NotificationsPage', () => {
         instance.openPrivacyPolicy();
 
         expect(instance.externalLinkProvider.open).toHaveBeenCalledWith(
-          'https://bitpay.com/about/privacy',
+          'https://fcash.cash/about/privacy',
           true,
           null,
           'View Privacy Policy',

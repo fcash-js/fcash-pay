@@ -2,8 +2,8 @@ package.json
 package-lock.json
 package-template.json
 google-services.json
-app-template/bitpay/google-services.json
-app-template/copay/google-services.json
+app-template/fcash-project/google-services.json
+app-template/fcash-pay/google-services.json
 .sourcemaps/
 coverage/
 platforms/

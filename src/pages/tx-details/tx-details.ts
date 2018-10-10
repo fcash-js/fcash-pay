@@ -31,7 +31,7 @@ export class TxDetailsPage {
   public title: string;
   public txNotification;
   public color: string;
-  public copayerId: string;
+  public FcashPayId: string;
   public txsUnsubscribedForNotifications: boolean;
   public contactName: string;
   public txMemo: string;
@@ -60,7 +60,7 @@ export class TxDetailsPage {
     this.title = this.translate.instant('Transaction');
     this.wallet = this.profileProvider.getWallet(this.navParams.data.walletId);
     this.color = this.wallet.color;
-    this.copayerId = this.wallet.credentials.copayerId;
+    this.FcashPayId = this.wallet.credentials.FcashPayId;
     this.isShared = this.wallet.credentials.n > 1;
     this.txsUnsubscribedForNotifications = this.config.confirmedTxsNotifications
       ? !this.config.confirmedTxsNotifications.enabled
@@ -82,19 +82,19 @@ export class TxDetailsPage {
   }
 
   ionViewWillEnter() {
-    this.events.subscribe('bwsEvent', (_, type: string, n) => {
+    this.events.subscribe('fwsEvent', (_, type: string, n) => {
       if (type == 'NewBlock' && n && n.data && n.data.network == 'livenet')
         this.updateTxDebounced({ hideLoading: true });
     });
   }
 
   ionViewWillLeave() {
-    this.events.unsubscribe('bwsEvent');
+    this.events.unsubscribe('fwsEvent');
   }
 
   public readMore(): void {
     let url =
-      'https://support.bitpay.com/hc/en-us/articles/115004497783-What-does-the-BitPay-wallet-s-warning-amount-too-low-to-spend-mean-';
+      'https://support.fcash.cash/hc/en-us/articles/115004497783-What-does-the-BitPay-wallet-s-warning-amount-too-low-to-spend-mean-';
     let optIn = true;
     let title = null;
     let message = this.translate.instant('Read more in our support page');
@@ -150,7 +150,7 @@ export class TxDetailsPage {
         type: action.type,
         time: action.createdOn,
         description: actionDescriptions[action.type],
-        by: action.copayerName
+        by: action.fcash-payName
       });
     });
 

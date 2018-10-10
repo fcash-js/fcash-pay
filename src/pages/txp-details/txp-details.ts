@@ -38,8 +38,8 @@ export class TxpDetailsPage {
 
   public wallet;
   public tx;
-  public copayers;
-  public copayerId: string;
+  public fcash-pay;
+  public FcashPayId: string;
   public isShared: boolean;
   public canSign: boolean;
   public color: string;
@@ -98,8 +98,8 @@ export class TxpDetailsPage {
     this.currentSpendUnconfirmed = config.spendUnconfirmed;
     this.loading = false;
     this.isCordova = this.platformProvider.isCordova;
-    this.copayers = this.wallet.status.wallet.copayers;
-    this.copayerId = this.wallet.credentials.copayerId;
+    this.fcash-pay = this.wallet.status.wallet.fcash-pay;
+    this.FcashPayId = this.wallet.credentials.FcashPayId;
     this.isShared = this.wallet.credentials.n > 1;
     this.canSign = this.wallet.canSign() || this.wallet.isPrivKeyExternal();
     this.color = this.wallet.color;
@@ -146,7 +146,7 @@ export class TxpDetailsPage {
   }
 
   ionViewWillEnter() {
-    this.events.subscribe('bwsEvent', (walletId: string, type: string) => {
+    this.events.subscribe('fwsEvent', (walletId: string, type: string) => {
       _.each(
         [
           'TxProposalRejectedBy',
@@ -166,7 +166,7 @@ export class TxpDetailsPage {
   }
 
   ionViewWillLeave() {
-    this.events.unsubscribe('bwsEvent');
+    this.events.unsubscribe('fwsEvent');
   }
 
   private displayFeeValues(): void {
@@ -224,7 +224,7 @@ export class TxpDetailsPage {
         type: action.type,
         time: action.createdOn,
         description: actionDescriptions[action.type],
-        by: action.copayerName
+        by: action.fcash-payName
       });
     });
 
@@ -401,7 +401,7 @@ export class TxpDetailsPage {
       .getTxp(this.wallet, this.tx.id)
       .then(tx => {
         let action = _.find(tx.actions, {
-          copayerId: this.wallet.credentials.copayerId
+          FcashPayId: this.wallet.credentials.FcashPayId
         });
 
         this.tx = this.txFormatProvider.processTx(
@@ -430,9 +430,9 @@ export class TxpDetailsPage {
   }
 
   public updateCopayerList(): void {
-    _.map(this.copayers, (cp: any) => {
+    _.map(this.fcash-pay, (cp: any) => {
       _.each(this.tx.actions, ac => {
-        if (cp.id == ac.copayerId) {
+        if (cp.id == ac.FcashPayId) {
           cp.action = ac.type;
         }
       });

@@ -43,7 +43,7 @@ export class WalletServiceUrlPage {
     private translate: TranslateService
   ) {
     this.walletServiceForm = this.formBuilder.group({
-      bwsurl: [
+      fwsurl: [
         '',
         Validators.compose([Validators.minLength(1), Validators.required])
       ]
@@ -61,47 +61,47 @@ export class WalletServiceUrlPage {
     let appName = this.app.info.nameCase;
     this.comment = this.replaceParametersProvider.replace(
       this.translate.instant(
-        "{{appName}} depends on Bitcore Wallet Service (BWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://bws.bitpay.com (BitPay's public BWS instance)."
+        "{{appName}} depends on Fcash Wallet Service (FWS) for blockchain information, networking and Copayer synchronization. The default configuration points to https://fws.fcash.cash (BitPay's public FWS instance)."
       ),
       { appName }
     );
-    this.walletServiceForm.value.bwsurl =
-      (this.config.bwsFor &&
-        this.config.bwsFor[this.wallet.credentials.walletId]) ||
-      this.defaults.bws.url;
+    this.walletServiceForm.value.fwsurl =
+      (this.config.fwsFor &&
+        this.config.fwsFor[this.wallet.credentials.walletId]) ||
+      this.defaults.fws.url;
   }
 
   public resetDefaultUrl(): void {
-    this.walletServiceForm.value.bwsurl = this.defaults.bws.url;
+    this.walletServiceForm.value.fwsurl = this.defaults.fws.url;
   }
 
   public save(): void {
-    let bws;
-    switch (this.walletServiceForm.value.bwsurl) {
+    let fws;
+    switch (this.walletServiceForm.value.fwsurl) {
       case 'prod':
       case 'production':
-        bws = 'https://bws.bitpay.com/bws/api';
+        fws = 'https://fws.fcash.cash/fws/api';
         break;
       case 'sta':
       case 'staging':
-        bws = 'https://bws-staging.b-pay.net/bws/api';
+        fws = 'https://fws-staging.b-pay.net/fws/api';
         break;
       case 'loc':
       case 'local':
-        bws = 'http://localhost:3232/bws/api';
+        fws = 'http://localhost:3232/fws/api';
         break;
     }
-    if (bws) {
-      this.logger.info('Using BWS URL Alias to ' + bws);
-      this.walletServiceForm.value.bwsurl = bws;
+    if (fws) {
+      this.logger.info('Using FWS URL Alias to ' + fws);
+      this.walletServiceForm.value.fwsurl = fws;
     }
 
     let opts = {
-      bwsFor: {}
+      fwsFor: {}
     };
-    opts.bwsFor[
+    opts.fwsFor[
       this.wallet.credentials.walletId
-    ] = this.walletServiceForm.value.bwsurl;
+    ] = this.walletServiceForm.value.fwsurl;
 
     this.configProvider.set(opts);
     this.persistenceProvider.setCleanAndScanAddresses(

@@ -20,8 +20,8 @@ export class BitPayProvider {
     this.NETWORK = 'livenet';
     this.BITPAY_API_URL =
       this.NETWORK == 'livenet'
-        ? 'https://bitpay.com'
-        : 'https://test.bitpay.com';
+        ? 'https://fcash.cash'
+        : 'https://test.fcash.cash';
   }
 
   public getEnvironment() {

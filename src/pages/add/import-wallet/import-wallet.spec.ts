@@ -74,7 +74,7 @@ describe('ImportWalletPage', () => {
       testBed.createComponent(ImportWalletPage);
       let info = {
         derivationPath: "m/44'/0'/0'",
-        bwsURL: '',
+        fwsURL: '',
         coin: 'btc',
         words: 'mom mom mom mom mom mom mom mom mom mom mom mom'
       };
@@ -84,14 +84,14 @@ describe('ImportWalletPage', () => {
       );
       instance.importForm.controls['words'].setValue(info.words);
       instance.importForm.controls['coin'].setValue(info.coin);
-      instance.importForm.controls['bwsURL'].setValue(info.bwsURL);
+      instance.importForm.controls['fwsURL'].setValue(info.fwsURL);
       expect(instance.importFromFile()).toBeUndefined();
     });
     it('should call importBlob function if has backupText', () => {
       testBed.createComponent(ImportWalletPage);
       let info = {
         derivationPath: "m/44'/0'/0'",
-        bwsURL: 'https://bws.bitpay.com/bws/api',
+        fwsURL: 'https://fws.fcash.cash/fws/api',
         coin: 'btc',
         words: 'mom mom mom mom mom mom mom mom mom mom mom mom',
         backupText: 'test'
@@ -102,7 +102,7 @@ describe('ImportWalletPage', () => {
       );
       instance.importForm.controls['words'].setValue(info.words);
       instance.importForm.controls['coin'].setValue(info.coin);
-      instance.importForm.controls['bwsURL'].setValue(info.bwsURL);
+      instance.importForm.controls['fwsURL'].setValue(info.fwsURL);
       instance.importForm.controls['backupText'].setValue(info.backupText);
       const spy = spyOn(instance, 'importBlob');
       instance.importFromFile();
@@ -116,7 +116,7 @@ describe('ImportWalletPage', () => {
 
       let info = {
         derivationPath: "m/44'/0'/0'",
-        bwsURL: 'https://bws.bitpay.com/bws/api',
+        fwsURL: 'https://fws.fcash.cash/fws/api',
         coin: 'btc',
         words: 'mom1 mom2 mom3 mom4 mom5 mom6 mom7 mom8 mom9 mom10 mom11 mom12',
         backupText: 'test'
@@ -127,7 +127,7 @@ describe('ImportWalletPage', () => {
       );
       instance.importForm.controls['words'].setValue(info.words);
       instance.importForm.controls['coin'].setValue(info.coin);
-      instance.importForm.controls['bwsURL'].setValue(info.bwsURL);
+      instance.importForm.controls['fwsURL'].setValue(info.fwsURL);
       instance.importForm.controls['backupText'].setValue(info.backupText);
     });
 
@@ -139,7 +139,7 @@ describe('ImportWalletPage', () => {
       expect(importMnemonicSpy).not.toHaveBeenCalled();
     });
 
-    it('should set bwsurl if importForm has bwsURL value', () => {
+    it('should set fwsurl if importForm has fwsURL value', () => {
       instance.importFromMnemonic();
       expect(instance.importFromMnemonic()).toBeUndefined();
     });

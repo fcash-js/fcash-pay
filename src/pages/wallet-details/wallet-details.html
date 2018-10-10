@@ -62,7 +62,7 @@
         </div>
         <div class="balance-error" *ngIf="walletNotRegistered" (tap)="recreate()">
           <span class="title" translate>Tap to recreate</span>
-          <div translate>This wallet is not registered at the given Bitcore Wallet Service (BWS). You can recreate it from the local information.</div>
+          <div translate>This wallet is not registered at the given Fcash Wallet Service (FWS). You can recreate it from the local information.</div>
         </div>
       </expandable-header-primary>
       <expandable-header-footer class="wallet-info" *ngIf="wallet" style="display: flex; align-items: center">
@@ -73,7 +73,7 @@
           <img class="read-only" *ngIf="!wallet.canSign()" src="assets/img/icon-read-only.svg">
           <img class="read-only-text" *ngIf="!wallet.canSign()" src="assets/img/icon-text-read-only.svg">
           <img class="auditable-text" *ngIf="wallet.status && wallet.status.wallet && wallet.status.wallet.singleAddress" src="assets/img/icon-text-auditable.svg">
-          <img class="custom-bws" *ngIf="wallet.usingCustomBWS" src="assets/img/icon-bws-white.svg">
+          <img class="custom-fws" *ngIf="wallet.usingCustomFWS" src="assets/img/icon-fws-white.svg">
           <img class="encrypted" *ngIf="wallet.isPrivKeyEncrypted()" src="assets/img/icon-lock-white.svg">
 
           <span class="wallet-type" *ngIf="wallet.credentials.n > 1">
@@ -93,7 +93,7 @@
     </expandable-header>
 
     <div *ngIf="wallet.network == 'testnet'" class="box-notification warning">
-      <a class="energized" (click)="openExternalLink('https://support.bitpay.com/hc/en-us/articles/360004102011-What-is-testnet-How-do-I-avoid-testnet-Bitcoin-scams-')">
+      <a class="energized" (click)="openExternalLink('https://support.fcash.cash/hc/en-us/articles/360004102011-What-is-testnet-How-do-I-avoid-testnet-Bitcoin-scams-')">
         <ion-icon name="warning"></ion-icon>
         {{'Learn more about testnet blockchain' | translate}}
         <ion-icon name="arrow-forward"></ion-icon>
@@ -177,7 +177,7 @@
                     <img class="icon-services" src="assets/img/amazon/amazon-icon.svg" *ngIf="tx.customData.service == 'amazon'" width="40">
                     <img class="icon-services" src="assets/img/mercado-libre/mercado-livre-icon.svg" *ngIf="tx.customData.service == 'mercadolibre'"
                       width="40">
-                    <img class="icon-services" src="assets/img/bitpay-card/icon-bitpay.svg" *ngIf="tx.customData.service == 'debitcard'" width="40">
+                    <img class="icon-services" src="assets/img/fcash-card/icon-fcash.svg" *ngIf="tx.customData.service == 'debitcard'" width="40">
                   </span>
                   <span *ngIf="tx.customData && tx.customData.toWalletName && !tx.customData.service">
                     <img class="icon-services" src="assets/img/icon-wallet-reverse.svg" *ngIf="tx.action == 'sent'" width="40">

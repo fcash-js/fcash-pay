@@ -19,8 +19,8 @@ import { PushNotificationsProvider } from '../../../providers/push-notifications
 import { WalletProvider } from '../../../providers/wallet/wallet';
 
 @Component({
-  selector: 'page-copayers',
-  templateUrl: 'copayers.html'
+  selector: 'page-fcash-pay',
+  templateUrl: 'fcash-pay.html'
 })
 export class CopayersPage {
   public appName: string;
@@ -28,7 +28,7 @@ export class CopayersPage {
   public isCordova: boolean;
 
   public wallet;
-  public copayers;
+  public fcash-pay;
   public secret;
 
   private onResumeSubscription: Subscription;
@@ -88,7 +88,7 @@ export class CopayersPage {
   }
 
   private subscribeEvents(): void {
-    this.events.subscribe('bwsEvent', (walletId, type) => {
+    this.events.subscribe('fwsEvent', (walletId, type) => {
       if (
         this.wallet &&
         walletId == this.wallet.id &&
@@ -100,7 +100,7 @@ export class CopayersPage {
   }
 
   private unsubscribeEvents(): void {
-    this.events.unsubscribe('bwsEvent');
+    this.events.unsubscribe('fwsEvent');
   }
 
   close() {
@@ -113,7 +113,7 @@ export class CopayersPage {
       .getStatus(this.wallet, {})
       .then(status => {
         this.wallet.status = status;
-        this.copayers = this.wallet.status.wallet.copayers;
+        this.fcash-pay = this.wallet.status.wallet.fcash-pay;
         this.secret = this.wallet.status.wallet.secret;
         if (status.wallet.status == 'complete') {
           this.wallet.openWallet(err => {
@@ -160,7 +160,7 @@ export class CopayersPage {
   }
 
   public showFullInfo(): void {
-    const infoSheet = this.actionSheetProvider.createInfoSheet('copayers', {
+    const infoSheet = this.actionSheetProvider.createInfoSheet('fcash-pay', {
       secret: this.secret
     });
     infoSheet.present();

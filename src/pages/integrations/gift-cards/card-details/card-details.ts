@@ -36,7 +36,7 @@ export class CardDetailsPage {
   }
 
   ionViewWillEnter() {
-    this.events.subscribe('bwsEvent', (_, type: string) => {
+    this.events.subscribe('fwsEvent', (_, type: string) => {
       if (type == 'NewBlock') {
         this.updateGiftCard();
       }
@@ -44,7 +44,7 @@ export class CardDetailsPage {
   }
 
   ionViewWillLeave() {
-    this.events.unsubscribe('bwsEvent');
+    this.events.unsubscribe('fwsEvent');
   }
 
   updateGiftCard() {
