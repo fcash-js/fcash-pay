@@ -142,7 +142,7 @@
     "@zxing/library": "0.8.2",
     "@zxing/ngx-scanner": "1.2.1",
     "angular2-moment": "1.7.1",
-    "bitauth": "git+https://github.com/bitpay/bitauth.git#fcash",
+    "bitauth": "git+https://github.com/bitpay/bitauth.git#master",
     "fcash-wallet-client": "6.7.5",
     "buffer-compare": "1.1.1",
     "cordova": "8.0.0",
