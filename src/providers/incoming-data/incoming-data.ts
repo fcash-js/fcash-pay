@@ -6,7 +6,7 @@ import { Logger } from '../../providers/logger/logger';
 // providers
 import { ActionSheetProvider } from '../action-sheet/action-sheet';
 import { AppProvider } from '../app/app';
-import { BwcProvider } from '../bwc/bwc';
+import { FwcProvider } from '../fwc/fwc';
 import { PayproProvider } from '../paypro/paypro';
 import { Coin } from '../wallet/wallet';
 
@@ -22,7 +22,7 @@ export class IncomingDataProvider {
   constructor(
     private actionSheetProvider: ActionSheetProvider,
     private events: Events,
-    private bwcProvider: BwcProvider,
+    private fwcProvider: FwcProvider,
     private payproProvider: PayproProvider,
     private logger: Logger,
     private appProvider: AppProvider,
@@ -63,17 +63,17 @@ export class IncomingDataProvider {
 
   private isValidFcashUri(data: string): boolean {
     data = this.sanitizeUri(data);
-    return !!this.bwcProvider.getFcash().URI.isValid(data);
+    return !!this.fwcProvider.getFcash().URI.isValid(data);
   }
 
   private isValidFcashCashUri(data: string): boolean {
     data = this.sanitizeUri(data);
-    return !!this.bwcProvider.getFcashCash().URI.isValid(data);
+    return !!this.fwcProvider.getFcashCash().URI.isValid(data);
   }
 
   public isValidFcashCashUriWithLegacyAddress(data: string): boolean {
     data = this.sanitizeUri(data);
-    return !!this.bwcProvider
+    return !!this.fwcProvider
       .getFcash()
       .URI.isValid(data.replace(/^(bitcoincash:|bchtest:)/, 'bitcoin:'));
   }
@@ -85,22 +85,22 @@ export class IncomingDataProvider {
 
   private isValidFcashAddress(data: string): boolean {
     return !!(
-      this.bwcProvider.getFcash().Address.isValid(data, 'livenet') ||
-      this.bwcProvider.getFcash().Address.isValid(data, 'testnet')
+      this.fwcProvider.getFcash().Address.isValid(data, 'livenet') ||
+      this.fwcProvider.getFcash().Address.isValid(data, 'testnet')
     );
   }
 
   public isValidFcashCashLegacyAddress(data: string): boolean {
     return !!(
-      this.bwcProvider.getFcash().Address.isValid(data, 'livenet') ||
-      this.bwcProvider.getFcash().Address.isValid(data, 'testnet')
+      this.fwcProvider.getFcash().Address.isValid(data, 'livenet') ||
+      this.fwcProvider.getFcash().Address.isValid(data, 'testnet')
     );
   }
 
   private isValidFcashCashAddress(data: string): boolean {
     return !!(
-      this.bwcProvider.getFcashCash().Address.isValid(data, 'livenet') ||
-      this.bwcProvider.getFcashCash().Address.isValid(data, 'testnet')
+      this.fwcProvider.getFcashCash().Address.isValid(data, 'livenet') ||
+      this.fwcProvider.getFcashCash().Address.isValid(data, 'testnet')
     );
   }
 
@@ -172,7 +172,7 @@ export class IncomingDataProvider {
     let amountFromRedirParams =
       redirParams && redirParams.amount ? redirParams.amount : '';
     const coin = Coin.BTC;
-    let parsed = this.bwcProvider.getFcash().URI(data);
+    let parsed = this.fwcProvider.getFcash().URI(data);
     let address = parsed.address ? parsed.address.toString() : '';
     let message = parsed.message;
     let amount = parsed.amount || amountFromRedirParams;
@@ -185,7 +185,7 @@ export class IncomingDataProvider {
     let amountFromRedirParams =
       redirParams && redirParams.amount ? redirParams.amount : '';
     const coin = Coin.BCH;
-    let parsed = this.bwcProvider.getFcashCash().URI(data);
+    let parsed = this.fwcProvider.getFcashCash().URI(data);
     let address = parsed.address ? parsed.address.toString() : '';
 
     // keep address in original format
@@ -203,7 +203,7 @@ export class IncomingDataProvider {
   private handleFcashCashUriLegacyAddress(data: string): void {
     this.logger.debug('Incoming-data: Fcash Cash URI with legacy address');
     const coin = Coin.BCH;
-    let parsed = this.bwcProvider
+    let parsed = this.fwcProvider
       .getFcash()
       .URI(data.replace(/^(bitcoincash:|bchtest:)/, 'bitcoin:'));
 
@@ -211,11 +211,11 @@ export class IncomingDataProvider {
     if (!oldAddr)
       this.logger.error('Could not parse Fcash Cash legacy address');
 
-    let a = this.bwcProvider
+    let a = this.fwcProvider
       .getFcash()
       .Address(oldAddr)
       .toObject();
-    let address = this.bwcProvider
+    let address = this.fwcProvider
       .getFcashCash()
       .Address.fromObject(a)
       .toString();
@@ -582,7 +582,7 @@ export class IncomingDataProvider {
     let isPK: boolean = this.checkRegex(privateKey);
     if (!isPK) return false;
     try {
-      this.bwcProvider.getFcash().PrivateKey(privateKey, 'livenet');
+      this.fwcProvider.getFcash().PrivateKey(privateKey, 'livenet');
     } catch (err) {
       return false;
     }

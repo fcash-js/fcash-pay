@@ -12,7 +12,7 @@ import { Logger } from '../../providers/logger/logger';
 // providers
 import { ActionSheetProvider } from '../../providers/action-sheet/action-sheet';
 import { AddressBookProvider } from '../../providers/address-book/address-book';
-import { BwcErrorProvider } from '../../providers/bwc-error/bwc-error';
+import { FwcErrorProvider } from '../../providers/fwc-error/fwc-error';
 import { ConfigProvider } from '../../providers/config/config';
 import { FeeProvider } from '../../providers/fee/fee';
 import { OnGoingProcessProvider } from '../../providers/on-going-process/on-going-process';
@@ -79,7 +79,7 @@ export class TxpDetailsPage {
     private decimalPipe: DecimalPipe,
     private payproProvider: PayproProvider,
     private actionSheetProvider: ActionSheetProvider,
-    private bwcErrorProvider: BwcErrorProvider
+    private fwcErrorProvider: FwcErrorProvider
   ) {
     this.showMultiplesOutputs = false;
     let config = this.configProvider.get().wallet;
@@ -292,7 +292,7 @@ export class TxpDetailsPage {
 
     const errorInfoSheet = this.actionSheetProvider.createInfoSheet(
       'default-error',
-      { msg: this.bwcErrorProvider.msg(error), title: infoSheetTitle }
+      { msg: this.fwcErrorProvider.msg(error), title: infoSheetTitle }
     );
     errorInfoSheet.present();
     errorInfoSheet.onDidDismiss(() => {

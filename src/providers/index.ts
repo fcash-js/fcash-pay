@@ -28,8 +28,8 @@ export {
 } from '../providers/fcash-account/fcash-account';
 export { FcashCardProvider } from '../providers/fcash-card/fcash-card';
 export { FcashProvider } from '../providers/fcash-js/fcash';
-export { BwcErrorProvider } from '../providers/bwc-error/bwc-error';
-export { BwcProvider } from '../providers/bwc/bwc';
+export { FwcErrorProvider } from '../providers/fwc-error/fwc-error';
+export { FwcProvider } from '../providers/fwc/fwc';
 export { ClipboardProvider } from '../providers/clipboard/clipboard';
 export { CoinbaseProvider } from '../providers/coinbase/coinbase';
 export { ConfigProvider } from '../providers/config/config';

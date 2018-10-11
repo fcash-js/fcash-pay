@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 // Providers
-import { BwcProvider } from '../../providers/bwc/bwc';
+import { FwcProvider } from '../../providers/fwc/fwc';
 
 @Injectable()
 export class AddressProvider {
@@ -9,9 +9,9 @@ export class AddressProvider {
   private fcashBaseCash;
   private Fcash;
 
-  constructor(private bwcProvider: BwcProvider) {
-    this.fcashBase = this.bwcProvider.getFcash();
-    this.fcashBaseCash = this.bwcProvider.getFcashCash();
+  constructor(private fwcProvider: FwcProvider) {
+    this.fcashBase = this.fwcProvider.getFcash();
+    this.fcashBaseCash = this.fwcProvider.getFcashCash();
     this.Fcash = {
       btc: {
         lib: this.fcashBase,
@@ -43,10 +43,10 @@ export class AddressProvider {
     address = address.replace(/^(bitcoincash:|bchtest:|bitcoin:)/i, '');
     let network;
     try {
-      network = this.bwcProvider.getFcash().Address(address).network.name;
+      network = this.fwcProvider.getFcash().Address(address).network.name;
     } catch (e) {
       try {
-        network = this.bwcProvider.getFcashCash().Address(address).network
+        network = this.fwcProvider.getFcashCash().Address(address).network
           .name;
       } catch (e) {}
     }

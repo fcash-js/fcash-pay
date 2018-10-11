@@ -12,8 +12,8 @@ import { FcashCardPage } from '../fcash-card';
 import { ActionSheetProvider } from '../../../../providers/action-sheet/action-sheet';
 import { FcashCardProvider } from '../../../../providers/fcash-card/fcash-card';
 import { FcashProvider } from '../../../../providers/fcash-js/fcash';
-import { BwcErrorProvider } from '../../../../providers/bwc-error/bwc-error';
-import { BwcProvider } from '../../../../providers/bwc/bwc';
+import { FwcErrorProvider } from '../../../../providers/fwc-error/fwc-error';
+import { FwcProvider } from '../../../../providers/fwc/fwc';
 import { ConfigProvider } from '../../../../providers/config/config';
 import { ExternalLinkProvider } from '../../../../providers/external-link/external-link';
 import { FeeProvider } from '../../../../providers/fee/fee';
@@ -67,8 +67,8 @@ export class FcashCardTopUpPage {
     private actionSheetProvider: ActionSheetProvider,
     private fCashCardProvider: FcashCardProvider,
     private fCashProvider: FcashProvider,
-    private bwcErrorProvider: BwcErrorProvider,
-    private bwcProvider: BwcProvider,
+    private fwcErrorProvider: FwcErrorProvider,
+    private fwcProvider: FwcProvider,
     private configProvider: ConfigProvider,
     private externalLinkProvider: ExternalLinkProvider,
     private logger: Logger,
@@ -87,7 +87,7 @@ export class FcashCardTopUpPage {
   ) {
     this.configWallet = this.configProvider.get().wallet;
     this.isCordova = this.platformProvider.isCordova;
-    this.fcashBaseCash = this.bwcProvider.getFcashCash();
+    this.fcashBaseCash = this.fwcProvider.getFcashCash();
     this.hideSlideButton = false;
   }
 
@@ -330,7 +330,7 @@ export class FcashCardTopUpPage {
             .catch(err => {
               return reject({
                 title: this.translate.instant('Could not create transaction'),
-                message: this.bwcErrorProvider.msg(err)
+                message: this.fwcErrorProvider.msg(err)
               });
             });
         });
@@ -553,7 +553,7 @@ export class FcashCardTopUpPage {
             this._resetValues();
             this.showError(
               this.translate.instant('Could not send transaction'),
-              this.bwcErrorProvider.msg(err)
+              this.fwcErrorProvider.msg(err)
             );
           });
       });

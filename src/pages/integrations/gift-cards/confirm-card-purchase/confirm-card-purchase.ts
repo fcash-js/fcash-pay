@@ -17,8 +17,8 @@ import {
 } from '../../../../providers';
 import { ActionSheetProvider } from '../../../../providers/action-sheet/action-sheet';
 import { AmazonProvider } from '../../../../providers/amazon/amazon';
-import { BwcErrorProvider } from '../../../../providers/bwc-error/bwc-error';
-import { BwcProvider } from '../../../../providers/bwc/bwc';
+import { FwcErrorProvider } from '../../../../providers/fwc-error/fwc-error';
+import { FwcProvider } from '../../../../providers/fwc/fwc';
 import { ConfigProvider } from '../../../../providers/config/config';
 import { ExternalLinkProvider } from '../../../../providers/external-link/external-link';
 import {
@@ -67,8 +67,8 @@ export class ConfirmCardPurchasePage extends ConfirmPage {
     actionSheetProvider: ActionSheetProvider,
     app: App,
     private amazonProvider: AmazonProvider,
-    bwcErrorProvider: BwcErrorProvider,
-    bwcProvider: BwcProvider,
+    fwcErrorProvider: FwcErrorProvider,
+    fwcProvider: FwcProvider,
     configProvider: ConfigProvider,
     decimalPipe: DecimalPipe,
     feeProvider: FeeProvider,
@@ -93,8 +93,8 @@ export class ConfirmCardPurchasePage extends ConfirmPage {
     super(
       actionSheetProvider,
       app,
-      bwcErrorProvider,
-      bwcProvider,
+      fwcErrorProvider,
+      fwcProvider,
       configProvider,
       decimalPipe,
       externalLinkProvider,
@@ -323,7 +323,7 @@ export class ConfirmCardPurchasePage extends ConfirmPage {
     return this.walletProvider.createTx(wallet, txp).catch(err => {
       throw {
         title: this.translate.instant('Could not create transaction'),
-        message: this.bwcErrorProvider.msg(err)
+        message: this.fwcErrorProvider.msg(err)
       };
     });
   }
@@ -499,7 +499,7 @@ export class ConfirmCardPurchasePage extends ConfirmPage {
             this.resetValues();
           }
           this.showErrorInfoSheet(
-            this.bwcErrorProvider.msg(err),
+            this.fwcErrorProvider.msg(err),
             this.translate.instant('Could not send transaction')
           );
         }

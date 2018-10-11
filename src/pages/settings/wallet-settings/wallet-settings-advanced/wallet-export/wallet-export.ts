@@ -12,7 +12,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { ActionSheetProvider } from '../../../../../providers/action-sheet/action-sheet';
 import { AppProvider } from '../../../../../providers/app/app';
 import { BackupProvider } from '../../../../../providers/backup/backup';
-import { BwcErrorProvider } from '../../../../../providers/bwc-error/bwc-error';
+import { FwcErrorProvider } from '../../../../../providers/fwc-error/fwc-error';
 import { ConfigProvider } from '../../../../../providers/config/config';
 import { PersistenceProvider } from '../../../../../providers/persistence/persistence';
 import { PlatformProvider } from '../../../../../providers/platform/platform';
@@ -61,7 +61,7 @@ export class WalletExportPage extends WalletTabsChild {
     private actionSheetProvider: ActionSheetProvider,
     public walletTabsProvider: WalletTabsProvider,
     private configProvider: ConfigProvider,
-    private bwcErrorProvider: BwcErrorProvider
+    private fwcErrorProvider: FwcErrorProvider
   ) {
     super(navCtrl, profileProvider, walletTabsProvider);
     this.exportWalletForm = this.formBuilder.group(
@@ -154,7 +154,7 @@ export class WalletExportPage extends WalletTabsChild {
           err.message != 'FINGERPRINT_CANCELLED' &&
           err.message != 'PASSWORD_CANCELLED'
         )
-          this.showErrorInfoSheet(this.bwcErrorProvider.msg(err));
+          this.showErrorInfoSheet(this.fwcErrorProvider.msg(err));
       });
   }
 
@@ -212,7 +212,7 @@ export class WalletExportPage extends WalletTabsChild {
           err.message != 'FINGERPRINT_CANCELLED' &&
           err.message != 'PASSWORD_CANCELLED'
         )
-          this.showErrorInfoSheet(this.bwcErrorProvider.msg(err));
+          this.showErrorInfoSheet(this.fwcErrorProvider.msg(err));
       });
   }
 
@@ -271,7 +271,7 @@ export class WalletExportPage extends WalletTabsChild {
             err.message != 'FINGERPRINT_CANCELLED' &&
             err.message != 'PASSWORD_CANCELLED'
           )
-            this.showErrorInfoSheet(this.bwcErrorProvider.msg(err));
+            this.showErrorInfoSheet(this.fwcErrorProvider.msg(err));
           return resolve();
         });
     });

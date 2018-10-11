@@ -15,8 +15,8 @@ import { DisclaimerPage } from '../../onboarding/disclaimer/disclaimer';
 
 // providers
 import { ActionSheetProvider } from '../../../providers/action-sheet/action-sheet';
-import { BwcErrorProvider } from '../../../providers/bwc-error/bwc-error';
-import { BwcProvider } from '../../../providers/bwc/bwc';
+import { FwcErrorProvider } from '../../../providers/fwc-error/fwc-error';
+import { FwcProvider } from '../../../providers/fwc/fwc';
 import { OnGoingProcessProvider } from '../../../providers/on-going-process/on-going-process';
 import { ProfileProvider } from '../../../providers/profile/profile';
 import { WalletProvider } from '../../../providers/wallet/wallet';
@@ -56,8 +56,8 @@ export class BackupGamePage {
     private logger: Logger,
     private profileProvider: ProfileProvider,
     private walletProvider: WalletProvider,
-    private bwcProvider: BwcProvider,
-    private bwcErrorProvider: BwcErrorProvider,
+    private fwcProvider: FwcProvider,
+    private fwcErrorProvider: FwcErrorProvider,
     private onGoingProcessProvider: OnGoingProcessProvider,
     private translate: TranslateService,
     public actionSheetProvider: ActionSheetProvider
@@ -92,7 +92,7 @@ export class BackupGamePage {
           err.message != 'PASSWORD_CANCELLED'
         ) {
           let title = this.translate.instant('Could not decrypt wallet');
-          this.showErrorInfoSheet(this.bwcErrorProvider.msg(err), title);
+          this.showErrorInfoSheet(this.fwcErrorProvider.msg(err), title);
         }
         this.navCtrl.pop();
       });
@@ -231,7 +231,7 @@ export class BackupGamePage {
       }
 
       if (this.mnemonicHasPassphrase) {
-        let walletClient = this.bwcProvider.getClient();
+        let walletClient = this.fwcProvider.getClient();
         let separator = this.useIdeograms ? '\u3000' : ' ';
         let customSentence = customWordList.join(separator);
         let password = this.password || '';

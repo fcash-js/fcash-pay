@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
-export class BwcErrorProvider {
+export class FwcErrorProvider {
   constructor(private translate: TranslateService) { }
 
   public msg(err, prefix?: string): string {
@@ -11,7 +11,7 @@ export class BwcErrorProvider {
     const name = err.name
       ? err.name === 'Error'
         ? err.message
-        : err.name.replace(/^bwc.Error/g, '')
+        : err.name.replace(/^fwc.Error/g, '')
       : err;
 
     let body = '';

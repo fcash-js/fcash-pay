@@ -5,8 +5,8 @@ import * as lodash from 'lodash';
 import { Logger } from '../../../../../providers/logger/logger';
 
 // Providers
-import { BwcErrorProvider } from '../../../../../providers/bwc-error/bwc-error';
-import { BwcProvider } from '../../../../../providers/bwc/bwc';
+import { FwcErrorProvider } from '../../../../../providers/fwc-error/fwc-error';
+import { FwcProvider } from '../../../../../providers/fwc/fwc';
 import { ExternalLinkProvider } from '../../../../../providers/external-link/external-link';
 import { OnGoingProcessProvider } from '../../../../../providers/on-going-process/on-going-process';
 import { PopupProvider } from '../../../../../providers/popup/popup';
@@ -41,8 +41,8 @@ export class FcashCashPage extends WalletTabsChild {
     private popupProvider: PopupProvider,
     private pushNotificationsProvider: PushNotificationsProvider,
     private externalLinkProvider: ExternalLinkProvider,
-    private bwcErrorProvider: BwcErrorProvider,
-    private bwcProvider: BwcProvider,
+    private fwcErrorProvider: FwcErrorProvider,
+    private fwcProvider: FwcProvider,
     private logger: Logger,
     private translate: TranslateService,
     private events: Events,
@@ -51,7 +51,7 @@ export class FcashCashPage extends WalletTabsChild {
     public walletTabsProvider: WalletTabsProvider
   ) {
     super(navCtrl, profileProvider, walletTabsProvider);
-    this.errors = this.bwcProvider.getErrors();
+    this.errors = this.fwcProvider.getErrors();
   }
 
   ionViewWillEnter() {
@@ -96,7 +96,7 @@ export class FcashCashPage extends WalletTabsChild {
         this.availableWallet.error =
           err === 'WALLET_NOT_REGISTERED'
             ? this.translate.instant('Wallet not registered')
-            : this.bwcErrorProvider.msg(err);
+            : this.fwcErrorProvider.msg(err);
         this.logger.error(err);
       });
   }
@@ -118,7 +118,7 @@ export class FcashCashPage extends WalletTabsChild {
     };
 
     const setErr = err => {
-      this.bwcErrorProvider.cb(err, 'Could not duplicate').then(errorMsg => {
+      this.fwcErrorProvider.cb(err, 'Could not duplicate').then(errorMsg => {
         this.logger.warn('Duplicate BCH', errorMsg);
         this.popupProvider.ionicAlert(errorMsg, null, 'OK');
         return;
@@ -204,7 +204,7 @@ export class FcashCashPage extends WalletTabsChild {
           err.message != 'FINGERPRINT_CANCELLED' &&
           err.message != 'PASSWORD_CANCELLED'
         ) {
-          setErr(this.bwcErrorProvider.msg(err));
+          setErr(this.fwcErrorProvider.msg(err));
         }
       });
   }

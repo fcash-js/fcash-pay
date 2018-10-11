@@ -10,7 +10,7 @@ import { CoinbasePage } from '../coinbase';
 // providers
 import { ActionSheetProvider } from '../../../../providers/action-sheet/action-sheet';
 import { AppProvider } from '../../../../providers/app/app';
-import { BwcErrorProvider } from '../../../../providers/bwc-error/bwc-error';
+import { FwcErrorProvider } from '../../../../providers/fwc-error/fwc-error';
 import { CoinbaseProvider } from '../../../../providers/coinbase/coinbase';
 import { ConfigProvider } from '../../../../providers/config/config';
 import { ExternalLinkProvider } from '../../../../providers/external-link/external-link';
@@ -54,7 +54,7 @@ export class SellCoinbasePage {
   constructor(
     private actionSheetProvider: ActionSheetProvider,
     private appProvider: AppProvider,
-    private bwcErrorProvider: BwcErrorProvider,
+    private fwcErrorProvider: FwcErrorProvider,
     private coinbaseProvider: CoinbaseProvider,
     private configProvider: ConfigProvider,
     private logger: Logger,
@@ -429,7 +429,7 @@ export class SellCoinbasePage {
                     })
                     .catch(err => {
                       this.onGoingProcessProvider.clear();
-                      this.showError(this.bwcErrorProvider.msg(err));
+                      this.showError(this.fwcErrorProvider.msg(err));
                       return;
                     });
                 })

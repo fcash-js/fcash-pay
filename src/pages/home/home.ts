@@ -32,7 +32,7 @@ import { AddressProvider } from '../../providers/address/address';
 import { AmazonProvider } from '../../providers/amazon/amazon';
 import { AppProvider } from '../../providers/app/app';
 import { FcashCardProvider } from '../../providers/fcash-card/fcash-card';
-import { BwcErrorProvider } from '../../providers/bwc-error/bwc-error';
+import { FwcErrorProvider } from '../../providers/fwc-error/fwc-error';
 import { ClipboardProvider } from '../../providers/clipboard/clipboard';
 import { ConfigProvider } from '../../providers/config/config';
 import { EmailNotificationsProvider } from '../../providers/email-notifications/email-notifications';
@@ -103,7 +103,7 @@ export class HomePage {
     private profileProvider: ProfileProvider,
     private releaseProvider: ReleaseProvider,
     private walletProvider: WalletProvider,
-    private bwcErrorProvider: BwcErrorProvider,
+    private fwcErrorProvider: FwcErrorProvider,
     private logger: Logger,
     private events: Events,
     private configProvider: ConfigProvider,
@@ -607,9 +607,9 @@ export class HomePage {
             wallet.error =
               err === 'WALLET_NOT_REGISTERED'
                 ? 'Wallet not registered'
-                : this.bwcErrorProvider.msg(err);
+                : this.fwcErrorProvider.msg(err);
             this.logger.warn(
-              this.bwcErrorProvider.msg(
+              this.fwcErrorProvider.msg(
                 err,
                 'Error updating status for ' + wallet.name
               )

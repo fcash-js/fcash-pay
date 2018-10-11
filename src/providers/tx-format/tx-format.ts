@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Logger } from '../../providers/logger/logger';
-import { BwcProvider } from '../bwc/bwc';
+import { FwcProvider } from '../fwc/fwc';
 import { ConfigProvider } from '../config/config';
 import { FilterProvider } from '../filter/filter';
 import { RateProvider } from '../rate/rate';
@@ -15,14 +15,14 @@ export class TxFormatProvider {
   public pendingTxProposalsCountForUs: number;
 
   constructor(
-    private bwcProvider: BwcProvider,
+    private fwcProvider: FwcProvider,
     private rate: RateProvider,
     private configProvider: ConfigProvider,
     private filter: FilterProvider,
     private logger: Logger
   ) {
     this.logger.debug('TxFormatProvider initialized');
-    this.fcashBaseCash = this.bwcProvider.getFcashCash();
+    this.fcashBaseCash = this.fwcProvider.getFcashCash();
   }
 
   public toCashAddress(address: string, withPrefix?: boolean): string {
@@ -50,7 +50,7 @@ export class TxFormatProvider {
     var opts = {
       fullPrecision: !!fullPrecision
     };
-    return this.bwcProvider
+    return this.fwcProvider
       .getUtils()
       .formatAmount(satoshis, settings.unitCode, opts);
   }

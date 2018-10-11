@@ -3,13 +3,13 @@ import { Events } from 'ionic-angular';
 import { AppProvider, PopupProvider } from '..';
 import { TestUtils } from '../../test';
 import { ActionSheetProvider } from '../action-sheet/action-sheet';
-import { BwcProvider } from '../bwc/bwc';
+import { FwcProvider } from '../fwc/fwc';
 import { Logger } from '../logger/logger';
 import { IncomingDataProvider } from './incoming-data';
 
 describe('Provider: Incoming Data Provider', () => {
   let incomingDataProvider: IncomingDataProvider;
-  let bwcProvider: BwcProvider;
+  let fwcProvider: FwcProvider;
   let logger: Logger;
   let events: Events;
   let loggerSpy;
@@ -39,7 +39,7 @@ describe('Provider: Incoming Data Provider', () => {
       { provide: PopupProvider, useClass: PopupProviderMock }
     ]);
     incomingDataProvider = testBed.get(IncomingDataProvider);
-    bwcProvider = testBed.get(BwcProvider);
+    fwcProvider = testBed.get(FwcProvider);
     logger = testBed.get(Logger);
     events = testBed.get(Events);
     loggerSpy = spyOn(logger, 'debug');
@@ -76,8 +76,8 @@ describe('Provider: Incoming Data Provider', () => {
     });
     it('Should handle Plain URL', () => {
       let data = [
-        'http://fcash.cash/', // non-SSL URL Handling
-        'https://fcash.cash/' // SSL URL Handling
+        'http://www.fcash.cash/', // non-SSL URL Handling
+        'https://www.fcash.cash/' // SSL URL Handling
       ];
       data.forEach(element => {
         expect(
@@ -189,7 +189,7 @@ describe('Provider: Incoming Data Provider', () => {
       ];
 
       data.forEach(element => {
-        let parsed = bwcProvider.getFcashCash().URI(element);
+        let parsed = fwcProvider.getFcashCash().URI(element);
         let addr = parsed.address ? parsed.address.toString() : '';
 
         // keep address in original format
@@ -220,7 +220,7 @@ describe('Provider: Incoming Data Provider', () => {
       ];
 
       data.forEach(element => {
-        let parsed = bwcProvider.getFcashCash().URI(element);
+        let parsed = fwcProvider.getFcashCash().URI(element);
         let addr = parsed.address ? parsed.address.toString() : '';
         // keep address in original format
         if (parsed.address && element.indexOf(addr) < 0) {
@@ -256,7 +256,7 @@ describe('Provider: Incoming Data Provider', () => {
         'bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa?amount=1.0000&label=Genesis%20Fcash%20Address&message=test%20message' // Basic Payment Protocol
       ];
       data.forEach(element => {
-        let parsed = bwcProvider.getFcash().URI(element);
+        let parsed = fwcProvider.getFcash().URI(element);
         let addr = parsed.address ? parsed.address.toString() : '';
         let message = parsed.message;
         let amount = parsed.amount ? parsed.amount : '';
@@ -299,17 +299,17 @@ describe('Provider: Incoming Data Provider', () => {
         'Incoming-data: Fcash Cash URI with legacy address'
       );
 
-      let parsed = bwcProvider
+      let parsed = fwcProvider
         .getFcash()
         .URI(data.replace(/^bitcoincash:/, 'bitcoin:'));
 
       let oldAddr = parsed.address ? parsed.address.toString() : '';
 
-      let a = bwcProvider
+      let a = fwcProvider
         .getFcash()
         .Address(oldAddr)
         .toObject();
-      let addr = bwcProvider
+      let addr = fwcProvider
         .getFcashCash()
         .Address.fromObject(a)
         .toString();
@@ -336,17 +336,17 @@ describe('Provider: Incoming Data Provider', () => {
         'Incoming-data: Fcash Cash URI with legacy address'
       );
 
-      let parsed = bwcProvider
+      let parsed = fwcProvider
         .getFcash()
         .URI(data.replace(/^bchtest:/, 'bitcoin:'));
 
       let oldAddr = parsed.address ? parsed.address.toString() : '';
 
-      let a = bwcProvider
+      let a = fwcProvider
         .getFcash()
         .Address(oldAddr)
         .toObject();
-      let addr = bwcProvider
+      let addr = fwcProvider
         .getFcashCash()
         .Address.fromObject(a)
         .toString();

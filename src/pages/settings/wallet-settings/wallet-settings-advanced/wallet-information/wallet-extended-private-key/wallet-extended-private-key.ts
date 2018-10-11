@@ -5,7 +5,7 @@ import { Logger } from '../../../../../../providers/logger/logger';
 // providers
 import { TranslateService } from '@ngx-translate/core';
 import { ActionSheetProvider } from '../../../../../../providers/action-sheet/action-sheet';
-import { BwcErrorProvider } from '../../../../../../providers/bwc-error/bwc-error';
+import { FwcErrorProvider } from '../../../../../../providers/fwc-error/fwc-error';
 import { ProfileProvider } from '../../../../../../providers/profile/profile';
 import { WalletProvider } from '../../../../../../providers/wallet/wallet';
 
@@ -26,7 +26,7 @@ export class WalletExtendedPrivateKeyPage {
     private navCtrl: NavController,
     private actionSheetProvider: ActionSheetProvider,
     private translate: TranslateService,
-    private bwcErrorProvider: BwcErrorProvider
+    private fwcErrorProvider: FwcErrorProvider
   ) {}
 
   ionViewDidLoad() {
@@ -52,7 +52,7 @@ export class WalletExtendedPrivateKeyPage {
           err.message != 'PASSWORD_CANCELLED'
         ) {
           let title = this.translate.instant('Could not decrypt wallet');
-          this.showErrorInfoSheet(this.bwcErrorProvider.msg(err), title);
+          this.showErrorInfoSheet(this.fwcErrorProvider.msg(err), title);
         }
         this.navCtrl.pop();
       });

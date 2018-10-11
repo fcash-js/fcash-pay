@@ -1,5 +1,5 @@
 import * as _ from 'lodash';
-import { BwcProvider, PersistenceProvider } from '..';
+import { FwcProvider, PersistenceProvider } from '..';
 import { TestUtils } from '../../test';
 import { ProfileProvider } from './profile';
 
@@ -62,7 +62,7 @@ describe('Profile Provider', () => {
     }
   };
 
-  class BwcProviderMock {
+  class FwcProviderMock {
     constructor() {}
     getErrors() {
       return 'error';
@@ -87,7 +87,7 @@ describe('Profile Provider', () => {
 
   beforeEach(() => {
     const testBed = TestUtils.configureProviderTestingModule([
-      { provide: BwcProvider, useClass: BwcProviderMock },
+      { provide: FwcProvider, useClass: FwcProviderMock },
       { provide: PersistenceProvider, useClass: PersistenceProviderMock }
     ]);
     profileProvider = testBed.get(ProfileProvider);

@@ -5,12 +5,12 @@ import { Logger } from '../../providers/logger/logger';
 import * as FWC from 'fcash-wallet-client';
 
 @Injectable()
-export class BwcProvider {
+export class FwcProvider {
   public buildTx = FWC.buildTx;
   public parseSecret = FWC.parseSecret;
   public Client = FWC;
   constructor(private logger: Logger) {
-    this.logger.debug('BwcProvider initialized');
+    this.logger.debug('FwcProvider initialized');
   }
   public getFcash() {
     return FWC.Fcash;
@@ -36,13 +36,13 @@ export class BwcProvider {
     opts = opts || {};
 
     // note opts use `fwsurl` all lowercase;
-    let bwc = new FWC({
+    let fwc = new FWC({
       baseUrl: opts.fwsurl || 'https://fws.fcash.cash/fws/api',
       verbose: opts.verbose,
       timeout: 100000,
       transports: ['polling']
     });
-    if (walletData) bwc.import(walletData, opts);
-    return bwc;
+    if (walletData) fwc.import(walletData, opts);
+    return fwc;
   }
 }

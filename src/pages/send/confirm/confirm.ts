@@ -13,8 +13,8 @@ import { ChooseFeeLevelPage } from '../choose-fee-level/choose-fee-level';
 
 // Providers
 import { ActionSheetProvider } from '../../../providers/action-sheet/action-sheet';
-import { BwcErrorProvider } from '../../../providers/bwc-error/bwc-error';
-import { BwcProvider } from '../../../providers/bwc/bwc';
+import { FwcErrorProvider } from '../../../providers/fwc-error/fwc-error';
+import { FwcProvider } from '../../../providers/fwc/fwc';
 import { ConfigProvider } from '../../../providers/config/config';
 import { ExternalLinkProvider } from '../../../providers/external-link/external-link';
 import { FeeProvider } from '../../../providers/fee/fee';
@@ -78,8 +78,8 @@ export class ConfirmPage extends WalletTabsChild {
   constructor(
     protected actionSheetProvider: ActionSheetProvider,
     protected app: App,
-    protected bwcErrorProvider: BwcErrorProvider,
-    protected bwcProvider: BwcProvider,
+    protected fwcErrorProvider: FwcErrorProvider,
+    protected fwcProvider: FwcProvider,
     protected configProvider: ConfigProvider,
     protected decimalPipe: DecimalPipe,
     protected externalLinkProvider: ExternalLinkProvider,
@@ -100,8 +100,8 @@ export class ConfirmPage extends WalletTabsChild {
     walletTabsProvider: WalletTabsProvider
   ) {
     super(navCtrl, profileProvider, walletTabsProvider);
-    this.fcashBase = this.bwcProvider.getFcash();
-    this.fcashBaseCash = this.bwcProvider.getFcashCash();
+    this.fcashBase = this.fwcProvider.getFcash();
+    this.fcashBaseCash = this.fwcProvider.getFcashCash();
     this.CONFIRM_LIMIT_USD = 20;
     this.FEE_TOO_HIGH_LIMIT_PER = 15;
     this.config = this.configProvider.get();
@@ -724,7 +724,7 @@ export class ConfirmPage extends WalletTabsChild {
 
     const errorInfoSheet = this.actionSheetProvider.createInfoSheet(
       'default-error',
-      { msg: this.bwcErrorProvider.msg(error), title: infoSheetTitle }
+      { msg: this.fwcErrorProvider.msg(error), title: infoSheetTitle }
     );
     errorInfoSheet.present();
     errorInfoSheet.onDidDismiss(() => {

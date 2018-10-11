@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Logger } from '../../providers/logger/logger';
 
 // providers
-import { BwcProvider } from '../../providers/bwc/bwc';
+import { FwcProvider } from '../../providers/fwc/fwc';
 import { ConfigProvider } from '../../providers/config/config';
 
 import * as _ from 'lodash';
@@ -23,7 +23,7 @@ export class FeeProvider {
   constructor(
     private configProvider: ConfigProvider,
     private logger: Logger,
-    private bwcProvider: BwcProvider,
+    private fwcProvider: FwcProvider,
     private translate: TranslateService
   ) {
     this.logger.debug('FeeProvider initialized');
@@ -116,7 +116,7 @@ export class FeeProvider {
         return resolve({ levels: this.cache.data, fromCache: true });
       }
 
-      let walletClient = this.bwcProvider.getClient(null, {});
+      let walletClient = this.fwcProvider.getClient(null, {});
 
       walletClient.getFeeLevels(
         coin,

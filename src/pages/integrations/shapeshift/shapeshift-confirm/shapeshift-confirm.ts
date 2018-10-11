@@ -10,8 +10,8 @@ import { FinishModalPage } from '../../../finish/finish';
 import { ShapeshiftPage } from '../shapeshift';
 
 // Providers
-import { BwcErrorProvider } from '../../../../providers/bwc-error/bwc-error';
-import { BwcProvider } from '../../../../providers/bwc/bwc';
+import { FwcErrorProvider } from '../../../../providers/fwc-error/fwc-error';
+import { FwcProvider } from '../../../../providers/fwc/fwc';
 import { ConfigProvider } from '../../../../providers/config/config';
 import { ExternalLinkProvider } from '../../../../providers/external-link/external-link';
 import { FeeProvider } from '../../../../providers/fee/fee';
@@ -67,8 +67,8 @@ export class ShapeshiftConfirmPage {
   public hideSlideButton: boolean;
 
   constructor(
-    private bwcProvider: BwcProvider,
-    private bwcErrorProvider: BwcErrorProvider,
+    private fwcProvider: FwcProvider,
+    private fwcErrorProvider: FwcErrorProvider,
     private configProvider: ConfigProvider,
     private replaceParametersProvider: ReplaceParametersProvider,
     private externalLinkProvider: ExternalLinkProvider,
@@ -89,8 +89,8 @@ export class ShapeshiftConfirmPage {
     this.configWallet = this.configProvider.get().wallet;
     this.currencyIsoCode = 'USD'; // Only USD
     this.isCordova = this.platformProvider.isCordova;
-    this.fcashBase = this.bwcProvider.getFcash();
-    this.fcashBaseCash = this.bwcProvider.getFcashCash();
+    this.fcashBase = this.fwcProvider.getFcash();
+    this.fcashBaseCash = this.fwcProvider.getFcashCash();
 
     this.useSendMax = this.navParams.data.useSendMax ? true : false;
 
@@ -415,7 +415,7 @@ export class ShapeshiftConfirmPage {
           this.hideSlideButton = false;
           return reject({
             title: this.translate.instant('Could not create transaction'),
-            message: this.bwcErrorProvider.msg(err)
+            message: this.fwcErrorProvider.msg(err)
           });
         });
     });
@@ -618,7 +618,7 @@ export class ShapeshiftConfirmPage {
           this.saveShapeshiftData();
         })
         .catch(err => {
-          this.logger.error(this.bwcErrorProvider.msg(err));
+          this.logger.error(this.fwcErrorProvider.msg(err));
           this.showErrorAndBack(
             null,
             this.translate.instant('Could not send transaction')

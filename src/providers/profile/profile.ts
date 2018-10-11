@@ -5,8 +5,8 @@ import * as _ from 'lodash';
 
 // providers
 import { AppProvider } from '../app/app';
-import { BwcErrorProvider } from '../bwc-error/bwc-error';
-import { BwcProvider } from '../bwc/bwc';
+import { FwcErrorProvider } from '../fwc-error/fwc-error';
+import { FwcProvider } from '../fwc/fwc';
 import { ConfigProvider } from '../config/config';
 import { LanguageProvider } from '../language/language';
 import { Logger } from '../logger/logger';
@@ -28,15 +28,15 @@ export class ProfileProvider {
   private UPDATE_PERIOD = 15;
   private throttledBwsEvent;
   private validationLock: boolean = false;
-  private errors = this.bwcProvider.getErrors();
+  private errors = this.fwcProvider.getErrors();
 
   constructor(
     private logger: Logger,
     private persistenceProvider: PersistenceProvider,
     private configProvider: ConfigProvider,
     private replaceParametersProvider: ReplaceParametersProvider,
-    private bwcProvider: BwcProvider,
-    private bwcErrorProvider: BwcErrorProvider,
+    private fwcProvider: FwcProvider,
+    private fwcErrorProvider: FwcErrorProvider,
     private platformProvider: PlatformProvider,
     private appProvider: AppProvider,
     private languageProvider: LanguageProvider,
@@ -325,7 +325,7 @@ export class ProfileProvider {
   public importWallet(str: string, opts): Promise<any> {
     return new Promise((resolve, reject) => {
       this.logger.info('Importing Wallet:', opts);
-      let walletClient = this.bwcProvider.getClient(null, opts);
+      let walletClient = this.fwcProvider.getClient(null, opts);
 
       try {
         let c = JSON.parse(str);
@@ -575,12 +575,12 @@ export class ProfileProvider {
   public importExtendedPrivateKey(xPrivKey: string, opts): Promise<any> {
     return new Promise((resolve, reject) => {
       this.logger.info('Importing Wallet xPrivKey');
-      let walletClient = this.bwcProvider.getClient(null, opts);
+      let walletClient = this.fwcProvider.getClient(null, opts);
 
       walletClient.importFromExtendedPrivateKey(xPrivKey, opts, err => {
         if (err) {
           if (err instanceof this.errors.NOT_AUTHORIZED) return reject(err);
-          this.bwcErrorProvider
+          this.fwcErrorProvider
             .cb(err, this.translate.instant('Could not import'))
             .then((msg: string) => {
               return reject(msg);
@@ -616,7 +616,7 @@ export class ProfileProvider {
   public importMnemonic(words: string, opts): Promise<any> {
     return new Promise((resolve, reject) => {
       this.logger.info('Importing Wallet Mnemonic');
-      let walletClient = this.bwcProvider.getClient(null, opts);
+      let walletClient = this.fwcProvider.getClient(null, opts);
 
       words = this.normalizeMnemonic(words);
       walletClient.importFromMnemonic(
@@ -635,7 +635,7 @@ export class ProfileProvider {
               return reject(err);
             }
 
-            this.bwcErrorProvider
+            this.fwcErrorProvider
               .cb(err, this.translate.instant('Could not import'))
               .then((msg: string) => {
                 return reject(msg);
@@ -659,7 +659,7 @@ export class ProfileProvider {
   public importExtendedPublicKey(opts): Promise<any> {
     return new Promise((resolve, reject) => {
       this.logger.info('Importing Wallet XPubKey');
-      let walletClient = this.bwcProvider.getClient(null, opts);
+      let walletClient = this.fwcProvider.getClient(null, opts);
 
       walletClient.importFromExtendedPublicKey(
         opts.extendedPublicKey,
@@ -676,7 +676,7 @@ export class ProfileProvider {
             if (err instanceof this.errors.NOT_AUTHORIZED)
               err.name = 'WALLET_DOES_NOT_EXIST';
 
-            this.bwcErrorProvider
+            this.fwcErrorProvider
               .cb(err, this.translate.instant('Could not import'))
               .then((msg: string) => {
                 return reject(msg);
@@ -822,7 +822,7 @@ export class ProfileProvider {
         return (config.fwsFor && config.fwsFor[walletId]) || defaults.fws.url;
       };
 
-      let walletClient = this.bwcProvider.getClient(
+      let walletClient = this.fwcProvider.getClient(
         JSON.stringify(credentials),
         {
           fwsurl: getFWSURL(credentials.walletId)
@@ -874,7 +874,7 @@ export class ProfileProvider {
   private seedWallet(opts): Promise<any> {
     return new Promise((resolve, reject) => {
       opts = opts ? opts : {};
-      let walletClient = this.bwcProvider.getClient(null, opts);
+      let walletClient = this.fwcProvider.getClient(null, opts);
       let network = opts.networkName || 'livenet';
 
       if (opts.mnemonic) {
@@ -995,7 +995,7 @@ export class ProfileProvider {
               },
               err => {
                 if (err) {
-                  this.bwcErrorProvider
+                  this.fwcErrorProvider
                     .cb(err, this.translate.instant('Error creating wallet'))
                     .then((msg: string) => {
                       return reject(msg);
@@ -1036,7 +1036,7 @@ export class ProfileProvider {
       this.logger.info('Joining Wallet...');
 
       try {
-        var walletData = this.bwcProvider.parseSecret(opts.secret);
+        var walletData = this.fwcProvider.parseSecret(opts.secret);
 
         // check if exist
         if (
@@ -1065,7 +1065,7 @@ export class ProfileProvider {
             },
             err => {
               if (err) {
-                this.bwcErrorProvider
+                this.fwcErrorProvider
                   .cb(err, this.translate.instant('Could not join wallet'))
                   .then((msg: string) => {
                     return reject(msg);
@@ -1327,7 +1327,7 @@ export class ProfileProvider {
           }
         });
 
-        let u = this.bwcProvider.getUtils();
+        let u = this.fwcProvider.getUtils();
         _.each(finale, x => {
           if (
             x.data &&
@@ -1379,7 +1379,7 @@ export class ProfileProvider {
         pr(wallet, err => {
           if (err)
             this.logger.warn(
-              this.bwcErrorProvider.msg(
+              this.fwcErrorProvider.msg(
                 err,
                 'Error updating notifications for ' + wallet.name
               )

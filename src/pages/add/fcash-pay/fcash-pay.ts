@@ -9,7 +9,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 // Providers
 import { ActionSheetProvider } from '../../../providers/action-sheet/action-sheet';
 import { AppProvider } from '../../../providers/app/app';
-import { BwcErrorProvider } from '../../../providers/bwc-error/bwc-error';
+import { FwcErrorProvider } from '../../../providers/fwc-error/fwc-error';
 import { Logger } from '../../../providers/logger/logger';
 import { OnGoingProcessProvider } from '../../../providers/on-going-process/on-going-process';
 import { PlatformProvider } from '../../../providers/platform/platform';
@@ -28,7 +28,7 @@ export class FcashAppPage {
   public isCordova: boolean;
 
   public wallet;
-  public fcash-pay;
+  public fcash_pay;
   public secret;
 
   private onResumeSubscription: Subscription;
@@ -37,7 +37,7 @@ export class FcashAppPage {
   constructor(
     private plt: Platform,
     private appProvider: AppProvider,
-    private bwcErrorProvider: BwcErrorProvider,
+    private fwcErrorProvider: FwcErrorProvider,
     private events: Events,
     private logger: Logger,
     private navParams: NavParams,
@@ -113,7 +113,7 @@ export class FcashAppPage {
       .getStatus(this.wallet, {})
       .then(status => {
         this.wallet.status = status;
-        this.fcash-pay = this.wallet.status.wallet.fcash-pay;
+        this.fcash_pay = this.wallet.status.wallet.fcash_pay;
         this.secret = this.wallet.status.wallet.secret;
         if (status.wallet.status == 'complete') {
           this.wallet.openWallet(err => {
@@ -127,7 +127,7 @@ export class FcashAppPage {
       })
       .catch(err => {
         let message = this.translate.instant('Could not update wallet');
-        this.popupProvider.ionicAlert(this.bwcErrorProvider.msg(err, message));
+        this.popupProvider.ionicAlert(this.fwcErrorProvider.msg(err, message));
         return;
       });
   }

@@ -6,8 +6,8 @@ import encoding from 'text-encoding';
 import { Logger } from '../../providers/logger/logger';
 
 // Providers
-import { BwcErrorProvider } from '../bwc-error/bwc-error';
-import { BwcProvider } from '../bwc/bwc';
+import { FwcErrorProvider } from '../fwc-error/fwc-error';
+import { FwcProvider } from '../fwc/fwc';
 import { ConfigProvider } from '../config/config';
 import { FeeProvider } from '../fee/fee';
 import { FilterProvider } from '../filter/filter';
@@ -80,7 +80,7 @@ export class WalletProvider {
   private SOFT_CONFIRMATION_LIMIT: number = 12;
   private SAFE_CONFIRMATIONS: number = 6;
 
-  private errors = this.bwcProvider.getErrors();
+  private errors = this.fwcProvider.getErrors();
 
   private progressFn = {};
 
@@ -91,11 +91,11 @@ export class WalletProvider {
 
   constructor(
     private logger: Logger,
-    private bwcProvider: BwcProvider,
+    private fwcProvider: FwcProvider,
     private txFormatProvider: TxFormatProvider,
     private configProvider: ConfigProvider,
     private persistenceProvider: PersistenceProvider,
-    private bwcErrorProvider: BwcErrorProvider,
+    private fwcErrorProvider: FwcErrorProvider,
     private rateProvider: RateProvider,
     private filter: FilterProvider,
     private languageProvider: LanguageProvider,
@@ -468,10 +468,10 @@ export class WalletProvider {
           if (!forceNew && addr) return resolve(addr);
 
           if (!wallet.isComplete())
-            return reject(this.bwcErrorProvider.msg('WALLET_NOT_COMPLETE'));
+            return reject(this.fwcErrorProvider.msg('WALLET_NOT_COMPLETE'));
 
           if (wallet.needsBackup) {
-            return reject(this.bwcErrorProvider.msg('WALLET_NEEDS_BACKUP'));
+            return reject(this.fwcErrorProvider.msg('WALLET_NEEDS_BACKUP'));
           }
 
           this.createAddress(wallet)
@@ -506,14 +506,14 @@ export class WalletProvider {
             err instanceof this.errors.MAIN_ADDRESS_GAP_REACHED ||
             (err.message && err.message == 'MAIN_ADDRESS_GAP_REACHED')
           ) {
-            this.logger.warn(this.bwcErrorProvider.msg(err, 'Server Error'));
+            this.logger.warn(this.fwcErrorProvider.msg(err, 'Server Error'));
             prefix = null;
             if (!this.isPopupOpen) {
               this.isPopupOpen = true;
               this.popupProvider
                 .ionicAlert(
                   null,
-                  this.bwcErrorProvider.msg('MAIN_ADDRESS_GAP_REACHED')
+                  this.fwcErrorProvider.msg('MAIN_ADDRESS_GAP_REACHED')
                 )
                 .then(() => {
                   this.isPopupOpen = false;
@@ -530,7 +530,7 @@ export class WalletProvider {
               }
             );
           } else {
-            this.bwcErrorProvider.cb(err, prefix).then(msg => {
+            this.fwcErrorProvider.cb(err, prefix).then(msg => {
               return reject(msg);
             });
           }
@@ -1176,7 +1176,7 @@ export class WalletProvider {
           wallet.savePreferences(prefs, err => {
             if (err) {
               this.popupProvider.ionicAlert(
-                this.bwcErrorProvider.msg(
+                this.fwcErrorProvider.msg(
                   err,
                   this.translate.instant(
                     'Could not save preferences on the server'
@@ -1450,7 +1450,7 @@ export class WalletProvider {
           return resolve();
         })
         .catch(err => {
-          return reject(this.bwcErrorProvider.msg(err));
+          return reject(this.fwcErrorProvider.msg(err));
         });
     });
   }
@@ -1488,7 +1488,7 @@ export class WalletProvider {
                 return resolve(broadcastedTxp);
               })
               .catch(err => {
-                return reject(this.bwcErrorProvider.msg(err));
+                return reject(this.fwcErrorProvider.msg(err));
               });
           } else {
             this.events.publish('Local/TxAction', wallet.id);
@@ -1667,7 +1667,7 @@ export class WalletProvider {
 
   public copyFcashApp(wallet, newWallet): Promise<any> {
     return new Promise((resolve, reject) => {
-      let walletPrivKey = this.bwcProvider
+      let walletPrivKey = this.fwcProvider
         .getFcash()
         .PrivateKey.fromString(wallet.credentials.walletPrivKey);
       let fcash_pay = 1;

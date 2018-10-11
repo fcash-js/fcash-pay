@@ -12,7 +12,7 @@ import { Subscription } from 'rxjs';
 
 // providers
 import { AddressBookProvider } from '../../providers/address-book/address-book';
-import { BwcErrorProvider } from '../../providers/bwc-error/bwc-error';
+import { FwcErrorProvider } from '../../providers/fwc-error/fwc-error';
 import { ExternalLinkProvider } from '../../providers/external-link/external-link';
 import { ActionSheetProvider } from '../../providers/index';
 import { Logger } from '../../providers/logger/logger';
@@ -64,7 +64,7 @@ export class WalletDetailsPage extends WalletTabsChild {
     profileProvider: ProfileProvider,
     private walletProvider: WalletProvider,
     private addressbookProvider: AddressBookProvider,
-    private bwcError: BwcErrorProvider,
+    private fwcError: FwcErrorProvider,
     private events: Events,
     private logger: Logger,
     private timeProvider: TimeProvider,
@@ -266,7 +266,7 @@ export class WalletDetailsPage extends WalletTabsChild {
         if (err === 'WALLET_NOT_REGISTERED') {
           this.walletNotRegistered = true;
         } else {
-          this.updateStatusError = this.bwcError.msg(
+          this.updateStatusError = this.fwcError.msg(
             err,
             this.translate.instant('Could not update wallet')
           );
