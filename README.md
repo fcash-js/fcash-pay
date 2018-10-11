@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/fcash-project/fcash-pay/master/resources/fcash-pay/android/icon/drawable-xxxhdpi-icon.png" alt="FcashApp" width="79">
+<img src="https://raw.githubusercontent.com/fcash-project/fcash-pay/master/resources/copay/android/icon/drawable-xxxhdpi-icon.png" alt="FcashApp" width="79">
 
 [![CircleCI](https://img.shields.io/circleci/project/github/fcash-project/fcash-pay/master.svg)](https://circleci.com/gh/fcash-project/fcash-pay/)
 [![Codecov](https://img.shields.io/codecov/c/github/fcash-project/fcash-pay.svg)](https://codecov.io/gh/fcash-project/fcash-pay/)
