@@ -1,7 +1,7 @@
 {
   "packageName": "fcash-pay",
   "packageDescription": "Fcash Wallet",
-  "packageNameId": "com.fcash.fcash-pay",
+  "packageNameId": "cash.fcash.wallet-pay",
   "themeColor": "#192c3a",
   "userVisibleName": "FcashApp",
   "purposeLine": "Fcash Wallet",

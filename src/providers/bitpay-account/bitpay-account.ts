@@ -137,7 +137,7 @@ export class FcashAccountProvider {
                     givenName: basicInfo.givenName,
                     familyName: basicInfo.familyName
                   };
-                  this.setBitpayAccount(acctData);
+                  this.setFcashAppAccount(acctData);
                   return cb(null, true, apiContext);
                 } else {
                   this.logger.info('User cancelled Fcash pairing process');
@@ -190,7 +190,7 @@ export class FcashAccountProvider {
   // Returns account objects as stored.
   public getAccountsAsStored(cb: (err, accounts) => any) {
     this.persistenceProvider
-      .getBitpayAccounts(this.bitPayProvider.getEnvironment().network)
+      .getFcashAppAccounts(this.bitPayProvider.getEnvironment().network)
       .then(accounts => {
         return cb(null, accounts);
       })
@@ -235,8 +235,8 @@ export class FcashAccountProvider {
     });
   }
 
-  private setBitpayAccount(account) {
-    this.persistenceProvider.setBitpayAccount(
+  private setFcashAppAccount(account) {
+    this.persistenceProvider.setFcashAppAccount(
       this.bitPayProvider.getEnvironment().network,
       account
     );
@@ -244,7 +244,7 @@ export class FcashAccountProvider {
 
   public removeAccount(email: string, cb: () => any) {
     this.persistenceProvider
-      .removeBitpayAccount(this.bitPayProvider.getEnvironment().network, email)
+      .removeFcashAppAccount(this.bitPayProvider.getEnvironment().network, email)
       .then(() => {
         return cb();
       });

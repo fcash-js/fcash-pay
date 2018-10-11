@@ -545,11 +545,11 @@ export class PersistenceProvider {
     return this.storage.remove(Keys.TX_CONFIRM_NOTIF(txid));
   }
 
-  getBitpayAccounts(network: string) {
+  getFcashAppAccounts(network: string) {
     return this.storage.get(Keys.BITPAY_ACCOUNTS_V2(network));
   }
 
-  setBitpayAccount(
+  setFcashAppAccount(
     network: string,
     data: {
       email: string;
@@ -558,7 +558,7 @@ export class PersistenceProvider {
       givenName?: string; // firstName
     }
   ) {
-    return this.getBitpayAccounts(network).then(allAccounts => {
+    return this.getFcashAppAccounts(network).then(allAccounts => {
       allAccounts = allAccounts || {};
       let account = allAccounts[data.email] || {};
       account.token = data.token;
@@ -573,16 +573,16 @@ export class PersistenceProvider {
     });
   }
 
-  removeBitpayAccount(network: string, email: string) {
-    return this.getBitpayAccounts(network).then(allAccounts => {
+  removeFcashAppAccount(network: string, email: string) {
+    return this.getFcashAppAccounts(network).then(allAccounts => {
       allAccounts = allAccounts || {};
       delete allAccounts[email];
       return this.storage.set(Keys.BITPAY_ACCOUNTS_V2(network), allAccounts);
     });
   }
 
-  setBitpayDebitCards(network: string, email: string, cards) {
-    return this.getBitpayAccounts(network).then(allAccounts => {
+  setFcashAppDebitCards(network: string, email: string, cards) {
+    return this.getFcashAppAccounts(network).then(allAccounts => {
       allAccounts = allAccounts || {};
       if (!allAccounts[email])
         throw new Error('Cannot set cards for unknown account ' + email);
@@ -598,8 +598,8 @@ export class PersistenceProvider {
   //   token: card token
   //   email: account email
   // ]
-  getBitpayDebitCards(network: string) {
-    return this.getBitpayAccounts(network).then(allAccounts => {
+  getFcashAppDebitCards(network: string) {
+    return this.getFcashAppAccounts(network).then(allAccounts => {
       let allCards = [];
       _.each(allAccounts, (account, email) => {
         if (account.cards) {
@@ -616,8 +616,8 @@ export class PersistenceProvider {
     });
   }
 
-  removeBitpayDebitCard(network: string, cardEid: string) {
-    return this.getBitpayAccounts(network)
+  removeFcashAppDebitCard(network: string, cardEid: string) {
+    return this.getFcashAppAccounts(network)
       .then(allAccounts => {
         return _.each(allAccounts, account => {
           account.cards = _.reject(account.cards, {

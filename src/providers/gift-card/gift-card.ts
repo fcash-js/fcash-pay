@@ -203,7 +203,7 @@ export class GiftCardProvider {
     this.cardUpdatesSubject.next(card);
   }
 
-  async createBitpayInvoice(data) {
+  async createFcashAppInvoice(data) {
     const dataSrc = {
       currency: data.currency,
       amount: data.amount,

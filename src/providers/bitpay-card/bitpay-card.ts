@@ -236,7 +236,7 @@ export class FcashCardProvider {
         });
 
         this.persistenceProvider
-          .setBitpayDebitCards(
+          .setFcashAppDebitCards(
             this.bitPayProvider.getEnvironment().network,
             apiContext.pairData.email,
             cards
@@ -388,7 +388,7 @@ export class FcashCardProvider {
   // get all cards, for all accounts.
   public getCards(cb) {
     this.persistenceProvider
-      .getBitpayDebitCards(this.bitPayProvider.getEnvironment().network)
+      .getFcashAppDebitCards(this.bitPayProvider.getEnvironment().network)
       .then(val => {
         return cb(val);
       });
@@ -423,7 +423,7 @@ export class FcashCardProvider {
 
   public remove(cardId, cb) {
     this.persistenceProvider
-      .removeBitpayDebitCard(
+      .removeFcashAppDebitCard(
         this.bitPayProvider.getEnvironment().network,
         cardId
       )

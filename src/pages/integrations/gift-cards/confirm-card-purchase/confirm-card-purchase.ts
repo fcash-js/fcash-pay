@@ -243,7 +243,7 @@ export class ConfirmCardPurchasePage extends ConfirmPage {
 
   public async createInvoice(data) {
     const cardOrder = await this.giftCardProvider
-      .createBitpayInvoice(data)
+      .createFcashAppInvoice(data)
       .catch(err => {
         throw this.handleCreateInvoiceError(err);
       });

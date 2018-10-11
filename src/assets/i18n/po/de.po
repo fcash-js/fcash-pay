@@ -762,7 +762,7 @@ msgid "Error in Payment Protocol"
 msgstr "Ein Fehler ist im Bezahl Protokoll aufgetreten"
 
 msgid "Error pairing Fcash Account"
-msgstr "Ein Fehler ist beim Koppeln des Bitpay-Account's aufgetreten"
+msgstr "Ein Fehler ist beim Koppeln des FcashApp-Account's aufgetreten"
 
 msgid "Error scanning funds:"
 msgstr "Fehler beim Ermitteln des Guthaben:"

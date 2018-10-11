@@ -1,7 +1,7 @@
 {
-  "name": "copay",
-  "description": "A Secure Fcash Wallet",
-  "author": "Fcash",
+  "name": "fcash-pay",
+  "description": "Fcash Wallet",
+  "author" : "Fcash",
   "version": "4.7.1",
   "keywords": [
     "bitcoin",
@@ -98,7 +98,7 @@
     "sign:android": "rm -f platforms/android/app/build/outputs/apk/release/android-release-signed-aligned.apk; jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore ../copay.keystore -signedjar platforms/android/app/build/outputs/apk/release/android-release-signed.apk platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk  copay_play && $ANDROID_HOME/build-tools/26.0.1/zipalign -v 4 platforms/android/app/build/outputs/apk/release/android-release-signed.apk platforms/android/app/build/outputs/apk/release/android-release-signed-aligned.apk",
     "apply:fcash-pay": "cd app-template && node apply.js copay",
     "apply:fcash": "cd app-template && node apply.js fcash",
-    "fix:fcm": "echo platforms/ios/FcashApp/Resources platforms/ios/FcashApp/Resources/Resources platforms/ios/Bitpay/Resources platforms/ios/Bitpay/Resources/Resources | xargs -n 1 cp GoogleService-Info.plist 2>/dev/null; mkdir -p platforms/android/app/src/debug platforms/android/app/src/release; echo platforms/android/app/src/debug platforms/android/app/src/release platforms/android/app | xargs -n 1 cp google-services.json",
+    "fix:fcm": "echo platforms/ios/FcashApp/Resources platforms/ios/FcashApp/Resources/Resources platforms/ios/FcashApp/Resources platforms/ios/FcashApp/Resources/Resources | xargs -n 1 cp GoogleService-Info.plist 2>/dev/null; mkdir -p platforms/android/app/src/debug platforms/android/app/src/release; echo platforms/android/app/src/debug platforms/android/app/src/release platforms/android/app | xargs -n 1 cp google-services.json",
     "sign:fcash-pay-desktop": "run-s sign:fcash-pay-linux sign:fcash-pay-windows sign:fcash-pay-macos",
     "sign:fcash-pay-macos": "gpg -u 1112CFA1 --output desktop/FcashApp.dmg.sig --detach-sig desktop/FcashApp.dmg",
     "sign:fcash-pay-linux": "gpg -u 1112CFA1 --output desktop/FcashApp-linux.zip.sig --detach-sig desktop/FcashApp-linux.zip",
@@ -265,7 +265,7 @@
       "cordova-plugin-ionic-webview": {},
       "cordova-custom-config": {},
       "cordova-plugin-customurlscheme": {
-        "URL_SCHEME": "bitcoin",
+        "URL_SCHEME"       : "bitcoin",
         "SECOND_URL_SCHEME": "copay",
         "THIRD_URL_SCHEME": "bitcoincash",
         "ANDROID_SCHEME": " ",

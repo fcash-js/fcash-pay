@@ -31,7 +31,7 @@ For a list of frequently asked questions please visit the [FcashApp FAQ](https:/
 - Customizable wallet naming and background colors
 - Multiple languages supported
 - Available for [iOS](https://itunes.apple.com/us/app/fcash-pay/id951330296), 
-    [Android](https://play.google.com/store/apps/details?id=com.fcash.copay&hl=en), 
+    [Android](https://play.google.com/store/apps/details?id=cash.fcash.wallet&hl=en), 
     [Windows Phone](http://www.windowsphone.com/en-us/store/app/copay-wallet/4372479b-a064-4d18-8bd3-74a3bdb81c3a), 
     [Chrome App](https://chrome.google.com/webstore/detail/fcash-pay/cnidaodnidkbaplmghlelgikaiejfhja?hl=en), 
     [Linux](https://github.com/fcash-project/fcash-pay/releases/latest), 
@@ -145,7 +145,7 @@ npm run final:desktop
 To enable external services, set the `COPAY_EXTERNAL_SERVICES_CONFIG_LOCATION` or `BITPAY_EXTERNAL_SERVICES_CONFIG_LOCATION` environment variable to the location of your configuration before running the `apply` task.
 
 ```sh
-COPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.copay/externalServices.json" npm run apply:fcash-pay
+COPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.fcash/externalServices.json" npm run apply:fcash-pay
 # or
 BITPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.fcash/externalServices.json" npm run apply:fcash
 ```

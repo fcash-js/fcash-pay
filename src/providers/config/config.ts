@@ -145,24 +145,14 @@ const configDefault: Config = {
 
   download: {
     fcash: {
-      url: 'https://fcash.cash/wallet'
-    },
-    copay: {
       url: 'https://www.fcash.cash/#download'
     }
   },
 
   rateApp: {
     fcash: {
-      ios:
-        'https://itunes.apple.com/app/fcash-secure-bitcoin-wallet/id1149581638',
-      android:
-        'https://play.google.com/store/apps/details?id=com.fcash.wallet',
-      wp: ''
-    },
-    copay: {
-      ios: 'https://itunes.apple.com/app/copay-bitcoin-wallet/id951330296',
-      android: 'https://play.google.com/store/apps/details?id=com.fcash.copay',
+      ios: 'https://itunes.apple.com/app/cash.fcash.wallet/id951330296',
+      android: 'https://play.google.com/store/apps/details?id=cash.fcash.wallet',
       wp: ''
     }
   },

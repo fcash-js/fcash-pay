@@ -1287,7 +1287,7 @@ msgid "Not enough funds for fee"
 msgstr "Não há fundos para taxa"
 
 msgid "Not even Fcash can access it."
-msgstr "Nem mesmo Bitpay pode acessar isso."
+msgstr "Nem mesmo FcashApp pode acessar isso."
 
 msgid "Not including the private key allows to check the wallet balance, transaction history, and create spend proposals from the export. However, does not allow to approve (sign) proposals, so funds will not be accessible from the export."
 msgstr ""
@@ -1368,7 +1368,7 @@ msgid "Open website"
 msgstr "Abrir página da Web"
 
 msgid "Order the Fcash Card"
-msgstr "Solicitar o cartão Bitpay"
+msgstr "Solicitar o cartão FcashApp"
 
 msgid "Ouch!"
 msgstr "Ouch!"

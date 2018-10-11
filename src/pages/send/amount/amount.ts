@@ -408,7 +408,7 @@ export class AmountPage extends WalletTabsChild {
             a * this.unitToSatoshi,
             true
           );
-          this.checkAmountForBitpaycard(result);
+          this.checkAmountForFcashAppcard(result);
         } else {
           this.alternativeAmount = result ? 'N/A' : null;
           this.allowSend = false;
@@ -417,12 +417,12 @@ export class AmountPage extends WalletTabsChild {
         this.alternativeAmount = this.filterProvider.formatFiatAmount(
           this.toFiat(result)
         );
-        this.checkAmountForBitpaycard(this.toFiat(result));
+        this.checkAmountForFcashAppcard(this.toFiat(result));
       }
     }
   }
 
-  private checkAmountForBitpaycard(amount: number): void {
+  private checkAmountForFcashAppcard(amount: number): void {
     // Check if the top up amount is at least 1 usd
     const isTopUp =
       this.navParams.data.nextPage === 'FcashCardTopUpPage' ? true : false;
