@@ -37,18 +37,10 @@ export interface Config {
     fcash: {
       url: string;
     };
-    copay: {
-      url: string;
-    };
   };
 
   rateApp: {
     fcash: {
-      ios: string;
-      android: string;
-      wp: string;
-    };
-    copay: {
       ios: string;
       android: string;
       wp: string;
@@ -248,13 +240,13 @@ export class ConfigProvider {
 
     this.logger.debug(
       'Config | spendUnconfirmed: ' +
-        spendUnconfirmed +
-        ' - useLegacyAddress: ' +
-        useLegacyAddress +
-        ' - persistentLogsEnabled: ' +
-        persistentLogsEnabled +
-        ' - lockMethod: ' +
-        lockMethod
+      spendUnconfirmed +
+      ' - useLegacyAddress: ' +
+      useLegacyAddress +
+      ' - persistentLogsEnabled: ' +
+      persistentLogsEnabled +
+      ' - lockMethod: ' +
+      lockMethod
     );
   }
 

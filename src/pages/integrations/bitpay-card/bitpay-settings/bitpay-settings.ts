@@ -24,7 +24,7 @@ export class FcashSettingsPage {
     private navParams: NavParams,
     private navCtrl: NavController,
     private fcashAccountProvider: FcashAccountProvider,
-    private bitPayCardProvider: FcashCardProvider,
+    private fCashCardProvider: FcashCardProvider,
     private popupProvider: PopupProvider,
     private configProvider: ConfigProvider,
     private homeIntegrationsProvider: HomeIntegrationsProvider
@@ -38,7 +38,7 @@ export class FcashSettingsPage {
   ionViewWillEnter() {
     let cardId = this.navParams.data.id;
     if (cardId) {
-      this.bitPayCardProvider.getCards(cards => {
+      this.fCashCardProvider.getCards(cards => {
         this.fcashCard = _.find(cards, { id: cardId });
       });
     } else {
@@ -68,7 +68,7 @@ export class FcashSettingsPage {
       ') from this device?';
     this.popupProvider.ionicConfirm(title, msg).then(res => {
       if (res) {
-        this.bitPayCardProvider.remove(card.id, err => {
+        this.fCashCardProvider.remove(card.id, err => {
           if (err) {
             this.popupProvider.ionicAlert('Error', 'Could not remove the card');
             return;

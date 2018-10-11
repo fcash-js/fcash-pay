@@ -38,7 +38,7 @@ export class AmazonProvider {
     * Production: 'livenet'
     */
     this.credentials.NETWORK = 'livenet';
-    this.credentials.BITPAY_API_URL =
+    this.credentials.FCASH_API_URL =
       this.credentials.NETWORK === 'testnet'
         ? 'https://test.fcash.cash'
         : 'https://fcash.cash';
@@ -107,7 +107,7 @@ export class AmazonProvider {
     return this.supportedCurrency
       ? Promise.resolve(this.supportedCurrency)
       : this.http
-          .get(this.credentials.BITPAY_API_URL + '/amazon-gift/supportedCards')
+          .get(this.credentials.FCASH_API_URL + '/amazon-gift/supportedCards')
           .toPromise()
           .then((data: any) => {
             this.logger.info('Amazon Gift Card Supported Cards: SUCCESS');

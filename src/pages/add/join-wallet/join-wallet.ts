@@ -84,7 +84,7 @@ export class JoinWalletPage {
       }
     ];
     this.events.subscribe('update:invitationCode', data => {
-      let invitationCode = data.value.replace('copay:', '');
+      let invitationCode = data.value.replace('fcash:', '');
       this.onQrCodeScannedJoin(invitationCode);
     });
   }
@@ -96,7 +96,7 @@ export class JoinWalletPage {
   ionViewWillEnter() {
     if (this.navParams.data.url) {
       let data: string = this.navParams.data.url;
-      data = data.replace('copay:', '');
+      data = data.replace('fcash:', '');
       this.onQrCodeScannedJoin(data);
     }
   }

@@ -65,8 +65,8 @@ export class FcashCardTopUpPage {
 
   constructor(
     private actionSheetProvider: ActionSheetProvider,
-    private bitPayCardProvider: FcashCardProvider,
-    private bitPayProvider: FcashProvider,
+    private fCashCardProvider: FcashCardProvider,
+    private fCashProvider: FcashProvider,
     private bwcErrorProvider: BwcErrorProvider,
     private bwcProvider: BwcProvider,
     private configProvider: ConfigProvider,
@@ -113,7 +113,7 @@ export class FcashCardTopUpPage {
     else if (this.currency == 'BCH') coin = 'bch';
     else coin = null;
 
-    this.bitPayCardProvider.get(
+    this.fCashCardProvider.get(
       {
         cardId: this.cardId,
         noRefresh: true
@@ -123,14 +123,14 @@ export class FcashCardTopUpPage {
           this.showErrorAndBack(null, err);
           return;
         }
-        this.bitPayCardProvider.setCurrencySymbol(card[0]);
+        this.fCashCardProvider.setCurrencySymbol(card[0]);
         this.lastFourDigits = card[0].lastFourDigits;
         this.currencySymbol = card[0].currencySymbol;
         this.currencyIsoCode = card[0].currency;
 
         this.wallets = this.profileProvider.getWallets({
           onlyComplete: true,
-          network: this.bitPayProvider.getEnvironment().network,
+          network: this.fCashProvider.getEnvironment().network,
           hasFunds: true,
           coin
         });
@@ -149,7 +149,7 @@ export class FcashCardTopUpPage {
   }
 
   private updateRates(coin: string) {
-    this.bitPayCardProvider.getRatesFromCoin(
+    this.fCashCardProvider.getRatesFromCoin(
       coin.toUpperCase(),
       this.currencyIsoCode,
       (err, r) => {
@@ -246,7 +246,7 @@ export class FcashCardTopUpPage {
 
   private createInvoice(data): Promise<any> {
     return new Promise((resolve, reject) => {
-      this.bitPayCardProvider.topUp(this.cardId, data, (err, invoiceId) => {
+      this.fCashCardProvider.topUp(this.cardId, data, (err, invoiceId) => {
         if (err) {
           return reject({
             title: 'Could not create the invoice',
@@ -254,7 +254,7 @@ export class FcashCardTopUpPage {
           });
         }
 
-        this.bitPayCardProvider.getInvoice(invoiceId, (err, inv) => {
+        this.fCashCardProvider.getInvoice(invoiceId, (err, inv) => {
           if (err) {
             return reject({
               title: 'Could not get the invoice',

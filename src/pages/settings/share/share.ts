@@ -42,7 +42,7 @@ export class SharePage {
     );
     let defaults = this.configProvider.getDefaults();
     this.downloadUrl =
-      this.appProvider.info.name == 'copay'
+      this.appProvider.info.name == 'fcash'
         ? defaults.download.fcash.url
         : defaults.download.fcash.url;
   }

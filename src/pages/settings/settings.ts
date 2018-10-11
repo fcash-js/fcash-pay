@@ -63,7 +63,7 @@ export class SettingsPage {
     private configProvider: ConfigProvider,
     private logger: Logger,
     private homeIntegrationsProvider: HomeIntegrationsProvider,
-    private bitPayCardProvider: FcashCardProvider,
+    private fCashCardProvider: FcashCardProvider,
     private platformProvider: PlatformProvider,
     private translate: TranslateService,
     private modalCtrl: ModalController,
@@ -113,7 +113,7 @@ export class SettingsPage {
     }, 200);
 
     // Only Fcash Wallet
-    this.bitPayCardProvider.get({}, (_, cards) => {
+    this.fCashCardProvider.get({}, (_, cards) => {
       this.showFcashCard = this.app.info._enabledExtensions.debitcard
         ? true
         : false;

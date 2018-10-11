@@ -25,10 +25,10 @@ export { CardBrand, CardConifg, CardName, GiftCard };
 export class GiftCardProvider {
   credentials: {
     NETWORK: 'testnet' | 'livenet';
-    BITPAY_API_URL: string;
+    FCASH_API_URL: string;
   } = {
     NETWORK: 'livenet',
-    BITPAY_API_URL: 'https://fcash.cash'
+    FCASH_API_URL: 'https://fcash.cash'
   };
 
   cardUpdatesSubject: Subject<GiftCard> = new Subject<GiftCard>();
@@ -50,7 +50,7 @@ export class GiftCardProvider {
   }
 
   setCredentials() {
-    this.credentials.BITPAY_API_URL =
+    this.credentials.FCASH_API_URL =
       this.credentials.NETWORK === 'testnet'
         ? 'https://test.fcash.cash'
         : 'https://fcash.cash';
@@ -123,7 +123,7 @@ export class GiftCardProvider {
     const name = data.name;
     const cardConfig = await this.getCardConfig(name);
 
-    const url = `${this.credentials.BITPAY_API_URL}/${
+    const url = `${this.credentials.FCASH_API_URL}/${
       cardConfig.fcashApiPath
     }/redeem`;
 
@@ -212,7 +212,7 @@ export class GiftCardProvider {
       buyerSelectedTransactionCurrency: data.buyerSelectedTransactionCurrency
     };
     const config = await this.getCardConfig(data.cardName);
-    const url = `${this.credentials.BITPAY_API_URL}/${
+    const url = `${this.credentials.FCASH_API_URL}/${
       config.fcashApiPath
     }/pay`;
     const headers = new HttpHeaders({
@@ -231,7 +231,7 @@ export class GiftCardProvider {
 
   public async getFcashInvoice(id) {
     const res: any = await this.http
-      .get(`${this.credentials.BITPAY_API_URL}/invoices/${id}`)
+      .get(`${this.credentials.FCASH_API_URL}/invoices/${id}`)
       .toPromise()
       .catch(err => {
         this.logger.error('Fcash Get Invoice: ERROR ' + err.error.message);

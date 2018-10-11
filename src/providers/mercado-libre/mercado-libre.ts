@@ -25,7 +25,7 @@ export class MercadoLibreProvider {
     * Production: 'livenet'
     */
     this.credentials.NETWORK = 'livenet';
-    this.credentials.BITPAY_API_URL =
+    this.credentials.FCASH_API_URL =
       this.credentials.NETWORK === 'testnet'
         ? 'https://test.fcash.cash'
         : 'https://fcash.cash';

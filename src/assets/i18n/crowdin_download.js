@@ -14,10 +14,10 @@ if (process.argv[2]) {
   var no_build = false;
   console.log(
     '\n' +
-      'Please note: If you do not have the crowdin API key and would like to download the ' +
-      'translations without building anyways, please make sure your English files are the same ' +
-      'version as crowdin, and then run this script with --nobuild\n\n' +
-      'eg. "node crowdin_download.js --nobuild"\n\n'
+    'Please note: If you do not have the crowdin API key and would like to download the ' +
+    'translations without building anyways, please make sure your English files are the same ' +
+    'version as crowdin, and then run this script with --nobuild\n\n' +
+    'eg. "node crowdin_download.js --nobuild"\n\n'
   );
 }
 
@@ -26,7 +26,7 @@ var path = require('path');
 var https = require('https');
 var AdmZip = require('adm-zip');
 
-var crowdin_identifier = 'copay';
+var crowdin_identifier = 'fcash';
 
 var local_file_name2 = path.join(__dirname, 'docs/appstore_en.txt');
 var local_file_name3 = path.join(__dirname, 'docs/updateinfo_en.txt');
@@ -37,9 +37,9 @@ try {
 } catch (e) {
   console.log(
     '\n### ABORTING ### One of the following files does not exist:\n' +
-      local_file_name2 +
-      '\n' +
-      local_file_name3
+    local_file_name2 +
+    '\n' +
+    local_file_name3
   );
   process.exit(1);
 }
@@ -64,24 +64,24 @@ if (no_build == false) {
   https
     .get(
       'https://api.crowdin.com/api/project/' +
-        crowdin_identifier +
-        '/export?key=' +
-        crowdin_api_key,
-      function(res) {
+      crowdin_identifier +
+      '/export?key=' +
+      crowdin_api_key,
+      function (res) {
         console.log('Export Got response: ' + res.statusCode);
 
-        res.on('data', function(chunk) {
+        res.on('data', function (chunk) {
           var resxml = chunk.toString('utf8');
           console.log(resxml);
 
           if (resxml.indexOf('status="skipped"') >= 0) {
             console.log(
               'Translation build was skipped due to either:\n' +
-                '1. No changes since last translation build, or\n' +
-                '2. API limit of once per 30 minutes has not been waited.\n\n' +
-                'Since we can not guarantee that translations have been built properly, this script will end here.\n' +
-                'Log in to FcashApp\'s Crowdin Settings and click the "Build Project" button to assure it is built recently, and then run this ' +
-                'script again with the --nobuild arg to download translations without checking if built.'
+              '1. No changes since last translation build, or\n' +
+              '2. API limit of once per 30 minutes has not been waited.\n\n' +
+              'Since we can not guarantee that translations have been built properly, this script will end here.\n' +
+              'Log in to FcashApp\'s Crowdin Settings and click the "Build Project" button to assure it is built recently, and then run this ' +
+              'script again with the --nobuild arg to download translations without checking if built.'
             );
             process.exit(1);
           }
@@ -89,18 +89,18 @@ if (no_build == false) {
           // Download most recent translations for all languages.
           https.get(
             'https://crowdin.com/download/project/' +
-              crowdin_identifier +
-              '.zip',
-            function(res) {
+            crowdin_identifier +
+            '.zip',
+            function (res) {
               var data = [],
                 dataLen = 0;
 
               res
-                .on('data', function(chunk) {
+                .on('data', function (chunk) {
                   data.push(chunk);
                   dataLen += chunk.length;
                 })
-                .on('end', function() {
+                .on('end', function () {
                   var buf = new Buffer(dataLen);
                   for (var i = 0, len = data.length, pos = 0; i < len; i++) {
                     data[i].copy(buf, pos);
@@ -218,7 +218,7 @@ if (no_build == false) {
         });
       }
     )
-    .on('error', function(e) {
+    .on('error', function (e) {
       console.log('Export Got error: ' + e.message);
     });
 } else {
@@ -227,19 +227,19 @@ if (no_build == false) {
   // Download most recent translations for all languages.
   https.get(
     'https://api.crowdin.com/api/project/' +
-      crowdin_identifier +
-      '/download/all.zip?key=' +
-      crowdin_api_key,
-    function(res) {
+    crowdin_identifier +
+    '/download/all.zip?key=' +
+    crowdin_api_key,
+    function (res) {
       var data = [],
         dataLen = 0;
 
       res
-        .on('data', function(chunk) {
+        .on('data', function (chunk) {
           data.push(chunk);
           dataLen += chunk.length;
         })
-        .on('end', function() {
+        .on('end', function () {
           var buf = new Buffer(dataLen);
           for (var i = 0, len = data.length, pos = 0; i < len; i++) {
             data[i].copy(buf, pos);

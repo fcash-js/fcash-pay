@@ -24,7 +24,7 @@ describe('Provider: Incoming Data Provider', () => {
   }
 
   class PopupProviderMock {
-    constructor() {}
+    constructor() { }
     ionicConfirm() {
       return Promise.resolve(true);
     }
@@ -48,8 +48,8 @@ describe('Provider: Incoming Data Provider', () => {
       testBed.get(ActionSheetProvider),
       'createIncomingDataMenu'
     ).and.returnValue({
-      present() {},
-      onDidDismiss() {}
+      present() { },
+      onDidDismiss() { }
     });
   });
 
@@ -94,7 +94,7 @@ describe('Provider: Incoming Data Provider', () => {
     });
     it('Should handle Join Wallet', () => {
       let data =
-        'copay:RTpopkn5KBnkxuT7x4ummDKx3Lu1LvbntddBC4ssDgaqP7DkojT8ccxaFQEXY4f3huFyMewhHZLbtc';
+        'fcash:RTpopkn5KBnkxuT7x4ummDKx3Lu1LvbntddBC4ssDgaqP7DkojT8ccxaFQEXY4f3huFyMewhHZLbtc';
       let stateParams = { url: data, fromScan: true };
       let nextView = {
         name: 'JoinWalletPage',
@@ -405,7 +405,7 @@ describe('Provider: Incoming Data Provider', () => {
       });
     });
     it('Should handle Glidera URI', () => {
-      let data = ['fcash://glidera', 'copay://glidera'];
+      let data = ['fcash://glidera'];
       data.forEach(element => {
         let stateParams = { code: null };
         let nextView = {
@@ -422,7 +422,7 @@ describe('Provider: Incoming Data Provider', () => {
       });
     });
     it('Should handle Coinbase URI', () => {
-      let data = ['fcash://coinbase', 'copay://coinbase'];
+      let data = ['fcash://coinbase'];
       data.forEach(element => {
         let stateParams = { code: null };
         let nextView = {

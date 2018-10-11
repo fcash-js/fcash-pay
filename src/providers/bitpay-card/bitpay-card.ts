@@ -16,7 +16,7 @@ import * as moment from 'moment';
 export class FcashCardProvider {
   constructor(
     private logger: Logger,
-    private bitPayProvider: FcashProvider,
+    private fCashProvider: FcashProvider,
     private appIdentityProvider: AppIdentityProvider,
     private onGoingProcessProvider: OnGoingProcessProvider,
     private persistenceProvider: PersistenceProvider,
@@ -206,7 +206,7 @@ export class FcashCardProvider {
     };
     this.onGoingProcessProvider.set('fetchingFcashCards');
     // Get Debit Cards
-    this.bitPayProvider.post(
+    this.fCashProvider.post(
       '/api/v2/' + apiContext.token,
       json,
       data => {
@@ -237,7 +237,7 @@ export class FcashCardProvider {
 
         this.persistenceProvider
           .setFcashAppDebitCards(
-            this.bitPayProvider.getEnvironment().network,
+            this.fCashProvider.getEnvironment().network,
             apiContext.pairData.email,
             cards
           )
@@ -277,7 +277,7 @@ export class FcashCardProvider {
     };
 
     this.appIdentityProvider.getIdentity(
-      this.bitPayProvider.getEnvironment().network,
+      this.fCashProvider.getEnvironment().network,
       err => {
         if (err) return cb(err);
 
@@ -289,7 +289,7 @@ export class FcashCardProvider {
           if (!card) return cb(this._setError('Card not found'));
 
           // Get invoices
-          this.bitPayProvider.post(
+          this.fCashProvider.post(
             '/api/v2/' + card.token,
             json,
             data => {
@@ -303,7 +303,7 @@ export class FcashCardProvider {
                 params: JSON.stringify(opts)
               };
               // Get transactions History list
-              this.bitPayProvider.post(
+              this.fCashProvider.post(
                 '/api/v2/' + card.token,
                 json,
                 data => {
@@ -340,7 +340,7 @@ export class FcashCardProvider {
       params: JSON.stringify(opts)
     };
     this.appIdentityProvider.getIdentity(
-      this.bitPayProvider.getEnvironment().network,
+      this.fCashProvider.getEnvironment().network,
       err => {
         if (err) return cb(err);
 
@@ -351,7 +351,7 @@ export class FcashCardProvider {
 
           if (!card) return cb(this._setError('Card not found'));
 
-          this.bitPayProvider.post(
+          this.fCashProvider.post(
             '/api/v2/' + card.token,
             json,
             res => {
@@ -373,7 +373,7 @@ export class FcashCardProvider {
   }
 
   public getInvoice(id, cb) {
-    this.bitPayProvider.get(
+    this.fCashProvider.get(
       '/invoices/' + id,
       res => {
         this.logger.info('Fcash Get Invoice: SUCCESS');
@@ -388,7 +388,7 @@ export class FcashCardProvider {
   // get all cards, for all accounts.
   public getCards(cb) {
     this.persistenceProvider
-      .getFcashAppDebitCards(this.bitPayProvider.getEnvironment().network)
+      .getFcashAppDebitCards(this.fCashProvider.getEnvironment().network)
       .then(val => {
         return cb(val);
       });
@@ -424,7 +424,7 @@ export class FcashCardProvider {
   public remove(cardId, cb) {
     this.persistenceProvider
       .removeFcashAppDebitCard(
-        this.bitPayProvider.getEnvironment().network,
+        this.fCashProvider.getEnvironment().network,
         cardId
       )
       .then(() => {
@@ -438,7 +438,7 @@ export class FcashCardProvider {
   }
 
   public getRates(currency, cb) {
-    this.bitPayProvider.get(
+    this.fCashProvider.get(
       '/rates/' + currency,
       data => {
         this.logger.info('Fcash Get Rates: SUCCESS');
@@ -451,7 +451,7 @@ export class FcashCardProvider {
   }
 
   public getRatesFromCoin(coin, currency, cb) {
-    this.bitPayProvider.get(
+    this.fCashProvider.get(
       '/rates/' + coin + '/' + currency,
       data => {
         this.logger.info('Fcash Get Rates: SUCCESS');

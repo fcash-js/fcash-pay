@@ -118,7 +118,7 @@ export class HomePage {
     private homeIntegrationsProvider: HomeIntegrationsProvider,
     private persistenceProvider: PersistenceProvider,
     private feedbackProvider: FeedbackProvider,
-    private bitPayCardProvider: FcashCardProvider,
+    private fCashCardProvider: FcashCardProvider,
     private translate: TranslateService,
     private emailProvider: EmailNotificationsProvider,
     private replaceParametersProvider: ReplaceParametersProvider,
@@ -194,7 +194,7 @@ export class HomePage {
     }, 200);
 
     // Only Fcash Wallet
-    this.bitPayCardProvider.get({}, (_, cards) => {
+    this.fCashCardProvider.get({}, (_, cards) => {
       this.zone.run(() => {
         this.showFcashCard = this.appProvider.info._enabledExtensions.debitcard
           ? true

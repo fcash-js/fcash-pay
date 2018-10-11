@@ -53,7 +53,7 @@ describe('LanguagePage', () => {
         const openLink = spyOn(instance.externalLinkProvider, 'open');
         instance.openExternalLink();
         expect(openLink).toHaveBeenCalledWith(
-          'https://crowdin.com/project/copay',
+          'https://crowdin.com/project/fcash',
           true,
           'Open Translation Community',
           'You can make contributions by signing up on our Crowdin community translation website. We’re looking forward to hearing from you!',

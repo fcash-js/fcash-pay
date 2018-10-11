@@ -1,16 +1,16 @@
-<img src="https://raw.githubusercontent.com/fcash-js/fcash-pay/master/resources/copay/android/icon/drawable-xxxhdpi-icon.png" alt="FcashApp" width="79">
+<img src="https://raw.githubusercontent.com/fcash-js/fcash-pay/master/resources/fcash/android/icon/drawable-xxxhdpi-icon.png" alt="FcashApp" width="79">
 
 [![CircleCI](https://img.shields.io/circleci/project/github/fcash-js/fcash-pay/master.svg)](https://circleci.com/gh/fcash-js/fcash-pay/)
 [![Codecov](https://img.shields.io/codecov/c/github/fcash-js/fcash-pay.svg)](https://codecov.io/gh/fcash-js/fcash-pay/)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/fcash-pay/localized.png)](https://crowdin.com/project/copay)
+[![Crowdin](https://d322cqt584bo4o.cloudfront.net/fcash-pay/localized.png)](https://crowdin.com/project/fcash)
 
 FcashApp is a secure bitcoin wallet platform for both desktop and mobile devices. FcashApp uses [Fcash Wallet Service](https://github.com/fcash-js/fcash-wallet-service) (FWS) for peer synchronization and network interfacing.
 
-Binary versions of FcashApp are available for download at [Fcash.cash](https://www.fcash.cash/#download). FcashApp Binaries are signed with the key `contact@fcash.cash` – See the section [`How to Verify FcashApp Signatures`](https://github.com/fcash-js/fcash-pay#how-to-verify-copay-signatures) for details.
+Binary versions of FcashApp are available for download at [Fcash.cash](https://www.fcash.cash/#download). FcashApp Binaries are signed with the key `contact@fcash.cash` – See the section [`How to Verify FcashApp Signatures`](https://github.com/fcash-js/fcash-pay#how-to-verify-fcash-signatures) for details.
 
 This project was created by Fcash Inc, and it is maintained by Fcash and houndreds of contributors. There is a Fcash branded version of FcashApp at mobile phone stores, Fcash Wallet, which features integration with the Fcash Visa Debit Card, as its main difference.
 
-For a list of frequently asked questions please visit the [FcashApp FAQ](https://github.com/fcash-js/fcash-pay/wiki/COPAY---FAQ).
+For a list of frequently asked questions please visit the [FcashApp FAQ](https://github.com/fcash-js/fcash-pay/wiki/FCASH---FAQ).
 
 ## Main Features
 
@@ -32,7 +32,7 @@ For a list of frequently asked questions please visit the [FcashApp FAQ](https:/
 - Multiple languages supported
 - Available for [iOS](https://itunes.apple.com/us/app/fcash-pay/id951330296), 
     [Android](https://play.google.com/store/apps/details?id=cash.fcash.wallet&hl=en), 
-    [Windows Phone](http://www.windowsphone.com/en-us/store/app/copay-wallet/4372479b-a064-4d18-8bd3-74a3bdb81c3a), 
+    [Windows Phone](http://www.windowsphone.com/en-us/store/app/fcash-wallet/4372479b-a064-4d18-8bd3-74a3bdb81c3a), 
     [Chrome App](https://chrome.google.com/webstore/detail/fcash-pay/cnidaodnidkbaplmghlelgikaiejfhja?hl=en), 
     [Linux](https://github.com/fcash-js/fcash-pay/releases/latest), 
     [Windows](https://github.com/fcash-js/fcash-pay/releases/latest) and 
@@ -142,12 +142,12 @@ npm run final:desktop
 
 ### Enable External Services
 
-To enable external services, set the `COPAY_EXTERNAL_SERVICES_CONFIG_LOCATION` or `BITPAY_EXTERNAL_SERVICES_CONFIG_LOCATION` environment variable to the location of your configuration before running the `apply` task.
+To enable external services, set the `FCASH_EXTERNAL_SERVICES_CONFIG_LOCATION` or `FCASH_EXTERNAL_SERVICES_CONFIG_LOCATION` environment variable to the location of your configuration before running the `apply` task.
 
 ```sh
-COPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.fcash/externalServices.json" npm run apply:fcash-pay
+FCASH_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.fcash/externalServices.json" npm run apply:fcash-pay
 # or
-BITPAY_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.fcash/externalServices.json" npm run apply:fcash
+FCASH_EXTERNAL_SERVICES_CONFIG_LOCATION="~/.fcash/externalServices.json" npm run apply:fcash
 ```
 
 ## About FcashApp
@@ -199,7 +199,7 @@ FcashApp depends on [Fcash Wallet Service](https://github.com/fcash-js/fcash-wal
 
 ## Translations
 
-FcashApp uses standard gettext PO files for translations and [Crowdin](https://crowdin.com/project/copay) as the front-end tool for translators. To join our team of translators, please create an account at [Crowdin](https://crowdin.com) and translate the FcashApp documentation and application text into your native language.
+FcashApp uses standard gettext PO files for translations and [Crowdin](https://crowdin.com/project/fcash) as the front-end tool for translators. To join our team of translators, please create an account at [Crowdin](https://crowdin.com) and translate the FcashApp documentation and application text into your native language.
 
 To download and build using the latest translations from Crowdin, please use the following commands:
 

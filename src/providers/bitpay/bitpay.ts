@@ -10,7 +10,7 @@ import * as bitauthService from 'bitauth';
 @Injectable()
 export class FcashProvider {
   private NETWORK: string;
-  private BITPAY_API_URL: string;
+  private FCASH_API_URL: string;
   constructor(
     private http: HttpClient,
     private appIdentityProvider: AppIdentityProvider,
@@ -18,7 +18,7 @@ export class FcashProvider {
   ) {
     this.logger.debug('FcashProvider initialized');
     this.NETWORK = 'livenet';
-    this.BITPAY_API_URL =
+    this.FCASH_API_URL =
       this.NETWORK == 'livenet'
         ? 'https://fcash.cash'
         : 'https://test.fcash.cash';
@@ -31,7 +31,7 @@ export class FcashProvider {
   }
 
   public get(endpoint, successCallback, errorCallback) {
-    let url = this.BITPAY_API_URL + endpoint;
+    let url = this.FCASH_API_URL + endpoint;
     let headers = {
       'Content-Type': 'application/json'
     };
@@ -53,9 +53,9 @@ export class FcashProvider {
           return errorCallback(err);
         }
 
-        let dataToSign = this.BITPAY_API_URL + endpoint + JSON.stringify(json);
+        let dataToSign = this.FCASH_API_URL + endpoint + JSON.stringify(json);
         let signedData = bitauthService.sign(dataToSign, appIdentity.priv);
-        let url = this.BITPAY_API_URL + endpoint;
+        let url = this.FCASH_API_URL + endpoint;
 
         let headers = new HttpHeaders().set('content-type', 'application/json');
         headers = headers.append('x-identity', appIdentity.pub);
@@ -87,7 +87,7 @@ export class FcashProvider {
         );
         json['params'].pubkey = appIdentity.pub;
         json['params'] = JSON.stringify(json.params);
-        let url = this.BITPAY_API_URL + '/api/v2/';
+        let url = this.FCASH_API_URL + '/api/v2/';
         let headers = {
           'Content-Type': 'application/json'
         };

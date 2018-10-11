@@ -84,14 +84,14 @@ exports.config = {
     jasmine.getEnv().addReporter(
       new jasmineReporters.TerminalReporter({
         verbosity: 3,
-        color: true,
+        color    : true,
         showStack: true
       })
     );
     jasmine.getEnv().addReporter(
       new jasmineReporters.JUnitXmlReporter({
-        savePath: process.env.JUNIT_REPORT_PATH || './test/',
-        outputFile: process.env.JUNIT_REPORT_NAME || 'junitresults.xml',
+        savePath      : process.env.JUNIT_REPORT_PATH || './test/',
+        outputFile    : process.env.JUNIT_REPORT_NAME || 'junitresults.xml',
         consolidateAll: true
       })
     );

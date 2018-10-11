@@ -1426,7 +1426,7 @@ msgstr ""
 msgid "Open"
 msgstr ""
 
-msgid "Open Crowdin"
+msgid "Open Fcash"
 msgstr ""
 
 msgid "Open GitHub"
@@ -2439,7 +2439,7 @@ msgstr ""
 msgid ""
 "We are always looking for translation contributions! You can make "
 "corrections or help to make this app available in your native language by "
-"joining our community on Crowdin."
+"joining our community on Fcash."
 msgstr ""
 
 msgid "We will confirm on the next screen."
@@ -2527,7 +2527,7 @@ msgid ""
 msgstr ""
 
 msgid ""
-"You can make contributions by signing up on our Crowdin community "
+"You can make contributions by signing up on our Fcash community "
 "translation website. We’re looking forward to hearing from you!"
 msgstr ""
 

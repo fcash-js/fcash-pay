@@ -24,7 +24,7 @@ import * as _ from 'lodash';
 })
 export class CreateWalletPage implements OnInit {
   /* For compressed keys, m*73 + n*34 <= 496 */
-  private COPAYER_PAIR_LIMITS = {
+  private FCASH_PAIR_LIMITS = {
     1: 1,
     2: 2,
     3: 3,
@@ -115,7 +115,7 @@ export class CreateWalletPage implements OnInit {
 
   private updateRCSelect(n: number): void {
     this.createForm.controls['totalFcashApp'].setValue(n);
-    var maxReq = this.COPAYER_PAIR_LIMITS[n];
+    var maxReq = this.FCASH_PAIR_LIMITS[n];
     this.signatures = _.range(1, maxReq + 1);
     this.createForm.controls['requiredFcashApp'].setValue(
       Math.min(Math.trunc(n / 2 + 1), maxReq)

@@ -7,7 +7,7 @@ var path = require('path');
 var https = require('https');
 var bhttp = require('bhttp');
 
-var crowdin_identifier = 'copay';
+var crowdin_identifier = 'fcash';
 
 var local_file_name1 = path.join(__dirname, 'po/template.pot');
 
@@ -53,12 +53,12 @@ if (crowdin_api_key != '') {
 
   bhttp.post(
     'https://api.crowdin.com/api/project/' +
-      crowdin_identifier +
-      '/update-file?key=' +
-      crowdin_api_key,
+    crowdin_identifier +
+    '/update-file?key=' +
+    crowdin_api_key,
     payload,
     {},
-    function(err, response) {
+    function (err, response) {
       if (!err)
         console.log(
           '\nResponse from update file call:\n',
@@ -70,17 +70,17 @@ if (crowdin_api_key != '') {
       https
         .get(
           'https://api.crowdin.com/api/project/' +
-            crowdin_identifier +
-            '/export?key=' +
-            crowdin_api_key,
-          function(res) {
+          crowdin_identifier +
+          '/export?key=' +
+          crowdin_api_key,
+          function (res) {
             console.log('Export Got response: ' + res.statusCode);
-            res.on('data', function(chunk) {
+            res.on('data', function (chunk) {
               console.log(chunk.toString('utf8'));
             });
           }
         )
-        .on('error', function(e) {
+        .on('error', function (e) {
           console.log('Export Got error: ' + e.message);
         });
     }

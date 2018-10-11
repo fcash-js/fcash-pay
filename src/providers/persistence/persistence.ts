@@ -23,7 +23,7 @@ const Keys = {
   APP_IDENTITY: network => 'appIdentity-' + network,
   BACKUP: walletId => 'backup-' + walletId,
   BALANCE_CACHE: cardId => 'balanceCache-' + cardId,
-  BITPAY_ACCOUNTS_V2: network => 'fcashAccounts-v2-' + network,
+  FCASH_ACCOUNTS_V2: network => 'fcashAccounts-v2-' + network,
   CLEAN_AND_SCAN_ADDRESSES: 'CleanAndScanAddresses',
   COINBASE_REFRESH_TOKEN: network => 'coinbaseRefreshToken-' + network,
   COINBASE_TOKEN: network => 'coinbaseToken-' + network,
@@ -546,7 +546,7 @@ export class PersistenceProvider {
   }
 
   getFcashAppAccounts(network: string) {
-    return this.storage.get(Keys.BITPAY_ACCOUNTS_V2(network));
+    return this.storage.get(Keys.FCASH_ACCOUNTS_V2(network));
   }
 
   setFcashAppAccount(
@@ -569,7 +569,7 @@ export class PersistenceProvider {
       this.logger.info(
         'Storing Fcash accounts with new account:' + data.email
       );
-      return this.storage.set(Keys.BITPAY_ACCOUNTS_V2(network), allAccounts);
+      return this.storage.set(Keys.FCASH_ACCOUNTS_V2(network), allAccounts);
     });
   }
 
@@ -577,7 +577,7 @@ export class PersistenceProvider {
     return this.getFcashAppAccounts(network).then(allAccounts => {
       allAccounts = allAccounts || {};
       delete allAccounts[email];
-      return this.storage.set(Keys.BITPAY_ACCOUNTS_V2(network), allAccounts);
+      return this.storage.set(Keys.FCASH_ACCOUNTS_V2(network), allAccounts);
     });
   }
 
@@ -587,7 +587,7 @@ export class PersistenceProvider {
       if (!allAccounts[email])
         throw new Error('Cannot set cards for unknown account ' + email);
       allAccounts[email].cards = cards;
-      return this.storage.set(Keys.BITPAY_ACCOUNTS_V2(network), allAccounts);
+      return this.storage.set(Keys.FCASH_ACCOUNTS_V2(network), allAccounts);
     });
   }
 
@@ -626,7 +626,7 @@ export class PersistenceProvider {
         });
       })
       .then(allAccounts => {
-        return this.storage.set(Keys.BITPAY_ACCOUNTS_V2(network), allAccounts);
+        return this.storage.set(Keys.FCASH_ACCOUNTS_V2(network), allAccounts);
       });
   }
 

@@ -125,7 +125,7 @@ export class IncomingDataProvider {
 
   private isValidJoinCode(data: string): boolean {
     data = this.sanitizeUri(data);
-    return !!(data && data.match(/^copay:[0-9A-HJ-NP-Za-km-z]{70,80}$/));
+    return !!(data && data.match(/^fcash:[0-9A-HJ-NP-Za-km-z]{70,80}$/));
   }
 
   private isValidJoinLegacyCode(data: string): boolean {
@@ -561,7 +561,7 @@ export class IncomingDataProvider {
     let value = match[0].replace(',', '.');
     let newUri = data.replace(regex, value);
 
-    // mobile devices, uris like copay://glidera
+    // mobile devices, uris like fcash://glidera
     newUri.replace('://', ':');
 
     return newUri;

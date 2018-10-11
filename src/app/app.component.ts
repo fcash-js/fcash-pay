@@ -105,7 +105,7 @@ export class FcashApp {
     private glideraProvider: GlideraProvider,
     private coinbaseProvider: CoinbaseProvider,
     private amazonProvider: AmazonProvider,
-    private bitPayCardProvider: FcashCardProvider,
+    private FcashCardProvider: FcashCardProvider,
     private mercadoLibreProvider: MercadoLibreProvider,
     private shapeshiftProvider: ShapeshiftProvider,
     private emailNotificationsProvider: EmailNotificationsProvider,
@@ -308,7 +308,7 @@ export class FcashApp {
 
     // Fcash Card
     if (this.appProvider.info._enabledExtensions.debitcard)
-      this.bitPayCardProvider.register();
+      this.FcashCardProvider.register();
   }
 
   private incomingDataRedirEvent(): void {

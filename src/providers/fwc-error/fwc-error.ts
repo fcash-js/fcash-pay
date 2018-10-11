@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 
 @Injectable()
 export class BwcErrorProvider {
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService) { }
 
   public msg(err, prefix?: string): string {
     if (!err) return 'Unknown error';
@@ -63,7 +63,7 @@ export class BwcErrorProvider {
         case 'WALLET_ALREADY_EXISTS':
           body = this.translate.instant('Wallet already exists');
           break;
-        case 'COPAYER_IN_WALLET':
+        case 'FCASH_IN_WALLET':
           body = this.translate.instant('FcashApp already in this wallet');
           break;
         case 'WALLET_FULL':
@@ -80,7 +80,7 @@ export class BwcErrorProvider {
             'Funds are locked by pending spend proposals'
           );
           break;
-        case 'COPAYER_VOTED':
+        case 'FCASH_VOTED':
           body = this.translate.instant(
             'FcashApp already voted on this spend proposal'
           );
@@ -118,7 +118,7 @@ export class BwcErrorProvider {
         case 'BAD_SIGNATURES':
           body = this.translate.instant('Signatures rejected by server');
           break;
-        case 'COPAYER_DATA_MISMATCH':
+        case 'FCASH_DATA_MISMATCH':
           body = this.translate.instant('FcashApp data mismatch');
           break;
         case 'DUST_AMOUNT':
@@ -127,7 +127,7 @@ export class BwcErrorProvider {
         case 'INCORRECT_ADDRESS_NETWORK':
           body = this.translate.instant('Incorrect network address');
           break;
-        case 'COPAYER_REGISTERED':
+        case 'FCASH_REGISTERED':
           body = this.translate.instant(
             'Key already associated with an existing wallet'
           );

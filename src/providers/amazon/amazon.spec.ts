@@ -25,7 +25,7 @@ describe('Provider: AmazonProvider', () => {
   describe('Function: getNetwork by default', () => {
     it('Should get livenet network by default', () => {
       expect(amazonProvider.getNetwork()).toBe('livenet');
-      expect(amazonProvider.credentials.BITPAY_API_URL).toBe(
+      expect(amazonProvider.credentials.FCASH_API_URL).toBe(
         'https://fcash.cash'
       );
     });

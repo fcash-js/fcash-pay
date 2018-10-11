@@ -38,8 +38,8 @@ export class FcashCardPage {
 
   constructor(
     private translate: TranslateService,
-    private bitPayProvider: FcashProvider,
-    private bitPayCardProvider: FcashCardProvider,
+    private fCashProvider: FcashProvider,
+    private fCashCardProvider: FcashCardProvider,
     private logger: Logger,
     private popupProvider: PopupProvider,
     private timeProvider: TimeProvider,
@@ -52,12 +52,12 @@ export class FcashCardPage {
     this.dateRange = {
       value: 'last30Days'
     };
-    this.network = this.bitPayProvider.getEnvironment().network;
+    this.network = this.fCashProvider.getEnvironment().network;
     this.cardId = this.navParams.data.id;
 
     if (!this.cardId) this.navCtrl.pop();
 
-    this.bitPayCardProvider.get(
+    this.fCashCardProvider.get(
       {
         cardId: this.cardId,
         noRefresh: true
@@ -112,7 +112,7 @@ export class FcashCardPage {
     if (!_.isEmpty(history.transactionList)) return cb();
 
     let dateRange = this.setDateRange('all');
-    this.bitPayCardProvider.getHistory(
+    this.fCashCardProvider.getHistory(
       this.cardId,
       dateRange,
       (err, history) => {
@@ -127,7 +127,7 @@ export class FcashCardPage {
     let dateRange = this.setDateRange(this.dateRange.value);
 
     this.loadingHistory = true;
-    this.bitPayCardProvider.getHistory(
+    this.fCashCardProvider.getHistory(
       this.cardId,
       dateRange,
       (err, history) => {
@@ -155,15 +155,15 @@ export class FcashCardPage {
 
           this.setDateTime(txs);
 
-          this.fcashCardTransactionHistoryConfirming = this.bitPayCardProvider.filterTransactions(
+          this.fcashCardTransactionHistoryConfirming = this.fCashCardProvider.filterTransactions(
             'confirming',
             txs
           );
-          this.fcashCardTransactionHistoryCompleted = this.bitPayCardProvider.filterTransactions(
+          this.fcashCardTransactionHistoryCompleted = this.fCashCardProvider.filterTransactions(
             'completed',
             txs
           );
-          this.fcashCardTransactionHistoryPreAuth = this.bitPayCardProvider.filterTransactions(
+          this.fcashCardTransactionHistoryPreAuth = this.fCashCardProvider.filterTransactions(
             'preAuth',
             txs
           );
@@ -178,7 +178,7 @@ export class FcashCardPage {
             //   balance: history.currentCardBalance,
             //   transactions: history.txs
             // };
-            // this.bitPayCardProvider.setHistory($scope.cardId, cacheHistory, {}, (err) => {
+            // this.fCashCardProvider.setHistory($scope.cardId, cacheHistory, {}, (err) => {
             //   if (err) $log.error(err);
             //   $scope.historyCached = true;
             // });

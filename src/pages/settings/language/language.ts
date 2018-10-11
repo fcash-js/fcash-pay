@@ -29,7 +29,7 @@ export class LanguagePage {
   }
 
   public openExternalLink(): void {
-    let url = 'https://crowdin.com/project/copay';
+    let url = 'https://crowdin.com/project/fcash';
     let optIn = true;
     let title = this.translate.instant('Open Translation Community');
     let message = this.translate.instant(

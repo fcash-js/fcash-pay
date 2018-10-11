@@ -51,7 +51,7 @@ export class FcashAccountProvider {
   constructor(
     private platformProvider: PlatformProvider,
     private replaceParametersProvider: ReplaceParametersProvider,
-    private bitPayProvider: FcashProvider,
+    private fCashProvider: FcashProvider,
     private logger: Logger,
     private onGoingProcessProvider: OnGoingProcessProvider,
     private popupProvider: PopupProvider,
@@ -87,7 +87,7 @@ export class FcashAccountProvider {
       };
 
       this.onGoingProcessProvider.set('fetchingFcashAccount');
-      this.bitPayProvider.postAuth(
+      this.fCashProvider.postAuth(
         json,
         data => {
           if (data && data.error) {
@@ -173,7 +173,7 @@ export class FcashAccountProvider {
       method: 'getBasicInfo'
     };
     // Get basic account information
-    this.bitPayProvider.post(
+    this.fCashProvider.post(
       '/api/v2/' + apiContext.token,
       json,
       data => {
@@ -190,7 +190,7 @@ export class FcashAccountProvider {
   // Returns account objects as stored.
   public getAccountsAsStored(cb: (err, accounts) => any) {
     this.persistenceProvider
-      .getFcashAppAccounts(this.bitPayProvider.getEnvironment().network)
+      .getFcashAppAccounts(this.fCashProvider.getEnvironment().network)
       .then(accounts => {
         return cb(null, accounts);
       })
@@ -207,7 +207,7 @@ export class FcashAccountProvider {
         return cb(err, []);
       }
       this.appIdentityProvider.getIdentity(
-        this.bitPayProvider.getEnvironment().network,
+        this.fCashProvider.getEnvironment().network,
         (err, appIdentity) => {
           if (err) {
             return cb(err);
@@ -237,14 +237,14 @@ export class FcashAccountProvider {
 
   private setFcashAppAccount(account) {
     this.persistenceProvider.setFcashAppAccount(
-      this.bitPayProvider.getEnvironment().network,
+      this.fCashProvider.getEnvironment().network,
       account
     );
   }
 
   public removeAccount(email: string, cb: () => any) {
     this.persistenceProvider
-      .removeFcashAppAccount(this.bitPayProvider.getEnvironment().network, email)
+      .removeFcashAppAccount(this.fCashProvider.getEnvironment().network, email)
       .then(() => {
         return cb();
       });

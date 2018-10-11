@@ -24,9 +24,9 @@ export class FcashCardIntroPage {
     private translate: TranslateService,
     private actionSheetCtrl: ActionSheetController,
     private navParams: NavParams,
-    private bitPayAccountProvider: FcashAccountProvider,
+    private fCashAccountProvider: FcashAccountProvider,
     private popupProvider: PopupProvider,
-    private bitPayCardProvider: FcashCardProvider,
+    private fCashCardProvider: FcashCardProvider,
     private navCtrl: NavController,
     private externalLinkProvider: ExternalLinkProvider
   ) {}
@@ -41,7 +41,7 @@ export class FcashCardIntroPage {
       let pairingReason = this.translate.instant(
         'add your Fcash Visa card(s)'
       );
-      this.bitPayAccountProvider.pair(
+      this.fCashAccountProvider.pair(
         pairData,
         pairingReason,
         (err: string, paired: boolean, apiContext) => {
@@ -53,7 +53,7 @@ export class FcashCardIntroPage {
             return;
           }
           if (paired) {
-            this.bitPayCardProvider.sync(apiContext, (err, cards) => {
+            this.fCashCardProvider.sync(apiContext, (err, cards) => {
               if (err) {
                 this.popupProvider.ionicAlert(
                   this.translate.instant('Error updating Debit Cards'),
@@ -83,7 +83,7 @@ export class FcashCardIntroPage {
       );
     }
 
-    this.bitPayAccountProvider.getAccounts((err, accounts) => {
+    this.fCashAccountProvider.getAccounts((err, accounts) => {
       if (err) {
         this.popupProvider.ionicAlert(this.translate.instant('Error'), err);
         return;
@@ -92,7 +92,7 @@ export class FcashCardIntroPage {
     });
   }
 
-  public bitPayCardInfo() {
+  public fCashCardInfo() {
     let url = 'https://fcash.cash/visa/faq';
     this.externalLinkProvider.open(url);
   }
@@ -157,7 +157,7 @@ export class FcashCardIntroPage {
     if (_.isUndefined(account)) {
       this.startPairFcashAccount();
     } else {
-      this.bitPayCardProvider.sync(account.apiContext, err => {
+      this.fCashCardProvider.sync(account.apiContext, err => {
         if (err) {
           this.popupProvider.ionicAlert(this.translate.instant('Error'), err);
           return;
