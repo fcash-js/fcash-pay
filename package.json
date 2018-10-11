@@ -9,7 +9,7 @@
     "fcash",
     "copay",
     "multisignature",
-    "fcore"
+    "fcash-base"
   ],
   "main": "www/index.html",
   "title": "FcashApp",
@@ -41,11 +41,11 @@
   "homepage": "https://www.fcash.cash",
   "license": "MIT",
   "repository": {
-    "url": "git://github.com/fcash-project/fcash-pay.git",
+    "url": "git://github.com/fcash-js/fcash-pay.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/fcash-project/fcash-pay/issues"
+    "url": "https://github.com/fcash-js/fcash-pay/issues"
   },
   "scripts": {
     "postinstall": "sed -i  -e \"s/.*require(...\\/...);//g\" node_modules/asn1.js-rfc5280/index.js && run-s e2e:update env:dev prompt",
@@ -143,7 +143,7 @@
     "@zxing/library": "0.8.2",
     "@zxing/ngx-scanner": "1.2.1",
     "angular2-moment": "1.7.1",
-    "bitauth": "git+https://github.com/fcash-project/bitauth.git#copay",
+    "bitauth": "git+https://github.com/fcash-js/bitauth.git#copay",
     "fcash-wallet-client": "6.7.5",
     "buffer-compare": "1.1.1",
     "cordova": "8.0.0",

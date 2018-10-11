@@ -7,7 +7,7 @@ import { Device } from '@ionic-native/device';
 
 // providers
 import { AppIdentityProvider } from '../app-identity/app-identity';
-import { FcashProvider } from '../fcash-project/fcash';
+import { FcashProvider } from '../fcash-js/fcash';
 import { Logger } from '../logger/logger';
 import { OnGoingProcessProvider } from '../on-going-process/on-going-process';
 import { PersistenceProvider } from '../persistence/persistence';

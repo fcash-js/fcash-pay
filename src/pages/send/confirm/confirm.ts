@@ -41,8 +41,8 @@ export class ConfirmPage extends WalletTabsChild {
   @ViewChild('slideButton')
   slideButton;
 
-  private fcore;
-  protected fcoreCash;
+  private fcashBase;
+  protected fcashBaseCash;
 
   public countDown = null;
   public CONFIRM_LIMIT_USD: number;
@@ -100,8 +100,8 @@ export class ConfirmPage extends WalletTabsChild {
     walletTabsProvider: WalletTabsProvider
   ) {
     super(navCtrl, profileProvider, walletTabsProvider);
-    this.fcore = this.bwcProvider.getFcash();
-    this.fcoreCash = this.bwcProvider.getFcashCash();
+    this.fcashBase = this.bwcProvider.getFcash();
+    this.fcashBaseCash = this.bwcProvider.getFcashCash();
     this.CONFIRM_LIMIT_USD = 20;
     this.FEE_TOO_HIGH_LIMIT_PER = 15;
     this.config = this.configProvider.get();
@@ -123,7 +123,7 @@ export class ConfirmPage extends WalletTabsChild {
   ionViewWillEnter() {
     this.navCtrl.swipeBackEnabled = false;
     this.isOpenSelector = false;
-    let B = this.navParams.data.coin == 'bch' ? this.fcoreCash : this.fcore;
+    let B = this.navParams.data.coin == 'bch' ? this.fcashBaseCash : this.fcashBase;
     let networkName;
     try {
       networkName = new B.Address(this.navParams.data.toAddress).network.name;
@@ -177,7 +177,7 @@ export class ConfirmPage extends WalletTabsChild {
 
     if (this.tx.coin && this.tx.coin == 'bch') {
       // Use legacy address
-      this.tx.toAddress = this.fcoreCash
+      this.tx.toAddress = this.fcashBaseCash
         .Address(this.tx.toAddress)
         .toString();
     }

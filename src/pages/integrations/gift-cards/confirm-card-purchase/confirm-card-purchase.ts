@@ -316,7 +316,7 @@ export class ConfirmCardPurchasePage extends ConfirmPage {
 
     if (wallet.coin && wallet.coin == 'bch') {
       // Use legacy address
-      txp.toAddress = this.fcoreCash.Address(txp.toAddress).toString();
+      txp.toAddress = this.fcashBaseCash.Address(txp.toAddress).toString();
       txp.outputs[0].toAddress = txp.toAddress;
     }
 

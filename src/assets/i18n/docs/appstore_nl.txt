@@ -20,4 +20,4 @@ Email meldingen voor betalingen en overdrachten
 Aanpasbare portemonnee namen en achtergrond kleuren
 10 ondersteunde talen (EN, CZ, FR, DE, IT, ES, JA, PL, RU, NL)
 
-FcashApp is gratis open source software draaiend op niet-merkgebonden servers, dus het is niet nodig te vertrouwen op enig bedrijf voor blijvende ondersteuning. Iedereen kan de broncode van FcashApp inzien of er aan bijdragen via GitHub (https://github.com/fcash-project/fcash-pay). 
+FcashApp is gratis open source software draaiend op niet-merkgebonden servers, dus het is niet nodig te vertrouwen op enig bedrijf voor blijvende ondersteuning. Iedereen kan de broncode van FcashApp inzien of er aan bijdragen via GitHub (https://github.com/fcash-js/fcash-pay). 

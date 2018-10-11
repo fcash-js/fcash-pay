@@ -8,7 +8,7 @@ import { AmountPage } from '../../send/amount/amount';
 
 // providers
 import { FcashCardProvider } from '../../../providers/fcash-card/fcash-card';
-import { FcashProvider } from '../../../providers/fcash-project/fcash';
+import { FcashProvider } from '../../../providers/fcash-js/fcash';
 import { ExternalLinkProvider } from '../../../providers/external-link/external-link';
 import { PopupProvider } from '../../../providers/popup/popup';
 import { TimeProvider } from '../../../providers/time/time';

@@ -44,7 +44,7 @@ export class PaperWalletPage {
   public balanceHidden: boolean;
   public error: boolean;
   public isOpenSelector: boolean;
-  private fcore;
+  private fcashBase;
 
   // Platform info
   public isCordova: boolean;
@@ -66,7 +66,7 @@ export class PaperWalletPage {
     private platformProvider: PlatformProvider,
     private bwcErrorProvider: BwcErrorProvider
   ) {
-    this.fcore = this.bwcProvider.getFcash();
+    this.fcashBase = this.bwcProvider.getFcash();
     this.isCordova = this.platformProvider.isCordova;
     this.isOpenSelector = false;
     this.scannedKey = this.navParams.data.privateKey;
@@ -144,7 +144,7 @@ export class PaperWalletPage {
 
   private checkPrivateKey(privateKey: string): boolean {
     try {
-      new this.fcore.PrivateKey(privateKey, 'livenet');
+      new this.fcashBase.PrivateKey(privateKey, 'livenet');
     } catch (err) {
       return false;
     }

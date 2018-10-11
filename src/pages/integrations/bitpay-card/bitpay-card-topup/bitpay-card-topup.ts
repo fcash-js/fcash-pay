@@ -11,7 +11,7 @@ import { FcashCardPage } from '../fcash-card';
 // Provider
 import { ActionSheetProvider } from '../../../../providers/action-sheet/action-sheet';
 import { FcashCardProvider } from '../../../../providers/fcash-card/fcash-card';
-import { FcashProvider } from '../../../../providers/fcash-project/fcash';
+import { FcashProvider } from '../../../../providers/fcash-js/fcash';
 import { BwcErrorProvider } from '../../../../providers/bwc-error/bwc-error';
 import { BwcProvider } from '../../../../providers/bwc/bwc';
 import { ConfigProvider } from '../../../../providers/config/config';
@@ -56,7 +56,7 @@ export class FcashCardTopUpPage {
   public currencySymbol;
   public rate;
 
-  private fcoreCash;
+  private fcashBaseCash;
   private createdTx;
   private configWallet;
 
@@ -87,7 +87,7 @@ export class FcashCardTopUpPage {
   ) {
     this.configWallet = this.configProvider.get().wallet;
     this.isCordova = this.platformProvider.isCordova;
-    this.fcoreCash = this.bwcProvider.getFcashCash();
+    this.fcashBaseCash = this.bwcProvider.getFcashCash();
     this.hideSlideButton = false;
   }
 
@@ -318,7 +318,7 @@ export class FcashCardTopUpPage {
 
           if (wallet.coin && wallet.coin == 'bch') {
             // Use legacy address
-            txp.toAddress = this.fcoreCash.Address(txp.toAddress).toString();
+            txp.toAddress = this.fcashBaseCash.Address(txp.toAddress).toString();
             txp.outputs[0].toAddress = txp.toAddress;
           }
 

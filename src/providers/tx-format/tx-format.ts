@@ -9,7 +9,7 @@ import * as _ from 'lodash';
 
 @Injectable()
 export class TxFormatProvider {
-  private fcoreCash;
+  private fcashBaseCash;
 
   // TODO: implement configService
   public pendingTxProposalsCountForUs: number;
@@ -22,11 +22,11 @@ export class TxFormatProvider {
     private logger: Logger
   ) {
     this.logger.debug('TxFormatProvider initialized');
-    this.fcoreCash = this.bwcProvider.getFcashCash();
+    this.fcashBaseCash = this.bwcProvider.getFcashCash();
   }
 
   public toCashAddress(address: string, withPrefix?: boolean): string {
-    let cashAddr: string = this.fcoreCash.Address(address).toCashAddress();
+    let cashAddr: string = this.fcashBaseCash.Address(address).toCashAddress();
 
     if (withPrefix) {
       return cashAddr;
@@ -36,7 +36,7 @@ export class TxFormatProvider {
   }
 
   public toLegacyAddress(address: string): string {
-    let legacyAddr: string = this.fcoreCash.Address(address);
+    let legacyAddr: string = this.fcashBaseCash.Address(address);
     return legacyAddr;
   }
 

@@ -126,7 +126,7 @@ describe('AboutPage', () => {
         instance.openExternalLink();
 
         expect(instance.externalLinkProvider.open).toHaveBeenCalledWith(
-          'https://github.com/fcash-project/testRepo/tree/testHash',
+          'https://github.com/fcash-js/testRepo/tree/testHash',
           true,
           'Open GitHub Project',
           'You can see the latest developments and contribute to this open source app by visiting our project on GitHub.',

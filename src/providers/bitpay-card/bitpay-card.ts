@@ -3,7 +3,7 @@ import { Logger } from '../../providers/logger/logger';
 
 // providers
 import { AppIdentityProvider } from '../app-identity/app-identity';
-import { FcashProvider } from '../fcash-project/fcash';
+import { FcashProvider } from '../fcash-js/fcash';
 import { ConfigProvider } from '../config/config';
 import { HomeIntegrationsProvider } from '../home-integrations/home-integrations';
 import { OnGoingProcessProvider } from '../on-going-process/on-going-process';

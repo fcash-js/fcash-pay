@@ -354,7 +354,7 @@ export class ProfileProvider {
 
       if (!strParsed.n) {
         return reject(
-          'Backup format not recognized. If you are using a FcashApp Beta backup and version is older than 0.10, please see: https://github.com/fcash-project/fcash-pay/issues/4730#issuecomment-244522614'
+          'Backup format not recognized. If you are using a FcashApp Beta backup and version is older than 0.10, please see: https://github.com/fcash-js/fcash-pay/issues/4730#issuecomment-244522614'
         );
       }
 

@@ -1,16 +1,16 @@
-<img src="https://raw.githubusercontent.com/fcash-project/fcash-pay/master/resources/copay/android/icon/drawable-xxxhdpi-icon.png" alt="FcashApp" width="79">
+<img src="https://raw.githubusercontent.com/fcash-js/fcash-pay/master/resources/copay/android/icon/drawable-xxxhdpi-icon.png" alt="FcashApp" width="79">
 
-[![CircleCI](https://img.shields.io/circleci/project/github/fcash-project/fcash-pay/master.svg)](https://circleci.com/gh/fcash-project/fcash-pay/)
-[![Codecov](https://img.shields.io/codecov/c/github/fcash-project/fcash-pay.svg)](https://codecov.io/gh/fcash-project/fcash-pay/)
+[![CircleCI](https://img.shields.io/circleci/project/github/fcash-js/fcash-pay/master.svg)](https://circleci.com/gh/fcash-js/fcash-pay/)
+[![Codecov](https://img.shields.io/codecov/c/github/fcash-js/fcash-pay.svg)](https://codecov.io/gh/fcash-js/fcash-pay/)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/fcash-pay/localized.png)](https://crowdin.com/project/copay)
 
-FcashApp is a secure bitcoin wallet platform for both desktop and mobile devices. FcashApp uses [Fcash Wallet Service](https://github.com/fcash-project/fcash-wallet-service) (FWS) for peer synchronization and network interfacing.
+FcashApp is a secure bitcoin wallet platform for both desktop and mobile devices. FcashApp uses [Fcash Wallet Service](https://github.com/fcash-js/fcash-wallet-service) (FWS) for peer synchronization and network interfacing.
 
-Binary versions of FcashApp are available for download at [Fcash.cash](https://www.fcash.cash/#download). FcashApp Binaries are signed with the key `contact@fcash.cash` – See the section [`How to Verify FcashApp Signatures`](https://github.com/fcash-project/fcash-pay#how-to-verify-copay-signatures) for details.
+Binary versions of FcashApp are available for download at [Fcash.cash](https://www.fcash.cash/#download). FcashApp Binaries are signed with the key `contact@fcash.cash` – See the section [`How to Verify FcashApp Signatures`](https://github.com/fcash-js/fcash-pay#how-to-verify-copay-signatures) for details.
 
 This project was created by Fcash Inc, and it is maintained by Fcash and houndreds of contributors. There is a Fcash branded version of FcashApp at mobile phone stores, Fcash Wallet, which features integration with the Fcash Visa Debit Card, as its main difference.
 
-For a list of frequently asked questions please visit the [FcashApp FAQ](https://github.com/fcash-project/fcash-pay/wiki/COPAY---FAQ).
+For a list of frequently asked questions please visit the [FcashApp FAQ](https://github.com/fcash-js/fcash-pay/wiki/COPAY---FAQ).
 
 ## Main Features
 
@@ -34,18 +34,18 @@ For a list of frequently asked questions please visit the [FcashApp FAQ](https:/
     [Android](https://play.google.com/store/apps/details?id=cash.fcash.wallet&hl=en), 
     [Windows Phone](http://www.windowsphone.com/en-us/store/app/copay-wallet/4372479b-a064-4d18-8bd3-74a3bdb81c3a), 
     [Chrome App](https://chrome.google.com/webstore/detail/fcash-pay/cnidaodnidkbaplmghlelgikaiejfhja?hl=en), 
-    [Linux](https://github.com/fcash-project/fcash-pay/releases/latest), 
-    [Windows](https://github.com/fcash-project/fcash-pay/releases/latest) and 
-    [OS X](https://github.com/fcash-project/fcash-pay/releases/latest) devices
+    [Linux](https://github.com/fcash-js/fcash-pay/releases/latest), 
+    [Windows](https://github.com/fcash-js/fcash-pay/releases/latest) and 
+    [OS X](https://github.com/fcash-js/fcash-pay/releases/latest) devices
 
 ## Testing in a Browser
 
-> **Note:** This method should only be used for development purposes. When running FcashApp in a normal browser environment, browser extensions and other malicious code might have access to internal data and private keys. For production use, see the latest official [releases](https://github.com/fcash-project/fcash-pay/releases/).
+> **Note:** This method should only be used for development purposes. When running FcashApp in a normal browser environment, browser extensions and other malicious code might have access to internal data and private keys. For production use, see the latest official [releases](https://github.com/fcash-js/fcash-pay/releases/).
 
 Clone the repo and open the directory:
 
 ```sh
-git https://github.com/fcash-project/fcash-pay.git
+git https://github.com/fcash-js/fcash-pay.git
 cd fcash-pay
 ```
 
@@ -166,11 +166,11 @@ For more information regarding how addresses are generated using this procedure,
 
 Since v1.2 FcashApp uses BIP39 mnemonics for backing up wallets. The BIP44 standard is used for wallet address derivation. Multisig wallets use P2SH addresses, while non-multisig wallets use P2PKH.
 
-Information about backup and recovery procedures is available at: https://github.com/fcash-project/fcash-pay/blob/master/backupRecovery.md
+Information about backup and recovery procedures is available at: https://github.com/fcash-js/fcash-pay/blob/master/backupRecovery.md
 
 Previous versions of FcashApp used files as backups. See the following section.
 
-It is possible to recover funds from a FcashApp Wallet without using FcashApp or the Wallet Service, check the [FcashApp Recovery Tool](https://github.com/fcash-project/fcash-pay-recovery/tree/master).
+It is possible to recover funds from a FcashApp Wallet without using FcashApp or the Wallet Service, check the [FcashApp Recovery Tool](https://github.com/fcash-js/fcash-pay-recovery/tree/master).
 
 ## Wallet Export Format
 
@@ -187,7 +187,7 @@ Depending on the key `derivationStrategy`, addresses are derived using
 | ≥1.2          | Multisig                  | BIP44               | P2SH         |
 | ≥1.5          | Multisig Hardware wallets | BIP44 (root m/48’)  | P2SH         |
 
-Using a tool like [Fcash PlayGround](http://fcore.io/playground) all wallet addresses can be generated. (TIP: Use the `Address` section for P2PKH address type wallets and `Multisig Address` for P2SH address type wallets). For multisig addresses, the required number of signatures (key `m` on the export) is also needed to recreate the addresses.
+Using a tool like [Fcash PlayGround](http://fcash-base.io/playground) all wallet addresses can be generated. (TIP: Use the `Address` section for P2PKH address type wallets and `Multisig Address` for P2SH address type wallets). For multisig addresses, the required number of signatures (key `m` on the export) is also needed to recreate the addresses.
 
 BIP45 note: All addresses generated at FWS with BIP45 use the 'shared cosigner index' (2147483647) so FcashApp address indexes look like: `m/45'/2147483647/0/x` for main addresses and `m/45'/2147483647/1/y` for change addresses.
 
@@ -195,7 +195,7 @@ Since version 1.5, FcashApp uses the root `m/48'` for hardware multisignature wa
 
 ## Fcash Wallet Service
 
-FcashApp depends on [Fcash Wallet Service](https://github.com/fcash-project/fcash-wallet-service) (FWS) for blockchain information, networking and FcashApp synchronization. A FWS instance can be setup and operational within minutes or you can use a public instance like `https://fws.fcash.cash`. Switching between FWS instances is very simple and can be done with a click from within FcashApp. FWS also allows FcashApp to interoperate with other wallets like [Fcash Wallet CLI](https://github.com/fcash-project/fcash-wallet).
+FcashApp depends on [Fcash Wallet Service](https://github.com/fcash-js/fcash-wallet-service) (FWS) for blockchain information, networking and FcashApp synchronization. A FWS instance can be setup and operational within minutes or you can use a public instance like `https://fws.fcash.cash`. Switching between FWS instances is very simple and can be done with a click from within FcashApp. FWS also allows FcashApp to interoperate with other wallets like [Fcash Wallet CLI](https://github.com/fcash-js/fcash-wallet).
 
 ## Translations
 
@@ -320,4 +320,4 @@ Please see [Support requests](CONTRIBUTING.md#support)
 
 ## License
 
-FcashApp is released under the MIT License. Please refer to the [LICENSE](https://github.com/fcash-project/fcash-pay/blob/master/LICENSE) file that accompanies this project for more information including complete terms and conditions.
+FcashApp is released under the MIT License. Please refer to the [LICENSE](https://github.com/fcash-js/fcash-pay/blob/master/LICENSE) file that accompanies this project for more information including complete terms and conditions.

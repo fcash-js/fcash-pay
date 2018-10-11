@@ -733,14 +733,14 @@ export class HomePage {
     if (OS.extension !== '') {
       okText = this.translate.instant('Download');
       url =
-        'https://github.com/fcash-project/fcash-pay/releases/download/' +
+        'https://github.com/fcash-js/fcash-pay/releases/download/' +
         this.latestVersion +
         '/' +
         appName +
         OS.extension;
     } else {
       okText = this.translate.instant('View Update');
-      url = 'https://github.com/fcash-project/fcash-pay/releases/latest';
+      url = 'https://github.com/fcash-js/fcash-pay/releases/latest';
     }
 
     let optIn = true;

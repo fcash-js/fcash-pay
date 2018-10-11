@@ -184,7 +184,7 @@ const configDefault: Config = {
   },
 
   release: {
-    url: 'https://api.github.com/repos/fcash-project/fcash-pay/releases/latest'
+    url: 'https://api.github.com/repos/fcash-js/fcash-pay/releases/latest'
   },
 
   pushNotificationsEnabled: true,

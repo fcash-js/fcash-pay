@@ -19,7 +19,7 @@ import { PlatformProvider } from '../platform/platform';
 import { AppProvider } from './app';
 
 import { LoggerMock } from '../logger/logger.mock';
-import * as appTemplate from './../../../app-template/fcash-project/appConfig.json';
+import * as appTemplate from './../../../app-template/fcash-js/appConfig.json';
 
 describe('AppProvider', () => {
   let injector: TestBed;

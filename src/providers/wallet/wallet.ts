@@ -924,7 +924,7 @@ export class WalletProvider {
   }
 
   // These 2 functions were taken from
-  // https://github.com/fcash-project/fcash-wallet-service/blob/master/lib/model/txproposal.js#L243
+  // https://github.com/fcash-js/fcash-wallet-service/blob/master/lib/model/txproposal.js#L243
   private getEstimatedSizeForSingleInput(wallet): number {
     switch (wallet.credentials.addressType) {
       case 'P2PKH':

@@ -5,20 +5,20 @@ import { BwcProvider } from '../../providers/bwc/bwc';
 
 @Injectable()
 export class AddressProvider {
-  private fcore;
-  private fcoreCash;
+  private fcashBase;
+  private fcashBaseCash;
   private Fcash;
 
   constructor(private bwcProvider: BwcProvider) {
-    this.fcore = this.bwcProvider.getFcash();
-    this.fcoreCash = this.bwcProvider.getFcashCash();
+    this.fcashBase = this.bwcProvider.getFcash();
+    this.fcashBaseCash = this.bwcProvider.getFcashCash();
     this.Fcash = {
       btc: {
-        lib: this.fcore,
+        lib: this.fcashBase,
         translateTo: 'bch'
       },
       bch: {
-        lib: this.fcoreCash,
+        lib: this.fcashBaseCash,
         translateTo: 'btc'
       }
     };
@@ -73,8 +73,8 @@ export class AddressProvider {
   }
 
   public validateAddress(address: string) {
-    let Address = this.fcore.Address;
-    let AddressCash = this.fcoreCash.Address;
+    let Address = this.fcashBase.Address;
+    let AddressCash = this.fcashBaseCash.Address;
     let isLivenet = Address.isValid(address, 'livenet');
     let isTestnet = Address.isValid(address, 'testnet');
     let isLivenetCash = AddressCash.isValid(address, 'livenet');
@@ -115,10 +115,10 @@ export class AddressProvider {
   }
 
   public isValid(address: string): boolean {
-    let URI = this.fcore.URI;
-    let Address = this.fcore.Address;
-    let URICash = this.fcoreCash.URI;
-    let AddressCash = this.fcoreCash.Address;
+    let URI = this.fcashBase.URI;
+    let Address = this.fcashBase.Address;
+    let URICash = this.fcashBaseCash.URI;
+    let AddressCash = this.fcashBaseCash.Address;
 
     // Bip21 uri
     let uri, isAddressValidLivenet, isAddressValidTestnet;

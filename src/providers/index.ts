@@ -27,7 +27,7 @@ export {
   FcashAccountProvider
 } from '../providers/fcash-account/fcash-account';
 export { FcashCardProvider } from '../providers/fcash-card/fcash-card';
-export { FcashProvider } from '../providers/fcash-project/fcash';
+export { FcashProvider } from '../providers/fcash-js/fcash';
 export { BwcErrorProvider } from '../providers/bwc-error/bwc-error';
 export { BwcProvider } from '../providers/bwc/bwc';
 export { ClipboardProvider } from '../providers/clipboard/clipboard';
