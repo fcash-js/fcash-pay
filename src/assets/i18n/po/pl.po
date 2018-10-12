@@ -20,7 +20,7 @@ msgstr "(Zaufany)"
 msgid "(possible double spend)"
 msgstr "(możliwa podwójna wypłata)"
 
-msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcash-pay has signed, or 2) 10 minutes have passed since the proposal was created."
+msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcashpay has signed, or 2) 10 minutes have passed since the proposal was created."
 msgstr ""
 
 msgid "5-star ratings help us get Fcash Wallet into more hands, and more users means more resources can be committed to the app!"
@@ -1802,7 +1802,7 @@ msgstr "Podziel się miłością, zapraszając swoich przyjaciół."
 msgid "Share this QR code to receive {amount} in your wallet {name}."
 msgstr ""
 
-msgid "Share this invitation with your fcash-pay"
+msgid "Share this invitation with your fcashpay"
 msgstr "Wyślij zaproszenie współwłaścicielom portfela"
 
 msgid "Share {{appName}}"
@@ -2042,7 +2042,7 @@ msgstr "Łącznie"
 msgid "Total Locked Balance"
 msgstr "Łącznie zablokowane środki"
 
-msgid "Total number of fcash-pay"
+msgid "Total number of fcashpay"
 msgstr ""
 
 msgid "Total wallet inputs"
@@ -2204,7 +2204,7 @@ msgstr "Ostrzeżenie: klucz derywacji nie działa na tym urządzeniu/portfelu. D
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "OSTRZEŻENIE: CERTYFIKAT NIEZAUFANY"
 
-msgid "Waiting for fcash-pay"
+msgid "Waiting for fcashpay"
 msgstr "Oczekiwanie na współwłaścicieli portfela"
 
 msgid "Waiting..."

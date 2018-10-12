@@ -51,7 +51,7 @@ export class TxDetailsPage {
     private txFormatProvider: TxFormatProvider,
     private walletProvider: WalletProvider,
     private translate: TranslateService
-  ) {}
+  ) { }
 
   ionViewDidLoad() {
     this.config = this.configProvider.get();
@@ -150,7 +150,7 @@ export class TxDetailsPage {
         type: action.type,
         time: action.createdOn,
         description: actionDescriptions[action.type],
-        by: action.fcash-payName
+        by: action.fcashpayName
       });
     });
 

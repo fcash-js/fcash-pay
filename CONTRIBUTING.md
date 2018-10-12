@@ -73,9 +73,9 @@ provide as much detail and context as possible.
 ## Support requests
 
 If you are having particular problem with your FcashApp instalation, please first [search older
-issues](https://github.com/fcash-js/fcash-pay/issues) in order to learn if the issue is already reported. It could be fixed already.
+issues](https://github.com/fcash-js/fcashpay/issues) in order to learn if the issue is already reported. It could be fixed already.
 
-Please also check our [FAQ](https://github.com/fcash-js/fcash-pay/wiki/fcash---FAQ).
+Please also check our [FAQ](https://github.com/fcash-js/fcashpay/wiki/fcash---FAQ).
 
 When requesting support describe the issue as much in detail as possible. Consider to
 provide the following information:
@@ -93,7 +93,7 @@ If you need to provide personal / sensitive data to solve the issue (like the Wa
 We will provide a better channel (like an Fcash email address) so you can send the information. If possible, please
 encrypt your emails using GnuPG.
 
-To open an issue go to [Github Issues](https://github.com/fcash-js/fcash-pay/issues).
+To open an issue go to [Github Issues](https://github.com/fcash-js/fcashpay/issues).
 
 <a name="pull-requests"></a>
 

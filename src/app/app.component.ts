@@ -32,7 +32,7 @@ import { ShapeshiftProvider } from '../providers/shapeshift/shapeshift';
 import { TouchIdProvider } from '../providers/touchid/touchid';
 
 // pages
-import { FcashAppPage } from '../pages/add/fcash-pay/fcash-pay';
+import { FcashAppPage } from '../pages/add/fcashpay/fcashpay';
 import { ImportWalletPage } from '../pages/add/import-wallet/import-wallet';
 import { JoinWalletPage } from '../pages/add/join-wallet/join-wallet';
 import { FingerprintModalPage } from '../pages/fingerprint/fingerprint';

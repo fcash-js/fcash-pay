@@ -103,20 +103,20 @@ export class WalletTransactionHistoryPage {
           'Comment'
         ];
 
-        var _amount, _note, _fcash-pay, _creator, _comment;
+        var _amount, _note, _fcashpay, _creator, _comment;
 
         data.forEach(it => {
           var amount = it.amount;
 
           if (it.action == 'moved') amount = 0;
 
-          _fcash-pay = '';
+          _fcashpay = '';
           _creator = '';
 
           if (it.actions && it.actions.length > 1) {
             for (var i = 0; i < it.actions.length; i++) {
-              _fcash-pay +=
-                it.actions[i].fcash-payName + ':' + it.actions[i].type + ' - ';
+              _fcashpay +=
+                it.actions[i].fcashpayName + ':' + it.actions[i].type + ' - ';
             }
             _creator =
               it.creatorName && it.creatorName != 'undefined'
@@ -140,7 +140,7 @@ export class WalletTransactionHistoryPage {
             Currency: this.currency,
             Txid: it.txid,
             Creator: _creator,
-            FcashApp: _fcash-pay,
+            FcashApp: _fcashpay,
             Comment: _comment
           });
 

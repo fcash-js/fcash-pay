@@ -1,8 +1,8 @@
 FROM circleci/node:9-browsers
 USER root
-COPY package.json /fcash-pay/package.json
-COPY src/environments/dev.ts /fcash-pay/src/environments/dev.ts
-WORKDIR /fcash-pay/
+COPY package.json /fcashpay/package.json
+COPY src/environments/dev.ts /fcashpay/src/environments/dev.ts
+WORKDIR /fcashpay/
 RUN npm install --unsafe-perm
-COPY . /fcash-pay/
+COPY . /fcashpay/
 CMD [ "npm", "run", "e2e:capture-latest"]

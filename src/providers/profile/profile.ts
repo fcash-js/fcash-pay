@@ -195,7 +195,7 @@ export class ProfileProvider {
           return;
         }
         wallet.setNotificationsInterval(this.UPDATE_PERIOD);
-        wallet.openWallet(() => {});
+        wallet.openWallet(() => { });
       }
     );
     this.events.subscribe('wallet:updated', (walletId: string) => {
@@ -302,7 +302,7 @@ export class ProfileProvider {
             this.profile.setChecked(this.platformProvider.ua, walletId);
           } else {
             this.logger.warn('Key Derivation failed for wallet:' + walletId);
-            this.persistenceProvider.clearLastAddress(walletId).then(() => {});
+            this.persistenceProvider.clearLastAddress(walletId).then(() => { });
           }
 
           this.storeProfileIfDirty();
@@ -354,7 +354,7 @@ export class ProfileProvider {
 
       if (!strParsed.n) {
         return reject(
-          'Backup format not recognized. If you are using a FcashApp Beta backup and version is older than 0.10, please see: https://github.com/fcash-js/fcash-pay/issues/4730#issuecomment-244522614'
+          'Backup format not recognized. If you are using a FcashApp Beta backup and version is older than 0.10, please see: https://github.com/fcash-js/fcashpay/issues/4730#issuecomment-244522614'
         );
       }
 
@@ -837,9 +837,9 @@ export class ProfileProvider {
 
       this.logger.debug(
         'Binding wallet:' +
-          credentials.walletId +
-          ' Validating?:' +
-          !skipKeyValidation
+        credentials.walletId +
+        ' Validating?:' +
+        !skipKeyValidation
       );
       return resolve(this.bindWalletClient(walletClient));
     });
@@ -1355,7 +1355,7 @@ export class ProfileProvider {
 
             let idToName = {};
             if (wallet.cachedStatus) {
-              _.each(wallet.cachedStatus.wallet.fcash-pay, c => {
+              _.each(wallet.cachedStatus.wallet.fcashpay, c => {
                 idToName[c.id] = c.name;
               });
             }

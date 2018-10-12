@@ -21,7 +21,7 @@ export class WalletInformationPage {
   public walletName: string;
   public N: number;
   public M: number;
-  public fcash-pay;
+  public fcashpay;
   public FcashPayId;
   public balanceByAddress;
   public account: number;
@@ -44,7 +44,7 @@ export class WalletInformationPage {
     private navCtrl: NavController,
     private events: Events,
     private logger: Logger
-  ) {}
+  ) { }
 
   ionViewDidLoad() {
     this.logger.info('Loaded:  WalletInformationPage');
@@ -57,7 +57,7 @@ export class WalletInformationPage {
     this.walletId = this.wallet.credentials.walletId;
     this.N = this.wallet.credentials.n;
     this.M = this.wallet.credentials.m;
-    this.fcash-pay = this.wallet.cachedStatus.wallet.fcash-pay;
+    this.fcashpay = this.wallet.cachedStatus.wallet.fcashpay;
     this.FcashPayId = this.wallet.credentials.FcashPayId;
     this.balanceByAddress = this.wallet.balanceByAddress;
     this.account = this.wallet.credentials.account;

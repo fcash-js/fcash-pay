@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import { ConfigProvider } from '../config/config';
 import { Logger } from '../../providers/logger/logger';
 import { FwcProvider } from '../fwc/fwc';
-import { ConfigProvider } from '../config/config';
 import { FilterProvider } from '../filter/filter';
 import { RateProvider } from '../rate/rate';
 

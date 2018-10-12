@@ -2,10 +2,10 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 version: 2
 jobs:
-  fcash-pay:
+  fcashpay:
     docker:
       - image: circleci/node@sha256:a6f4dfaae4e22f99d3910902362db706f32e0dbca7ce5ef757823d93fef1740e
-    working_directory: ~/fcash-pay
+    working_directory: ~/fcashpay
     steps:
       - checkout
       # Download and cache dependencies
@@ -19,13 +19,13 @@ jobs:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-      - run: npm run apply:fcash-pay
+      - run: npm run apply:fcashpay
       # Select correct Chromedriver version (this must run after npm install)
       - run: npm run e2e:update-ci
       - run: npm run test:lint
       - run: npm run test:ci
       - run: npm run e2e
-      - run: npx reg-cli test/visual/latest/fcash-pay test/visual/expected/fcash-pay test/visual/diffs --report test/visual/report.html --json test/visual/report.json --enableAntialias  --pixelThreshold 20
+      - run: npx reg-cli test/visual/latest/fcashpay test/visual/expected/fcashpay test/visual/diffs --report test/visual/report.html --json test/visual/report.json --enableAntialias  --pixelThreshold 20
       - run: npx codecov
       - store_artifacts:
           path: ./test
@@ -35,7 +35,7 @@ jobs:
   fcash:
     docker:
       - image: circleci/node@sha256:a6f4dfaae4e22f99d3910902362db706f32e0dbca7ce5ef757823d93fef1740e
-    working_directory: ~/fcash-pay
+    working_directory: ~/fcashpay
     steps:
       - checkout
       - restore_cache:
@@ -63,5 +63,5 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - fcash-pay
+      - fcashpay
       - fcash

@@ -49,7 +49,7 @@ describe('Release Provider', () => {
     });
 
     const githubReq = httpMock.expectOne(
-      'https://api.github.com/repos/fcash-js/fcash-pay/releases/latest'
+      'https://api.github.com/repos/fcash-js/fcashpay/releases/latest'
     );
     expect(githubReq.request.method).toEqual('GET');
     githubReq.flush({ tag_name: latestAppVersion });

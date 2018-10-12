@@ -1670,11 +1670,11 @@ export class WalletProvider {
       let walletPrivKey = this.fwcProvider
         .getFcash()
         .PrivateKey.fromString(wallet.credentials.walletPrivKey);
-      let fcash_pay = 1;
+      let fcashpay = 1;
       let i = 0;
 
       lodash.each(wallet.credentials.publicKeyRing, item => {
-        let name = item.fcash_payName || 'fcash_pay ' + fcash_pay++;
+        let name = item.fcashpayName || 'fcashpay ' + fcashpay++;
         newWallet._doJoinWallet(
           newWallet.credentials.walletId,
           walletPrivKey,
@@ -1685,7 +1685,7 @@ export class WalletProvider {
             coin: newWallet.credentials.coin
           },
           err => {
-            // Ignore error is fcash-pay already in wallet
+            // Ignore error is fcashpay already in wallet
             if (err && !(err instanceof this.errors.FCASH_IN_WALLET))
               return reject(err);
             if (++i == wallet.credentials.publicKeyRing.length)

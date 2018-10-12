@@ -1,6 +1,6 @@
 /* Pages */
 import { AddPage } from '../pages/add/add';
-import { FcashAppPage } from '../pages/add/fcash-pay/fcash-pay';
+import { FcashAppPage } from '../pages/add/fcashpay/fcashpay';
 import { CreateWalletPage } from '../pages/add/create-wallet/create-wallet';
 import { ImportWalletPage } from '../pages/add/import-wallet/import-wallet';
 import { JoinWalletPage } from '../pages/add/join-wallet/join-wallet';

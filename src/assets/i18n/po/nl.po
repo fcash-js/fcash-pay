@@ -20,7 +20,7 @@ msgstr "(Vertrouwd)"
 msgid "(possible double spend)"
 msgstr "(mogelijk dubbel besteed)"
 
-msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcash-pay has signed, or 2) 10 minutes have passed since the proposal was created."
+msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcashpay has signed, or 2) 10 minutes have passed since the proposal was created."
 msgstr ""
 
 msgid "5-star ratings help us get Fcash Wallet into more hands, and more users means more resources can be committed to the app!"
@@ -1802,8 +1802,8 @@ msgstr "Deel het plezier door uw vrienden uit te nodigen."
 msgid "Share this QR code to receive {amount} in your wallet {name}."
 msgstr ""
 
-msgid "Share this invitation with your fcash-pay"
-msgstr "Deel deze uitnodiging met uw fcash-pay"
+msgid "Share this invitation with your fcashpay"
+msgstr "Deel deze uitnodiging met uw fcashpay"
 
 msgid "Share {{appName}}"
 msgstr ""
@@ -2042,7 +2042,7 @@ msgstr "Totaal"
 msgid "Total Locked Balance"
 msgstr "Totaal Vergrendeld Saldo"
 
-msgid "Total number of fcash-pay"
+msgid "Total number of fcashpay"
 msgstr ""
 
 msgid "Total wallet inputs"
@@ -2204,8 +2204,8 @@ msgstr "WAARSCHUWING: Sleutel derivatie werkt op dit moment niet op dit apparaat
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "WAARSCHUWING: NIET-VERTROUWD CERTIFICAAT"
 
-msgid "Waiting for fcash-pay"
-msgstr "Wachten op fcash-pay"
+msgid "Waiting for fcashpay"
+msgstr "Wachten op fcashpay"
 
 msgid "Waiting..."
 msgstr "Wachten..."

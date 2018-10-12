@@ -18,9 +18,9 @@
       </ion-item>
 
       <ion-item>
-        <ion-label stacked>{{'Total number of fcash-pay' | translate}}</ion-label>
+        <ion-label stacked>{{'Total number of fcashpay' | translate}}</ion-label>
         <ion-select okText="{{okText}}" cancelText="{{cancelText}}" formControlName="totalFcashApp" (ionChange)="setTotalFcashApp(createForm.value.totalFcashApp)">
-          <ion-option *ngFor="let fcash-pay of fcash-pay" [value]="fcash-pay">{{fcash-pay}}</ion-option>
+          <ion-option *ngFor="let fcashpay of fcashpay" [value]="fcashpay">{{fcashpay}}</ion-option>
         </ion-select>
       </ion-item>
 

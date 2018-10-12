@@ -20,7 +20,7 @@ msgstr "(신뢰할 수 있음)"
 msgid "(possible double spend)"
 msgstr "(이중 지출 가능)"
 
-msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcash-pay has signed, or 2) 10 minutes have passed since the proposal was created."
+msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcashpay has signed, or 2) 10 minutes have passed since the proposal was created."
 msgstr ""
 
 msgid "5-star ratings help us get Fcash Wallet into more hands, and more users means more resources can be committed to the app!"
@@ -1802,7 +1802,7 @@ msgstr "공유를 위해 친구를 초대하세요."
 msgid "Share this QR code to receive {amount} in your wallet {name}."
 msgstr ""
 
-msgid "Share this invitation with your fcash-pay"
+msgid "Share this invitation with your fcashpay"
 msgstr "귀하의 코페이어와 이 초대를 공유하세요"
 
 msgid "Share {{appName}}"
@@ -2042,7 +2042,7 @@ msgstr "합계"
 msgid "Total Locked Balance"
 msgstr "차단된 잔액 합계"
 
-msgid "Total number of fcash-pay"
+msgid "Total number of fcashpay"
 msgstr ""
 
 msgid "Total wallet inputs"
@@ -2204,7 +2204,7 @@ msgstr "경고: 이 기기/지갑에서는 키 유도가 작동하지 않습니�
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "경고: 신뢰할 수 없는 인증서"
 
-msgid "Waiting for fcash-pay"
+msgid "Waiting for fcashpay"
 msgstr "코페이어 기다리는 중"
 
 msgid "Waiting..."

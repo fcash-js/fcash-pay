@@ -3,7 +3,7 @@ package-lock.json
 package-template.json
 google-services.json
 app-template/fcash-js/google-services.json
-app-template/fcash-pay/google-services.json
+app-template/fcashpay/google-services.json
 .sourcemaps/
 coverage/
 platforms/

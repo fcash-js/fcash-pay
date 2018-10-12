@@ -20,8 +20,8 @@ msgstr "(De confianza)"
 msgid "(possible double spend)"
 msgstr "(Posible doble gasto)"
 
-msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcash-pay has signed, or 2) 10 minutes have passed since the proposal was created."
-msgstr "* Una propuesta de pago puede ser eliminada si 1) Usted es el creador, y ningún otro fcash-pay la ha firmado, o 2) Han transcurrido 10 minutos desde la creación de la propuesta."
+msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcashpay has signed, or 2) 10 minutes have passed since the proposal was created."
+msgstr "* Una propuesta de pago puede ser eliminada si 1) Usted es el creador, y ningún otro fcashpay la ha firmado, o 2) Han transcurrido 10 minutos desde la creación de la propuesta."
 
 msgid "5-star ratings help us get Fcash Wallet into more hands, and more users means more resources can be committed to the app!"
 msgstr "Una calificación de 5 estrellas nos ayuda a que Fcash sea más utilizado, ¡mientras más usuarios más recursos podemos destinar al desarrollo de la aplicación!"
@@ -1802,8 +1802,8 @@ msgstr "Comparte la pasión invitando a tus amigos."
 msgid "Share this QR code to receive {amount} in your wallet {name}."
 msgstr "Comparte este código QR para recibir {amount} en su billetera {name}."
 
-msgid "Share this invitation with your fcash-pay"
-msgstr "Compartir esta invitación con sus fcash-pay"
+msgid "Share this invitation with your fcashpay"
+msgstr "Compartir esta invitación con sus fcashpay"
 
 msgid "Share {{appName}}"
 msgstr "Compartir {{appName}}"
@@ -2043,8 +2043,8 @@ msgstr "Total"
 msgid "Total Locked Balance"
 msgstr "Balance Total Bloqueado"
 
-msgid "Total number of fcash-pay"
-msgstr "Número total de fcash-pay"
+msgid "Total number of fcashpay"
+msgstr "Número total de fcashpay"
 
 msgid "Total wallet inputs"
 msgstr "Total de entradas de la billetera"
@@ -2205,8 +2205,8 @@ msgstr "ADVERTENCIA: Derivación de la clave no funciona en este dispositivo/bil
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "ADVERTENCIA: EL CERTIFICADO NO ES DE CONFIANZA"
 
-msgid "Waiting for fcash-pay"
-msgstr "Esperando a los demás fcash-pay"
+msgid "Waiting for fcashpay"
+msgstr "Esperando a los demás fcashpay"
 
 msgid "Waiting..."
 msgstr "Esperando..."

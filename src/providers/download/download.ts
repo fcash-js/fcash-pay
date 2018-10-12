@@ -37,9 +37,7 @@ export class DownloadProvider {
       if (e.name == 'InvalidStateError') {
         // InvalidStateError (tested on FF13 WinXP)
         this.logger.debug('Invalid state Error: Trying to blob data again');
-        out = new Blob([data], {
-          type: datatype
-        });
+        out = new Blob([data], { type: datatype });
       } else {
         // We're screwed, blob constructor unsupported entirely
         this.logger.error('Error: blob constructor unsupported entirely');

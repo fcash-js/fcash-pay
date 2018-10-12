@@ -38,7 +38,7 @@ export class TxpDetailsPage {
 
   public wallet;
   public tx;
-  public fcash-pay;
+  public fcashpay;
   public FcashPayId: string;
   public isShared: boolean;
   public canSign: boolean;
@@ -98,7 +98,7 @@ export class TxpDetailsPage {
     this.currentSpendUnconfirmed = config.spendUnconfirmed;
     this.loading = false;
     this.isCordova = this.platformProvider.isCordova;
-    this.fcash-pay = this.wallet.status.wallet.fcash-pay;
+    this.fcashpay = this.wallet.status.wallet.fcashpay;
     this.FcashPayId = this.wallet.credentials.FcashPayId;
     this.isShared = this.wallet.credentials.n > 1;
     this.canSign = this.wallet.canSign() || this.wallet.isPrivKeyExternal();
@@ -224,7 +224,7 @@ export class TxpDetailsPage {
         type: action.type,
         time: action.createdOn,
         description: actionDescriptions[action.type],
-        by: action.fcash-payName
+        by: action.fcashpayName
       });
     });
 
@@ -430,7 +430,7 @@ export class TxpDetailsPage {
   }
 
   public updateFcashAppList(): void {
-    _.map(this.fcash-pay, (cp: any) => {
+    _.map(this.fcashpay, (cp: any) => {
       _.each(this.tx.actions, ac => {
         if (cp.id == ac.FcashPayId) {
           cp.action = ac.type;

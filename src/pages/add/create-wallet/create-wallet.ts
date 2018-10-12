@@ -44,7 +44,7 @@ export class CreateWalletPage implements OnInit {
   private derivationPathByDefault: string;
   private derivationPathForTestnet: string;
 
-  public fcash-pay: number[];
+  public fcashpay: number[];
   public signatures: number[];
   public showAdvOpts: boolean;
   public seedOptions;
@@ -78,7 +78,7 @@ export class CreateWalletPage implements OnInit {
     this.defaults = this.configProvider.getDefaults();
     this.tc = this.isShared ? this.defaults.wallet.totalFcashApp : 1;
 
-    this.fcash-pay = _.range(2, this.defaults.limits.totalFcashApp + 1);
+    this.fcashpay = _.range(2, this.defaults.limits.totalFcashApp + 1);
     this.derivationPathByDefault = this.derivationPathHelperProvider.default;
     this.derivationPathForTestnet = this.derivationPathHelperProvider.defaultTestnet;
     this.showAdvOpts = false;

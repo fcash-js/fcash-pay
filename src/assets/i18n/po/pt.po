@@ -20,7 +20,7 @@ msgstr "(Confiável)"
 msgid "(possible double spend)"
 msgstr "(Possível gasto duplo)"
 
-msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcash-pay has signed, or 2) 10 minutes have passed since the proposal was created."
+msgid "* A payment proposal can be deleted if 1) you are the creator, and no other fcashpay has signed, or 2) 10 minutes have passed since the proposal was created."
 msgstr "Uma proposta de pagamento pode ser excluída se: 1) você for o criador e nenhum outro assinante tiver assinado, ou 2) 10 minutos se passaram desde que a proposta foi criada."
 
 msgid "5-star ratings help us get Fcash Wallet into more hands, and more users means more resources can be committed to the app!"
@@ -1802,8 +1802,8 @@ msgstr "Compartilhe o amor convidando seus amigos."
 msgid "Share this QR code to receive {amount} in your wallet {name}."
 msgstr ""
 
-msgid "Share this invitation with your fcash-pay"
-msgstr "Compartilhe este convite com seus fcash-pay"
+msgid "Share this invitation with your fcashpay"
+msgstr "Compartilhe este convite com seus fcashpay"
 
 msgid "Share {{appName}}"
 msgstr "Compartilhar {{appName}}"
@@ -2042,8 +2042,8 @@ msgstr "Total"
 msgid "Total Locked Balance"
 msgstr "Saldo Total Bloqueado"
 
-msgid "Total number of fcash-pay"
-msgstr "Número total de fcash-pay"
+msgid "Total number of fcashpay"
+msgstr "Número total de fcashpay"
 
 msgid "Total wallet inputs"
 msgstr "Total de entradas da carteira"
@@ -2204,8 +2204,8 @@ msgstr "Aviso: Derivação de chave não está funcionando neste dispositivo/car
 msgid "WARNING: UNTRUSTED CERTIFICATE"
 msgstr "AVISO: CERTIFICADO NÃO CONFIÁVEL"
 
-msgid "Waiting for fcash-pay"
-msgstr "Aguardando fcash-pay"
+msgid "Waiting for fcashpay"
+msgstr "Aguardando fcashpay"
 
 msgid "Waiting..."
 msgstr "Aguardando…"

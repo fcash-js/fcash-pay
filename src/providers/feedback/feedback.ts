@@ -17,7 +17,7 @@ export class FeedbackProvider {
     // Get more info: https://mashe.hawksey.info/2014/07/google-sheets-as-a-database-insert-with-apps-script-using-postget-methods-with-ajax-example/
     this.URL =
       this.appProvider.servicesInfo &&
-      this.appProvider.servicesInfo.feedbackSheetURL
+        this.appProvider.servicesInfo.feedbackSheetURL
         ? this.appProvider.servicesInfo.feedbackSheetURL
         : null;
   }
@@ -26,9 +26,7 @@ export class FeedbackProvider {
     return new Promise((resolve, reject) => {
       if (!this.URL) return resolve();
 
-      const headers = new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
-      });
+      const headers = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
       const urlSearchParams = new HttpParams()
         .set('Email', dataSrc.email)
         .set('Feedback', dataSrc.feedback)

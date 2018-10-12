@@ -202,7 +202,7 @@ export class SettingsPage {
   public openHelpExternalLink(): void {
     let url =
       this.appName == 'FcashApp'
-        ? 'https://github.com/fcash-js/fcash-pay/issues'
+        ? 'https://github.com/fcash-js/fcashpay/issues'
         : 'https://help.fcash.cash/fcash-app';
     let optIn = true;
     let title = null;

@@ -110,7 +110,7 @@ export class FcashCashPage extends WalletTabsChild {
       name: wallet.name + '[BCH]',
       m: wallet.m,
       n: wallet.n,
-      myName: wallet.credentials.fcash-payName,
+      myName: wallet.credentials.fcashpayName,
       networkName: wallet.network,
       coin: Coin.BCH,
       walletPrivKey: wallet.credentials.walletPrivKey,
@@ -215,7 +215,7 @@ export class FcashCashPage extends WalletTabsChild {
       if (wallet.n == 1) return resolve();
 
       this.logger.debug(
-        'Adding fcash-pay for BCH wallet config:' + wallet.m + '-' + wallet.n
+        'Adding fcashpay for BCH wallet config:' + wallet.m + '-' + wallet.n
       );
 
       this.walletProvider
