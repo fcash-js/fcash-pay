@@ -15,8 +15,8 @@ describe('AddressProvider', () => {
   ];
 
   let BCHAddresses = [
-    'CHUwf57Maceqk5jhMX6NJkuLEbHEfqqgwx', // BCH Livenet Bitpay Style
-    // 'mg6PLV5yyUS6Gy55fJ7f994dQ7RpfJNYC9', // TODO: BCH Testnet Bitpay Style
+    'CHUwf57Maceqk5jhMX6NJkuLEbHEfqqgwx', // BCH Livenet Fcash Style
+    // 'mg6PLV5yyUS6Gy55fJ7f994dQ7RpfJNYC9', // TODO: BCH Testnet Fcash Style
     'qq9jk8jskjsmgqnzygwjsghp3knautm2dcnc5e4k7n', // BCH Livenet
     'qqr99gt5qdk4qyaxxvzeapgjuxkg6x9ueue95fakj7' // BCH Testnet
   ];

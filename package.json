@@ -1,8 +1,8 @@
 {
-  "name": "fcashpay-app",
+  "name": "fcashpay",
   "description": "A Secure Fcash Wallet",
   "author": "Fcash",
-  "version": "4.7.4",
+  "version": "4.7.1",
   "keywords": [
     "bitcoin",
     "wallet",
